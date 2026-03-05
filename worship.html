@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans-x-en">
+<head>
+<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="Chinese Christian Church of Rhode Island (CCCRI) — A non-denominational Christian church serving Rhode Island and southeastern New England in Mandarin, Cantonese, and English." name="description"/><meta content="Chinese Christian Church of Rhode Island | 羅德島華人基督教會" property="og:title"/><meta content="website" property="og:type"/><meta content="#c0171d" name="theme-color"/><title>Chinese Christian Church of Rhode Island | 羅德島華人基督教會</title><link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&amp;family=Noto+Serif:wght@400;600;700&amp;family=Noto+Sans+SC:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/><script>
+window.showPage = function(id) {
+  var pages = document.querySelectorAll('.page');
+  for (var i = 0; i < pages.length; i++) pages[i].classList.remove('active');
+  var btns = document.querySelectorAll('.nav-links button');
+  for (var j = 0; j < btns.length; j++) btns[j].classList.remove('active');
+  var page = document.getElementById('page-' + id);
+  var btn  = document.getElementById('nav-'  + id);
+  if (page) page.classList.add('active');
+  if (btn)  btn.classList.add('active');
+  window.scrollTo(0, 0);
+};
+
+window.toggleMenu = function() {
+  var menu = document.getElementById('mobile-menu');
+  var btn  = document.getElementById('hamburger');
+  var open = menu.classList.toggle('open');
+  btn.classList.toggle('open', open);
+  btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+};
+
+window.navTo = function(id) {
+  window.showPage(id);
+  var menu = document.getElementById('mobile-menu');
+  var btn  = document.getElementById('hamburger');
+  menu.classList.remove('open');
+  btn.classList.remove('open');
+  btn.setAttribute('aria-expanded', 'false');
+};
+
+function switchTab(id) {
+  // Update buttons
+  document.querySelectorAll('.tab-btn').forEach(function(btn) {
+    btn.classList.remove('tab-active');
+    btn.setAttribute('aria-selected', 'false');
+  });
+  var activeBtn = document.getElementById('tab-' + id);
+  if (activeBtn) { activeBtn.classList.add('tab-active'); activeBtn.setAttribute('aria-selected', 'true'); }
+  // Update panels
+  document.querySelectorAll('.tab-panel').forEach(function(p) { p.style.display = 'none'; });
+  var activePanel = document.getElementById('panel-' + id);
+  if (activePanel) activePanel.style.display = 'block';
+}
+
+</script>
+<link rel="stylesheet" href="assets/style.css">
+<title>Chinese Christian Church of Rhode Island | 羅德島華人基督教會 — Worship</title>
+</head>
+<body data-nav="worship">
+<nav aria-label="Main navigation" role="navigation"><a aria-label="CCCRI Home" class="nav-logo" href="index.html"><img alt="CCCRI — Chinese Christian Church of Rhode Island logo" src="assets/images/img_a20f2f15e524.gif"/></a><div class="nav-links"><a aria-label="主页 Home" href="index.html" id="nav-home">主页 Home</a><a aria-label="关于我们 About" href="about.html" id="nav-about">关于我们 About</a><a aria-label="敬拜 Worship" href="worship.html" id="nav-worship">敬拜 Worship</a><a aria-label="活动 Events" href="events.html" id="nav-activities">活动 Events</a><a aria-label="事工 Ministries" href="ministries.html" id="nav-ministries">事工 Ministries</a><a aria-label="资源 Resources" href="resources.html" id="nav-resources">资源 Resources</a><a aria-label="联系 Contact" href="contact.html" id="nav-contact">联系 Contact</a></div><button aria-expanded="false" aria-label="Open navigation menu" class="hamburger" id="hamburger" onclick="toggleMenu()">
+<span></span><span></span><span></span>
+</button><a aria-label="Donate online — 線上奉獻" class="nav-donate" href="https://tithe.ly/give_new/www/#/tithely/give-one-time/1707700" rel="noopener" target="_blank">線上奉獻 Donate</a></nav><div aria-label="Mobile navigation" class="mobile-menu" id="mobile-menu" role="navigation"><a href="index.html">主页 Home</a><a href="about.html">关于我们 About Us</a><a href="worship.html">敬拜 Worship</a><a href="events.html">活动 Events</a><a href="ministries.html">事工 Ministries</a><a href="resources.html">资源 Resources</a><a href="contact.html">联系 Contact</a></div>
+<main class="page">
+
+<div class="page-header" role="banner">
+<p class="zh">敬拜聚會</p>
+<h1>Worship Services</h1>
+<p>Join Us for Sunday Worship</p>
+</div>
+<div class="section">
+<div style="max-width:900px;margin:0 auto;">
+<!-- ── Latest Sermon Video ── -->
+<div class="gold-divider"></div>
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:1.6rem;color:var(--gold);font-weight:700;margin-bottom:0.1rem;">最新證道</p>
+<h2 class="section-title" style="margin-bottom:0.4rem;">Latest Sunday Sermon</h2>
+<p style="color:var(--slate);font-size:0.95rem;margin-bottom:1.5rem;">最新主日崇拜講道 · Watch our most recent Sunday worship service</p>
+<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:8px;box-shadow:0 8px 32px rgba(0,0,0,0.18);margin-bottom:3rem;">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="true" src="https://www.youtube.com/embed/2ODA8emUj9I?rel=0" style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;" title="Latest Sunday Sermon — CCCRI Chinese Ministry">
+</iframe>
+</div>
+<!-- ── Service Cards ── -->
+<div class="service-tabs" style="margin-bottom:1.5rem;">
+<!-- Tab buttons -->
+<div aria-label="Service selection" class="tab-bar" role="tablist">
+<button aria-controls="panel-zh" aria-selected="true" class="tab-btn tab-active" id="tab-zh" onclick="switchTab('zh')" role="tab">
+<span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:1rem;font-weight:700;">🏮 中文崇拜</span>
+<span style="display:block;font-size:0.8rem;opacity:0.85;font-weight:400;">Chinese Service</span>
+</button>
+<button aria-controls="panel-en" aria-selected="false" class="tab-btn" id="tab-en" onclick="switchTab('en')" role="tab">
+<span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:1rem;font-weight:700;">✝️ 英文崇拜</span>
+<span style="display:block;font-size:0.8rem;opacity:0.85;font-weight:400;">English Service</span>
+</button>
+</div>
+<!-- Chinese Service Panel -->
+<div aria-labelledby="tab-zh" class="tab-panel" id="panel-zh" role="tabpanel">
+<div aria-label="Chinese language worship service" class="service-card" role="region" style="text-align:left;">
+<div aria-hidden="true" style="font-size:2.2rem;margin-bottom:0.6rem;text-align:center;">🏮</div>
+<p class="zh" style="text-align:center;">中文崇拜</p>
+<h3 style="text-align:center;">Chinese Service</h3>
+<div class="time" style="text-align:center;">主日 Sunday 11:15 AM – 12:50 PM</div>
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.9rem;color:var(--slate);margin-bottom:0.3rem;text-align:center;">以普通話和廣東話進行的崇拜，透過聖經和讚美詩聯結我們的華語會眾。</p>
+<p style="margin-bottom:1.2rem;text-align:center;">A worship experience in Mandarin and Cantonese, connecting our Chinese-speaking congregation through Scripture and praise.</p>
+<div style="background:var(--cream);border-radius:6px;padding:1.2rem;margin-top:0.5rem;">
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.9rem;font-weight:700;color:var(--navy);margin-bottom:0.2rem;">崇拜程序</p>
+<p style="font-size:0.875rem;color:var(--slate);margin-bottom:0.8rem;">Worship Order · Rhode Island Chinese Christian Church</p>
+<div style="display:flex;flex-direction:column;gap:0.35rem;">
+<div style="display:flex;gap:0.75rem;font-size:0.875rem;align-items:baseline;">
+<span style="color:var(--gold);font-weight:700;min-width:52px;font-variant-numeric:tabular-nums;">11:15</span>
+<span style="font-family:'Noto Sans SC',sans-serif;color:var(--slate);">召集 <span style="font-family:'Noto Sans',sans-serif;font-size:0.875rem;">Called</span></span>
+</div>
+<div style="display:flex;gap:0.75rem;font-size:0.875rem;align-items:baseline;">
+<span style="color:var(--gold);font-weight:700;min-width:52px;font-variant-numeric:tabular-nums;">11:17</span>
+<span style="font-family:'Noto Sans SC',sans-serif;color:var(--slate);">詩歌敬拜（含詩班） <span style="font-family:'Noto Sans',sans-serif;font-size:0.875rem;">Song worship (incl. choir)</span></span>
+</div>
+<div style="display:flex;gap:0.75rem;font-size:0.875rem;align-items:baseline;">
+<span style="color:var(--gold);font-weight:700;min-width:52px;font-variant-numeric:tabular-nums;">11:32</span>
+<span style="font-family:'Noto Sans SC',sans-serif;color:var(--slate);">禱告 <span style="font-family:'Noto Sans',sans-serif;font-size:0.875rem;">Prayer</span></span>
+</div>
+<div style="display:flex;gap:0.75rem;font-size:0.875rem;align-items:baseline;">
+<span style="color:var(--gold);font-weight:700;min-width:52px;font-variant-numeric:tabular-nums;">11:37</span>
+<span style="font-family:'Noto Sans SC',sans-serif;color:var(--slate);">讀經 <span style="font-family:'Noto Sans',sans-serif;font-size:0.875rem;">Bible reading</span></span>
+</div>
+<div style="display:flex;gap:0.75rem;font-size:0.875rem;align-items:baseline;">
+<span style="color:var(--gold);font-weight:700;min-width:52px;font-variant-numeric:tabular-nums;">11:40</span>
+<span style="font-family:'Noto Sans SC',sans-serif;color:var(--slate);">講道 <span style="font-family:'Noto Sans',sans-serif;font-size:0.875rem;">Preaching the Word</span></span>
+</div>
+<div style="display:flex;gap:0.75rem;font-size:0.875rem;align-items:baseline;">
+<span style="color:var(--gold);font-weight:700;min-width:52px;font-variant-numeric:tabular-nums;">12:35</span>
+<span style="font-family:'Noto Sans SC',sans-serif;color:var(--slate);">回應詩 <span style="font-family:'Noto Sans',sans-serif;font-size:0.875rem;">Response to Poetry</span></span>
+</div>
+<div style="display:flex;gap:0.75rem;font-size:0.875rem;align-items:baseline;">
+<span style="color:var(--gold);font-weight:700;min-width:52px;font-variant-numeric:tabular-nums;">12:38</span>
+<span style="font-family:'Noto Sans SC',sans-serif;color:var(--slate);">奉獻禱告 <span style="font-family:'Noto Sans',sans-serif;font-size:0.875rem;">Offering prayer</span></span>
+</div>
+<div style="display:flex;gap:0.75rem;font-size:0.875rem;align-items:baseline;">
+<span style="color:var(--gold);font-weight:700;min-width:52px;font-variant-numeric:tabular-nums;">12:40</span>
+<span style="font-family:'Noto Sans SC',sans-serif;color:var(--slate);">報告 <span style="font-family:'Noto Sans',sans-serif;font-size:0.875rem;">Announcements</span></span>
+</div>
+<div style="display:flex;gap:0.75rem;font-size:0.875rem;align-items:baseline;">
+<span style="color:var(--gold);font-weight:700;min-width:52px;font-variant-numeric:tabular-nums;">12:46</span>
+<span style="font-family:'Noto Sans SC',sans-serif;color:var(--slate);">祝福 <span style="font-family:'Noto Sans',sans-serif;font-size:0.875rem;">Blessing</span></span>
+</div>
+<div style="display:flex;gap:0.75rem;font-size:0.875rem;align-items:baseline;">
+<span style="color:var(--gold);font-weight:700;min-width:52px;font-variant-numeric:tabular-nums;">12:47</span>
+<span style="font-family:'Noto Sans SC',sans-serif;color:var(--slate);">三一頌 <span style="font-family:'Noto Sans',sans-serif;font-size:0.875rem;">Trinity Praise</span></span>
+</div>
+<div style="border-top:1px solid rgba(0,0,0,0.1);margin-top:0.5rem;padding-top:0.5rem;display:flex;gap:0.75rem;font-size:0.875rem;align-items:baseline;">
+<span style="color:var(--red);font-weight:700;min-width:52px;">12:50</span>
+<span style="font-family:'Noto Sans SC',sans-serif;color:var(--slate);">聚會結束 <span style="font-family:'Noto Sans',sans-serif;font-size:0.875rem;">Service ends</span></span>
+</div>
+<div style="display:flex;gap:0.75rem;font-size:0.875rem;align-items:baseline;">
+<span style="color:var(--red);font-weight:700;min-width:52px;">13:00</span>
+<span style="font-family:'Noto Sans SC',sans-serif;color:var(--slate);">愛宴開始（餐廳） <span style="font-family:'Noto Sans',sans-serif;font-size:0.875rem;">Fellowship lunch begins (dining hall)</span></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- English Service Panel -->
+<div aria-labelledby="tab-en" class="tab-panel" id="panel-en" role="tabpanel" style="display:none;">
+<div aria-label="English language worship service" class="service-card" role="region" style="text-align:left;">
+<div aria-hidden="true" style="font-size:2.2rem;margin-bottom:0.6rem;text-align:center;">✝️</div>
+<p class="zh" style="text-align:center;">英文崇拜</p>
+<h3 style="text-align:center;">English Service</h3>
+<div class="time" style="text-align:center;">主日 Sunday 10:00 AM – 11:10 AM</div>
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.9rem;color:var(--slate);margin-bottom:0.3rem;text-align:center;">英語崇拜，歡迎第二代及所有英語會眾參加。</p>
+<p style="margin-bottom:1rem;text-align:center;">An English-language worship service for our second-generation and English-speaking congregation members.</p>
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.875rem;color:var(--slate);line-height:1.7;margin-bottom:0.3rem;">City Light CCCRI 是我們充滿活力的英語會眾，歡迎學生、年輕專業人士和家庭加入，體驗當代敬拜、相關教導和真實的社群生活。</p>
+<p style="font-size:0.875rem;color:var(--slate);line-height:1.7;margin-bottom:1.2rem;">City Light CCCRI is our vibrant English congregation, welcoming students, young professionals, and families. Connect with us for contemporary worship, relevant teaching, and authentic community.</p>
+<div style="background:var(--cream);border-radius:6px;padding:1.2rem;margin-top:0.5rem;">
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.9rem;font-weight:700;color:var(--navy);margin-bottom:0.2rem;">主日程序</p>
+<p style="font-size:0.875rem;color:var(--slate);margin-bottom:0.8rem;">Sunday Schedule · City Light CCCRI</p>
+<div style="display:flex;flex-direction:column;gap:0.6rem;">
+<div>
+<div style="display:flex;gap:0.75rem;font-size:0.875rem;align-items:baseline;margin-bottom:0.25rem;">
+<span style="color:var(--gold);font-weight:700;min-width:52px;">10:00</span>
+<span style="font-weight:700;color:var(--navy);letter-spacing:0.04em;">WORSHIP SERVICE</span>
+</div>
+<p style="font-size:0.875rem;color:var(--slate);margin-left:64px;line-height:1.6;">來與我們一起敬拜，讚美感謝神，尋求認識創造我們之神的愛。<br/>Come worship with us as we give praises and thanksgiving to our God and seek to understand the love of the God who created us.</p>
+</div>
+<div style="border-top:1px solid rgba(0,0,0,0.08);padding-top:0.6rem;">
+<div style="display:flex;gap:0.75rem;font-size:0.875rem;align-items:baseline;margin-bottom:0.25rem;">
+<span style="color:var(--gold);font-weight:700;min-width:52px;">11:20</span>
+<span style="font-weight:700;color:var(--navy);letter-spacing:0.04em;">COFFEE CHAT</span>
+</div>
+<p style="font-size:0.875rem;color:var(--slate);margin-left:64px;line-height:1.6;">與我們一起喝咖啡、吃甜甜圈和鬆餅！在咖啡和點心中增進彼此認識。<br/>Fellowship with us over coffee, donuts, muffins and more! Let us get to know one another as we chat over coffee and snacks.</p>
+</div>
+<div style="border-top:1px solid rgba(0,0,0,0.08);padding-top:0.6rem;">
+<div style="display:flex;gap:0.75rem;font-size:0.875rem;align-items:baseline;margin-bottom:0.25rem;">
+<span style="color:var(--gold);font-weight:700;min-width:52px;">11:45</span>
+<span style="font-weight:700;color:var(--navy);letter-spacing:0.04em;">SUNDAY SCHOOL</span>
+</div>
+<p style="font-size:0.875rem;color:var(--slate);margin-left:64px;line-height:1.6;">深入探索聖經，學習如何將聖經應用於日常生活中。<br/>Dwell deeper into the scriptures and navigate the intricacies of the Bible as we seek to apply it into our daily lives.</p>
+</div>
+<div style="border-top:1px solid rgba(0,0,0,0.08);padding-top:0.6rem;">
+<div style="display:flex;gap:0.75rem;font-size:0.875rem;align-items:baseline;margin-bottom:0.25rem;">
+<span style="color:var(--red);font-weight:700;min-width:52px;">1:00</span>
+<span style="font-weight:700;color:var(--navy);letter-spacing:0.04em;">LUNCH FELLOWSHIP</span>
+</div>
+<p style="font-size:0.875rem;color:var(--slate);margin-left:64px;line-height:1.6;">來享用美味的家常便飯，認識 CityLight 的弟兄姊妹。第一次來的訪客，午餐我們請客！<br/>Join us for a delicious home cooked meal and get to know the people of CityLight. First time visitors, lunch is on us!</p>
+</div>
+</div>
+</div>
+<div style="margin-top:1.2rem;text-align:center;">
+<a href="https://citylightcccri.org" onmouseout="this.style.background='var(--navy)'" onmouseover="this.style.background='var(--red)'" rel="noopener" style="display:inline-block;background:var(--navy);color:white;padding:0.6rem 1.4rem;border-radius:4px;font-size:0.875rem;font-weight:600;text-decoration:none;transition:all 0.2s;" target="_blank">
+              Visit City Light CCCRI →
+            </a>
+</div>
+</div>
+</div>
+</div>
+<!-- ── What to Expect ── -->
+<div class="gold-divider" style="margin-top:2rem;"></div>
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:1.6rem;color:var(--gold);font-weight:700;margin-bottom:0.1rem;">崇拜體驗</p>
+<h2 class="section-title" style="margin-bottom:2rem;">What to Expect</h2>
+<div class="three-col" style="margin-bottom:3rem;">
+<div class="feature-item"><div aria-hidden="true" class="feature-icon">🎵</div><div class="zh">敬拜讚美</div><h4>Inspiring Worship</h4><p style="font-family:'Noto Sans SC',sans-serif;font-size:0.875rem;margin-bottom:0.2rem;">融合多種語言的現代與傳統讚美詩歌</p><p>Contemporary and traditional praise in multiple languages</p></div>
+<div class="feature-item"><div aria-hidden="true" class="feature-icon">📖</div><div class="zh">聖經教導</div><h4>Bible Teaching</h4><p style="font-family:'Noto Sans SC',sans-serif;font-size:0.875rem;margin-bottom:0.2rem;">以聖經為根基的釋經講道，貼近生活應用</p><p>Expository preaching grounded in Scripture, relevant to life</p></div>
+<div class="feature-item"><div aria-hidden="true" class="feature-icon">🤝</div><div class="zh">友善社群</div><h4>Friendly Community</h4><p style="font-family:'Noto Sans SC',sans-serif;font-size:0.875rem;margin-bottom:0.2rem;">溫暖友善的會眾，讓您有賓至如歸的感覺</p><p>A warm, welcoming congregation that feels like home</p></div>
+</div>
+<!-- ── Historical Review of Sunday Worship ── -->
+<div class="gold-divider"></div>
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:1.6rem;color:var(--gold);font-weight:700;margin-bottom:0.1rem;">主日崇拜回顧</p>
+<h2 class="section-title" style="margin-bottom:0.4rem;">Historical Review of Sunday Worship</h2>
+<p style="color:var(--slate);font-size:0.95rem;margin-bottom:1.8rem;">中文堂主日崇拜歷史回顧 · A record of recent Sunday sermons at the Chinese Church</p>
+<div style="display:flex;flex-direction:column;gap:0.85rem;margin-bottom:2rem;">
+<div class="announce-item">
+<div class="announce-date"><span class="month">Feb</span><span class="day">08</span><span style="font-size:0.875rem;color:var(--gold-light);">2026</span></div>
+<div class="announce-body">
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.875rem;color:var(--gold);font-weight:600;margin-bottom:0.1rem;">甄德强牧師</p>
+<h4 style="margin-bottom:0.1rem;">Pastor Zhen Deqiang</h4>
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.9rem;color:var(--navy);font-weight:700;margin-bottom:0.1rem;">服事基督</p>
+<p style="font-size:0.875rem;color:var(--slate);font-style:italic;">Serving Christ</p>
+<a href="https://youtu.be/6aEL_8n1QfU?si=GWbLEed3j_zc7OwC" onmouseout="this.style.opacity='1'" onmouseover="this.style.opacity='0.85'" rel="noopener" style="display:inline-flex;align-items:center;gap:0.4rem;margin-top:0.6rem;
+                     background:#FF0000;color:white;padding:0.35rem 0.9rem;
+                     border-radius:3px;font-size:0.875rem;font-weight:600;
+                     text-decoration:none;transition:opacity 0.2s;" target="_blank">
+              ▶ <span style="font-family:'Noto Sans SC',sans-serif;">觀看</span> Watch
+            </a>
+</div>
+</div>
+<div class="announce-item">
+<div class="announce-date"><span class="month">Feb</span><span class="day">01</span><span style="font-size:0.875rem;color:var(--gold-light);">2026</span></div>
+<div class="announce-body">
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.875rem;color:var(--gold);font-weight:600;margin-bottom:0.1rem;">甄德强牧師</p>
+<h4 style="margin-bottom:0.1rem;">Pastor Zhen Deqiang</h4>
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.9rem;color:var(--navy);font-weight:700;margin-bottom:0.1rem;">約拿說我知道</p>
+<p style="font-size:0.875rem;color:var(--slate);font-style:italic;">Jonah Said I Know</p>
+<a href="https://youtu.be/fK0FbUtU2eA?si=stmg0au25U2Vqdiu" onmouseout="this.style.opacity='1'" onmouseover="this.style.opacity='0.85'" rel="noopener" style="display:inline-flex;align-items:center;gap:0.4rem;margin-top:0.6rem;
+                     background:#FF0000;color:white;padding:0.35rem 0.9rem;
+                     border-radius:3px;font-size:0.875rem;font-weight:600;
+                     text-decoration:none;transition:opacity 0.2s;" target="_blank">
+              ▶ <span style="font-family:'Noto Sans SC',sans-serif;">觀看</span> Watch
+            </a>
+</div>
+</div>
+<div class="announce-item">
+<div class="announce-date"><span class="month">Jan</span><span class="day">25</span><span style="font-size:0.875rem;color:var(--gold-light);">2026</span></div>
+<div class="announce-body">
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.875rem;color:var(--gold);font-weight:600;margin-bottom:0.1rem;">曾世增牧師</p>
+<h4 style="margin-bottom:0.1rem;">Pastor Zeng Shizeng</h4>
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.9rem;color:var(--navy);font-weight:700;margin-bottom:0.1rem;">恩典之軍：在審判中向世界宣揚憐憫</p>
+<p style="font-size:0.875rem;color:var(--slate);font-style:italic;">Army of Grace: Proclaiming Mercy to a World Under Judgment</p>
+<a href="https://youtu.be/UIgRoRSmEDw?si=hygDQ3MugR40bnKR" onmouseout="this.style.opacity='1'" onmouseover="this.style.opacity='0.85'" rel="noopener" style="display:inline-flex;align-items:center;gap:0.4rem;margin-top:0.6rem;
+                     background:#FF0000;color:white;padding:0.35rem 0.9rem;
+                     border-radius:3px;font-size:0.875rem;font-weight:600;
+                     text-decoration:none;transition:opacity 0.2s;" target="_blank">
+              ▶ <span style="font-family:'Noto Sans SC',sans-serif;">觀看</span> Watch
+            </a>
+</div>
+</div>
+<div class="announce-item">
+<div class="announce-date"><span class="month">Jan</span><span class="day">18</span><span style="font-size:0.875rem;color:var(--gold-light);">2026</span></div>
+<div class="announce-body">
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.875rem;color:var(--gold);font-weight:600;margin-bottom:0.1rem;">甄德强牧師</p>
+<h4 style="margin-bottom:0.1rem;">Pastor Zhen Deqiang</h4>
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.9rem;color:var(--navy);font-weight:700;margin-bottom:0.1rem;">魚腹中的禱告</p>
+<p style="font-size:0.875rem;color:var(--slate);font-style:italic;">Prayer in the Belly of a Fish</p>
+<a href="https://youtu.be/6bS12KsYs0g?si=WwT-Tk7nKBLZYy4L" onmouseout="this.style.opacity='1'" onmouseover="this.style.opacity='0.85'" rel="noopener" style="display:inline-flex;align-items:center;gap:0.4rem;margin-top:0.6rem;
+                     background:#FF0000;color:white;padding:0.35rem 0.9rem;
+                     border-radius:3px;font-size:0.875rem;font-weight:600;
+                     text-decoration:none;transition:opacity 0.2s;" target="_blank">
+              ▶ <span style="font-family:'Noto Sans SC',sans-serif;">觀看</span> Watch
+            </a>
+</div>
+</div>
+<div class="announce-item">
+<div class="announce-date"><span class="month">Jan</span><span class="day">04</span><span style="font-size:0.875rem;color:var(--gold-light);">2026</span></div>
+<div class="announce-body">
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.875rem;color:var(--gold);font-weight:600;margin-bottom:0.1rem;">宋執事</p>
+<h4 style="margin-bottom:0.1rem;">Deacon Song</h4>
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.9rem;color:var(--navy);font-weight:700;margin-bottom:0.1rem;">約拿沒有去尼尼微</p>
+<p style="font-size:0.875rem;color:var(--slate);font-style:italic;">Jonah Did Not Go to Nineveh</p>
+<a href="https://youtu.be/euPYwZFDBcE?si=kV9pZWqXIatOdynA" onmouseout="this.style.opacity='1'" onmouseover="this.style.opacity='0.85'" rel="noopener" style="display:inline-flex;align-items:center;gap:0.4rem;margin-top:0.6rem;
+                     background:#FF0000;color:white;padding:0.35rem 0.9rem;
+                     border-radius:3px;font-size:0.875rem;font-weight:600;
+                     text-decoration:none;transition:opacity 0.2s;" target="_blank">
+              ▶ <span style="font-family:'Noto Sans SC',sans-serif;">觀看</span> Watch
+            </a>
+</div>
+</div>
+</div>
+<!-- YouTube Channel Button -->
+<div style="text-align:center;margin-bottom:2rem;">
+<a href="https://www.youtube.com/@ChineseMinistryCCCRI" onmouseout="this.style.background='#FF0000';this.style.transform='translateY(0)'" onmouseover="this.style.background='#cc0000';this.style.transform='translateY(-2px)'" rel="noopener" style="display:inline-flex;align-items:center;gap:0.75rem;background:#FF0000;color:white;padding:0.85rem 2rem;border-radius:4px;font-size:1rem;font-weight:700;text-decoration:none;font-family:'Noto Sans',sans-serif;transition:all 0.2s;box-shadow:0 4px 12px rgba(255,0,0,0.3);" target="_blank">
+<svg aria-hidden="true" fill="white" height="24" viewbox="0 0 24 24" width="24">
+<path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path>
+</svg>
+<span>
+<span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:0.875rem;font-weight:400;opacity:0.9;">觀看所有主日崇拜</span>
+            View All Sunday Sermons on YouTube
+          </span>
+</a>
+</div>
+</div>
+</div>
+<div class="section section-alt">
+<div style="max-width:860px;margin:0 auto;">
+<div aria-label="Online worship options" class="online-card" role="region">
+<div class="zh">線上敬拜</div>
+<h3>Join Us Online</h3>
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.9rem;color:rgba(255,255,255,0.8);margin-bottom:0.3rem;">無法親自出席？線上觀看直播或隨時收看錄影。</p>
+<p>Can't make it in person? Watch our services live or access recordings anytime.</p>
+<div class="online-btns">
+<a class="btn-watch" href="https://www.youtube.com/@ChineseMinistryCCCRI" rel="noopener" target="_blank">▶ Watch Live 直播</a>
+<a class="btn-gold" href="https://goo.gl/maps/HcaaXQQvwiYJvish9" rel="noopener" target="_blank">🗺 Directions 路線</a>
+</div>
+</div>
+</div>
+</div>
+<footer>
+<div class="footer-links">
+<span>📍 <strong style="color:var(--gold-light);">333 Roosevelt Ave, Pawtucket, RI 02860</strong></span>
+<span>📞 <a href="tel:4017228877" style="color:var(--gold-light);">(401) 722-8877</a></span>
+<span>✉️ <a href="mailto:info@cccri.org" style="color:var(--gold-light);">info@cccri.org</a></span>
+</div>
+<p class="info">For more information: <a href="mailto:leaderscccri@gmail.com" style="color:var(--gold-light);">leaderscccri@gmail.com</a></p>
+<p class="copy">© CCCRI — All Rights Reserved</p>
+</footer>
+
+</main>
+<script src="assets/script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans-x-en">
+<head>
+<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="Chinese Christian Church of Rhode Island (CCCRI) — A non-denominational Christian church serving Rhode Island and southeastern New England in Mandarin, Cantonese, and English." name="description"/><meta content="Chinese Christian Church of Rhode Island | 羅德島華人基督教會" property="og:title"/><meta content="website" property="og:type"/><meta content="#c0171d" name="theme-color"/><title>Chinese Christian Church of Rhode Island | 羅德島華人基督教會</title><link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&amp;family=Noto+Serif:wght@400;600;700&amp;family=Noto+Sans+SC:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/><script>
+window.showPage = function(id) {
+  var pages = document.querySelectorAll('.page');
+  for (var i = 0; i < pages.length; i++) pages[i].classList.remove('active');
+  var btns = document.querySelectorAll('.nav-links button');
+  for (var j = 0; j < btns.length; j++) btns[j].classList.remove('active');
+  var page = document.getElementById('page-' + id);
+  var btn  = document.getElementById('nav-'  + id);
+  if (page) page.classList.add('active');
+  if (btn)  btn.classList.add('active');
+  window.scrollTo(0, 0);
+};
+
+window.toggleMenu = function() {
+  var menu = document.getElementById('mobile-menu');
+  var btn  = document.getElementById('hamburger');
+  var open = menu.classList.toggle('open');
+  btn.classList.toggle('open', open);
+  btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+};
+
+window.navTo = function(id) {
+  window.showPage(id);
+  var menu = document.getElementById('mobile-menu');
+  var btn  = document.getElementById('hamburger');
+  menu.classList.remove('open');
+  btn.classList.remove('open');
+  btn.setAttribute('aria-expanded', 'false');
+};
+
+function switchTab(id) {
+  // Update buttons
+  document.querySelectorAll('.tab-btn').forEach(function(btn) {
+    btn.classList.remove('tab-active');
+    btn.setAttribute('aria-selected', 'false');
+  });
+  var activeBtn = document.getElementById('tab-' + id);
+  if (activeBtn) { activeBtn.classList.add('tab-active'); activeBtn.setAttribute('aria-selected', 'true'); }
+  // Update panels
+  document.querySelectorAll('.tab-panel').forEach(function(p) { p.style.display = 'none'; });
+  var activePanel = document.getElementById('panel-' + id);
+  if (activePanel) activePanel.style.display = 'block';
+}
+
+</script>
+<link rel="stylesheet" href="assets/style.css">
+<title>Chinese Christian Church of Rhode Island | 羅德島華人基督教會 — Min Food</title>
+</head>
+<body data-nav="ministries">
+<nav aria-label="Main navigation" role="navigation"><a aria-label="CCCRI Home" class="nav-logo" href="index.html"><img alt="CCCRI — Chinese Christian Church of Rhode Island logo" src="assets/images/img_a20f2f15e524.gif"/></a><div class="nav-links"><a aria-label="主页 Home" href="index.html" id="nav-home">主页 Home</a><a aria-label="关于我们 About" href="about.html" id="nav-about">关于我们 About</a><a aria-label="敬拜 Worship" href="worship.html" id="nav-worship">敬拜 Worship</a><a aria-label="活动 Events" href="events.html" id="nav-activities">活动 Events</a><a aria-label="事工 Ministries" href="ministries.html" id="nav-ministries">事工 Ministries</a><a aria-label="资源 Resources" href="resources.html" id="nav-resources">资源 Resources</a><a aria-label="联系 Contact" href="contact.html" id="nav-contact">联系 Contact</a></div><button aria-expanded="false" aria-label="Open navigation menu" class="hamburger" id="hamburger" onclick="toggleMenu()">
+<span></span><span></span><span></span>
+</button><a aria-label="Donate online — 線上奉獻" class="nav-donate" href="https://tithe.ly/give_new/www/#/tithely/give-one-time/1707700" rel="noopener" target="_blank">線上奉獻 Donate</a></nav><div aria-label="Mobile navigation" class="mobile-menu" id="mobile-menu" role="navigation"><a href="index.html">主页 Home</a><a href="about.html">关于我们 About Us</a><a href="worship.html">敬拜 Worship</a><a href="events.html">活动 Events</a><a href="ministries.html">事工 Ministries</a><a href="resources.html">资源 Resources</a><a href="contact.html">联系 Contact</a></div>
+<main class="page">
+
+<div class="page-header" role="banner" style="background:linear-gradient(135deg,#9a1015,#c0171d);">
+<p class="zh">食物與祝福</p>
+<h1>Food &amp; Blessing</h1>
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.95rem;opacity:0.85;margin-bottom:0.2rem;">分享、供應、祝福社區</p>
+<p>Sharing, providing, blessing the community</p>
+</div>
+<div class="section">
+<div style="max-width:860px;margin:0 auto;">
+<a aria-label="Back to Ministries" class="ministry-back-btn" href="ministries.html">
+        ← 返回事工列表 Back to Ministries
+      </a>
+<div class="gold-divider"></div>
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:1.6rem;color:var(--gold);font-weight:700;margin-bottom:0.1rem;">食物與祝福</p>
+<h2 class="section-title">Food &amp; Blessing</h2>
+<div style="background:var(--cream);border-radius:8px;padding:1.8rem;margin-bottom:2rem;border-left:4px solid var(--gold);">
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:1rem;color:var(--navy);font-weight:700;margin-bottom:0.2rem;">主的恩典團契的開始：</p>
+<p style="font-size:0.95rem;color:var(--navy);font-weight:600;margin-bottom:1.2rem;font-style:italic;">The fellowship of the Lord's grace begins:</p>
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.95rem;color:var(--slate);line-height:1.9;margin-bottom:0.4rem;">2006年一個主日，出現了一則「酒樓祝福義工」的廣告，廣告上寫著：「酒樓福音事工，誠徵義工協助策劃、關懷、接送、帶詩歌、各類球類及康樂活動、預備晚餐、個人佈道等，工作時間彈性商量，無需薪酬……」廣告出現不到一小時，弟兄姊妹按各人恩賜踴躍報名。藉著神的大能，酒樓祝福隊就此成形。</p>
+<p style="font-size:0.95rem;color:var(--slate);line-height:1.9;margin-bottom:1.4rem;">On a Sunday in 2006, an advertisement appeared for "Restaurant Blessing Volunteers," which stated: "Restaurant evangelistic work, sincerely seeking volunteers to help with planning, care, transportation, leading hymns, various sports and recreational activities, preparing supper, personal sermons, etc. Working hours are negotiable, salary is not required..." Within an hour of the advertisement appearing, brothers and sisters signed up according to their gifts. Through God's power, the Restaurant Blessing team was thus formed.</p>
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.95rem;color:var(--slate);line-height:1.9;margin-bottom:0.4rem;">蒙福團契充滿了神的關懷與恩典。疫情前，我們每週二晚上11時聚會，在莫鴻興弟兄的帶領下，大家一起研讀聖經、唱詩讚美，弟兄姊妹的屬靈生命一同成長。疫情開始後，蒙福團契從未停止聚會，我們在家中透過Zoom網上相聚，研讀神的話語、彼此鼓勵，屬靈生命仍得滋養，生命沒有因疫情而受損。</p>
+<p style="font-size:0.95rem;color:var(--slate);line-height:1.9;margin-bottom:1.4rem;">The Fellowship of the Blessed Ones is filled with God's care and grace. Before the pandemic, we met every Tuesday night at 11 p.m. Under the leadership of Brother Mo Hongxing, we studied the Bible together, sang hymns, and the spiritual lives of the brothers and sisters grew together. After the pandemic began, the Fellowship of the Blessed Ones never stopped meeting. We met online from home using Zoom, studied God's word, encouraged one another, and our spiritual lives were still nourished. Our lives were not diminished by the pandemic.</p>
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.95rem;color:var(--slate);line-height:1.9;margin-bottom:0.4rem;">由2009年9月8日起，蒙福團契亦開始了第一次的晚堂崇拜，方便許多在餐飲業工作的基督徒一同敬拜、守聖餐。</p>
+<p style="font-size:0.95rem;color:var(--slate);line-height:1.9;margin-bottom:1.4rem;">Starting on September 8, 2009, the Blessed Fellowship also began its first evening supper worship service, which made it convenient for many Christians working in the catering industry to worship together and keep the Lord's supper together.</p>
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.95rem;color:var(--slate);line-height:1.9;margin-bottom:0.4rem;">過去十八年間，我們舉辦了各式各樣的活動，包括排球比賽、象棋表演、拔河比賽、電腦班、英文班、醫療講座、移民政策簡介、特別佈道會、福音話劇、卡拉OK、中秋節慶典、感恩節音樂會、聖誕節慶典及春節聯歡晚會等。透過這些活動，許多人聽到了福音、嘗到了其中的甘甜，決志受洗信主，回歸我們的教會大家庭。為此，我們感謝天父。</p>
+<p style="font-size:0.95rem;color:var(--slate);line-height:1.9;margin-bottom:1.4rem;">For the past eighteen years, we have organized various activities, including volleyball matches, chess performances, tug-of-war competitions, computer classes, English classes, medical lectures, immigration policy briefings, special evangelistic meetings, gospel plays, karaoke, Mid-Autumn Festival celebrations, Thanksgiving concerts, Christmas celebrations, and Spring Festival galas. Through these activities, many people have heard the gospel, tasted its sweetness, and decided to be baptized and believe in Jesus, returning to our church family. We thank our Heavenly Father for this.</p>
+</div>
+<!-- Photo Gallery -->
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:2.5rem;">
+<div style="border-radius:8px;overflow:hidden;box-shadow:0 3px 14px rgba(0,0,0,0.12);">
+<img alt="Restaurant Ministry Fellowship 2016" src="assets/images/img_e56dde2af8d4.webp" style="width:100%;height:220px;object-fit:cover;display:block;"/>
+<div style="padding:0.6rem 0.8rem;background:white;">
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.8rem;color:var(--slate);margin:0;">蒙福團契聚會 · Restaurant Blessing Fellowship (2016)</p>
+</div>
+</div>
+<div style="border-radius:8px;overflow:hidden;box-shadow:0 3px 14px rgba(0,0,0,0.12);">
+<img alt="Restaurant Ministry Fellowship 2017" src="assets/images/img_c76a046efc2b.webp" style="width:100%;height:220px;object-fit:cover;display:block;"/>
+<div style="padding:0.6rem 0.8rem;background:white;">
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.8rem;color:var(--slate);margin:0;">蒙福團契聚會 · Restaurant Blessing Fellowship (2017)</p>
+</div>
+</div>
+</div>
+<div style="background:var(--cream);border-radius:8px;padding:1.5rem;text-align:center;">
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.95rem;color:var(--navy);font-weight:700;margin-bottom:0.3rem;">有興趣參與或了解更多？</p>
+<p style="font-size:0.875rem;color:var(--slate);margin-bottom:1rem;">Interested in getting involved or learning more?</p>
+<a href="mailto:info@cccri.org" style="display:inline-block;background:var(--red);color:white;padding:0.65rem 1.5rem;border-radius:4px;font-size:0.875rem;font-weight:700;text-decoration:none;margin-right:0.5rem;">
+          ✉️ <span style="font-family:'Noto Sans SC',sans-serif;">聯絡我們</span> Contact Us
+        </a>
+<a href="ministries.html">
+          ← 返回事工 Back to Ministries
+        </a>
+</div>
+</div>
+</div>
+<div class="section section-alt">
+<div style="max-width:860px;margin:0 auto;">
+<div aria-label="Online worship options" class="online-card" role="region">
+<div class="zh">線上敬拜</div>
+<h3>Join Us Online</h3>
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.9rem;color:rgba(255,255,255,0.8);margin-bottom:0.3rem;">無法親自出席？線上觀看直播或隨時收看錄影。</p>
+<p>Can't make it in person? Watch our services live or access recordings anytime.</p>
+<div class="online-btns">
+<a class="btn-watch" href="https://www.youtube.com/@ChineseMinistryCCCRI" rel="noopener" target="_blank">▶ Watch Live 直播</a>
+<a class="btn-gold" href="https://goo.gl/maps/HcaaXQQvwiYJvish9" rel="noopener" target="_blank">🗺 Directions 路線</a>
+</div>
+</div>
+</div>
+</div>
+<footer>
+<div class="footer-links">
+<span>📍 <strong style="color:var(--gold-light);">333 Roosevelt Ave, Pawtucket, RI 02860</strong></span>
+<span>📞 <a href="tel:4017228877" style="color:var(--gold-light);">(401) 722-8877</a></span>
+<span>✉️ <a href="mailto:info@cccri.org" style="color:var(--gold-light);">info@cccri.org</a></span>
+</div>
+<p class="info">For more information: <a href="mailto:leaderscccri@gmail.com" style="color:var(--gold-light);">leaderscccri@gmail.com</a></p>
+<p class="copy">© CCCRI — All Rights Reserved</p>
+</footer>
+
+</main>
+<script src="assets/script.js" defer></script>
+</body>
+</html>

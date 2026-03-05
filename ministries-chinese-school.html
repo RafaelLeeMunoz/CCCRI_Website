@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans-x-en">
+<head>
+<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="Chinese Christian Church of Rhode Island (CCCRI) — A non-denominational Christian church serving Rhode Island and southeastern New England in Mandarin, Cantonese, and English." name="description"/><meta content="Chinese Christian Church of Rhode Island | 羅德島華人基督教會" property="og:title"/><meta content="website" property="og:type"/><meta content="#c0171d" name="theme-color"/><title>Chinese Christian Church of Rhode Island | 羅德島華人基督教會</title><link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&amp;family=Noto+Serif:wght@400;600;700&amp;family=Noto+Sans+SC:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/><script>
+window.showPage = function(id) {
+  var pages = document.querySelectorAll('.page');
+  for (var i = 0; i < pages.length; i++) pages[i].classList.remove('active');
+  var btns = document.querySelectorAll('.nav-links button');
+  for (var j = 0; j < btns.length; j++) btns[j].classList.remove('active');
+  var page = document.getElementById('page-' + id);
+  var btn  = document.getElementById('nav-'  + id);
+  if (page) page.classList.add('active');
+  if (btn)  btn.classList.add('active');
+  window.scrollTo(0, 0);
+};
+
+window.toggleMenu = function() {
+  var menu = document.getElementById('mobile-menu');
+  var btn  = document.getElementById('hamburger');
+  var open = menu.classList.toggle('open');
+  btn.classList.toggle('open', open);
+  btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+};
+
+window.navTo = function(id) {
+  window.showPage(id);
+  var menu = document.getElementById('mobile-menu');
+  var btn  = document.getElementById('hamburger');
+  menu.classList.remove('open');
+  btn.classList.remove('open');
+  btn.setAttribute('aria-expanded', 'false');
+};
+
+function switchTab(id) {
+  // Update buttons
+  document.querySelectorAll('.tab-btn').forEach(function(btn) {
+    btn.classList.remove('tab-active');
+    btn.setAttribute('aria-selected', 'false');
+  });
+  var activeBtn = document.getElementById('tab-' + id);
+  if (activeBtn) { activeBtn.classList.add('tab-active'); activeBtn.setAttribute('aria-selected', 'true'); }
+  // Update panels
+  document.querySelectorAll('.tab-panel').forEach(function(p) { p.style.display = 'none'; });
+  var activePanel = document.getElementById('panel-' + id);
+  if (activePanel) activePanel.style.display = 'block';
+}
+
+</script>
+<link rel="stylesheet" href="assets/style.css">
+<title>Chinese Christian Church of Rhode Island | 羅德島華人基督教會 — Min Chinese School</title>
+</head>
+<body data-nav="ministries">
+<nav aria-label="Main navigation" role="navigation"><a aria-label="CCCRI Home" class="nav-logo" href="index.html"><img alt="CCCRI — Chinese Christian Church of Rhode Island logo" src="assets/images/img_a20f2f15e524.gif"/></a><div class="nav-links"><a aria-label="主页 Home" href="index.html" id="nav-home">主页 Home</a><a aria-label="关于我们 About" href="about.html" id="nav-about">关于我们 About</a><a aria-label="敬拜 Worship" href="worship.html" id="nav-worship">敬拜 Worship</a><a aria-label="活动 Events" href="events.html" id="nav-activities">活动 Events</a><a aria-label="事工 Ministries" href="ministries.html" id="nav-ministries">事工 Ministries</a><a aria-label="资源 Resources" href="resources.html" id="nav-resources">资源 Resources</a><a aria-label="联系 Contact" href="contact.html" id="nav-contact">联系 Contact</a></div><button aria-expanded="false" aria-label="Open navigation menu" class="hamburger" id="hamburger" onclick="toggleMenu()">
+<span></span><span></span><span></span>
+</button><a aria-label="Donate online — 線上奉獻" class="nav-donate" href="https://tithe.ly/give_new/www/#/tithely/give-one-time/1707700" rel="noopener" target="_blank">線上奉獻 Donate</a></nav><div aria-label="Mobile navigation" class="mobile-menu" id="mobile-menu" role="navigation"><a href="index.html">主页 Home</a><a href="about.html">关于我们 About Us</a><a href="worship.html">敬拜 Worship</a><a href="events.html">活动 Events</a><a href="ministries.html">事工 Ministries</a><a href="resources.html">资源 Resources</a><a href="contact.html">联系 Contact</a></div>
+<main class="page">
+
+<div class="page-header" role="banner" style="background:linear-gradient(135deg,#9a1015,#c0171d);">
+<p class="zh">中文學校</p>
+<h1>Chinese School</h1>
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.95rem;opacity:0.85;margin-bottom:0.2rem;">傳承中華文化與語言</p>
+<p>Preserving Chinese language and heritage</p>
+</div>
+<div class="section">
+<div style="max-width:860px;margin:0 auto;">
+<a aria-label="Back to Ministries" class="ministry-back-btn" href="ministries.html">
+        ← 返回事工列表 Back to Ministries
+      </a>
+<div class="gold-divider"></div>
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:1.6rem;color:var(--gold);font-weight:700;margin-bottom:0.1rem;">中文學校</p>
+<h2 class="section-title">Chinese School</h2>
+<!-- Hero image - school gathering -->
+<div style="margin-bottom:1.8rem;border-radius:10px;overflow:hidden;box-shadow:0 4px 18px rgba(0,0,0,0.13);">
+<img alt="Chinese School gathering with students and families" src="assets/images/img_45bc207b064e.webp" style="width:100%;max-height:300px;object-fit:cover;object-position:center 30%;display:block;"/>
+</div>
+<!-- Body text -->
+<div style="background:var(--cream);border-radius:8px;padding:1.8rem;margin-bottom:1.8rem;border-left:4px solid var(--red);">
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.95rem;color:var(--slate);line-height:1.9;margin-bottom:0.4rem;">羅德島華人基督教會附屬中文學校創立至今已逾四十二年，旨在讓北美華人家庭的下一代學習中文、傳承中華文化。自創校以來，學校不僅培育了眾多美籍華裔的下一代，更為許多非華語學生提供了學習中文、認識中華文化的機會。</p>
+<p style="font-size:0.95rem;color:var(--slate);line-height:1.9;margin-bottom:1.4rem;">The Rhode Island Chinese Christian Church Affiliated Chinese School was established forty-two years ago with the aim of enabling the next generation of Chinese families in North America to learn Chinese and inherit Chinese culture. In the more than forty years since its founding, the school has not only nurtured many of the next generation of Chinese Americans but has also provided an opportunity for many non-Chinese-speaking students to learn Chinese and understand Chinese culture.</p>
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.95rem;color:var(--slate);line-height:1.9;margin-bottom:0.4rem;">我們的教學方式是採用多種生動、體驗式的方法，在有限的教學時間內充分激發學生對中華文化的興趣，使他們產生學習了解中華文化最有用工具——普通話——的渴望。</p>
+<p style="font-size:0.95rem;color:var(--slate);line-height:1.9;margin-bottom:1.4rem;">Our teaching method is to use a variety of lively and experiential approaches to fully stimulate students' interest in Chinese culture within a limited teaching time, so that they can have a desire to learn the most useful tool for understanding Chinese culture – Mandarin Chinese.</p>
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.95rem;color:var(--slate);line-height:1.9;margin-bottom:0.4rem;">我們的老師以無限的愛心、豐富的經驗和無私的奉獻精神教導學生。</p>
+<p style="font-size:0.95rem;color:var(--slate);line-height:1.9;margin-bottom:1.4rem;">Our teachers teach our students with boundless love, rich experience, and selfless dedication.</p>
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.95rem;color:var(--slate);line-height:1.9;margin-bottom:0.4rem;">我們的教學主要使用普通話及簡體中文，同時亦經常為學生提供接觸繁體中文的機會。</p>
+<p style="font-size:0.95rem;color:var(--slate);line-height:1.9;margin-bottom:1.4rem;">Our teaching primarily uses Mandarin and Simplified Chinese. We also frequently provide students with opportunities to engage with Traditional Chinese.</p>
+<div style="background:white;border-radius:6px;padding:1rem 1.2rem;margin-bottom:1.2rem;">
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.875rem;color:var(--navy);font-weight:700;margin-bottom:0.15rem;">🕐 上課時間 Class Time</p>
+<p style="font-size:0.875rem;color:var(--slate);line-height:1.8;margin-bottom:0;">每逢主日下午1:45，於羅德島華人教會舉行，春、秋兩個學期。<br/>Every Sunday afternoon at 1:45 at the Rhode Island Chinese Church, during the spring and fall semesters.</p>
+</div>
+<div style="background:white;border-radius:6px;padding:1rem 1.2rem;">
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.875rem;color:var(--navy);font-weight:700;margin-bottom:0.15rem;">💳 繳交學費 Tuition Payment</p>
+<p style="font-size:0.875rem;color:var(--slate);line-height:1.8;margin-bottom:0;">如需繳交學費，請前往
+            <a href="https://cccri.org/donate" rel="noopener" style="color:var(--red);font-weight:600;" target="_blank">教會奉獻連結</a>，
+            然後在「To:」下拉選單中選擇「Chinese School Registration」。<br/>
+            To pay tuition fees, please go to
+            <a href="https://cccri.org/donate" rel="noopener" style="color:var(--red);font-weight:600;" target="_blank">the church donation link</a>
+            and then select "Chinese School Registration" from the "To:" drop-down list.</p>
+</div>
+</div>
+<!-- 2-up photo row: nature outing + lion dance -->
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.8rem;">
+<div style="border-radius:8px;overflow:hidden;box-shadow:0 3px 12px rgba(0,0,0,0.1);">
+<img alt="Chinese School students on nature outing, sitting on rocks" src="assets/images/img_729049759afa.webp" style="width:100%;height:220px;object-fit:cover;display:block;"/>
+<div style="padding:0.5rem 0.8rem;background:white;">
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.78rem;color:var(--slate);margin:0;">秋季郊遊活動 · Fall Outing</p>
+</div>
+</div>
+<div style="border-radius:8px;overflow:hidden;box-shadow:0 3px 12px rgba(0,0,0,0.1);">
+<img alt="Lion dance performance at Chinese New Year celebration" src="assets/images/img_c3d2a0f170ee.webp" style="width:100%;height:220px;object-fit:cover;display:block;"/>
+<div style="padding:0.5rem 0.8rem;background:white;">
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.78rem;color:var(--slate);margin:0;">農曆新年舞獅表演 · Chinese New Year Lion Dance</p>
+</div>
+</div>
+</div>
+<!-- Schedule table image -->
+<div style="margin-bottom:2.5rem;">
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:1rem;color:var(--navy);font-weight:700;margin-bottom:0.8rem;">📅 2025–2026 課程表 Class Schedule</p>
+<div style="border-radius:8px;overflow:hidden;box-shadow:0 3px 14px rgba(0,0,0,0.12);">
+<img alt="2025-2026 Chinese School class schedule" src="assets/images/img_c3ffd7e49652.webp" style="width:100%;display:block;"/>
+</div>
+</div>
+<div style="background:var(--cream);border-radius:8px;padding:1.5rem;text-align:center;">
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.95rem;color:var(--navy);font-weight:700;margin-bottom:0.3rem;">有興趣報名或了解更多？</p>
+<p style="font-size:0.875rem;color:var(--slate);margin-bottom:1rem;">Interested in enrolling or learning more?</p>
+<a href="mailto:info@cccri.org" style="display:inline-block;background:var(--red);color:white;padding:0.65rem 1.5rem;border-radius:4px;font-size:0.875rem;font-weight:700;text-decoration:none;margin-right:0.5rem;">
+          ✉️ <span style="font-family:'Noto Sans SC',sans-serif;">聯絡我們</span> Contact Us
+        </a>
+<a href="ministries.html">
+          ← 返回事工 Back to Ministries
+        </a>
+</div>
+</div>
+</div>
+<div class="section section-alt">
+<div style="max-width:860px;margin:0 auto;">
+<div aria-label="Online worship options" class="online-card" role="region">
+<div class="zh">線上敬拜</div>
+<h3>Join Us Online</h3>
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.9rem;color:rgba(255,255,255,0.8);margin-bottom:0.3rem;">無法親自出席？線上觀看直播或隨時收看錄影。</p>
+<p>Can't make it in person? Watch our services live or access recordings anytime.</p>
+<div class="online-btns">
+<a class="btn-watch" href="https://www.youtube.com/@ChineseMinistryCCCRI" rel="noopener" target="_blank">▶ Watch Live 直播</a>
+<a class="btn-gold" href="https://goo.gl/maps/HcaaXQQvwiYJvish9" rel="noopener" target="_blank">🗺 Directions 路線</a>
+</div>
+</div>
+</div>
+</div>
+<footer>
+<div class="footer-links">
+<span>📍 <strong style="color:var(--gold-light);">333 Roosevelt Ave, Pawtucket, RI 02860</strong></span>
+<span>📞 <a href="tel:4017228877" style="color:var(--gold-light);">(401) 722-8877</a></span>
+<span>✉️ <a href="mailto:info@cccri.org" style="color:var(--gold-light);">info@cccri.org</a></span>
+</div>
+<p class="info">For more information: <a href="mailto:leaderscccri@gmail.com" style="color:var(--gold-light);">leaderscccri@gmail.com</a></p>
+<p class="copy">© CCCRI — All Rights Reserved</p>
+</footer>
+
+</main>
+<script src="assets/script.js" defer></script>
+</body>
+</html>

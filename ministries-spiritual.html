@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans-x-en">
+<head>
+<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="Chinese Christian Church of Rhode Island (CCCRI) — A non-denominational Christian church serving Rhode Island and southeastern New England in Mandarin, Cantonese, and English." name="description"/><meta content="Chinese Christian Church of Rhode Island | 羅德島華人基督教會" property="og:title"/><meta content="website" property="og:type"/><meta content="#c0171d" name="theme-color"/><title>Chinese Christian Church of Rhode Island | 羅德島華人基督教會</title><link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&amp;family=Noto+Serif:wght@400;600;700&amp;family=Noto+Sans+SC:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/><script>
+window.showPage = function(id) {
+  var pages = document.querySelectorAll('.page');
+  for (var i = 0; i < pages.length; i++) pages[i].classList.remove('active');
+  var btns = document.querySelectorAll('.nav-links button');
+  for (var j = 0; j < btns.length; j++) btns[j].classList.remove('active');
+  var page = document.getElementById('page-' + id);
+  var btn  = document.getElementById('nav-'  + id);
+  if (page) page.classList.add('active');
+  if (btn)  btn.classList.add('active');
+  window.scrollTo(0, 0);
+};
+
+window.toggleMenu = function() {
+  var menu = document.getElementById('mobile-menu');
+  var btn  = document.getElementById('hamburger');
+  var open = menu.classList.toggle('open');
+  btn.classList.toggle('open', open);
+  btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+};
+
+window.navTo = function(id) {
+  window.showPage(id);
+  var menu = document.getElementById('mobile-menu');
+  var btn  = document.getElementById('hamburger');
+  menu.classList.remove('open');
+  btn.classList.remove('open');
+  btn.setAttribute('aria-expanded', 'false');
+};
+
+function switchTab(id) {
+  // Update buttons
+  document.querySelectorAll('.tab-btn').forEach(function(btn) {
+    btn.classList.remove('tab-active');
+    btn.setAttribute('aria-selected', 'false');
+  });
+  var activeBtn = document.getElementById('tab-' + id);
+  if (activeBtn) { activeBtn.classList.add('tab-active'); activeBtn.setAttribute('aria-selected', 'true'); }
+  // Update panels
+  document.querySelectorAll('.tab-panel').forEach(function(p) { p.style.display = 'none'; });
+  var activePanel = document.getElementById('panel-' + id);
+  if (activePanel) activePanel.style.display = 'block';
+}
+
+</script>
+<link rel="stylesheet" href="assets/style.css">
+<title>Chinese Christian Church of Rhode Island | 羅德島華人基督教會 — Min Spiritual</title>
+</head>
+<body data-nav="ministries">
+<nav aria-label="Main navigation" role="navigation"><a aria-label="CCCRI Home" class="nav-logo" href="index.html"><img alt="CCCRI — Chinese Christian Church of Rhode Island logo" src="assets/images/img_a20f2f15e524.gif"/></a><div class="nav-links"><a aria-label="主页 Home" href="index.html" id="nav-home">主页 Home</a><a aria-label="关于我们 About" href="about.html" id="nav-about">关于我们 About</a><a aria-label="敬拜 Worship" href="worship.html" id="nav-worship">敬拜 Worship</a><a aria-label="活动 Events" href="events.html" id="nav-activities">活动 Events</a><a aria-label="事工 Ministries" href="ministries.html" id="nav-ministries">事工 Ministries</a><a aria-label="资源 Resources" href="resources.html" id="nav-resources">资源 Resources</a><a aria-label="联系 Contact" href="contact.html" id="nav-contact">联系 Contact</a></div><button aria-expanded="false" aria-label="Open navigation menu" class="hamburger" id="hamburger" onclick="toggleMenu()">
+<span></span><span></span><span></span>
+</button><a aria-label="Donate online — 線上奉獻" class="nav-donate" href="https://tithe.ly/give_new/www/#/tithely/give-one-time/1707700" rel="noopener" target="_blank">線上奉獻 Donate</a></nav><div aria-label="Mobile navigation" class="mobile-menu" id="mobile-menu" role="navigation"><a href="index.html">主页 Home</a><a href="about.html">关于我们 About Us</a><a href="worship.html">敬拜 Worship</a><a href="events.html">活动 Events</a><a href="ministries.html">事工 Ministries</a><a href="resources.html">资源 Resources</a><a href="contact.html">联系 Contact</a></div>
+<main class="page">
+
+<div class="page-header" role="banner" style="background:linear-gradient(135deg,#9a1015,#c0171d);">
+<p class="zh">靈命與造就</p>
+<h1>Spiritual Life &amp; Edification</h1>
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.95rem;opacity:0.85;margin-bottom:0.2rem;">查經、培訓、門徒</p>
+<p>Bible study, training, discipleship</p>
+</div>
+<div class="section">
+<div style="max-width:860px;margin:0 auto;">
+<a aria-label="Back to Ministries" class="ministry-back-btn" href="ministries.html">
+        ← 返回事工列表 Back to Ministries
+      </a>
+<div class="gold-divider"></div>
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:1.6rem;color:var(--gold);font-weight:700;margin-bottom:0.1rem;">靈命與造就</p>
+<h2 class="section-title">Spiritual Life &amp; Edification</h2>
+<div style="background:var(--cream);border-radius:8px;padding:1.8rem;margin-bottom:2rem;border-left:4px solid var(--navy);">
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.95rem;color:var(--slate);line-height:1.9;margin-bottom:0.4rem;">教會主日學是教導聖經基要真理的課堂，幫助信徒認識神、認識信仰，是弟兄姊妹學習真理、接受裝備與培訓的地方。教會主日學自1996年開始，經過數十年的摸索，已發展出一套較為完整的教學體系。</p>
+<p style="font-size:0.95rem;color:var(--slate);line-height:1.9;margin-bottom:1.5rem;">Church Sunday school is a classroom that teaches fundamental truths of the Bible, helps believers know God and their faith, and is a place for brothers and sisters to learn the truth and receive equipping and training. Church Sunday school began in 1996, and after decades of exploration, it has developed a relatively complete teaching system.</p>
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.95rem;color:var(--slate);line-height:1.9;margin-bottom:0.4rem;">教會主日學仿照大學學期制，每年分為春、夏、秋、冬四個學季。春、秋學季各有12堂課（3個月），夏、冬學季各有6堂課（1.5個月）。春、秋學季分別以普通話和廣東話授課，夏、冬學季則以普通話合班授課。</p>
+<p style="font-size:0.95rem;color:var(--slate);line-height:1.9;margin-bottom:1.5rem;">Similar to a university semester, church Sunday school is divided into four semesters each year: spring, summer, autumn, and winter. The spring and autumn semesters each have 12 classes (3 months), while the summer and winter semesters each have 6 classes (1.5 months). Classes in the spring and autumn semesters are taught separately in Mandarin and Cantonese, while classes in the summer and winter semesters are taught jointly in Mandarin.</p>
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.95rem;color:var(--slate);line-height:1.9;margin-bottom:0.4rem;">春、秋主日學按信徒的屬靈歷程，分設福音班、受浸班、門徒班、聖經縱覽班及單卷聖經班。近年來，因應會眾需要，亦開辦了系統神學班及長者讀經班。夏、冬主日學則以實用課程為主，如基督徒家庭生活及職場視角等，每季主題各有不同。</p>
+<p style="font-size:0.95rem;color:var(--slate);line-height:1.9;margin-bottom:1.5rem;">The spring and autumn Sunday school sessions are divided into Gospel, Baptism, Discipleship, Bible Overview, and Single Bible Book classes, based on the believers' spiritual journey. In recent years, in response to the needs of the congregation, systematic theology classes and Bible reading classes for the elderly have also been offered. The summer and winter Sunday school sessions focus on practical courses, such as Christian family life and workplace perspectives, with different themes each season.</p>
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.95rem;color:var(--slate);line-height:1.9;margin-bottom:0.4rem;">每年約有20位主日學老師忠心服事於教導崗位，在造就學生的同時，自己也深受造就和祝福。願弟兄姊妹積極參與主日學事工——不做學生，便做老師——實現教會多年前訂立的美好目標！</p>
+<p style="font-size:0.95rem;color:var(--slate);line-height:1.9;margin-bottom:1rem;">Each year, approximately 20 Sunday school teachers diligently serve in their teaching positions, edifying the students while also receiving profound edification and blessings themselves. May brothers and sisters actively participate in the ministry of Sunday school—if not students, then teachers—to realize the beautiful goals the church set many years ago!</p>
+</div>
+<!-- 2026 Spring Sunday School Schedule -->
+<div style="margin-bottom:2.5rem;">
+<div class="gold-divider"></div>
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:1.3rem;color:var(--navy);font-weight:700;text-align:center;margin-bottom:0.3rem;">羅德島華人基督教會 主日學</p>
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:1rem;color:var(--gold);font-weight:700;text-align:center;margin-bottom:0.8rem;">2026年春季課程簡介</p>
+<div style="display:flex;justify-content:space-between;font-family:'Noto Sans SC',sans-serif;font-size:0.875rem;color:var(--slate);margin-bottom:1.2rem;flex-wrap:wrap;gap:0.5rem;">
+<span>📅 日期：3月1日至6月7日</span>
+<span>🕐 時間：主日上午10至11點</span>
+</div>
+<div style="overflow-x:auto;">
+<table style="width:100%;border-collapse:collapse;font-size:0.875rem;">
+<thead>
+<tr style="background:var(--navy);color:white;font-family:'Noto Sans SC',sans-serif;">
+<th style="padding:0.75rem 1rem;text-align:center;white-space:nowrap;min-width:80px;">對象</th>
+<th style="padding:0.75rem 1rem;text-align:center;white-space:nowrap;min-width:100px;">課程</th>
+<th style="padding:0.75rem 1rem;text-align:left;min-width:280px;">課程簡介</th>
+<th style="padding:0.75rem 0.8rem;text-align:center;white-space:nowrap;">語言</th>
+</tr>
+</thead>
+<tbody style="font-family:'Noto Sans SC',sans-serif;">
+<tr style="border-bottom:1px solid rgba(0,0,0,0.08);">
+<td style="padding:1rem;text-align:center;font-weight:700;color:var(--navy);vertical-align:middle;">慕道友</td>
+<td style="padding:1rem;text-align:center;vertical-align:middle;"><p style="font-weight:700;color:var(--navy);margin-bottom:0.2rem;">福音班</p><p style="font-size:0.8rem;color:var(--gold);">生命之道</p></td>
+<td style="padding:1rem;color:var(--slate);line-height:1.8;vertical-align:middle;">宇宙之間到底有沒有神？ 如果有神，應該是怎麼樣的一位神？ 聖經是「神的話」？ 還是「神話」？ 值得相信嗎？ 耶穌是誰？ 為什麼要相信接受他，人才能得著永生？ 竭誠的歡迎您來參加本班，一同探索並領受這生命之道。</td>
+<td style="padding:1rem;text-align:center;vertical-align:middle;"><span style="display:inline-block;background:var(--navy);color:white;border-radius:4px;padding:0.15rem 0.5rem;font-size:0.8rem;margin-bottom:0.3rem;">國</span><br/><span style="display:inline-block;background:var(--slate);color:white;border-radius:4px;padding:0.15rem 0.5rem;font-size:0.8rem;">粵</span></td>
+</tr>
+<tr style="background:rgba(200,149,42,0.05);border-bottom:1px solid rgba(0,0,0,0.08);">
+<td style="padding:1rem;text-align:center;font-weight:700;color:var(--navy);vertical-align:middle;">信而願受洗者</td>
+<td style="padding:1rem;text-align:center;vertical-align:middle;"><p style="font-weight:700;color:var(--navy);margin-bottom:0.2rem;">浸禮班</p><p style="font-size:0.8rem;color:var(--gold);">新造的人</p></td>
+<td style="padding:1rem;color:var(--slate);line-height:1.8;vertical-align:middle;">是為已決志接受主耶穌為個人救主，並有心接受浸禮者而設。課程內容包括——重生、得救與改變、基督徒的信仰、靈修生活、教會生活、以及聖禮的認識。目的在幫助學員明白並堅定其信仰，得以在人面前見證對神的真實信心。</td>
+<td style="padding:1rem;text-align:center;vertical-align:middle;"><span style="display:inline-block;background:var(--navy);color:white;border-radius:4px;padding:0.15rem 0.5rem;font-size:0.8rem;margin-bottom:0.3rem;">國</span><br/><span style="display:inline-block;background:var(--slate);color:white;border-radius:4px;padding:0.15rem 0.5rem;font-size:0.8rem;">粵</span></td>
+</tr>
+<tr style="border-bottom:1px solid rgba(0,0,0,0.08);">
+<td style="padding:1rem;text-align:center;font-weight:700;color:var(--navy);vertical-align:middle;">信徒</td>
+<td style="padding:1rem;text-align:center;vertical-align:middle;"><p style="font-weight:700;color:var(--navy);margin-bottom:0.2rem;">初信造就班</p><p style="font-size:0.8rem;color:var(--gold);">新生命</p></td>
+<td style="padding:1rem;color:var(--slate);line-height:1.8;vertical-align:middle;">新生命班是為初信受洗之後的弟兄姐妹們開設的課程。所使用的教材涵蓋小組靈修、分享、經文查考、所學之應用與實踐。旨在帶領受洗不久的基督徒從聖經的角度與吩咐將信仰貫穿、活化在生命中的各層面，成為跟隨基督委身教會的門徒。</td>
+<td style="padding:1rem;text-align:center;vertical-align:middle;"><span style="display:inline-block;background:var(--navy);color:white;border-radius:4px;padding:0.15rem 0.5rem;font-size:0.8rem;">國</span></td>
+</tr>
+<tr style="background:rgba(200,149,42,0.05);border-bottom:1px solid rgba(0,0,0,0.08);">
+<td style="padding:1rem;text-align:center;font-weight:700;color:var(--navy);vertical-align:middle;">信徒</td>
+<td style="padding:1rem;text-align:center;vertical-align:middle;"><p style="font-weight:700;color:var(--navy);margin-bottom:0.2rem;">系統神學</p><p style="font-size:0.8rem;color:var(--gold);line-height:1.5;">從讀經、解經<br/>到順服並分享聖經</p></td>
+<td style="padding:1rem;color:var(--slate);line-height:1.8;vertical-align:middle;">我們這學期的內容主要是系統神學簡介（包含導論、啟示、聖經論）。我們會探討系統神學的定義、方法、專論、以及在基督徒群體當中的具體應用。期待我們可以從讀聖經開始，進而理解聖經，順服聖經，分享聖經，並架構我們堅定不移的信仰基礎。在這個基礎上幫助我們實踐耶穌基督的大使命（馬太福音 28：19-20）。歡迎大家一起來學習。</td>
+<td style="padding:1rem;text-align:center;vertical-align:middle;"><span style="display:inline-block;background:var(--navy);color:white;border-radius:4px;padding:0.15rem 0.5rem;font-size:0.8rem;">國</span></td>
+</tr>
+<tr style="border-bottom:1px solid rgba(0,0,0,0.08);">
+<td style="padding:1rem;text-align:center;font-weight:700;color:var(--navy);vertical-align:middle;">信徒</td>
+<td style="padding:1rem;text-align:center;vertical-align:middle;"><p style="font-weight:700;color:var(--navy);margin-bottom:0.2rem;">聖經單卷班</p><p style="font-size:0.8rem;color:var(--gold);">雅歌</p></td>
+<td style="padding:1rem;color:var(--slate);line-height:1.8;vertical-align:middle;">春季粵語主日學將採用中神「生命之道」課程《雅歌》。日期2026/1/19日至3/22日的主日早晨9:45–11:00。<br/><br/>《雅歌》是聖經的「詩歌智慧書」之一，是不容易解讀的一卷書，除了婚禮，都甚少用到它。其內容用語較深，意象豐富，運用典故。聖經嘗試透過無數意象來理解存在於神與人之間這個關係的奧秘。這卷書就是透過新郎、丈夫與妻子這個意象，以男女愛情與婚姻來呈現上主與子民的關係，一個「像極了愛情」的關係，讓我們從中去學習如何彼此相愛和如何去愛神。</td>
+<td style="padding:1rem;text-align:center;vertical-align:middle;"><span style="display:inline-block;background:var(--slate);color:white;border-radius:4px;padding:0.15rem 0.5rem;font-size:0.8rem;">粵</span></td>
+</tr>
+<tr style="background:rgba(200,149,42,0.05);">
+<td style="padding:1rem;text-align:center;font-weight:700;color:var(--navy);vertical-align:middle;">信徒</td>
+<td style="padding:1rem;text-align:center;vertical-align:middle;"><p style="font-weight:700;color:var(--navy);margin-bottom:0.2rem;">長者讀經班</p><p style="font-size:0.8rem;color:var(--gold);">羅馬書</p></td>
+<td style="padding:1rem;color:var(--slate);line-height:1.8;vertical-align:middle;">春季長者們將一起讀《羅馬書》，歡迎參加！</td>
+<td style="padding:1rem;text-align:center;vertical-align:middle;"><span style="display:inline-block;background:var(--slate);color:white;border-radius:4px;padding:0.15rem 0.5rem;font-size:0.8rem;">粵</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Action Buttons -->
+<div style="display:flex;flex-direction:column;gap:1rem;margin-bottom:2.5rem;">
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSd_WFDqmKpd1xSYddqzBQq3njUaGw6rzT5yL1XM1CsIFL3hrw/viewform" onmouseout="this.style.background='white';this.style.boxShadow='0 2px 10px rgba(0,0,0,0.07)'" onmouseover="this.style.background='#eef2f8';this.style.boxShadow='0 4px 18px rgba(0,0,0,0.13)'" rel="noopener" style="display:flex;align-items:center;gap:1.2rem;background:white;border:2px solid var(--navy);border-radius:8px;padding:1.2rem 1.5rem;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,0.07);transition:all 0.18s;" target="_blank">
+<span style="font-size:2rem;flex-shrink:0;">📖</span>
+<div>
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:1.05rem;color:var(--navy);font-weight:700;margin-bottom:0.1rem;">主日學報名</p>
+<p style="font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:0;">Enroll in Sunday School</p>
+</div>
+<span style="margin-left:auto;color:var(--navy);font-size:1.2rem;font-weight:700;">→</span>
+</a>
+<a href="resources.html">
+<span style="font-size:2rem;flex-shrink:0;">🌐</span>
+<div>
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:1.05rem;color:var(--navy);font-weight:700;margin-bottom:0.1rem;">更多福音網站</p>
+<p style="font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:0;">More Gospel Websites</p>
+</div>
+<span style="margin-left:auto;color:var(--navy);font-size:1.2rem;font-weight:700;">→</span>
+</a>
+</div>
+<div style="text-align:center;">
+<a href="ministries.html">
+          ← 返回事工 Back to Ministries
+        </a>
+</div>
+</div>
+</div>
+<div class="section section-alt">
+<div style="max-width:860px;margin:0 auto;">
+<div aria-label="Online worship options" class="online-card" role="region">
+<div class="zh">線上敬拜</div>
+<h3>Join Us Online</h3>
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.9rem;color:rgba(255,255,255,0.8);margin-bottom:0.3rem;">無法親自出席？線上觀看直播或隨時收看錄影。</p>
+<p>Can't make it in person? Watch our services live or access recordings anytime.</p>
+<div class="online-btns">
+<a class="btn-watch" href="https://www.youtube.com/@ChineseMinistryCCCRI" rel="noopener" target="_blank">▶ Watch Live 直播</a>
+<a class="btn-gold" href="https://goo.gl/maps/HcaaXQQvwiYJvish9" rel="noopener" target="_blank">🗺 Directions 路線</a>
+</div>
+</div>
+</div>
+</div>
+<footer>
+<div class="footer-links">
+<span>📍 <strong style="color:var(--gold-light);">333 Roosevelt Ave, Pawtucket, RI 02860</strong></span>
+<span>📞 <a href="tel:4017228877" style="color:var(--gold-light);">(401) 722-8877</a></span>
+<span>✉️ <a href="mailto:info@cccri.org" style="color:var(--gold-light);">info@cccri.org</a></span>
+</div>
+<p class="info">For more information: <a href="mailto:leaderscccri@gmail.com" style="color:var(--gold-light);">leaderscccri@gmail.com</a></p>
+<p class="copy">© CCCRI — All Rights Reserved</p>
+</footer>
+
+</main>
+<script src="assets/script.js" defer></script>
+</body>
+</html>

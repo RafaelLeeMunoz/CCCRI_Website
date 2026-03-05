@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans-x-en">
+<head>
+<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="Chinese Christian Church of Rhode Island (CCCRI) — A non-denominational Christian church serving Rhode Island and southeastern New England in Mandarin, Cantonese, and English." name="description"/><meta content="Chinese Christian Church of Rhode Island | 羅德島華人基督教會" property="og:title"/><meta content="website" property="og:type"/><meta content="#c0171d" name="theme-color"/><title>Chinese Christian Church of Rhode Island | 羅德島華人基督教會</title><link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&amp;family=Noto+Serif:wght@400;600;700&amp;family=Noto+Sans+SC:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/><script>
+window.showPage = function(id) {
+  var pages = document.querySelectorAll('.page');
+  for (var i = 0; i < pages.length; i++) pages[i].classList.remove('active');
+  var btns = document.querySelectorAll('.nav-links button');
+  for (var j = 0; j < btns.length; j++) btns[j].classList.remove('active');
+  var page = document.getElementById('page-' + id);
+  var btn  = document.getElementById('nav-'  + id);
+  if (page) page.classList.add('active');
+  if (btn)  btn.classList.add('active');
+  window.scrollTo(0, 0);
+};
+
+window.toggleMenu = function() {
+  var menu = document.getElementById('mobile-menu');
+  var btn  = document.getElementById('hamburger');
+  var open = menu.classList.toggle('open');
+  btn.classList.toggle('open', open);
+  btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+};
+
+window.navTo = function(id) {
+  window.showPage(id);
+  var menu = document.getElementById('mobile-menu');
+  var btn  = document.getElementById('hamburger');
+  menu.classList.remove('open');
+  btn.classList.remove('open');
+  btn.setAttribute('aria-expanded', 'false');
+};
+
+function switchTab(id) {
+  // Update buttons
+  document.querySelectorAll('.tab-btn').forEach(function(btn) {
+    btn.classList.remove('tab-active');
+    btn.setAttribute('aria-selected', 'false');
+  });
+  var activeBtn = document.getElementById('tab-' + id);
+  if (activeBtn) { activeBtn.classList.add('tab-active'); activeBtn.setAttribute('aria-selected', 'true'); }
+  // Update panels
+  document.querySelectorAll('.tab-panel').forEach(function(p) { p.style.display = 'none'; });
+  var activePanel = document.getElementById('panel-' + id);
+  if (activePanel) activePanel.style.display = 'block';
+}
+
+</script>
+<link rel="stylesheet" href="assets/style.css">
+<title>Chinese Christian Church of Rhode Island | 羅德島華人基督教會 — About</title>
+</head>
+<body data-nav="about">
+<nav aria-label="Main navigation" role="navigation"><a aria-label="CCCRI Home" class="nav-logo" href="index.html"><img alt="CCCRI — Chinese Christian Church of Rhode Island logo" src="assets/images/img_a20f2f15e524.gif"/></a><div class="nav-links"><a aria-label="主页 Home" href="index.html" id="nav-home">主页 Home</a><a aria-label="关于我们 About" href="about.html" id="nav-about">关于我们 About</a><a aria-label="敬拜 Worship" href="worship.html" id="nav-worship">敬拜 Worship</a><a aria-label="活动 Events" href="events.html" id="nav-activities">活动 Events</a><a aria-label="事工 Ministries" href="ministries.html" id="nav-ministries">事工 Ministries</a><a aria-label="资源 Resources" href="resources.html" id="nav-resources">资源 Resources</a><a aria-label="联系 Contact" href="contact.html" id="nav-contact">联系 Contact</a></div><button aria-expanded="false" aria-label="Open navigation menu" class="hamburger" id="hamburger" onclick="toggleMenu()">
+<span></span><span></span><span></span>
+</button><a aria-label="Donate online — 線上奉獻" class="nav-donate" href="https://tithe.ly/give_new/www/#/tithely/give-one-time/1707700" rel="noopener" target="_blank">線上奉獻 Donate</a></nav><div aria-label="Mobile navigation" class="mobile-menu" id="mobile-menu" role="navigation"><a href="index.html">主页 Home</a><a href="about.html">关于我们 About Us</a><a href="worship.html">敬拜 Worship</a><a href="events.html">活动 Events</a><a href="ministries.html">事工 Ministries</a><a href="resources.html">资源 Resources</a><a href="contact.html">联系 Contact</a></div>
+<main class="page">
+
+<div class="page-header" role="banner">
+<p class="zh">關於我們</p>
+<h1>About Us</h1>
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:1rem;color:rgba(255,255,255,0.8);margin-bottom:0.15rem;">建立信仰、社群與服事</p>
+<p>Building Faith, Community, and Service</p>
+</div>
+<div class="section">
+<div style="max-width:960px;margin:0 auto;">
+<div aria-label="About CCCRI" class="about-blurb" role="region">
+<p class="zh">無宗派的基督教會，以普通話、廣東話和英語服事羅德島和新英格蘭東南部地區的會眾。始於布朗大學一個由來自五湖四海的華人留學生和教師組成的團契。位於羅得島歷史悠久的波塔基市，交通便利，緊靠95號州際高速公路。</p>
+<p>A non-denominational Christian church that serves its congregation in Rhode Island and southeastern New England in Mandarin, Cantonese, and English. It originated from a fellowship at Brown University comprised of Chinese international students and faculty from all over the world. Located in the historic city of Pawtucket, Rhode Island, it is easily accessible, being close to Interstate 95.</p>
+</div>
+<div class="gold-divider"></div>
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:1.6rem;color:var(--gold);font-weight:700;margin-bottom:0.1rem;">領導團隊</p>
+<h2 class="section-title">Our Leadership Team</h2>
+<p class="section-subtitle"><span style="font-family:'Noto Sans SC',sans-serif;display:block;margin-bottom:0.2rem;">忠心服事、引領會眾的同工</span>Dedicated servants guiding our congregation</p>
+<!-- Elders -->
+<div class="gold-divider" style="margin-bottom:0.5rem;"></div>
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:1.6rem;color:var(--gold);font-weight:700;margin-bottom:0.1rem;">長老</p>
+<h3 style="font-family:'Noto Serif',serif;font-size:1.4rem;color:var(--navy);margin-bottom:0.5rem;">Elders</h3>
+<p class="section-subtitle">教會的屬靈領袖 · Spiritual leaders of our congregation</p>
+<div class="leader-grid-3" style="margin-bottom:1.5rem;">
+<div class="leader-card">
+<div class="leader-photo">
+<img alt="Elder Chen Bensheng" src="assets/images/img_d1a9a1a20c87.webp"/>
+</div>
+<p class="leader-name-zh">陳本生</p>
+<p class="leader-name-en">Chen Bensheng</p>
+<p class="leader-title-zh">長老</p>
+<p class="leader-title-en">Elder</p>
+</div>
+<div class="leader-card">
+<div class="leader-photo">
+<img alt="Elder Ye Chao" src="assets/images/img_6c766a69a14b.webp"/>
+</div>
+<p class="leader-name-zh">葉超</p>
+<p class="leader-name-en">Ye Chao</p>
+<p class="leader-title-zh">長老</p>
+<p class="leader-title-en">Elder</p>
+</div>
+<div class="leader-card">
+<div class="leader-photo">
+<img alt="Elder Wu Ziping" src="assets/images/img_77ffc2b8f819.webp"/>
+</div>
+<p class="leader-name-zh">吳子平</p>
+<p class="leader-name-en">Wu Ziping</p>
+<p class="leader-title-zh">長老</p>
+<p class="leader-title-en">Elder</p>
+</div>
+</div>
+<!-- Pastors -->
+<div class="gold-divider" style="margin-top:1.5rem;margin-bottom:0.5rem;"></div>
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:1.6rem;color:var(--gold);font-weight:700;margin-bottom:0.1rem;">牧師</p>
+<h3 style="font-family:'Noto Serif',serif;font-size:1.4rem;color:var(--navy);margin-bottom:0.5rem;">Pastors</h3>
+<p class="section-subtitle">牧養我們的會眾 · Shepherding our congregation</p>
+<div class="leader-grid-4" style="margin-bottom:1.5rem;">
+<div class="leader-card">
+<div class="leader-photo">
+<img alt="Pastor Yao Xuewen" src="assets/images/img_83edfb48dfea.webp"/>
+</div>
+<p class="leader-name-zh">姚學文</p>
+<p class="leader-name-en">Yao Xuewen</p>
+<p class="leader-title-zh">牧師</p>
+<p class="leader-title-en">Pastor</p>
+<p class="leader-sub-zh">負責英文堂及青少年事工</p>
+<p class="leader-sub-en">Responsible for English ministry &amp; youth ministry</p>
+</div>
+<div class="leader-card">
+<div class="leader-photo">
+<img alt="Pastor Zhen Deqiang" src="assets/images/img_b09994e0a812.webp"/>
+</div>
+<p class="leader-name-zh">甄德强</p>
+<p class="leader-name-en">Zhen Deqiang</p>
+<p class="leader-title-zh">牧師</p>
+<p class="leader-title-en">Pastor</p>
+<p class="leader-sub-zh">負責中文堂/粵語事工</p>
+<p class="leader-sub-en">Responsible for Chinese/Cantonese ministry</p>
+</div>
+<div class="leader-card">
+<div class="leader-photo">
+<img alt="Pastor Zeng Shizeng" src="assets/images/img_218672fff5ba.webp"/>
+</div>
+<p class="leader-name-zh">曾世增</p>
+<p class="leader-name-en">Zeng Shizeng</p>
+<p class="leader-title-zh">牧師</p>
+<p class="leader-title-en">Pastor</p>
+<p class="leader-sub-zh">負責中文堂/國語事工</p>
+<p class="leader-sub-en">Responsible for Chinese/Mandarin ministry</p>
+</div>
+<div class="leader-card">
+<div class="leader-photo">
+<img alt="Pastor Pang Yiu" src="assets/images/img_a1a1c04a0c27.webp"/>
+</div>
+<p class="leader-name-zh">Pang Yiu</p>
+<p class="leader-name-en">Pang Yiu</p>
+<p class="leader-title-zh">牧師</p>
+<p class="leader-title-en">Pastor</p>
+<p class="leader-sub-zh">負責兒童事工</p>
+<p class="leader-sub-en">Responsible for children's ministry</p>
+</div>
+</div>
+<!-- Preacher & Retired -->
+<div class="gold-divider" style="margin-top:1.5rem;margin-bottom:0.5rem;"></div>
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:1.6rem;color:var(--gold);font-weight:700;margin-bottom:0.1rem;">傳道與榮休</p>
+<h3 style="font-family:'Noto Serif',serif;font-size:1.4rem;color:var(--navy);margin-bottom:0.5rem;">Preacher &amp; Retired Reverend</h3>
+<p class="section-subtitle">忠心服事的同工 · Faithful servants in ministry</p>
+<div class="leader-grid-2" style="max-width:560px;margin-bottom:1.5rem;">
+<div class="leader-card">
+<div class="leader-photo">
+<img alt="Preacher Song Gaojingzhi" src="assets/images/img_b736ceac5d41.webp"/>
+</div>
+<p class="leader-name-zh">宋高靜芝</p>
+<p class="leader-name-en">Song Gaojingzhi</p>
+<p class="leader-title-zh">義務傳道</p>
+<p class="leader-title-en">Pro Bono Preacher</p>
+</div>
+<div class="leader-card">
+<div class="leader-photo">
+<img alt="Retired Reverend Huang Tianyou" src="assets/images/img_872f6ad67c25.webp"/>
+</div>
+<p class="leader-name-zh">黄天祐</p>
+<p class="leader-name-en">Huang Tianyou</p>
+<p class="leader-title-zh">榮休牧師</p>
+<p class="leader-title-en">Retired Reverend</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section section-alt">
+<div style="max-width:960px;margin:0 auto;">
+<div class="two-col">
+<div>
+<div class="gold-divider"></div>
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:1.6rem;color:var(--gold);font-weight:700;margin-bottom:0.1rem;">我們的宗旨</p>
+<h2 class="section-title">Our Mission</h2>
+<p style="color:var(--slate);line-height:1.9;font-family:'Noto Sans SC',sans-serif;font-size:0.9rem;margin-bottom:1rem;">本教會以基督耶穌為首，聯合眾聖徒在主基督里互相建立，領人歸主，見證基督，傳揚福音，培育門徒，遵行主耶穌所托付之使命，以榮神益人。</p>
+<p style="color:var(--slate);line-height:1.9;font-size:0.9rem;margin-bottom:1.5rem;">Our church, with Jesus Christ as its head, unites all saints to build one another up in the Lord Jesus Christ, lead people to the Lord, witness to Christ, proclaim the gospel, nurture disciples, and carry out the mission entrusted to us by the Lord Jesus, so as to glorify God and benefit people.</p>
+<p style="color:var(--slate);line-height:1.8;font-size:0.9rem;">Founded decades ago by Chinese immigrants, CCCRI has grown into a vibrant, multi-generational congregation with ministries for all ages, serving Rhode Island and southeastern New England.</p>
+</div>
+<div aria-label="Our core values" class="values-card" role="region">
+<div style="text-align:center;margin-bottom:1.5rem;">
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:1.8rem;color:var(--gold-light);font-weight:700;margin-bottom:0.1rem;line-height:1.2;">核心價值</p>
+<p style="font-family:'Noto Serif',serif;font-size:1.4rem;color:white;font-weight:600;">Our Core Values</p>
+<div style="width:40px;height:2px;background:var(--gold);margin:0.6rem auto 0;"></div>
+</div>
+<div class="value-item">
+<span class="value-emoji">🙏</span>
+<div>
+<strong style="font-family:'Noto Sans SC',sans-serif;">信仰 <span style="font-weight:400;">Faith</span></strong>
+<p class="value-desc" style="font-family:'Noto Sans SC',sans-serif;">以聖經和禱告為根基<br/><span style="font-family:'Noto Sans',sans-serif;">Rooted in Scripture and prayer</span></p>
+</div>
+</div>
+<div class="value-item">
+<span class="value-emoji">❤️</span>
+<div>
+<strong style="font-family:'Noto Sans SC',sans-serif;">團契 <span style="font-weight:400;">Community</span></strong>
+<p class="value-desc" style="font-family:'Noto Sans SC',sans-serif;">跨越世代的聯結<br/><span style="font-family:'Noto Sans',sans-serif;">Connecting across generations</span></p>
+</div>
+</div>
+<div class="value-item">
+<span class="value-emoji">🌍</span>
+<div>
+<strong style="font-family:'Noto Sans SC',sans-serif;">服事 <span style="font-weight:400;">Service</span></strong>
+<p class="value-desc" style="font-family:'Noto Sans SC',sans-serif;">本地與全球外展事工<br/><span style="font-family:'Noto Sans',sans-serif;">Local and global outreach</span></p>
+</div>
+</div>
+<div class="value-item">
+<span class="value-emoji">🌱</span>
+<div>
+<strong style="font-family:'Noto Sans SC',sans-serif;">成長 <span style="font-weight:400;">Growth</span></strong>
+<p class="value-desc" style="font-family:'Noto Sans SC',sans-serif;">門徒訓練與靈命塑造<br/><span style="font-family:'Noto Sans',sans-serif;">Discipleship and spiritual formation</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section section-alt">
+<div style="max-width:860px;margin:0 auto;">
+<div aria-label="Online worship options" class="online-card" role="region">
+<div class="zh">線上敬拜</div>
+<h3>Join Us Online</h3>
+<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.9rem;color:rgba(255,255,255,0.8);margin-bottom:0.3rem;">無法親自出席？線上觀看直播或隨時收看錄影。</p>
+<p>Can't make it in person? Watch our services live or access recordings anytime.</p>
+<div class="online-btns">
+<a class="btn-watch" href="https://www.youtube.com/@ChineseMinistryCCCRI" rel="noopener" target="_blank">▶ Watch Live 直播</a>
+<a class="btn-gold" href="https://goo.gl/maps/HcaaXQQvwiYJvish9" rel="noopener" target="_blank">🗺 Directions 路線</a>
+</div>
+</div>
+</div>
+</div>
+<footer>
+<div class="footer-links">
+<span>📍 <strong style="color:var(--gold-light);">333 Roosevelt Ave, Pawtucket, RI 02860</strong></span>
+<span>📞 <a href="tel:4017228877" style="color:var(--gold-light);">(401) 722-8877</a></span>
+<span>✉️ <a href="mailto:info@cccri.org" style="color:var(--gold-light);">info@cccri.org</a></span>
+</div>
+<p class="info">For more information: <a href="mailto:leaderscccri@gmail.com" style="color:var(--gold-light);">leaderscccri@gmail.com</a></p>
+<p class="copy">© CCCRI — All Rights Reserved</p>
+</footer>
+
+</main>
+<script src="assets/script.js" defer></script>
+</body>
+</html>
