@@ -1,0 +1,796 @@
+
+:root {
+  --red: #c0171d;
+  --red-dark: #9a1015;
+  --gold: #c8952a;
+  --gold-light: #e8b84b;
+  --navy: #1a2e4a;
+  --cream: #f9f5ef;
+  --warm-white: #fdfaf6;
+  --slate: #4a5568;
+  --light-blue: #e8f0f8;
+  --text: #2d3748;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans','Noto Sans SC',sans-serif; color:var(--text); background:var(--warm-white); overflow-x:hidden; font-weight:500; }
+
+/* ── NAV ── */
+nav {
+  position:fixed; top:0; left:0; right:0; z-index:1000;
+  background:var(--red);
+  display:flex; align-items:center; justify-content:space-between;
+  padding:0 1.5rem; height:64px;
+  box-shadow:0 2px 12px rgba(0,0,0,0.25);
+}
+.nav-logo { display:flex; align-items:center; text-decoration:none; padding:6px 0; }
+.nav-logo img { height:50px; width:auto; filter:brightness(0) invert(1); }
+.nav-links { display:flex; gap:0; }
+.nav-links a {
+  background:none; border:none; color:rgba(255,255,255,0.88);
+  font-family:'Noto Sans','Noto Sans SC',sans-serif; font-size:0.875rem;
+  font-weight:500; padding:0 0.9rem; height:64px; cursor:pointer;
+  letter-spacing:0.02em; border-bottom:3px solid transparent;
+  transition:all 0.2s; white-space:nowrap;
+}
+.nav-links a:hover, .nav-links a.active {
+  color:#fff; border-bottom-color:#fff; background:rgba(0,0,0,0.15);
+}
+.nav-donate {
+  background:white; color:var(--red); font-family:'Noto Sans','Noto Sans SC',sans-serif;
+  font-size:0.875rem; font-weight:700; padding:0.45rem 1.1rem; border-radius:3px;
+  text-decoration:none; white-space:nowrap; margin-left:0.75rem;
+  border:2px solid white; transition:all 0.2s;
+}
+.nav-donate:hover { background:var(--red-dark); color:white; }
+
+/* ── PAGES ── */
+.page { display:block; padding-top:64px; min-height:100vh; }
+
+@keyframes fadeIn { from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:translateY(0)} }
+
+/* ── HERO ── */
+.hero {
+  position:relative; height:560px; overflow:hidden;
+  background:url('images/img_3942a6f02a90.jpg') center 20% / cover no-repeat;
+  display:flex; align-items:center; justify-content:center;
+}
+.hero::before {
+  content:''; position:absolute; inset:0;
+  background:linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.35) 60%, rgba(0,0,0,0.5) 100%);
+}
+.hero-content {
+  position:relative; z-index:2; text-align:center; padding:0 2rem; max-width:860px;
+}
+.hero-content h1 { color:white; font-family:'Noto Serif',serif; }
+.hero-chinese { display:block; font-size:2.4rem; font-weight:700; margin-bottom:0.3rem; color:white; text-shadow: 0px 1px 5px rgba(0,0,0,0.55); }
+.hero-english { display:block; font-size:1.3rem; font-weight:500; color:rgba(255,255,255,0.92); margin-bottom:2rem; text-shadow: 0px 1px 5px rgba(0,0,0,0.55); }
+.hero-btns { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
+.btn-red {
+  background:var(--red); color:white; border:2px solid var(--red);
+  padding:0.75rem 1.8rem; font-size:0.9rem; font-weight:600;
+  cursor:pointer; border-radius:3px; font-family:'Noto Sans',sans-serif;
+  transition:all 0.2s; text-decoration:none; display:inline-block;
+}
+.btn-red:hover { background:var(--red-dark); border-color:var(--red-dark); }
+.btn-outline {
+  background:transparent; color:white; border:2px solid rgba(255,255,255,0.7);
+  padding:0.75rem 1.8rem; font-size:0.9rem; font-weight:600;
+  cursor:pointer; border-radius:3px; font-family:'Noto Sans',sans-serif;
+  transition:all 0.2s;
+}
+.btn-outline:hover { border-color:white; background:rgba(255,255,255,0.12); }
+
+/* ── MISSION BANNER ── */
+.mission-banner {
+  background:var(--warm-white); padding:3.5rem 5%; text-align:center;
+  border-bottom:1px solid rgba(0,0,0,0.07);
+}
+.mission-banner .zh-label { font-family:'Noto Sans SC',sans-serif; font-size:1.8rem; color:var(--gold); font-weight:700; margin-bottom:0.1rem; }
+.mission-banner h2 { font-family:'Noto Serif',serif; font-size:2rem; color:var(--navy); margin-bottom:0.8rem; }
+.gold-bar { width:60px; height:3px; background:var(--gold); margin:0 auto 1.8rem; }
+.mission-banner .zh-text { font-family:'Noto Sans SC',sans-serif; font-size:1rem; color:var(--slate); line-height:2; margin-bottom:1.2rem; max-width:780px; margin-left:auto; margin-right:auto; }
+.mission-banner .en-text { font-size:1rem; color:var(--slate); line-height:1.9; font-style:italic; max-width:780px; margin:0 auto; }
+
+/* ── HOME CARDS ── */
+.home-cards {
+  display:grid; grid-template-columns:repeat(3,1fr); gap:0;
+  background:var(--navy);
+}
+.home-card {
+  position:relative; overflow:hidden; min-height:220px;
+  display:flex; flex-direction:column; justify-content:flex-end;
+  padding:1.5rem; cursor:pointer; border:none;
+  border-right:1px solid rgba(255,255,255,0.1);
+  transition:transform 0.2s;
+}
+.home-card:last-child { border-right:none; }
+.home-card:hover { transform:scale(1.01); z-index:2; }
+.home-card::after {
+  content:''; position:absolute; inset:0;
+  background:linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
+  pointer-events:none;
+}
+.home-card-text { position:relative; z-index:2; color:white; }
+.home-card-text .zh { font-size:1rem; font-weight:700; color:var(--gold-light); margin-bottom:0.15rem; font-family:'Noto Sans SC',sans-serif; }
+.home-card-text .en { font-size:1rem; font-weight:600; margin-bottom:0.5rem; }
+.home-card-text .sub-zh { font-size:0.875rem; color:rgba(255,255,255,0.8); margin-bottom:0.1rem; font-family:'Noto Sans SC',sans-serif; }
+.home-card-text .sub-en { font-size:0.875rem; color:rgba(255,255,255,0.7); }
+.card-border { border-top:4px solid var(--gold); }
+
+/* ── ANNOUNCEMENTS ── */
+.section { padding:4rem 5%; }
+.section-alt { background:var(--cream); }
+.section-title { font-family:'Noto Serif',serif; font-size:1.9rem; color:var(--navy); margin-bottom:0.4rem; }
+.section-subtitle { color:var(--slate); font-size:0.95rem; margin-bottom:2.5rem; font-weight:500; }
+.gold-divider { width:60px; height:3px; background:var(--gold); margin-bottom:0.8rem; }
+
+.announce-item {
+  display:flex; gap:1.5rem; padding:1.5rem;
+  border-left:4px solid var(--gold); background:white;
+  margin-bottom:1rem; border-radius:0 4px 4px 0;
+  box-shadow:0 2px 8px rgba(0,0,0,0.06);
+}
+.announce-date {
+  min-width:56px; text-align:center; background:var(--red); color:white;
+  padding:0.5rem; border-radius:4px; display:flex; flex-direction:column;
+  align-items:center; justify-content:center; flex-shrink:0;
+}
+.announce-date .month { font-size:0.875rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--gold-light); }
+.announce-date .day { font-size:1.6rem; font-weight:700; line-height:1; }
+.announce-body h4 { font-size:1rem; font-weight:600; margin-bottom:0.3rem; color:var(--navy); }
+.announce-body p { font-size:0.9rem; color:var(--slate); line-height:1.6; font-weight:500; }
+
+/* ── PAGE HEADER ── */
+.page-header {
+  background:linear-gradient(135deg, var(--red-dark), var(--red));
+  color:white; text-align:center; padding:3.5rem 2rem;
+  position:relative; overflow:hidden;
+}
+.page-header::after {
+  content:''; position:absolute; bottom:0; left:0; right:0;
+  height:4px; background:linear-gradient(90deg,var(--gold),var(--gold-light),var(--gold));
+}
+.page-header h1 { font-family:'Noto Serif',serif; font-size:2.4rem; margin-bottom:0.3rem; text-shadow: 0px 1px 5px rgba(0,0,0,0.55); }
+.page-header p { color:rgba(255,255,255,0.8); font-size:1rem; font-weight:500; text-shadow: 0px 1px 5px rgba(0,0,0,0.55); }
+.page-header .zh { font-family:'Noto Sans SC',sans-serif; font-size:2rem; font-weight:700; color:rgba(255,255,255,0.9); margin-bottom:0.2rem; text-shadow: 0px 1px 5px rgba(0,0,0,0.55); }
+
+/* ── ABOUT PAGE ── */
+.two-col { display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:start; }
+.three-col { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; }
+.four-col { display:grid; grid-template-columns:repeat(4,1fr); gap:1.5rem; }
+
+.person-card { text-align:center; }
+.person-avatar {
+  width:88px; height:88px; border-radius:50%;
+  margin:0 auto 0.8rem; border:3px solid var(--gold);
+  display:flex; align-items:center; justify-content:center;
+  font-size:2rem; background:var(--light-blue);
+}
+.person-card h4 { font-weight:600; font-size:0.95rem; color:var(--navy); }
+.person-card span { font-size:0.875rem; color:var(--slate); }
+
+/* ── LEADERSHIP PHOTO SIZE (responsive) ── */
+.leader-photo {
+  width: clamp(195px, 21vw, 270px);
+  height: clamp(195px, 21vw, 270px);
+  border-radius: 50%;
+  margin: 0 auto 0.6rem;
+  border: 3px solid var(--gold);
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  flex-shrink: 0;
+}
+.leader-photo img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center top;
+  display: block;
+}
+.leader-card {
+  text-align: center;
+  padding: 0.5rem 0.25rem;
+}
+.leader-card p { margin: 0; line-height: 1.4; }
+.leader-name-zh {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+  font-weight: 700; color: var(--navy); margin-bottom: 0.05rem !important;
+}
+.leader-name-en { font-size: 0.9rem; color: var(--slate); margin-bottom: 0.2rem !important; }
+.leader-title-zh {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 0.9rem; font-weight: 700; color: var(--gold); margin-bottom: 0.05rem !important;
+}
+.leader-title-en { font-size: 0.875rem; color: var(--slate); font-weight: 600; margin-bottom: 0.15rem !important; }
+.leader-sub-zh {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 0.875rem; color: var(--slate); margin-bottom: 0.05rem !important; line-height: 1.4;
+}
+.leader-sub-en { font-size: 0.875rem; color: var(--slate); line-height: 1.4; }
+
+@media(max-width:900px) {
+  .leader-photo { width: clamp(150px, 20vw, 200px); height: clamp(150px, 20vw, 200px); }
+}
+@media(max-width:600px) {
+  .leader-photo { width: 140px; height: 140px; }
+}
+
+.values-card {
+  background:linear-gradient(135deg,var(--navy),#2d4a6e);
+  border-radius:6px; padding:2.5rem 2.5rem 1.5rem; color:white;
+  display:flex; flex-direction:column; justify-content:center;
+}
+.values-card h3 { font-family:'Noto Serif',serif; font-size:1.4rem; color:var(--gold-light); margin-bottom:1.5rem; text-align:center; }
+.value-item { display:flex; gap:1rem; align-items:flex-start; margin-bottom:1.5rem; }
+.value-item .value-emoji { font-size:2rem; flex-shrink:0; line-height:1.2; }
+.value-item strong { display:block; margin-bottom:0.3rem; font-size:1.1rem; }
+.value-item .value-desc { font-size:0.95rem; opacity:0.85; line-height:1.5; }
+
+.about-blurb {
+  background:white; border-left:5px solid var(--gold);
+  padding:2rem; border-radius:0 6px 6px 0;
+  box-shadow:0 2px 12px rgba(0,0,0,0.07); margin-bottom:3rem;
+}
+.about-blurb p { font-size:0.9rem; color:var(--slate); line-height:1.9; }
+.about-blurb p + p { margin-top:0.75rem; }
+.about-blurb .zh { font-family:'Noto Sans SC',sans-serif; }
+
+/* ── WORSHIP ── */
+.service-card {
+  background:white; border-radius:6px; padding:2rem;
+  text-align:center; box-shadow:0 4px 20px rgba(0,0,0,0.08);
+  border-top:4px solid var(--gold);
+}
+.service-card h3 { font-family:'Noto Serif',serif; font-size:1.2rem; color:var(--navy); margin-bottom:0.3rem; }
+.service-card .time { font-size:1rem; color:var(--red); font-weight:600; margin:0.4rem 0; }
+.service-card p { font-size:0.88rem; color:var(--slate); }
+.service-card .zh { font-family:'Noto Sans SC',sans-serif; font-size:0.9rem; color:var(--slate); margin-bottom:0.2rem; }
+
+.feature-item { text-align:center; padding:1.2rem 0.5rem; }
+.feature-icon {
+  width:60px; height:60px; border-radius:50%;
+  background:var(--light-blue); border:2px solid var(--gold);
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.5rem; margin:0 auto 0.8rem;
+}
+.feature-item h4 { font-weight:600; color:var(--navy); margin-bottom:0.2rem; font-size:0.95rem; }
+.feature-item .zh { font-family:'Noto Sans SC',sans-serif; font-size:0.9rem; color:var(--slate); }
+.feature-item p { font-size:0.9rem; color:var(--slate); }
+
+.online-card {
+  background:var(--navy); color:white; border-radius:6px; padding:3rem; text-align:center;
+}
+.online-card h3 { font-family:'Noto Serif',serif; font-size:1.5rem; margin-bottom:0.3rem; text-shadow: 0px 1px 5px rgba(0,0,0,0.55); }
+.online-card .zh { font-family:'Noto Sans SC',sans-serif; color:rgba(255,255,255,0.7); margin-bottom:0.5rem; font-size:0.95rem; font-weight:700; text-shadow: 0px 1px 5px rgba(0,0,0,0.55); }
+.online-card p { color:rgba(255,255,255,0.7); margin-bottom:2rem; font-size:0.9rem; font-weight:500; text-shadow: 0px 1px 5px rgba(0,0,0,0.55); }
+.online-btns { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
+.btn-watch {
+  background:#c0392b; color:white; border:none; padding:0.75rem 1.6rem;
+  border-radius:3px; cursor:pointer; font-size:0.9rem; font-weight:600;
+  font-family:'Noto Sans',sans-serif; transition:all 0.2s;
+}
+.btn-watch:hover { background:#e74c3c; }
+.btn-gold {
+  background:var(--gold); color:white; border:none; padding:0.75rem 1.6rem;
+  border-radius:3px; cursor:pointer; font-size:0.9rem; font-weight:600;
+  font-family:'Noto Sans',sans-serif; transition:all 0.2s;
+}
+.btn-gold:hover { background:var(--gold-light); }
+
+/* ── EVENTS ── */
+.event-card { background:white; border-radius:6px; box-shadow:0 4px 20px rgba(0,0,0,0.08); overflow:hidden; }
+.event-banner { color:white; padding:1.8rem; text-align:center; }
+.event-banner h3 { font-family:'Noto Serif',serif; font-size:1.3rem; margin-bottom:0.2rem; }
+.event-banner .zh { font-family:'Noto Sans SC',sans-serif; font-size:0.9rem; opacity:0.85; margin-bottom:0.2rem; }
+.event-banner p { font-size:0.875rem; opacity:0.85; }
+.event-body { padding:1.5rem; font-size:0.9rem; color:var(--slate); line-height:1.7; }
+
+.weekly-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:1.5rem; }
+.weekly-item { background:white; padding:1.1rem; border-radius:6px; border-left:4px solid var(--gold); }
+.weekly-item strong { display:block; color:var(--navy); margin-bottom:0.2rem; font-size:0.9rem; }
+.weekly-item .zh { font-family:'Noto Sans SC',sans-serif; font-size:0.875rem; color:var(--slate); }
+.weekly-item span { font-size:0.875rem; color:var(--slate); display:block; }
+
+/* ── MINISTRIES ── */
+.ministry-card {
+  background:white; border-radius:6px; overflow:hidden;
+  box-shadow:0 4px 20px rgba(0,0,0,0.08); transition:transform 0.2s;
+}
+.ministry-card:hover { transform:translateY(-4px); }
+.ministry-card-header {
+  color:white; padding:1.8rem; text-align:center; font-size:2.2rem;
+}
+.ministry-card-body { padding:1.5rem; }
+.ministry-card-body .zh { font-family:'Noto Sans SC',sans-serif; font-size:0.875rem; color:var(--slate); margin-bottom:0.1rem; }
+.ministry-card-body h3 { font-family:'Noto Serif',serif; color:var(--navy); margin-bottom:0.5rem; }
+.ministry-card-body p { font-size:0.9rem; color:var(--slate); }
+
+.fellowship-card {
+  background:var(--navy); color:white; border-radius:6px; padding:2rem;
+  text-align:center; border-bottom:4px solid var(--gold); transition:transform 0.2s; cursor:pointer;
+}
+.fellowship-card.red { background:var(--red-dark); }
+.fellowship-card:hover { transform:translateY(-4px); }
+.fellowship-card .zh { font-family:'Noto Sans SC',sans-serif; font-size:1.1rem; color:var(--gold-light); margin-bottom:0.2rem; }
+.fellowship-card h4 { font-size:1rem; margin-bottom:0.4rem; }
+.fellowship-card p { font-size:0.875rem; color:rgba(255,255,255,0.7); }
+
+/* ── RESOURCES ── */
+.resource-item {
+  display:flex; align-items:center; gap:0.75rem;
+  background:white; padding:0.8rem 1rem; border-radius:4px;
+  font-size:0.9rem; color:var(--navy); cursor:pointer;
+  border:1px solid rgba(0,0,0,0.08); transition:all 0.2s; margin-bottom:0.6rem;
+}
+.resource-item:hover { border-color:var(--gold); color:var(--gold); }
+.resource-item::before { content:'→'; color:var(--gold); font-weight:700; }
+.resource-item .zh { font-family:'Noto Sans SC',sans-serif; font-size:0.875rem; color:var(--slate); display:block; }
+
+.devotional-card {
+  background:white; border-left:5px solid var(--gold);
+  padding:2rem; border-radius:0 6px 6px 0;
+  box-shadow:0 4px 20px rgba(0,0,0,0.08); margin-bottom:2rem;
+}
+.devotional-card .zh { font-family:'Noto Sans SC',sans-serif; font-size:0.9rem; color:var(--slate); margin-bottom:0.2rem; }
+.devotional-card h3 { font-family:'Noto Serif',serif; color:var(--navy); margin-bottom:0.5rem; }
+.devotional-card ul { list-style:none; padding:0; margin-top:1rem; }
+.devotional-card li { padding:0.35rem 0; font-size:0.88rem; color:var(--slate); display:flex; align-items:center; gap:0.5rem; }
+.devotional-card li::before { content:'✓'; color:var(--gold); font-weight:700; }
+
+/* ── CONTACT ── */
+.contact-info-item { display:flex; align-items:flex-start; gap:1rem; margin-bottom:1.5rem; }
+.contact-icon {
+  width:40px; height:40px; background:var(--red); border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-size:1rem; color:white; flex-shrink:0;
+}
+.contact-info-item h4 { font-weight:600; color:var(--navy); font-size:0.88rem; margin-bottom:0.1rem; }
+.contact-info-item p { color:var(--slate); font-size:0.88rem; }
+
+.map-placeholder {
+  background:var(--light-blue); border-radius:6px; height:220px;
+  display:flex; align-items:center; justify-content:center;
+  font-size:3rem; border:2px solid rgba(0,0,0,0.08);
+  margin-bottom:1.5rem; position:relative; overflow:hidden;
+}
+.map-placeholder::after {
+  content:'333 Roosevelt Ave, Pawtucket, RI 02860';
+  position:absolute; bottom:0; left:0; right:0;
+  background:var(--navy); color:white; padding:0.5rem 1rem;
+  font-size:0.875rem; text-align:center;
+}
+
+.form-group { margin-bottom:1.1rem; }
+.form-group label { display:block; font-size:0.9rem; font-weight:600; color:var(--navy); margin-bottom:0.3rem; }
+.form-group label .zh { font-family:'Noto Sans SC',sans-serif; font-size:0.875rem; color:var(--slate); margin-right:0.3rem; }
+.form-group input, .form-group textarea {
+  width:100%; padding:0.7rem 0.9rem;
+  border:1px solid rgba(0,0,0,0.15); border-radius:4px;
+  font-family:'Noto Sans',sans-serif; font-size:0.9rem; color:var(--text);
+  transition:border-color 0.2s;
+}
+.form-group input:focus, .form-group textarea:focus { outline:none; border-color:var(--red); }
+.form-group textarea { height:110px; resize:vertical; }
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+
+/* ── FOOTER ── */
+footer {
+  background:var(--red-dark); color:white; text-align:center; padding:2rem 1.5rem;
+}
+.footer-links { display:flex; flex-wrap:wrap; justify-content:center; gap:0.5rem 2rem; margin-bottom:0.75rem; font-size:0.875rem; font-weight:500; }
+.footer-links a { color:var(--gold-light); text-decoration:none; }
+.footer-links a:hover { text-decoration:underline; }
+footer .copy { font-size:0.875rem; color:rgba(255,255,255,0.4); margin-top:0.5rem; }
+footer .info { font-size:0.875rem; color:rgba(255,255,255,0.65); margin-bottom:0.4rem; }
+
+@media(max-width:768px) {
+  .two-col,.three-col,.four-col,.home-cards,.weekly-grid,.form-row { grid-template-columns:1fr; }
+  .hero-chinese { font-size:1.6rem; }
+  .nav-links a { font-size:0.875rem; padding:0 0.4rem; }
+}
+
+/* ── MOBILE NAV ── */
+.hamburger {
+  display:none; background:none; border:none; cursor:pointer;
+  flex-direction:column; gap:5px; padding:4px; margin-left:0.5rem;
+}
+.hamburger span {
+  display:block; width:24px; height:2px; background:white;
+  border-radius:2px; transition:all 0.3s;
+}
+.hamburger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity:0; }
+.hamburger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+
+.mobile-menu {
+  display:none; position:fixed; top:64px; left:0; right:0; z-index:999;
+  background:var(--red-dark); flex-direction:column;
+  border-top:2px solid rgba(255,255,255,0.15);
+  box-shadow:0 8px 24px rgba(0,0,0,0.3);
+}
+.mobile-menu.open { display:flex; }
+.mobile-menu a {
+  background:none; border:none; border-bottom:1px solid rgba(255,255,255,0.1);
+  color:white; font-family:'Noto Sans','Noto Sans SC',sans-serif;
+  font-size:1rem; padding:1rem 1.5rem; text-align:left; cursor:pointer;
+  transition:background 0.2s;
+}
+.mobile-menu a:hover { background:rgba(0,0,0,0.2); }
+
+@media(max-width:768px) {
+  .nav-links { display:none; }
+  /* leader grids handled by .leader-grid-* classes */
+  .hamburger { display:flex; }
+  .two-col,.three-col,.four-col,.home-cards,.weekly-grid,.form-row { grid-template-columns:1fr; }
+  .hero { height:420px; }
+  .hero-chinese { font-size:1.5rem; }
+  .hero-english { font-size:0.95rem; }
+  .hero-btns { flex-direction:column; align-items:center; }
+  .hero-btns button { width:100%; max-width:260px; }
+  .section { padding:2.5rem 4%; }
+  .page-header h1 { font-size:1.8rem; }
+  .mission-banner { padding:2.5rem 4%; }
+  .mission-banner .zh-label { font-size:1.3rem; }
+  .mission-banner h2 { font-size:1.5rem; }
+  .home-card { min-height:180px; }
+  nav { padding:0 1rem; }
+  .nav-donate { font-size:0.875rem; padding:0.4rem 0.75rem; margin-left:0.5rem; }
+  .announce-item { gap:0.75rem; padding:1rem; }
+}
+
+
+/* ── LEADERSHIP SECTION TIGHTER PADDING ── */
+#page-about .section { padding: 2.5rem 5%; }
+/* ── CHINESE SECTION LABELS (above English headings) ── */
+.zh-label-lg {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 1.6rem;
+  color: var(--gold);
+  font-weight: 700;
+  margin-bottom: 0.1rem;
+  display: block;
+  line-height: 1.2;
+}
+/* Page header zh subtitles stay smaller — they're above h1 */
+.page-header .zh {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 0.2rem;
+}
+
+
+/* ── LEADER PROFILE GRIDS ── */
+.leader-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.leader-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+.leader-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+@media(max-width: 900px) {
+  .leader-grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .leader-grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .leader-grid-2 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media(max-width: 480px) {
+  .leader-grid-3 { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  .leader-grid-4 { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+  .leader-grid-2 { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+}
+
+
+/* ── SERVICE TABS ── */
+.tab-bar {
+  display: flex;
+  border-bottom: 3px solid var(--gold);
+  margin-bottom: 0;
+  gap: 0;
+}
+.tab-btn {
+  flex: 1;
+  padding: 0.9rem 1rem;
+  background: var(--cream);
+  border: none;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -3px;
+  cursor: pointer;
+  font-family: 'Noto Serif', serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--slate);
+  text-align: center;
+  transition: background 0.2s, color 0.2s;
+  line-height: 1.3;
+}
+.tab-btn:hover { background: #efe8db; color: var(--navy); }
+.tab-btn.tab-active {
+  background: white;
+  color: var(--red);
+  border-bottom-color: white;
+  border-top: 3px solid var(--gold);
+  border-left: 1px solid rgba(0,0,0,0.1);
+  border-right: 1px solid rgba(0,0,0,0.1);
+}
+.tab-panel {
+  background: white;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-top: none;
+  border-radius: 0 0 6px 6px;
+  padding: 1.5rem;
+}
+
+
+/* ── FEATURED EVENT CARDS ── */
+.feat-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.10);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.feat-banner {
+  color: white;
+  padding: 1.6rem 1.4rem;
+  text-align: center;
+}
+.feat-banner-zh {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 0.875rem;
+  opacity: 0.85;
+  margin-bottom: 0.4rem;
+}
+.feat-banner h3 {
+  font-family: 'Noto Serif', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  line-height: 1.3;
+}
+.feat-banner-date {
+  font-size: 0.875rem;
+  font-family: 'Noto Sans SC', sans-serif;
+  opacity: 0.9;
+}
+.feat-body {
+  padding: 1.3rem 1.3rem 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── WEEKLY TABLE ── */
+.weekly-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  font-family: 'Noto Sans SC', sans-serif;
+}
+.weekly-table thead tr {
+  background: var(--navy);
+  color: white;
+}
+.weekly-table th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.weekly-table td {
+  padding: 0.65rem 1rem;
+  border-bottom: 1px solid rgba(0,0,0,0.07);
+  color: var(--slate);
+  vertical-align: top;
+}
+.weekly-table tbody tr:hover { background: rgba(200,149,42,0.05); }
+.weekly-table tr.week-divider td {
+  border-top: 3px solid var(--gold);
+  padding-top: 0.75rem;
+}
+
+@media (max-width: 700px) {
+  .weekly-table th:nth-child(3),
+  .weekly-table td:nth-child(3) { display: none; }
+}
+
+
+/* ── MINISTRY CARDS ── */
+.ministry-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem;
+  margin-bottom: 3rem;
+}
+.ministry-btn-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 3px 16px rgba(0,0,0,0.09);
+  overflow: hidden;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  text-align: center;
+  transition: transform 0.18s, box-shadow 0.18s;
+  width: 100%;
+}
+.ministry-btn-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.16);
+}
+.ministry-btn-card:focus {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+}
+.min-card-header {
+  padding: 1.8rem 1rem 1.5rem;
+  color: white;
+  min-height: 140px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  border-radius: 10px 10px 0 0;
+}
+/* shadows now in individual rules */
+.min-card-icon { font-size: 2.4rem; margin-bottom: 0.5rem; }
+.min-card-zh {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.15rem;
+  opacity: 0.95;
+  text-shadow: 0px 1px 5px rgba(0,0,0,0.55);
+}
+.min-card-en {
+  font-family: 'Noto Serif', serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  opacity: 0.85;
+  line-height: 1.3;
+  text-shadow: 0px 1px 5px rgba(0,0,0,0.55);
+}
+.min-card-body {
+  padding: 0.9rem 0.9rem 1rem;
+}
+.min-card-tagline-zh {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 0.8rem;
+  color: var(--gold);
+  font-weight: 600;
+  margin-bottom: 0.1rem;
+}
+.min-card-tagline-en {
+  font-size: 0.75rem;
+  color: var(--slate);
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+.min-card-arrow {
+  display: inline-block;
+  margin-top: 0.4rem;
+  font-size: 0.8rem;
+  color: var(--red);
+  font-weight: 700;
+}
+
+/* ── MINISTRY SUB-PAGE ── */
+.ministry-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: none;
+  border: 2px solid var(--gold);
+  color: var(--navy);
+  padding: 0.5rem 1.1rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 2rem;
+  font-family: 'Noto Sans SC', sans-serif;
+  transition: background 0.15s;
+}
+.ministry-back-btn:hover { background: var(--cream); }
+
+.min-detail-card {
+  background: var(--cream);
+  border-radius: 8px;
+  padding: 1.3rem 1.5rem;
+  margin-bottom: 1rem;
+  border-left: 4px solid var(--gold);
+}
+.min-detail-title {
+  font-family: 'Noto Serif', serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 0.4rem;
+}
+.min-detail-body {
+  font-size: 0.875rem;
+  color: var(--slate);
+  line-height: 1.8;
+  font-family: 'Noto Sans SC', sans-serif;
+  font-weight: 500;
+}
+
+@media (max-width: 900px) {
+  .ministry-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 500px) {
+  .ministry-grid { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
+}
+
+
+/* FELLOWSHIP CARDS */
+.fel-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.fel-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.09);
+  overflow: hidden;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  text-align: center;
+  transition: transform 0.18s, box-shadow 0.18s;
+  width: 100%;
+}
+.fel-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
+.fel-card:focus { outline: 3px solid var(--gold); outline-offset: 2px; }
+.fel-card-banner { padding: 1rem 0.5rem 0.8rem; color: white; }
+.fel-icon { font-size: 1.8rem; display: block; }
+.fel-card-body { padding: 0.6rem 0.5rem 0.8rem; }
+.fel-zh { font-family: 'Noto Sans SC', sans-serif; font-size: 0.875rem; font-weight: 700; color: var(--navy); margin-bottom: 0.1rem; line-height: 1.3; }
+.fel-en { font-size: 0.72rem; color: var(--slate); margin-bottom: 0.3rem; line-height: 1.3; font-weight: 600; }
+.fel-arrow { font-size: 0.7rem; color: var(--red); font-weight: 700; }
+@media (max-width: 900px) { .fel-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 500px) { .fel-grid { grid-template-columns: repeat(2, 1fr); gap: 0.7rem; } }
+
+
+/* ── Global: all text within image-background sections gets shadow ── */
+.hero-section *, .sermon-card *, .online-card * { text-shadow: 0px 1px 5px rgba(0,0,0,0.55); }
+/* ── Fellowship card icons on image banners ── */
+.fel-card-banner .fel-icon { text-shadow: 0px 1px 5px rgba(0,0,0,0.55); }
+/* ── Worship tab panels body text weight bump ── */
+.service-card p, .service-card li { font-weight: 500; }
+
+
+/* ── Fellowship card image banner ── */
+.fel-card-banner {
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fel-zh-banner {
+  font-family: 'Noto Sans SC', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: white;
+  display: block;
+  text-align: center;
+  text-shadow: 0px 1px 5px rgba(0,0,0,0.7);
+}
+
+
+
+/* Added for multi-page links */
+.nav-links a { display:flex; align-items:center; text-decoration:none; }
+.mobile-menu a { display:block; text-decoration:none; }
