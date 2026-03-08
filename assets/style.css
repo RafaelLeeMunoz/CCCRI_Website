@@ -51,7 +51,7 @@ nav {
 /* ── HERO ── */
 .hero {
   position:relative; height:560px; overflow:hidden;
-  background:url('images/img_3942a6f02a90.jpg') center 50% / cover no-repeat;
+  background:url('images/img_3942a6f02a90.jpg') center 20% / cover no-repeat;
   display:flex; align-items:center; justify-content:center;
 }
 .hero::before {
