@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans-x-en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="News & Updates — Chinese Christian Church of Rhode Island (CCCRI)" name="description"/>
+<title>消息與見證 News | Chinese Christian Church of Rhode Island</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&family=Noto+Serif:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+<style>
+/* ── SITE CSS (from style.css) ── */
+:root {
+  --red: #c0171d;
+  --red-dark: #9a1015;
+  --gold: #c8952a;
+  --gold-light: #e8b84b;
+  --navy: #1a2e4a;
+  --cream: #f9f5ef;
+  --warm-white: #fdfaf6;
+  --slate: #4a5568;
+  --light-blue: #e8f0f8;
+  --text: #2d3748;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans','Noto Sans SC',sans-serif; color:var(--text); background:var(--warm-white); overflow-x:hidden; font-weight:500; }
+nav {
+  position:fixed; top:0; left:0; right:0; z-index:1000;
+  background:var(--red);
+  display:flex; align-items:center; justify-content:space-between;
+  padding:0 1.5rem; height:64px;
+  box-shadow:0 2px 12px rgba(0,0,0,0.25);
+}
+.nav-logo { display:flex; align-items:center; text-decoration:none; padding:6px 0; }
+.nav-logo img { height:50px; width:auto; filter:brightness(0) invert(1); }
+.nav-links { display:flex; gap:0; }
+.nav-links a {
+  background:none; border:none; color:rgba(255,255,255,0.88);
+  font-family:'Noto Sans','Noto Sans SC',sans-serif; font-size:0.875rem;
+  font-weight:500; padding:0 0.9rem; height:64px; cursor:pointer;
+  letter-spacing:0.02em; border-bottom:3px solid transparent;
+  transition:all 0.2s; white-space:nowrap; display:flex; align-items:center; text-decoration:none;
+}
+.nav-links a:hover, .nav-links a.active { color:#fff; border-bottom-color:#fff; background:rgba(0,0,0,0.15); }
+.nav-donate {
+  background:white; color:var(--red); font-family:'Noto Sans','Noto Sans SC',sans-serif;
+  font-size:0.875rem; font-weight:700; padding:0.45rem 1.1rem; border-radius:3px;
+  text-decoration:none; white-space:nowrap; margin-left:0.75rem;
+  border:2px solid white; transition:all 0.2s;
+}
+.nav-donate:hover { background:var(--red-dark); color:white; }
+.page { display:block; padding-top:64px; min-height:100vh; }
+.section { padding:4rem 5%; }
+.section-alt { background:var(--cream); }
+.section-title { font-family:'Noto Serif',serif; font-size:1.9rem; color:var(--navy); margin-bottom:0.4rem; }
+.section-subtitle { color:var(--slate); font-size:0.95rem; margin-bottom:2.5rem; font-weight:500; }
+.gold-divider { width:60px; height:3px; background:var(--gold); margin-bottom:0.8rem; }
+.page-header {
+  background:linear-gradient(135deg, var(--red-dark), var(--red));
+  color:white; text-align:center; padding:3.5rem 2rem;
+  position:relative; overflow:hidden;
+}
+.page-header::after {
+  content:''; position:absolute; bottom:0; left:0; right:0;
+  height:4px; background:linear-gradient(90deg,var(--gold),var(--gold-light),var(--gold));
+}
+.page-header h1 { font-family:'Noto Serif',serif; font-size:2.4rem; margin-bottom:0.3rem; text-shadow:0px 1px 5px rgba(0,0,0,0.55); }
+.page-header p { color:rgba(255,255,255,0.8); font-size:1rem; font-weight:500; }
+.page-header .zh { font-family:'Noto Sans SC',sans-serif; font-size:2rem; font-weight:700; color:rgba(255,255,255,0.9); margin-bottom:0.2rem; text-shadow:0px 1px 5px rgba(0,0,0,0.55); }
+footer { background:var(--red-dark); color:white; text-align:center; padding:2rem 1.5rem; }
+.footer-links { display:flex; flex-wrap:wrap; justify-content:center; gap:0.5rem 2rem; margin-bottom:0.75rem; font-size:0.875rem; font-weight:500; }
+.footer-links a { color:var(--gold-light); text-decoration:none; }
+footer .info { font-size:0.875rem; color:rgba(255,255,255,0.65); margin-bottom:0.4rem; }
+footer .copy { font-size:0.875rem; color:rgba(255,255,255,0.4); margin-top:0.5rem; }
+.hamburger { display:none; background:none; border:none; cursor:pointer; flex-direction:column; gap:5px; padding:4px; margin-left:0.5rem; }
+.hamburger span { display:block; width:24px; height:2px; background:white; border-radius:2px; transition:all 0.3s; }
+.mobile-menu { display:none; position:fixed; top:64px; left:0; right:0; z-index:999; background:var(--red-dark); flex-direction:column; border-top:2px solid rgba(255,255,255,0.15); box-shadow:0 8px 24px rgba(0,0,0,0.3); }
+.mobile-menu.open { display:flex; }
+.mobile-menu a { background:none; border:none; border-bottom:1px solid rgba(255,255,255,0.1); color:white; font-family:'Noto Sans','Noto Sans SC',sans-serif; font-size:1rem; padding:1rem 1.5rem; text-align:left; cursor:pointer; transition:background 0.2s; text-decoration:none; display:block; }
+.mobile-menu a:hover { background:rgba(0,0,0,0.2); }
+@media(max-width:768px) {
+  .nav-links { display:none; }
+  .hamburger { display:flex; }
+  nav { padding:0 1rem; }
+  .nav-donate { font-size:0.875rem; padding:0.4rem 0.75rem; margin-left:0.5rem; }
+  .section { padding:2.5rem 4%; }
+  .page-header h1 { font-size:1.8rem; }
+}
+
+/* ── YEAR TABS ── */
+.year-tabs {
+  display:flex;
+  gap:0;
+  border-bottom:3px solid var(--gold);
+  margin-bottom:2.5rem;
+  flex-wrap:wrap;
+}
+.year-tab {
+  padding:0.75rem 2rem;
+  background:var(--cream);
+  border:none;
+  border-bottom:3px solid transparent;
+  margin-bottom:-3px;
+  cursor:pointer;
+  font-family:'Noto Serif',serif;
+  font-size:1.1rem;
+  font-weight:700;
+  color:var(--slate);
+  letter-spacing:0.05em;
+  transition:all 0.2s;
+}
+.year-tab:hover { background:#efe8db; color:var(--navy); }
+.year-tab.active {
+  background:white;
+  color:var(--red);
+  border-bottom-color:white;
+  border-top:3px solid var(--gold);
+  border-left:1px solid rgba(0,0,0,0.1);
+  border-right:1px solid rgba(0,0,0,0.1);
+}
+.year-panel { display:none; }
+.year-panel.active { display:block; }
+
+/* ── NEWS CARD GRID ── */
+.news-grid {
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:1.5rem;
+  margin-bottom:2rem;
+}
+@media(max-width:900px) { .news-grid { grid-template-columns:repeat(2,1fr); } }
+@media(max-width:560px) { .news-grid { grid-template-columns:1fr; } }
+
+.news-card {
+  background:white;
+  border-radius:8px;
+  box-shadow:0 3px 16px rgba(0,0,0,0.08);
+  overflow:hidden;
+  cursor:pointer;
+  border:1px solid rgba(0,0,0,0.06);
+  transition:transform 0.2s, box-shadow 0.2s;
+  display:flex;
+  flex-direction:column;
+}
+.news-card:hover {
+  transform:translateY(-4px);
+  box-shadow:0 10px 32px rgba(0,0,0,0.14);
+}
+.news-card-header {
+  background:linear-gradient(135deg, var(--navy), #2d4a6e);
+  padding:1.2rem 1.3rem 1rem;
+  position:relative;
+}
+.news-card-month {
+  font-family:'Noto Serif',serif;
+  font-size:0.7rem;
+  font-weight:700;
+  letter-spacing:0.15em;
+  text-transform:uppercase;
+  color:var(--gold-light);
+  margin-bottom:0.35rem;
+}
+.news-card-title {
+  font-family:'Noto Serif',serif;
+  font-size:1rem;
+  font-weight:700;
+  color:white;
+  line-height:1.4;
+}
+.news-card-img {
+  width:100%;
+  height:160px;
+  object-fit:cover;
+  display:block;
+  background:var(--light-blue);
+}
+.news-card-img-placeholder {
+  width:100%;
+  height:120px;
+  background:linear-gradient(135deg,var(--light-blue),#d4e8f8);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:2rem;
+  color:var(--navy);
+  opacity:0.4;
+}
+.news-card-body {
+  padding:1rem 1.3rem 1.2rem;
+  flex:1;
+  display:flex;
+  flex-direction:column;
+}
+.news-card-excerpt {
+  font-size:0.85rem;
+  color:var(--slate);
+  line-height:1.7;
+  flex:1;
+  /* clamp to 3 lines */
+  display:-webkit-box;
+  -webkit-line-clamp:3;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+}
+.news-card-footer {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-top:0.9rem;
+  padding-top:0.75rem;
+  border-top:1px solid rgba(0,0,0,0.07);
+}
+.news-card-count {
+  font-size:0.75rem;
+  color:var(--slate);
+  opacity:0.7;
+}
+.news-card-read {
+  font-size:0.78rem;
+  font-weight:700;
+  color:var(--red);
+  letter-spacing:0.03em;
+}
+
+/* ── COMING SOON CARD ── */
+.news-card-soon .news-card-header {
+  background:linear-gradient(135deg, #8a9ab0, #b0bec8);
+}
+.news-card-soon {
+  opacity:0.65;
+  cursor:default;
+}
+.news-card-soon:hover { transform:none; box-shadow:0 3px 16px rgba(0,0,0,0.08); }
+.badge-soon {
+  display:inline-block;
+  background:rgba(255,255,255,0.2);
+  color:white;
+  font-size:0.65rem;
+  font-weight:700;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  padding:0.2rem 0.55rem;
+  border-radius:20px;
+  margin-top:0.5rem;
+}
+
+/* ── PLACEHOLDER YEAR ── */
+.year-placeholder {
+  text-align:center;
+  padding:4rem 2rem;
+  color:var(--slate);
+}
+.year-placeholder .icon { font-size:3rem; margin-bottom:1rem; opacity:0.4; }
+.year-placeholder p { font-size:0.95rem; }
+
+/* ── MODAL ── */
+.modal-overlay {
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.6);
+  z-index:2000;
+  padding:1.5rem;
+  overflow-y:auto;
+  backdrop-filter:blur(3px);
+}
+.modal-overlay.open { display:flex; align-items:flex-start; justify-content:center; }
+.modal {
+  background:white;
+  border-radius:10px;
+  max-width:760px;
+  width:100%;
+  margin:auto;
+  box-shadow:0 24px 80px rgba(0,0,0,0.3);
+  overflow:hidden;
+  animation:modalIn 0.22s ease;
+}
+@keyframes modalIn { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
+
+.modal-header {
+  background:linear-gradient(135deg, var(--navy), #2d4a6e);
+  padding:2rem 2rem 1.5rem;
+  position:relative;
+}
+.modal-close {
+  position:absolute;
+  top:1rem; right:1rem;
+  background:rgba(255,255,255,0.15);
+  border:none;
+  color:white;
+  width:32px; height:32px;
+  border-radius:50%;
+  font-size:1.1rem;
+  cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+  transition:background 0.2s;
+}
+.modal-close:hover { background:rgba(255,255,255,0.3); }
+.modal-month {
+  font-size:0.7rem;
+  font-weight:700;
+  letter-spacing:0.15em;
+  text-transform:uppercase;
+  color:var(--gold-light);
+  margin-bottom:0.4rem;
+}
+.modal-title {
+  font-family:'Noto Serif',serif;
+  font-size:1.5rem;
+  font-weight:700;
+  color:white;
+  line-height:1.3;
+  padding-right:2rem;
+}
+.modal-body {
+  padding:2rem;
+  max-height:70vh;
+  overflow-y:auto;
+}
+.modal-body p {
+  font-size:0.92rem;
+  color:var(--slate);
+  line-height:1.9;
+  margin-bottom:1rem;
+}
+.modal-body p:last-child { margin-bottom:0; }
+.modal-body h4 {
+  font-family:'Noto Serif',serif;
+  font-size:1.05rem;
+  color:var(--navy);
+  margin:1.5rem 0 0.5rem;
+  font-weight:700;
+}
+.modal-body .story-divider {
+  border:none;
+  border-top:2px solid var(--gold);
+  opacity:0.3;
+  margin:1.5rem 0;
+}
+.modal-body blockquote {
+  border-left:4px solid var(--gold);
+  padding:0.75rem 1rem;
+  background:var(--cream);
+  border-radius:0 4px 4px 0;
+  margin:1rem 0;
+  font-style:italic;
+  color:var(--navy);
+  font-size:0.9rem;
+  line-height:1.8;
+}
+.modal-img-grid {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:0.75rem;
+  margin:1.2rem 0;
+}
+.modal-img-grid img {
+  width:100%; border-radius:6px; object-fit:cover; height:180px;
+}
+.modal-img-placeholder {
+  width:100%; border-radius:6px; height:180px;
+  background:linear-gradient(135deg,var(--light-blue),#d4e8f8);
+  display:flex; align-items:center; justify-content:center;
+  font-size:2.5rem; color:var(--navy); opacity:0.35;
+}
+</style>
+</head>
+<body data-nav="news">
+
+<nav aria-label="Main navigation" role="navigation">
+  <a aria-label="CCCRI Home" class="nav-logo" href="index.html">
+    <img alt="CCCRI logo" src="assets/images/img_a20f2f15e524.gif"/>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">主页 Home</a>
+    <a href="about.html">关于我们 About</a>
+    <a href="worship.html">敬拜 Worship</a>
+    <a href="events.html">活动 Events</a>
+    <a href="ministries.html">事工 Ministries</a>
+    <a href="news.html" class="active">消息 News</a>
+    <a href="resources.html">资源 Resources</a>
+    <a href="contact.html">联系 Contact</a>
+  </div>
+  <button aria-expanded="false" aria-label="Open navigation menu" class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
+  <a class="nav-donate" href="https://tithe.ly/give_new/www/#/tithely/give-one-time/1707700" rel="noopener" target="_blank">線上奉獻 Donate</a>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html">主页 Home</a>
+  <a href="about.html">关于我们 About Us</a>
+  <a href="worship.html">敬拜 Worship</a>
+  <a href="events.html">活动 Events</a>
+  <a href="ministries.html">事工 Ministries</a>
+  <a href="news.html">消息 News</a>
+  <a href="resources.html">资源 Resources</a>
+  <a href="contact.html">联系 Contact</a>
+</div>
+
+<main class="page">
+  <div class="page-header" role="banner">
+    <p class="zh">消息與見證</p>
+    <h1>News &amp; Updates</h1>
+    <p style="font-family:'Noto Sans SC',sans-serif;font-size:1rem;color:rgba(255,255,255,0.8);margin-bottom:0.15rem;">記錄上帝在我們中間的工作</p>
+    <p>A record of God's work among us</p>
+  </div>
+
+  <div class="section">
+    <div style="max-width:1060px;margin:0 auto;">
+      <div class="gold-divider"></div>
+      <p style="font-family:'Noto Sans SC',sans-serif;font-size:1.6rem;color:var(--gold);font-weight:700;margin-bottom:0.1rem;">年度消息</p>
+      <h2 class="section-title">Ministry News by Year</h2>
+      <p class="section-subtitle"><span style="font-family:'Noto Sans SC',sans-serif;display:block;margin-bottom:0.2rem;">點擊月份卡片閱讀完整報告</span>Click any month card to read the full report</p>
+
+      <!-- YEAR TABS -->
+      <div class="year-tabs" role="tablist">
+        <button class="year-tab" role="tab" onclick="switchYear('2023')">2023</button>
+        <button class="year-tab" role="tab" onclick="switchYear('2024')">2024</button>
+        <button class="year-tab" role="tab" onclick="switchYear('2025')">2025</button>
+        <button class="year-tab active" role="tab" onclick="switchYear('2026')">2026</button>
+      </div>
+
+      <!-- 2023 -->
+      <div class="year-panel" id="panel-2023">
+        <div class="news-grid">
+
+          <!-- APRIL 2023 -->
+          <div class="news-card" onclick="openModal('apr2023')">
+            <div class="news-card-header">
+              <div class="news-card-month">April 2023 · 四月</div>
+              <div class="news-card-title">Table Tennis Tournament &amp; Brothers/Sisters' Retreat</div>
+            </div>
+            <img class="news-card-img" src="April2023.webp" alt="April 2023"/>
+            <div class="news-card-body">
+              <p class="news-card-excerpt">Nearly 50 members competed across 28 matches over two weekends in a friendly table tennis tournament. Also, nearly 100 church members attended the biennial joint brothers and sisters' retreat with special lectures on rebuilding love in the family.</p>
+              <div class="news-card-footer">
+                <span class="news-card-count">2 stories</span>
+                <span class="news-card-read">Read more →</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- MAY 2023 -->
+          <div class="news-card" onclick="openModal('may2023')">
+            <div class="news-card-header">
+              <div class="news-card-month">May 2023 · 五月</div>
+              <div class="news-card-title">Prayer, Cleaning, Mother's Day &amp; Community Events</div>
+            </div>
+            <img class="news-card-img" src="May2023.webp" alt="May 2023"/>
+            <div class="news-card-body">
+              <p class="news-card-excerpt">A busy month: National Day of Prayer service, the annual church cleaning day with nearly 100 volunteers, handmade Mother's Day corsages, a fellowship staff retreat, a CEF children's Bible seminar, and a multicultural food and hymn festival.</p>
+              <div class="news-card-footer">
+                <span class="news-card-count">6 stories</span>
+                <span class="news-card-read">Read more →</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- JUNE 2023 -->
+          <div class="news-card" onclick="openModal('jun2023')">
+            <div class="news-card-header">
+              <div class="news-card-month">June 2023 · 六月</div>
+              <div class="news-card-title">Joint Fellowships, Graduation, Father's Day &amp; Baptism</div>
+            </div>
+            <img class="news-card-img" src="June2023.webp" alt="June 2023"/>
+            <div class="news-card-body">
+              <p class="news-card-excerpt">Caleb and Joyful fellowships held a joint gathering. The Evangelism Department hosted a calligraphy and flower arrangement event. The Chinese School held its graduation ceremony, and Father's Day was celebrated alongside a baptism service.</p>
+              <div class="news-card-footer">
+                <span class="news-card-count">5 stories</span>
+                <span class="news-card-read">Read more →</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- JULY 2023 -->
+          <div class="news-card" onclick="openModal('jul2023')">
+            <div class="news-card-header">
+              <div class="news-card-month">July 2023 · 七月</div>
+              <div class="news-card-title">Hymn Testimony Meeting &amp; Worship Dept. Training</div>
+            </div>
+            <img class="news-card-img" src="July2023.webp" alt="July 2023"/>
+            <div class="news-card-body">
+              <p class="news-card-excerpt">Over 80 people attended the church's first ever hymn sharing and testimony meeting on July 9th. The Worship Department also held a series of training retreats to strengthen Sunday worship across audio-visual, reception, and music ministry teams.</p>
+              <div class="news-card-footer">
+                <span class="news-card-count">2 stories</span>
+                <span class="news-card-read">Read more →</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- AUGUST 2023 -->
+          <div class="news-card" onclick="openModal('aug2023')">
+            <div class="news-card-header">
+              <div class="news-card-month">August 2023 · 八月</div>
+              <div class="news-card-title">Care Dept. Retreat, VBS &amp; Jia Mei Cruise</div>
+            </div>
+            <img class="news-card-img" src="August2023.webp" alt="August 2023"/>
+            <div class="news-card-body">
+              <p class="news-card-excerpt">The Care Department held a training retreat. The 2023 Vacation Bible School "Stellar" welcomed nearly 100 children with 70+ volunteers. Jia Mei Fellowship organized a five-day cruise to Saint John, Canada, with nearly 65 members.</p>
+              <div class="news-card-footer">
+                <span class="news-card-count">3 stories</span>
+                <span class="news-card-read">Read more →</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- SEPTEMBER 2023 -->
+          <div class="news-card" onclick="openModal('sep2023')">
+            <div class="news-card-header">
+              <div class="news-card-month">September 2023 · 九月</div>
+              <div class="news-card-title">Dragon Boat Festival &amp; Community Outreach</div>
+            </div>
+            <img class="news-card-img" src="September2023.webp" alt="September 2023"/>
+            <div class="news-card-body">
+              <p class="news-card-excerpt">The annual Rhode Island Dragon Boat Festival drew nearly thirty teams. The church's team competed while the evangelism booth — featuring balloon animals, Chinese school enrollment, and gospel materials — reached the broader community.</p>
+              <div class="news-card-footer">
+                <span class="news-card-count">1 story</span>
+                <span class="news-card-read">Read more →</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- OCTOBER 2023 -->
+          <div class="news-card" onclick="openModal('oct2023')">
+            <div class="news-card-header">
+              <div class="news-card-month">October 2023 · 十月</div>
+              <div class="news-card-title">Joint Fellowship &amp; 6th Bible Knowledge Competition</div>
+            </div>
+            <img class="news-card-img" src="October2023.webp" alt="October 2023"/>
+            <div class="news-card-body">
+              <p class="news-card-excerpt">Over 100 members from Caleb and Jia Mei fellowships gathered for games, hymns, and testimony sharing. The 6th Bible Knowledge Competition on 1 &amp; 2 Samuel saw Jia Mei Fellowship claim their second consecutive championship.</p>
+              <div class="news-card-footer">
+                <span class="news-card-count">2 stories</span>
+                <span class="news-card-read">Read more →</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- NOVEMBER 2023 -->
+          <div class="news-card" onclick="openModal('nov2023')">
+            <div class="news-card-header">
+              <div class="news-card-month">November 2023 · 十一月</div>
+              <div class="news-card-title">Thanksgiving Celebration</div>
+            </div>
+            <img class="news-card-img" src="November2023.webp" alt="November 2023"/>
+            <div class="news-card-body">
+              <p class="news-card-excerpt">About 300 brothers, sisters, and friends gathered for the Thanksgiving service on November 23rd, jointly organized by the Evangelism and Fellowship Departments. Four members shared testimonies followed by a sumptuous turkey feast.</p>
+              <div class="news-card-footer">
+                <span class="news-card-count">1 story</span>
+                <span class="news-card-read">Read more →</span>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /news-grid 2023 -->
+      </div><!-- /panel-2023 -->
+
+      <!-- 2024 -->
+      <div class="year-panel" id="panel-2024">
+        <div class="year-placeholder">
+          <div class="icon">📁</div>
+          <p style="font-family:'Noto Sans SC',sans-serif;margin-bottom:0.4rem;">2024年的消息正在整理中</p>
+          <p>2024 archive is being migrated from individual pages. Check back soon.</p>
+        </div>
+      </div>
+
+      <!-- 2025 -->
+      <div class="year-panel" id="panel-2025">
+        <div class="news-grid">
+
+          <!-- JANUARY -->
+          <div class="news-card" onclick="openModal('jan2025')">
+            <div class="news-card-header">
+              <div class="news-card-month">January 2025 · 一月</div>
+              <div class="news-card-title">English Class Lunar New Year Celebration</div>
+            </div>
+            <div class="news-card-img-placeholder">🎊</div>
+            <div class="news-card-body">
+              <p class="news-card-excerpt">A special Lunar New Year gathering was held in the church coffee room for three English classes, attracting over 25 teachers, students, and families. Participants received red envelopes containing five-colored gospel beads.</p>
+              <div class="news-card-footer">
+                <span class="news-card-count">1 story</span>
+                <span class="news-card-read">Read more →</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- MAY -->
+          <div class="news-card" onclick="openModal('may2025')">
+            <div class="news-card-header">
+              <div class="news-card-month">May 2025 · 五月</div>
+              <div class="news-card-title">Violin Recital: Brother Shang Quan</div>
+            </div>
+            <div class="news-card-img-placeholder">🎻</div>
+            <div class="news-card-body">
+              <p class="news-card-excerpt">Former principal violinist of the Railway Art Troupe performed over ten moving Christian hymns, drawing over 120 attendees including many new friends to the church.</p>
+              <div class="news-card-footer">
+                <span class="news-card-count">1 story</span>
+                <span class="news-card-read">Read more →</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- JULY -->
+          <div class="news-card" onclick="openModal('jul2025')">
+            <div class="news-card-header">
+              <div class="news-card-month">July 2025 · 七月</div>
+              <div class="news-card-title">Good Luck Supermarket Outreach</div>
+            </div>
+            <div class="news-card-img-placeholder">🛒</div>
+            <div class="news-card-body">
+              <p class="news-card-excerpt">The Missionary Department held its first "Rhode Island Evangelism Outreach" event at Good Luck Supermarket. Over 20 brothers and sisters participated, using games and crafts to share the gospel with the community.</p>
+              <div class="news-card-footer">
+                <span class="news-card-count">1 story</span>
+                <span class="news-card-read">Read more →</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- AUGUST -->
+          <div class="news-card" onclick="openModal('aug2025')">
+            <div class="news-card-header">
+              <div class="news-card-month">August 2025 · 八月</div>
+              <div class="news-card-title">Dragon Boat Festival Outreach</div>
+            </div>
+            <div class="news-card-img-placeholder">🐉</div>
+            <div class="news-card-body">
+              <p class="news-card-excerpt">The 26th annual Rhode Island Dragon Boat Festival at Festival Pier in Pawtucket. The church's team Row Model competed, while the Chinese and English sections ran an outreach booth reaching hundreds of families.</p>
+              <div class="news-card-footer">
+                <span class="news-card-count">1 story</span>
+                <span class="news-card-read">Read more →</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- OCTOBER -->
+          <div class="news-card" onclick="openModal('oct2025')">
+            <div class="news-card-header">
+              <div class="news-card-month">October 2025 · 十月</div>
+              <div class="news-card-title">Vermont Fall Foliage Trips</div>
+            </div>
+            <div class="news-card-img-placeholder">🍂</div>
+            <div class="news-card-body">
+              <p class="news-card-excerpt">Two fellowships journeyed to Vermont for autumn foliage trips — Home Fellowship's four-day trip to Lake Champlain and Stowe, and New Song Canaan Fellowship's three-day retreat filled with worship and fellowship.</p>
+              <div class="news-card-footer">
+                <span class="news-card-count">2 stories</span>
+                <span class="news-card-read">Read more →</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- NOVEMBER -->
+          <div class="news-card" onclick="openModal('nov2025')">
+            <div class="news-card-header">
+              <div class="news-card-month">November 2025 · 十一月</div>
+              <div class="news-card-title">Thanksgiving, Bible Competition &amp; Joint Fellowship</div>
+            </div>
+            <div class="news-card-img-placeholder">🙏</div>
+            <div class="news-card-body">
+              <p class="news-card-excerpt">Nearly 500 gathered for the annual Thanksgiving celebration. The 8th Bible Knowledge Competition focused on Acts. Jia Mei and Caleb fellowships held a moving joint event with testimonies, hymns, and a wonton lunch.</p>
+              <div class="news-card-footer">
+                <span class="news-card-count">3 stories</span>
+                <span class="news-card-read">Read more →</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- DECEMBER -->
+          <div class="news-card" onclick="openModal('dec2025')">
+            <div class="news-card-header">
+              <div class="news-card-month">December 2025 · 十二月</div>
+              <div class="news-card-title">Christmas Season: Love in Action</div>
+            </div>
+            <div class="news-card-img-placeholder">🌟</div>
+            <div class="news-card-body">
+              <p class="news-card-excerpt">A month full of ministry: senior center visit, English class celebration, charity concert benefiting 400 community members, Brown University student care, 500-family Christmas lunch delivery, and reflections on the gift of Christ.</p>
+              <div class="news-card-footer">
+                <span class="news-card-count">6 stories</span>
+                <span class="news-card-read">Read more →</span>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /news-grid -->
+      </div><!-- /panel-2025 -->
+
+      <!-- 2026 -->
+      <div class="year-panel active" id="panel-2026">
+        <div class="news-grid">
+
+          <!-- FEBRUARY 2026 -->
+          <div class="news-card" onclick="openModal('feb2026')">
+            <div class="news-card-header">
+              <div class="news-card-month">February 2026 · 二月</div>
+              <div class="news-card-title">14th Annual Spring Festival Gala — "Going Home for the New Year"</div>
+            </div>
+            <img class="news-card-img" src="1_2.webp" alt="Spring Festival Gala group photo"/>
+            <div class="news-card-body">
+              <p class="news-card-excerpt">On February 14th, the Family Fellowship hosted its 14th Annual Spring Festival Gala. Brothers and sisters gathered with songs, dances, testimonies, a love feast, and a dumpling-making session to celebrate the Lunar New Year together in the Lord's house.</p>
+              <div class="news-card-footer">
+                <span class="news-card-count">3 photos · 1 story</span>
+                <span class="news-card-read">Read more →</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- MARCH 2026 - CONCERT -->
+          <div class="news-card" onclick="openModal('mar2026')">
+            <div class="news-card-header">
+              <div class="news-card-month">March 2026 · 三月</div>
+              <div class="news-card-title">"The Most Beautiful Blessing in This Life" Concert</div>
+            </div>
+            <img class="news-card-img" src="2_2.webp" alt="Choir performing at the blessing concert"/>
+            <div class="news-card-body">
+              <p class="news-card-excerpt">A blessing concert drew many non-Christians and first-time visitors to the church. Featuring the Boston Star Orchestra, soloists, and a choir, the evening was filled with hymns that moved the audience to spontaneously join in worship.</p>
+              <div class="news-card-footer">
+                <span class="news-card-count">3 photos · 1 story</span>
+                <span class="news-card-read">Read more →</span>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /news-grid 2026 -->
+      </div><!-- /panel-2026 -->
+
+    </div>
+  </div>
+</main>
+
+<!-- ═══════════════ MODALS ═══════════════ -->
+
+<!-- JANUARY 2025 -->
+<div class="modal-overlay" id="modal-jan2025" onclick="closeModalOutside(event, 'jan2025')">
+  <div class="modal">
+    <div class="modal-header">
+      <button class="modal-close" onclick="closeModal('jan2025')">✕</button>
+      <div class="modal-month">January 2025 · 一月</div>
+      <div class="modal-title">English Class Lunar New Year Celebration</div>
+    </div>
+    <div class="modal-body">
+      <p><em>Church website editor Chen Ting reports.</em></p>
+      <p>On January 19th, from 1:45 PM to 3:15 PM, a special "2025 English Class Lunar New Year Celebration Gathering" was held in the church coffee room for the three English classes, attracting over 25 teachers, students, and their families.</p>
+      <p>In addition to hymns, games, and food sharing, each participant received a "red envelope" containing five-colored beads, which the teacher used to share the true meaning of the Gospel.</p>
+      <p>We thank the Lord that through this celebration, seekers could hear the Gospel, and we pray that the Lord will bless the students' learning and continue to guide the Evangelistic Department in providing them with opportunities for spiritual growth.</p>
+    </div>
+  </div>
+</div>
+
+<!-- MAY 2025 -->
+<div class="modal-overlay" id="modal-may2025" onclick="closeModalOutside(event, 'may2025')">
+  <div class="modal">
+    <div class="modal-header">
+      <button class="modal-close" onclick="closeModal('may2025')">✕</button>
+      <div class="modal-month">May 2025 · 五月</div>
+      <div class="modal-title">Violin Recital: Brother Shang Quan</div>
+    </div>
+    <div class="modal-body">
+      <p><em>Church website editor Chen Ting reports.</em></p>
+      <p>On May 16, 2025, Brother Shang Quan, former principal violinist of the Railway Art Troupe and now residing in Australia, visited the Rhode Island Chinese Christian Church and performed more than ten original and moving Christian hymns.</p>
+      <p>The violin recital that evening attracted over 120 attendees, many of whom were new friends. Besides enjoying Brother Shang Quan's beautiful violin playing, Brother Li Qi, the church's professional director, also shared his salvation testimony, deeply moving the attendees.</p>
+      <p>We offer our thanks and praise to God for this wonderful evening of music and testimony.</p>
+    </div>
+  </div>
+</div>
+
+<!-- JULY 2025 -->
+<div class="modal-overlay" id="modal-jul2025" onclick="closeModalOutside(event, 'jul2025')">
+  <div class="modal">
+    <div class="modal-header">
+      <button class="modal-close" onclick="closeModal('jul2025')">✕</button>
+      <div class="modal-month">July 2025 · 七月</div>
+      <div class="modal-title">Good Luck Supermarket Outreach</div>
+    </div>
+    <div class="modal-body">
+      <p><em>Church website editor Chen Ting reports.</em></p>
+      <p>On July 27, the Missionary Department Church held its first "Rhode Island Evangelism Outreach" event at Good Luck Supermarket from 3 p.m. to 4 p.m.</p>
+      <p>This outreach event not only provided practical opportunities for participants in the summer Sunday school evangelism course, but also encouraged brothers and sisters in the church to participate and experience it, bringing the gospel into the community. More than 20 brothers and sisters participated on the day.</p>
+      <p>The outreach activities received strong support from the Boston Short-Term Mission Center, who sent four brothers and sisters from Boston to help, providing gospel tools and games. Everyone served together with great enthusiasm. By using relaxed methods — playing games and doing crafts — to bring children to the booth, we took the opportunity to talk to parents, reaching out to new friends in the community with warm smiles and care.</p>
+      <p>Thanks be to the Lord for giving our brothers and sisters a fervent heart for sharing the gospel. We also saw brothers who hadn't returned to church for a long time come to us through this event. This outreach experience will be very helpful for planning future outreach activities and gives us greater confidence to fulfill the "Great Commission" entrusted to us by the Lord.</p>
+      <blockquote>"Preach the word, be prepared in season and out of season; correct, admonish and encourage with great patience and careful instruction." — 2 Timothy 4:2</blockquote>
+    </div>
+  </div>
+</div>
+
+<!-- AUGUST 2025 -->
+<div class="modal-overlay" id="modal-aug2025" onclick="closeModalOutside(event, 'aug2025')">
+  <div class="modal">
+    <div class="modal-header">
+      <button class="modal-close" onclick="closeModal('aug2025')">✕</button>
+      <div class="modal-month">August 2025 · 八月</div>
+      <div class="modal-title">Dragon Boat Festival Outdoor Outreach</div>
+    </div>
+    <div class="modal-body">
+      <p><em>Church website editor Chen Ting reports.</em></p>
+      <p>The 26th annual Rhode Island Dragon Boat Festival was held on August 30th at Festival Pier in Pawtucket. This year's festival was larger than last year, attracting over 20 professional and amateur teams. The church's dragon boat team, Row Model, once again sent nearly 25 members to compete.</p>
+      <p>The church's Chinese and English sections and the Chinese school set up a joint outreach booth at this year's Dragon Boat Festival, offering games suitable for all ages, such as balloon twisting, rock drawing, curling, tic-tac-toe, puzzles, gospel stickers and pens, colorful beads, and gospel crafts. They also distributed a large number of evangelistic pamphlets.</p>
+      <p>The booth was packed with visitors, especially families and children, who all had a wonderful time. We not only brought joy to the community but also had the opportunity to sow seeds of the gospel.</p>
+      <p>Thanks be to God, more than 50 brothers and sisters from the Chinese and English churches, as well as 4 friends from the Boston Short-Term Mission Center, participated in the outreach activities that day. Some new friends also came to church for a service the day after the Dragon Boat Festival outreach.</p>
+      <p>The Gospel is the power of God. This event allowed us to experience God's wonderful protection and grace, enabling us to reach more Chinese people, raising community awareness of the church, and letting more people know about the church and Chinese schools. Glory, praise, and accord to the one true God who loves us.</p>
+    </div>
+  </div>
+</div>
+
+<!-- OCTOBER 2025 -->
+<div class="modal-overlay" id="modal-oct2025" onclick="closeModalOutside(event, 'oct2025')">
+  <div class="modal">
+    <div class="modal-header">
+      <button class="modal-close" onclick="closeModal('oct2025')">✕</button>
+      <div class="modal-month">October 2025 · 十月</div>
+      <div class="modal-title">Vermont Fall Foliage Trips</div>
+    </div>
+    <div class="modal-body">
+      <h4>Home Fellowship Vermont Fall Foliage Tour (Oct. 10–13)</h4>
+      <p><em>Contributed by Xiong Fang, editor-in-chief of the church website.</em></p>
+      <p>From October 10th to 13th, over forty brothers and sisters from Home Fellowship traveled to Vermont for a four-day fall foliage viewing trip, staying at Sonnets ES Suites in Williston, VT. The trip not only allowed them to appreciate the magnificent autumn scenery but also provided an opportunity to experience the abundant grace of the Lord through fellowship and worship.</p>
+      <p>On Saturday, everyone went hiking in Mount Philo State Park in Charlotte, VT — a trail of about 1.9 miles. Along the way, the maple forests were layered and a gentle breeze caressed their faces. After reaching the summit, overlooking Lake Champlain and the autumn colors of the mountains, everyone praised the wonder and greatness of God's creation.</p>
+      <p>That afternoon, the group visited the famous Church Street Marketplace in downtown Burlington, enjoying street music, local delicacies, and ice cream. In the evening, the brothers and sisters boarded the Harvest Moon Dinner Cruise and sailed along Lake Champlain. The sunset and autumn colors intertwined, the lake was as calm as a mirror, and distant lights twinkled.</p>
+      <p>On Sunday morning, the group drove to the picturesque town of Stowe and attended Sunday worship at the renowned Stowe Community Church, where Brother Paul preached on the theme of "Love and Justice" from Psalm 85:10.</p>
+      <blockquote>"Behold, how good and pleasant it is when brothers dwell together in unity!" — Psalm 133:1</blockquote>
+
+      <hr class="story-divider"/>
+
+      <h4>New Song Canaan Fellowship Vermont Trip (Oct. 11–13)</h4>
+      <p><em>Contributed by Yunmei, special editor for the church website.</em></p>
+      <p>Eight families from New Song Canaan Fellowship — a total of 29 people — also embarked on a Vermont autumn foliage journey. During three days and two nights, they appreciated the beauty of God's creation, trekked through mountains to discover the beauty of waterfalls, showcased their culinary skills in the kitchen, and participated in various games amidst laughter and joy.</p>
+      <p>God prepared a special place for them to sing and worship freely, with wonderful testimonies and sharing from the brothers and sisters. They happily climbed mountains, worshipped the Lord with sincere hearts, and shared their innermost thoughts during evening tea breaks. The children played joyfully in the water. Every moment spent with family, every gathering in fellowship, allowed them to feel God's grace and presence even more deeply.</p>
+      <p>Thanks be to the Lord for His provision, and thanks to the brothers and sisters for their thoughtful arrangements. Although the journey is not yet over, they are already looking forward to their next gathering.</p>
+    </div>
+  </div>
+</div>
+
+<!-- NOVEMBER 2025 -->
+<div class="modal-overlay" id="modal-nov2025" onclick="closeModalOutside(event, 'nov2025')">
+  <div class="modal">
+    <div class="modal-header">
+      <button class="modal-close" onclick="closeModal('nov2025')">✕</button>
+      <div class="modal-month">November 2025 · 十一月</div>
+      <div class="modal-title">Thanksgiving, Bible Competition &amp; Joint Fellowship</div>
+    </div>
+    <div class="modal-body">
+      <h4>2025 Church Thanksgiving Activities</h4>
+      <p><em>Deacon Song Xiaohui reports.</em></p>
+      <p>This year's Thanksgiving event was held and concluded successfully under the Lord's grace. Nearly 500 brothers and sisters and guests participated, creating a warm, lively, and joyful atmosphere.</p>
+      <p>The various fellowships within the church devoted themselves wholeheartedly to the preparations. From setup and reception to catering and the sharing of testimonies, everything proceeded smoothly and collaboratively. The lunch that day was plentiful and delicious, and many longtime friends, thanks to the care and concern of fellowship members, once again deeply felt the warmth of the church family.</p>
+      <p>The post-meal thanksgiving sharing was even more touching. Brothers and sisters recounted their experiences of God's power and guidance over the past year, testifying to God's grace and giving glory to the true God, filling the entire church with gratitude and joy.</p>
+      <blockquote>What moved us most was not the increase in numbers, but the willingness of every brother and sister to serve together, allowing love and gratitude to truly flow among us.</blockquote>
+
+      <hr class="story-divider"/>
+
+      <h4>The 8th Bible Knowledge Competition (Nov. 9)</h4>
+      <p><em>Basic Education Department.</em></p>
+      <p>On November 9th, the 8th Bible Knowledge Competition was held at the church. This year's competition focused on the Book of Acts, with the Faithful, Good, Song of Canaan, Living Water, and Heavenly Road groups participating. After a friendly 40-minute competition, the Living Water group won first place, while the Heavenly Road and Faithful groups won second and third place respectively.</p>
+      <p>A new approach was adopted this year: one round of 40 minutes in a semi-open-book format — 25 minutes closed-book, followed by 15 minutes where participants could open their paper Bibles. It is hoped this approach will encourage participation, reduce competition pressure, and allow participants to enjoy the reading process.</p>
+      <p>The Bible knowledge competition began in 2017 and has been held annually except for 2020 due to the pandemic. May God continue to guide this competition and may our brothers and sisters strive harder to read the Bible.</p>
+
+      <hr class="story-divider"/>
+
+      <h4>Jia Mei &amp; Caleb Joint Fellowship — "Regaining Strength"</h4>
+      <p><em>Contributed by He Xiaomei, Special Editor of the Church Website.</em></p>
+      <p>On the third weekend of November, the brothers and sisters of Jia Mei and Caleb Fellowship welcomed their long-awaited joint fellowship. The event was held in the main hall with more than 80 brothers and sisters in attendance, filled with laughter, gentle greetings, and warm interactions.</p>
+      <p>The event, scheduled from 10:00 AM to 12:00 PM, focused on the theme of renewed strength. It began with praise, as everyone joyfully sang "Soaring on Wings of an Eagle." A missionary couple supported by the church shared their experiences and calling, including their ministry in the Philippines where they serve children of missionary families from around the world.</p>
+      <p>A sister from the Jia Mei Fellowship shared her experience of battling cancer for over two years, recounting God's grace and His work in her life, how God upheld her with His mighty arm and carried her through the valley of death. She also shared the unwavering care from the brothers and sisters who were more than family to her.</p>
+      <p>The event concluded with a wonton-making lunch session. The most popular dish was Shanghai-style wontons with shepherd's purse and pork filling, prepared by sisters from Shanghai. Laughter and joy echoed in the dining room.</p>
+      <blockquote>"But those who hope in the Lord will renew their strength; they will soar on wings of an eagle; they will run and not grow weary, they will walk and not faint." — Isaiah 40:31</blockquote>
+    </div>
+  </div>
+</div>
+
+<!-- DECEMBER 2025 -->
+<div class="modal-overlay" id="modal-dec2025" onclick="closeModalOutside(event, 'dec2025')">
+  <div class="modal">
+    <div class="modal-header">
+      <button class="modal-close" onclick="closeModal('dec2025')">✕</button>
+      <div class="modal-month">December 2025 · 十二月</div>
+      <div class="modal-title">Christmas Season: Love in Action</div>
+    </div>
+    <div class="modal-body">
+
+      <h4>Visit to Cranston Chinese Seniors Activity Center (Dec. 29)</h4>
+      <p><em>Church website editor Chen Ting reports.</em></p>
+      <p>On December 29th, the Ministry of Evangelism organized its first visit to the Cranston Chinese Day Care Center for Seniors. The church sent 17 brothers and sisters and their children, and 7 friends from the Boston Short-Term Mission Center also came to offer support.</p>
+      <p>Everyone came to serve with excitement and anticipation. The children opened the event with "Jesus Loves Me," and then parents and children danced the Hawaiian hula. Pastor Zeng Shizeng had a relaxed conversation with the elders in fluent Mandarin and Cantonese, reminding them that the most important purpose of Christmas is to share the love of Christ. We also brought Christmas gift bags to forty elders.</p>
+      <p>A special activity had participants make "eight-colored fish" crafts with the elderly, each color sharing the gospel message — from God's creation (green), to humanity's separation from God (black), to Christ's redemption (red), new life (white), joy and peace (yellow), salvation (blue), reconciliation (purple), and growth in faith (orange).</p>
+
+      <hr class="story-divider"/>
+
+      <h4>English Class Christmas Celebration (Dec. 21)</h4>
+      <p>On Sunday, December 21st, the English class held a Christmas celebration, attracting over 20 students, family members, new friends, teachers, and teaching assistants. The celebration included Christmas carols, delicious food, Christmas games, and a gift exchange.</p>
+      <p>Pastor Zeng Shizeng and his wife were invited to share the meaning of Christmas, encouraging everyone to emulate the selflessness and giving of Jesus Christ. Sister Hou Ya-ying, a student in the English class, shared her touching testimony of salvation — she saw a gentle, unseen hand guiding her to church, accepted salvation in faith, and became a member of the church last Christmas.</p>
+
+      <hr class="story-divider"/>
+
+      <h4>Christmas Charity Concert — Wakefield Concert Band (Dec. 14)</h4>
+      <p>The concert attracted approximately 400 community members. The Wakefield Concert Band performed several classic Christmas carols, culminating in a joyful sing-along. Participants dressed in Christmas costumes, and the stage was decorated with poinsettias, filling the entire church with a festive atmosphere. The concert also raised funds for the Elisha Project and Central Falls Library.</p>
+
+      <hr class="story-divider"/>
+
+      <h4>Brown University Shooting — Church Response</h4>
+      <p>Following the incident, the church acted swiftly: preparing Chinese meals to comfort affected Chinese students and their families, arranging brothers and sisters to deliver meals and pick up students to the airport, and Pastor Zeng visiting and praying for patients at the hospital.</p>
+      <blockquote>"We are truly grateful to have someone by our side and to show us care during this time." — Parents of affected students</blockquote>
+      <blockquote>"You are angels on earth, guardians sent by God!" — Community response</blockquote>
+
+      <hr class="story-divider"/>
+
+      <h4>Christmas Love Lunch Delivery (Dec. 20)</h4>
+      <p>The church, in conjunction with the Elisha Project, distributed Christmas gift packages and Chinese lunches to 500 families in need. Brothers and sisters began shopping, organizing, and preparing on Thursday. The stove was lit at 5:30 a.m. on Saturday morning. They worked non-stop for four hours and completed 550 boxed meals — pan-fried dumplings, char siu, pork ribs, vermicelli, and cabbage, with a bowl of white rice.</p>
+      <blockquote>"God is love, and whoever lives in love lives in God, and God in him." — 1 John 4:16</blockquote>
+
+      <hr class="story-divider"/>
+
+      <h4>A Gift — Reflection by Jia Mei Fellowship (Dec. 7)</h4>
+      <p>On December 7th, the Jia Mei Fellowship sang "A Gift" and "Amazing Grace" during worship. The familiar melodies filled the hall, gentle and sincere, reminding us that God has already prepared the best gift for humanity — Jesus Christ. Gifts are not earned through merit; they come from a loving heart and are given freely and unreservedly. More than two thousand years ago, God prepared a grace more precious and profound than any other gift in the world.</p>
+      <blockquote>Christmas reminds us that what is most precious to us is not what we can give to God, but what God has already given us — He gave Jesus to the world, brought light into darkness, placed hope in brokenness, and put eternity into the finite.</blockquote>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <span>📍 <strong style="color:var(--gold-light);">333 Roosevelt Ave, Pawtucket, RI 02860</strong></span>
+    <span>📞 <a href="tel:4017228877" style="color:var(--gold-light);">(401) 722-8877</a></span>
+  </div>
+  <p class="info">Chinese Christian Church of Rhode Island · 羅德島華人基督教會</p>
+  <p class="copy">© 2025 CCCRI. All rights reserved.</p>
+<!-- ══════ 2023 MODALS ══════ -->
+
+<!-- APRIL 2023 -->
+<div class="modal-overlay" id="modal-apr2023" onclick="closeModalOutside(event,'apr2023')">
+  <div class="modal">
+    <div class="modal-header">
+      <button class="modal-close" onclick="closeModal('apr2023')">✕</button>
+      <div class="modal-month">April 2023 · 四月</div>
+      <div class="modal-title">Table Tennis Tournament &amp; Brothers/Sisters' Retreat</div>
+    </div>
+    <div class="modal-body">
+      <h4>Table Tennis Friendly Match (April 23–30)</h4>
+      <p><em>Reported by Dongyan, Chinese Fellowship Department.</em></p>
+      <p>In April 2023, the church fellowship organized a friendly men's and women's table tennis tournament over two consecutive weekends. The brothers and sisters actively participated, making the competition lively and exciting. Nearly 50 participants competed in 28 matches.</p>
+      <p>The top four men were Zhao Kezhang, Liang Tianhua, Zhang Hua, and Chen Xinyuan. The top four women were Wu Haiwei, Pan Xiurong, Chen Dongling, and He Xiaomei.</p>
+      <p>This competition not only fostered a love for table tennis among the brothers and sisters and strengthened their bonds of affection, but also attracted many old and new friends who hadn't been seen in a long time to return and participate. It was truly a heartwarming fellowship activity.</p>
+      <hr class="story-divider"/>
+      <h4>Brothers and Sisters' Retreat (April 28–30)</h4>
+      <p><em>Reported by Xiaodong, Chinese Fellowship Department.</em></p>
+      <p>From April 28th to 30th, nearly 100 church members participated in the church's biennial joint retreat for brothers and sisters. We specially invited Pastor Huang Lixun and her husband, Pastor Hong Jianzhou, from the International True Love Family Association in California to give wonderful lectures on "The Wonderful Way to Rebuild Love for Children" and "True Love Must Be Built on the Foundation of God's Truth to Have a Life-Changing Impact."</p>
+      <p>During the retreat, we also held a variety of games and lively group discussions. The participants expressed that the three-day joint retreat was rich and fulfilling, and everyone benefited greatly. It was truly a spiritual feast overflowing with blessings!</p>
+    </div>
+  </div>
+</div>
+
+<!-- MAY 2023 -->
+<div class="modal-overlay" id="modal-may2023" onclick="closeModalOutside(event,'may2023')">
+  <div class="modal">
+    <div class="modal-header">
+      <button class="modal-close" onclick="closeModal('may2023')">✕</button>
+      <div class="modal-month">May 2023 · 五月</div>
+      <div class="modal-title">Prayer, Cleaning, Mother's Day &amp; Community Events</div>
+    </div>
+    <div class="modal-body">
+      <h4>National Day of Prayer Meeting (May 4)</h4>
+      <p><em>Reported by Xiong Fang.</em></p>
+      <p>May 4th is the National Day of Prayer in the United States. The church's prayer meeting was moved to 8 p.m. on May 4th. The congregation prayed for the nation's government — giving thanks for the freedom to live and worship freely, praying for democratic governance and leaders who act with righteousness and reverence for God — and for every family, praying for harmony, unity, and that children may be raised according to the Bible.</p>
+      <hr class="story-divider"/>
+      <h4>Big Cleaning Day (May 6)</h4>
+      <p><em>Pastors' Council.</em></p>
+      <p>May 6th was the church's annual cleaning day. Nearly a hundred people participated with joy and happiness, clearing weeds from the flower beds and courtyards and laying out fresh wood chips. Brothers and sisters, regardless of fellowship groups, worked together — making it a wonderful fellowship in itself!</p>
+      <hr class="story-divider"/>
+      <h4>Mother's Day (May 14)</h4>
+      <p><em>Chinese Language Centre Care Department.</em></p>
+      <p>This year's Mother's Day gifts were handmade crocheted corsages prepared by Aunt Huang Xiuqin. She spent nearly two months making over 150 corsages. Many mothers immediately wore these beautiful corsages crafted with love after receiving their gifts — they were truly lovely.</p>
+      <hr class="story-divider"/>
+      <h4>Fellowship Department Staff Retreat (May 20)</h4>
+      <p><em>Chinese Church Fellowship Department.</em></p>
+      <p>The retreat for staff of various fellowships was held on Saturday, May 20th, from 9:45 AM to 1:00 PM in the church choir room. Twenty-five brothers and sisters from various fellowships attended. Pastor Huang gave a special lecture on "Renewing Strength," and everyone spoke freely with active discussion on the function, current situation, and development of fellowships.</p>
+      <hr class="story-divider"/>
+      <h4>CEF Children's Bible Study Seminar (May 21)</h4>
+      <p><em>Children's Ministry, New Song Fellowship.</em></p>
+      <p>The church invited teachers from the Child Evangelism Fellowship (CEF) to conduct a teaching demonstration on Sunday, May 21st, at 2 PM. The main purpose was to introduce CEF and demonstrate how they teach children to study the Bible, with further training to follow to help young families teach their children during fellowship or on Children's Sundays.</p>
+      <hr class="story-divider"/>
+      <h4>Mini Food Festival and Hymn/Music Sharing (May 26)</h4>
+      <p>Taking advantage of the long weekend, the Ministry of Evangelism prepared a delicious meal for brothers and sisters attending Friday's activities. Everyone brought their own specialties — Chinese delicacies, Italian specialties, renowned Japanese sushi, gyoza and noodle soups, and Malaysian and Indonesian tropical curry dishes. While enjoying the delicious food, there was also hymn and music performance.</p>
+    </div>
+  </div>
+</div>
+
+<!-- JUNE 2023 -->
+<div class="modal-overlay" id="modal-jun2023" onclick="closeModalOutside(event,'jun2023')">
+  <div class="modal">
+    <div class="modal-header">
+      <button class="modal-close" onclick="closeModal('jun2023')">✕</button>
+      <div class="modal-month">June 2023 · 六月</div>
+      <div class="modal-title">Joint Fellowships, Graduation, Father's Day &amp; Baptism</div>
+    </div>
+    <div class="modal-body">
+      <h4>Caleb &amp; Joyful Fellowship Joint Gathering (June 3)</h4>
+      <p>Caleb Fellowship and Joyful Fellowship held a joint gathering, including a sharing session on handicrafts and other activities.</p>
+      <hr class="story-divider"/>
+      <h4>Calligraphy Exchange &amp; Flower Arrangement (June 10)</h4>
+      <p>On Saturday, June 10th, at 3 PM, the Ministry of Evangelism invited brothers, sisters, and friends to participate in a calligraphy exchange at the church. Together they copied Bible verses, practiced calligraphy, and appreciated each other's work. At 5 PM, Sister Wendy gave a brief lesson on the basics of flower arranging.</p>
+      <hr class="story-divider"/>
+      <h4>Chinese School Graduation Ceremony (June 11)</h4>
+      <p>The Chinese School held its annual graduation ceremony on Sunday, June 11th.</p>
+      <hr class="story-divider"/>
+      <h4>Father's Day &amp; Baptism Service (June 18)</h4>
+      <p>Father's Day was celebrated alongside a baptism service on Sunday, June 18th.</p>
+      <hr class="story-divider"/>
+      <h4>Jia Mei &amp; Xin Ge Joyful Fellowship at Colt State Park (June 24)</h4>
+      <p>Jia Mei Fellowship and Xin Ge Joyful Fellowship held a joint outdoor meeting at Colt State Park on Sunday, June 24th.</p>
+    </div>
+  </div>
+</div>
+
+<!-- JULY 2023 -->
+<div class="modal-overlay" id="modal-jul2023" onclick="closeModalOutside(event,'jul2023')">
+  <div class="modal">
+    <div class="modal-header">
+      <button class="modal-close" onclick="closeModal('jul2023')">✕</button>
+      <div class="modal-month">July 2023 · 七月</div>
+      <div class="modal-title">Hymn Testimony Meeting &amp; Worship Dept. Training</div>
+    </div>
+    <div class="modal-body">
+      <h4>Poetry Testimony Meeting (July 9)</h4>
+      <p><em>Reported by Xiong Fang.</em></p>
+      <blockquote>"Lord, open my lips, and my mouth will proclaim your praise!" — Psalm 51:15</blockquote>
+      <p>On the afternoon of July 9th, the Fellowship Department, in conjunction with the Evangelism Department, held the church's first hymn sharing and testimony meeting, attended by over 80 people. The meeting began with the congregation singing "Amazing Grace" and concluded with "The Most Beautiful Blessing in This Life" and "Praise One God." Many brothers and sisters shared 24 hymns, testifying to stories of God's presence with them and sharing why they liked each hymn.</p>
+      <p>The following are excerpts from the reflections of brothers and sisters after the meeting:</p>
+      <blockquote>"Thanks be to God, this hymn sharing allowed us to experience His presence. The spiritual inspiration enabled the brothers and sisters' testimonies and hymns to bear witness to how great and wondrous our God is, worthy of all our praise and hymns. Hallelujah, praise the Lord!"</blockquote>
+      <blockquote>"Having lived in the US for over twenty years and been a believer for over twenty years, this is the first time I've attended a hymn sharing session with so many people. I truly felt that the church is our home."</blockquote>
+      <blockquote>"Today's hymn meeting deeply moved me. The personal testimonies of the brothers and sisters — each song told a story. Sometimes, we sang along with tears in our eyes. Praise be to the Lord!"</blockquote>
+      <hr class="story-divider"/>
+      <h4>Worship Department Experience Seminar Retreats</h4>
+      <p><em>Reported by Dongyan.</em></p>
+      <p>Since the church fully resumed in-person worship in 2023, the Worship Department held a series of training and exchange meetings to strengthen Sunday worship across all areas — welcoming guests, leading worship, hymn singing, sound system control, and live sermon broadcasting.</p>
+      <p>Training sessions included: a technical session for audio-visual operators (April 9), a training on reception procedures for emcees and interpreters (July 15), and a retreat for hymn leaders, choir members, and music ministry personnel (July 30). Experienced brothers and sisters with years of service provided on-site guidance. May our worship be more pleasing to our Heavenly Father, and may those who worship be more blessed.</p>
+    </div>
+  </div>
+</div>
+
+<!-- AUGUST 2023 -->
+<div class="modal-overlay" id="modal-aug2023" onclick="closeModalOutside(event,'aug2023')">
+  <div class="modal">
+    <div class="modal-header">
+      <button class="modal-close" onclick="closeModal('aug2023')">✕</button>
+      <div class="modal-month">August 2023 · 八月</div>
+      <div class="modal-title">Care Dept. Retreat, VBS &amp; Jia Mei Cruise</div>
+    </div>
+    <div class="modal-body">
+      <h4>Care Department Retreat (August 5)</h4>
+      <p><em>Reported by Yang Minli.</em></p>
+      <p>On Saturday morning, August 5th, Pastor Huang, who had just returned from domestic missionary work, came to the church to give a detailed explanation of the functions and processes of the Care Department, sharing his many years of valuable experience. The meeting was organized by Sisters Ren and He of the Care Department.</p>
+      <p>As Pastor Huang said, how well a church's care ministry is carried out directly affects the church's overall pastoral work. God loves people and commands us to love one another. Facing every person who comes to the church — each with different backgrounds and reasons — we must receive them with sincere love and wisdom, so that they may all experience God's love.</p>
+      <hr class="story-divider"/>
+      <h4>Vacation Bible School "Stellar" (August 10–12)</h4>
+      <p>The 2023 four-day Vacation Bible School concluded at noon on August 12th. Nearly 100 children and their parents participated, along with 70+ volunteers.</p>
+      <p>This year's VBS theme was: <em>"When life feels dark, shines Jesus' light."</em> Students learned from John 8:12: "I am the light of the world. Whoever follows me will never walk in darkness, but will have the light of life." Through Bible stories, hymns, short plays, and games, children explored why and how to shine Jesus' light.</p>
+      <blockquote>"As the body of Christ, we will teach and prepare the next generation of Christians. No matter what happens to them as they grow up, we pray that they remember to SHINE JESUS' LIGHT!"</blockquote>
+      <hr class="story-divider"/>
+      <h4>Jia Mei Fellowship Cruise to Saint John, Canada (August 19)</h4>
+      <p><em>Reported by Keven.</em></p>
+      <p>On August 19th, Jia Mei Fellowship organized a five-day cruise to Saint John, Canada, to help brothers and sisters further know one another and truly live out the sweet life of mutual respect and love that comes from Jesus Christ. Nearly 65 people participated.</p>
+      <p>The trip placed special emphasis on spiritual growth. On the bus to and from New York, Sister Kathy led everyone in hymns; Brother Paul shared the moving stories behind the hymns; and the group gathered early on Sunday morning in the piano room to pray and worship together. Brother Paul also preached on <em>God's Heart: Jesus Is Love</em>, reminding everyone that God's love is the love of creation and of forgiveness.</p>
+      <p>Good deeds abounded throughout the trip. The Care Department's sisters Xiaoqin and Xiaomei carefully attended to several elderly members from other fellowships throughout the journey — including accompanying an 84-year-old sister on the Monkey Bar challenge, making her the oldest person ever to attempt it. The group also visited Saint John's oldest stone church and Trinity Church, and witnessed touching scenes of brothers caring for their elderly parents throughout the voyage.</p>
+      <blockquote>"Behold, how good and pleasant it is when brothers dwell together in unity!" — Psalm 133:1</blockquote>
+    </div>
+  </div>
+</div>
+
+<!-- SEPTEMBER 2023 -->
+<div class="modal-overlay" id="modal-sep2023" onclick="closeModalOutside(event,'sep2023')">
+  <div class="modal">
+    <div class="modal-header">
+      <button class="modal-close" onclick="closeModal('sep2023')">✕</button>
+      <div class="modal-month">September 2023 · 九月</div>
+      <div class="modal-title">Dragon Boat Festival &amp; Community Outreach</div>
+    </div>
+    <div class="modal-body">
+      <p><em>Reported by Xin Yuan.</em></p>
+      <p>The annual Rhode Island Dragon Boat Festival and Taiwan Day Celebration was held on September 2nd. The event included dragon boat races and traditional performances such as lion dancing and dumpling-eating competitions, drawing tens of thousands of participants.</p>
+      <p>This year's dragon boat competition attracted nearly thirty teams. As in previous years, the Rhode Island Chinese Christian Church organized a team with more than 20 members from both the Chinese and English congregations, along with friends from outside the church, all of whom actively participated and took time for regular training. The church's logistics group prepared delicious dumplings on competition day to keep everyone energized.</p>
+      <p>The church's evangelism outreach was also fruitful. The children's balloon booth attracted many kids lined up to receive balloon animals, the Chinese school enrollment booth drew many Chinese parents, and the gospel materials helped the community develop a deeper understanding of the church. Although the team competes not for the sake of rivalry, the emphasis on coordination during training still led to excellent results.</p>
+    </div>
+  </div>
+</div>
+
+<!-- OCTOBER 2023 -->
+<div class="modal-overlay" id="modal-oct2023" onclick="closeModalOutside(event,'oct2023')">
+  <div class="modal">
+    <div class="modal-header">
+      <button class="modal-close" onclick="closeModal('oct2023')">✕</button>
+      <div class="modal-month">October 2023 · 十月</div>
+      <div class="modal-title">Joint Fellowship &amp; 6th Bible Knowledge Competition</div>
+    </div>
+    <div class="modal-body">
+      <h4>Caleb &amp; Jia Mei Joint Fellowship (October 21)</h4>
+      <p><em>Reported by Keven.</em></p>
+      <p>On October 21st at 10 AM, over 100 members from Caleb Fellowship and Jia Mei Fellowship — ranging in age from their twenties to 84 years old — gathered in the main hall for a joint fellowship activity filled with warmth and joy. Together they played exciting relay games, sang beloved hymns in both Cantonese and Mandarin, and sincerely shared their most moving experiences of God's work in their lives.</p>
+      <p>Pastor Gao gave a concluding address emphasizing the importance of joint fellowship activities and highlighting three things every Christian should do: (1) participate in fellowship activities, (2) persistently study the Bible, and (3) strive to participate in ministry. Following the gathering, everyone enjoyed a delicious meal prepared by the brothers of Jia Mei Fellowship.</p>
+      <hr class="story-divider"/>
+      <h4>6th Bible Knowledge Competition (October 22)</h4>
+      <p><em>Broadcast by Luo Chenghui, Department of Basic Education.</em></p>
+      <p>On October 22nd, the 6th Bible Knowledge Competition was held at the church, focused on the Book of Samuel (1 &amp; 2). Noah, Canaan, Peter, New Song, Joy, and Jia Mei fellowships each sent a team of five. After three rounds of friendly competition over two hours, Jia Mei Fellowship won first place, with Canaan and New Song fellowships taking second and third respectively.</p>
+      <p>This year marked the second consecutive championship for Jia Mei Fellowship. Canaan and New Song Fellowships prepared together and both achieved excellent results. Noah Fellowship, though formed later, progressed rapidly. Peter Fellowship had participants over 70 years old, and Joyful Fellowship had all eligible members participate — everyone demonstrated wonderful commitment to God's word.</p>
+      <p>The competition began in 2017 and has been held annually except for 2020. Next year's competition will focus on the Gospel of Luke. May our brothers and sisters come to know the Savior better through its reading.</p>
+    </div>
+  </div>
+</div>
+
+<!-- NOVEMBER 2023 -->
+<div class="modal-overlay" id="modal-nov2023" onclick="closeModalOutside(event,'nov2023')">
+  <div class="modal">
+    <div class="modal-header">
+      <button class="modal-close" onclick="closeModal('nov2023')">✕</button>
+      <div class="modal-month">November 2023 · 十一月</div>
+      <div class="modal-title">Thanksgiving Celebration</div>
+    </div>
+    <div class="modal-body">
+      <p><em>Reported by Kathy, Ministry of Evangelism.</em></p>
+      <p>The Thanksgiving service of the Rhode Island Chinese Christian Church on November 23rd was jointly organized by the Department of Evangelism and the Department of Fellowship. About 300 brothers, sisters, and their relatives and friends gathered in God's house to enjoy the beautiful festive decorations, sumptuous food, and to thank and praise the Lord together with hymns.</p>
+      <p>At the start of the thanksgiving and sharing meeting, the congregation sang hymns and prayed to praise God together. Four brothers and sisters then shared their testimonies of the Lord's miraculous works in their lives.</p>
+      <p>Everyone enjoyed a sumptuous turkey feast: roast turkey, pineapple ham, fried shrimp, braised eggs, noodles with soybean paste, stir-fried shiitake mushrooms and greens, fruit, and various desserts.</p>
+      <blockquote>What we will never forget is that during the process of setting up the venue and preparing food, the brothers and sisters used their different gifts to serve wholeheartedly in their respective positions. The Holy Spirit was working in everyone's heart, and the Lord himself was leading, creating a beautiful picture. All glory belongs to Him.</blockquote>
+    </div>
+  </div>
+</div>
+
+<!-- ══════ END 2023 MODALS ══════ -->
+
+
+<div class="modal-overlay" id="modal-mar2026" onclick="closeModalOutside(event, 'mar2026')">
+  <div class="modal">
+    <div class="modal-header">
+      <button class="modal-close" onclick="closeModal('mar2026')">✕</button>
+      <div class="modal-month">March 2026 · 三月</div>
+      <div class="modal-title">"The Most Beautiful Blessing in This Life" Concert</div>
+    </div>
+    <div class="modal-body">
+      <p><em>Food and Blessing Fellowship Ministry — Zhen Xiaoli.</em></p>
+      <img src="2_2.webp" alt="Choir and soloist performing on stage" style="width:100%;border-radius:6px;margin-bottom:1.2rem;"/>
+      <p>This year's church theme is "Go and make disciples of all nations." Thanks be to the Lord, who gave believers the "Great Commission" in Matthew 28 and also bestowed upon them various gifts, enabling them to fulfill their duties according to His will. The recent blessing concert was a testament to God's power.</p>
+      <p>The "Most Beautiful Blessing in This Life" concert attracted many non-Christians, people visiting church for the first time, or people who hadn't been to church for years — all coming because they wanted to understand and receive this most beautiful blessing.</p>
+      <p>At 7 p.m. that evening, the beautiful music of "Amazing Grace" illuminated the dim lights, simultaneously drawing in the crowd's curiosity. Then came Brother Li Xiang's "My Heart Belongs to You," Sister Guo Xiaoqing's "I Saw You with My Own Eyes," and Pastor Zeng Shizeng leading the chorus of "My Precious Cross." The audience was deeply moved and spontaneously joined in the singing. The atmosphere was filled with joy, and God was at work, allowing the lyrics of the hymns to touch people's hearts.</p>
+      <div class="modal-img-grid">
+        <img src="2_3.webp" alt="Group photo of performers and guests after the concert"/>
+        <img src="2_1.webp" alt="Attendees and church members at the blessing concert"/>
+      </div>
+      <p>Organizing a concert requires the cooperation and guidance of the Holy Spirit. Sister Chen Ting took on all the design tasks — from posters to program sheets and tickets — all of high artistic standard. The Boston Star Orchestra rehearsed for twenty or thirty hours, undeterred by wind and snow, coming to God's temple in their best condition to praise Him with music.</p>
+      <p>Most gratifying was the accompaniment group. They started without confidence and even considered quitting, but in the end used all their courage and talent. Under the guidance of Sister Guo Xiaoqing, their dedication to every note, accurate pronunciation, and diligent practice resulted in a professional level of performance in just a few days of training.</p>
+      <blockquote>This is the result of trusting in God, and all this glory belongs to our Abba Father.</blockquote>
+      <p>We sincerely thank the restaurant owners who donated food that day. The diverse and delicious food brought joy to the guests and added to the festive atmosphere of the Spring Festival. Thanks be to God's great power, which moved fellow believers who love God and love others to come together and cooperate, allowing the concert to conclude successfully. Thanks and praise be to God, to my Triune God, to whom all glory belongs. Amen.</p>
+    </div>
+  </div>
+</div>
+
+<!-- FEBRUARY 2026 -->
+<div class="modal-overlay" id="modal-feb2026" onclick="closeModalOutside(event, 'feb2026')">
+  <div class="modal">
+    <div class="modal-header">
+      <button class="modal-close" onclick="closeModal('feb2026')">✕</button>
+      <div class="modal-month">February 2026 · 二月</div>
+      <div class="modal-title">14th Annual Spring Festival Gala — "Going Home for the New Year"</div>
+    </div>
+    <div class="modal-body">
+      <p><em>Yang Minli, Jiamei Fellowship.</em></p>
+
+      <div class="modal-img-grid">
+        <img src="1_2.webp" alt="Spring Festival Gala group photo" style="height:220px;grid-column:span 2;"/>
+      </div>
+
+      <p>On February 14th, the Rhode Island Chinese Christian Church's Family Fellowship hosted its 14th Annual Spring Festival Gala. For many years, "Returning Home for the New Year" has remained the consistent theme of the gala. On this day when traditional culture and faith converge, brothers and sisters gathered in the Lord's house to reflect on the Lord's faithful guidance over the past year and to resolve to realign their lives in the new year, finding true belonging and hope in Christ.</p>
+
+      <p>The gala opened with traditional Chinese New Year couplets in local dialects, evoking a sense of familiarity and reminding us that no matter where we come from, we all belong to one family in Christ. Following this, the Living Water Group presented a group dance, "Blessings for the Year of the Horse," offering enthusiastic blessings for the New Year.</p>
+
+      <div class="modal-img-grid">
+        <img src="1_3.webp" alt="Performers holding blessing cards on stage"/>
+        <img src="1_1.webp" alt="Decorated hall set for the Spring Festival feast"/>
+      </div>
+
+      <p>This year's gala featured an innovative "PK" segment with performances including a recitation and hymn "Returning to the First Love," a male chorus, a sanxian (three-stringed plucked instrument) solo titled "Wind, Forest, Fire, and Mountain," and a crosstalk performance "Talking About Horses in the Year of the Horse" filled with laughter and local flavor.</p>
+
+      <p>The gala featured a diverse and engaging program: a current affairs skit relatable to everyday life, song and dance performances of "Queen's Road Central" and "Gangnam Style," the themed program "Never Forget Our Initial Aspirations," a Valentine's Day flower and couples' outfit fashion show, and the distribution of red envelopes that filled the venue with love and laughter.</p>
+
+      <p>Starting at 2 p.m. that day, many brothers and sisters worked together to make dumplings and prepare the love feast. This year's Lunar New Year love feast was unique — each family brought their own specialty dishes: rice cakes, eight-treasure rice, various cold dishes and meat delicacies. The table was full of festive atmosphere and the love of sharing with one another.</p>
+
+      <blockquote>Behind this joy and festivity lies the silent dedication and sacrifice of many brothers and sisters. It is your willing and joyful service that has made this Spring Festival Gala not just a festive event, but also a real and beautiful spiritual experience.</blockquote>
+
+      <p>The Spring Festival reminds us to return home; in Christ, we find our true belonging. In the new year, we hope to continue to be rooted in the Lord's love, to support one another in fellowship, and to live out our faith in the little things of daily life. May we not forget our initial calling, walk together, and build our spiritual home in the Lord, so that God's name may be glorified among us.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+function toggleMenu() {
+  var menu = document.getElementById('mobile-menu');
+  var btn = document.getElementById('hamburger');
+  var open = menu.classList.toggle('open');
+  btn.classList.toggle('open', open);
+  btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+}
+
+function switchYear(year) {
+  document.querySelectorAll('.year-tab').forEach(function(t) { t.classList.remove('active'); });
+  document.querySelectorAll('.year-panel').forEach(function(p) { p.classList.remove('active'); });
+  event.target.classList.add('active');
+  document.getElementById('panel-' + year).classList.add('active');
+}
+
+function openModal(id) {
+  var overlay = document.getElementById('modal-' + id);
+  if (overlay) {
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeModal(id) {
+  var overlay = document.getElementById('modal-' + id);
+  if (overlay) {
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+}
+
+function closeModalOutside(e, id) {
+  if (e.target === e.currentTarget) closeModal(id);
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.modal-overlay.open').forEach(function(m) {
+      m.classList.remove('open');
+    });
+    document.body.style.overflow = '';
+  }
+});
+</script>
+</body>
+</html>
