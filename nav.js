@@ -46,12 +46,6 @@ class SiteNav extends HTMLElement {
           <img alt="CCCRI — Chinese Christian Church of Rhode Island logo" src="${LOGO_SRC}"/>
         </a>
         <div class="nav-links">${desktopLinks}</div>
-        <a
-          aria-label="Donate online — 線上奉獻"
-          class="nav-donate"
-          href="${DONATE_URL}"
-          rel="noopener"
-          target="_blank">線上奉獻 Donate</a>
         <button
           aria-expanded="false"
           aria-label="Open navigation menu"
@@ -60,6 +54,12 @@ class SiteNav extends HTMLElement {
           onclick="window.toggleMenu && window.toggleMenu()">
           <span></span><span></span><span></span>
         </button>
+        <a
+          aria-label="Donate online — 線上奉獻"
+          class="nav-donate"
+          href="${DONATE_URL}"
+          rel="noopener"
+          target="_blank">線上奉獻 Donate</a>
       </nav>
 
       <div aria-label="Mobile navigation" class="mobile-menu" id="mobile-menu" role="navigation">
