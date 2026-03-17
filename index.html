@@ -1,173 +1,227 @@
 <!DOCTYPE html>
 <html lang="zh-cmn-Hans-x-en">
 <head>
-<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="Chinese Christian Church of Rhode Island (CCCRI) — A non-denominational Christian church serving Rhode Island and southeastern New England in Mandarin, Cantonese, and English." name="description"/><meta content="Chinese Christian Church of Rhode Island | 羅德島華人基督教會" property="og:title"/><meta content="website" property="og:type"/><meta content="#c0171d" name="theme-color"/><title>Chinese Christian Church of Rhode Island | 羅德島華人基督教會</title><link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&amp;family=Noto+Serif:wght@400;600;700&amp;family=Noto+Sans+SC:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/><script>
-window.showPage = function(id) {
-  var pages = document.querySelectorAll('.page');
-  for (var i = 0; i < pages.length; i++) pages[i].classList.remove('active');
-  var btns = document.querySelectorAll('.nav-links button');
-  for (var j = 0; j < btns.length; j++) btns[j].classList.remove('active');
-  var page = document.getElementById('page-' + id);
-  var btn  = document.getElementById('nav-'  + id);
-  if (page) page.classList.add('active');
-  if (btn)  btn.classList.add('active');
-  window.scrollTo(0, 0);
-};
+  <meta charset="utf-8"/>
+  <meta name="viewport"    content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Chinese Christian Church of Rhode Island (CCCRI) — A non-denominational Christian church serving Rhode Island and southeastern New England in Mandarin, Cantonese, and English."/>
+  <meta name="theme-color" content="#c0171d"/>
+  <meta property="og:title" content="Chinese Christian Church of Rhode Island | 羅德島華人基督教會"/>
+  <meta property="og:type"  content="website"/>
 
-window.toggleMenu = function() {
-  var menu = document.getElementById('mobile-menu');
-  var btn  = document.getElementById('hamburger');
-  var open = menu.classList.toggle('open');
-  btn.classList.toggle('open', open);
-  btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-};
+  <!--
+    REMOVED: Duplicate <title> (was on lines 4 and 50 of the original).
+    One canonical title is kept here.
+  -->
+  <title>Chinese Christian Church of Rhode Island | 羅德島華人基督教會</title>
 
-window.navTo = function(id) {
-  window.showPage(id);
-  var menu = document.getElementById('mobile-menu');
-  var btn  = document.getElementById('hamburger');
-  menu.classList.remove('open');
-  btn.classList.remove('open');
-  btn.setAttribute('aria-expanded', 'false');
-};
+  <link rel="stylesheet" href="assets/style.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&family=Noto+Serif:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap"/>
 
-function switchTab(id) {
-  // Update buttons
-  document.querySelectorAll('.tab-btn').forEach(function(btn) {
-    btn.classList.remove('tab-active');
-    btn.setAttribute('aria-selected', 'false');
-  });
-  var activeBtn = document.getElementById('tab-' + id);
-  if (activeBtn) { activeBtn.classList.add('tab-active'); activeBtn.setAttribute('aria-selected', 'true'); }
-  // Update panels
-  document.querySelectorAll('.tab-panel').forEach(function(p) { p.style.display = 'none'; });
-  var activePanel = document.getElementById('panel-' + id);
-  if (activePanel) activePanel.style.display = 'block';
-}
-
-</script>
-<link rel="stylesheet" href="assets/style.css">
-<title>Chinese Christian Church of Rhode Island | 羅德島華人基督教會</title>
-<script src="assets/nav.js" defer></script>
+  <!--
+    REMOVED: The entire inline <script> block that was here. It contained:
+      • window.showPage() and window.navTo() — SPA-era functions. The site is
+        now multi-page (all nav links are <a href="...">) so these are dead code.
+      • window.toggleMenu() and switchTab() — exact duplicates of the functions
+        in assets/script.js, which was not being loaded on this page at all.
+    ADDED: assets/script.js (deferred), which provides window.toggleMenu,
+    window.switchTab, the close-on-navigate listener, and the active-nav
+    fallback — all of which this page needs.
+  -->
+  <script src="assets/nav.js"    defer></script>
+  <script src="assets/script.js" defer></script>
 </head>
+
 <body data-nav="home">
-<site-nav></site-nav>
-</div>
-<main class="page">
 
-<div aria-label="CCCRI church structure in Rhode Island" class="hero" role="img">
-<div class="hero-content">
-<h1>
-<span class="hero-chinese">欢迎来到罗德岛华人基督教会</span>
-<span class="hero-english">Welcome to Chinese Christian Church of Rhode Island</span>
-</h1>
-<div class="hero-btns">
-<a class="btn-red" href="worship.html">計劃參訪 Plan Your Visit</a>
-<a class="btn-outline" href="about.html">了解更多 Learn More</a>
-</div>
-</div>
-</div>
-<!-- Monthly Quote -->
-<section aria-labelledby="monthly-quote-heading" style="padding:3rem 5%;text-align:center;">
-  <div style="max-width:700px;margin:0 auto;">
-    <p style="font-family:'Noto Sans SC',sans-serif;font-size:1rem;color:var(--gold);font-weight:700;margin-bottom:0.15rem;">三月金句</p>
-    <h2 id="monthly-quote-heading" style="font-family:'Noto Serif',serif;font-size:1.5rem;color:var(--navy);margin-bottom:1.2rem;">March Quote</h2>
-    <div class="gold-divider" style="margin:0 auto 1.5rem;"></div>
-    <p style="font-family:'Noto Sans SC',sans-serif;font-size:1.1rem;color:var(--text);line-height:1.9;margin-bottom:0.75rem;">「因为人子来，并不是要受人的服事，乃是要服事人，并且要舍命作多人的赎价。」</p>
-    <p style="font-family:'Noto Serif',serif;font-size:1.05rem;font-style:italic;color:var(--slate);line-height:1.8;margin-bottom:1rem;">"For even the Son of Man did not come to be served, but to serve, and to give his life as a ransom for many."</p>
-    <p style="font-size:0.875rem;font-weight:600;color:var(--gold);letter-spacing:0.05em;">— Mark 10:45</p>
-  </div>
-</section>
+  <site-nav></site-nav>
+  <!--
+    REMOVED: Stray </div> that appeared immediately after <site-nav> with no
+    matching opening tag. It was an HTML validity error.
+  -->
 
-<!--Mission Statement--> 
-<section aria-labelledby="home-mission-heading" class="mission-banner">
-<p class="zh-label">我們的宗旨</p>
-<h2 id="home-mission-heading">Our Mission</h2>
-<div class="gold-bar"></div>
-<p class="zh-text">本教會以基督耶穌為首，聯合眾聖徒在主基督里互相建立，領人歸主，見證基督，傳揚福音，培育門徒，遵行主耶穌所托付之使命，以榮神益人。</p>
-<p class="en-text">"Our church, with Jesus Christ as its head, unites all saints to build one another up in the Lord Jesus Christ, lead people to the Lord, witness to Christ, proclaim the gospel, nurture disciples, and carry out the mission entrusted to us by the Lord Jesus, so as to glorify God and benefit people."</p>
-</section>
- <!--Three Photo Cards--> 
-<div aria-label="Quick links" class="home-cards" role="navigation">
-<a aria-label="Our Worship — Sunday services" class="home-card card-border" href="worship.html" style="background-image:url('assets/images/img_c76755828323.jpg');background-size:cover;background-position:center;">
-<div class="home-card-text">
-<div class="zh">我們的敬拜</div>
-<div class="en">Our Worship</div>
-<div class="sub-zh">主日中英文崇拜，上午11時</div>
-<div class="sub-en">Sunday services in Chinese &amp; English at 11:00 AM</div>
-</div>
-</a>
-<a aria-label="Ministries and Fellowship" class="home-card card-border" href="ministries.html" style="background-image:url('assets/images/img_4e82b05a8e95.jpg');background-size:cover;background-position:center;">
-<div class="home-card-text">
-<div class="zh">事工與團契</div>
-<div class="en">Ministries &amp; Fellowship</div>
-<div class="sub-zh">兒童、青年、關懷及長者事工</div>
-<div class="sub-en">Children, Youth, Care &amp; Senior ministries</div>
-</div>
-</a>
-<a aria-label="Upcoming Events" class="home-card card-border" href="events.html" style="background-image:url('assets/images/img_c3d2a0f170ee.webp');background-size:cover;background-position:center;">
-<div class="home-card-text">
-<div class="zh">近期活動</div>
-<div class="en">Upcoming Events</div>
-<div class="sub-zh">秋季活動、週年音樂會、台灣宣教之旅等</div>
-<div class="sub-en">Fall Fest, Anniversary Concert, Taiwan Missions Trip &amp; more</div>
-</div>
-</a>
-</div>
- <!--Announcements-->
-<div class="section">
-<div style="max-width:860px;margin:0 auto;">
-<div class="gold-divider"></div>
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:1.6rem;color:var(--gold);font-weight:700;margin-bottom:0.1rem;">公告</p>
-<h2 class="section-title">Announcements</h2>
-<p class="section-subtitle">Stay updated with what's happening in our community</p>
-<div class="announce-item">
-<div class="announce-date"><span class="month">Oct</span><span class="day">22</span></div>
-<div class="announce-body">
-<h4 style="font-family:'Noto Sans SC',sans-serif;color:var(--navy);margin-bottom:0.1rem;">秋季活動暨中秋節</h4>
-<h4 style="color:var(--navy);margin-bottom:0.5rem;">Fall Fest &amp; Mid Autumn Festival</h4>
-<p style="font-family:'Noto Sans SC',sans-serif;color:var(--slate);font-size:0.875rem;margin-bottom:0.2rem;">歡迎參加我們的秋季活動暨中秋節慶典。十月二十二日（週日）下午5時至8時。</p>
-<p>Join us for a wonderful celebration combining Fall Fest and the Mid Autumn Festival. Sunday, October 22, 5:00 PM — 8:00 PM.</p>
-</div>
-</div>
-<div class="announce-item">
-<div class="announce-date"><span class="month">Apr</span><span class="day">6</span></div>
-<div class="announce-body">
-<h4 style="font-family:'Noto Sans SC',sans-serif;color:var(--navy);margin-bottom:0.1rem;">週年音樂會</h4>
-<h4 style="color:var(--navy);margin-bottom:0.5rem;">Anniversary Concert</h4>
-<p style="font-family:'Noto Sans SC',sans-serif;color:var(--slate);font-size:0.875rem;margin-bottom:0.2rem;">以讚美敬拜慶祝教會週年。歡迎所有人參加這個特別的音樂之夜。</p>
-<p>Celebrate our church's anniversary with an evening of praise and worship. All are welcome.</p>
-</div>
-</div>
-<div class="announce-item">
-<div class="announce-date"><span class="month">Aug</span><span class="day">18</span></div>
-<div class="announce-body">
-<h4 style="font-family:'Noto Sans SC',sans-serif;color:var(--navy);margin-bottom:0.1rem;">台灣宣教之旅</h4>
-<h4 style="color:var(--navy);margin-bottom:0.5rem;">Taiwan Missions Trip</h4>
-<p style="font-family:'Noto Sans SC',sans-serif;color:var(--slate);font-size:0.875rem;margin-bottom:0.2rem;">我們的宣教團隊將前往台灣支持合作教會及事工。請聯絡宣教協調員了解詳情。</p>
-<p>Our missions team travels to Taiwan to support partner ministries. Contact our missions coordinator for details.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="section section-alt">
-<div style="max-width:860px;margin:0 auto;">
-<div aria-label="Online worship options" class="online-card" role="region">
-<div class="zh">線上敬拜</div>
-<h3>Join Us Online</h3>
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.9rem;color:rgba(255,255,255,0.8);margin-bottom:0.3rem;">無法親自出席？線上觀看直播或隨時收看錄影。</p>
-<p>Can't make it in person? Watch our services live or access recordings anytime.</p>
-<div class="online-btns">
-<a class="btn-watch" href="https://www.youtube.com/@ChineseMinistryCCCRI" rel="noopener" target="_blank">▶ Watch Live 直播</a>
-<a class="btn-gold" href="https://goo.gl/maps/HcaaXQQvwiYJvish9" rel="noopener" target="_blank">🗺 Directions 路線</a>
-</div>
-</div>
-</div>
-</div>
-<footer>
-<div class="footer-links">
-<span>📍 <strong style="color:var(--gold-light);">333 Roosevelt Ave, Pawtucket, RI 02860</strong></span>
-<span>📞 <a href="tel:4017228877" style="color:var(--gold-light);">(401) 722-8877</a></span>
-<span>✉️ <a href="/cdn-cgi/l/email-protection#f49d9a929bb4979797869dda9b8693" style="color:var(--gold-light);"><span class="__cf_email__" data-cfemail="7c15121a133c1f1f1f0e1552130e1b">[email&#160;protected]</span></a></span>
-</div>
-<p class="info">For more information: <a href="/cdn-cgi/l/email-protection#630f060207061110000000110a23040e020a0f4d000c0e" style="color:var(--gold-light
+  <main class="page">
+
+    <!-- ── HERO ──────────────────────────────────────────────────────────── -->
+    <!--
+      CHANGED: Removed role="img" from the hero <div>.
+      The element contains a real <h1> heading and two <a> links; role="img"
+      was causing assistive technologies to treat those children as part of an
+      image description rather than real content. The decorative background is
+      applied via CSS and does not need ARIA markup. The <h1> inside already
+      identifies the section.
+      REMOVED: The aria-label "CCCRI church structure in Rhode Island" — this
+      was the image alt text and is no longer appropriate now that role="img"
+      is gone. The <h1> text provides the accessible name.
+    -->
+    <div class="hero">
+      <div class="hero-content">
+        <h1>
+          <span class="hero-chinese">欢迎来到罗德岛华人基督教会</span>
+          <span class="hero-english">Welcome to Chinese Christian Church of Rhode Island</span>
+        </h1>
+        <div class="hero-btns">
+          <a class="btn-red"     href="worship.html">計劃參訪 Plan Your Visit</a>
+          <a class="btn-outline" href="about.html"  >了解更多 Learn More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── MONTHLY QUOTE ─────────────────────────────────────────────────── -->
+    <section aria-labelledby="monthly-quote-heading" style="padding:3rem 5%;text-align:center;">
+      <div style="max-width:700px;margin:0 auto;">
+        <p style="font-family:'Noto Sans SC',sans-serif;font-size:1rem;color:var(--gold);font-weight:700;margin-bottom:0.15rem;">三月金句</p>
+        <h2 id="monthly-quote-heading" style="font-family:'Noto Serif',serif;font-size:1.5rem;color:var(--navy);margin-bottom:1.2rem;">March Quote</h2>
+        <div class="gold-divider" style="margin:0 auto 1.5rem;"></div>
+        <p style="font-family:'Noto Sans SC',sans-serif;font-size:1.1rem;color:var(--text);line-height:1.9;margin-bottom:0.75rem;">「因为人子来，并不是要受人的服事，乃是要服事人，并且要舍命作多人的赎价。」</p>
+        <p style="font-family:'Noto Serif',serif;font-size:1.05rem;font-style:italic;color:var(--slate);line-height:1.8;margin-bottom:1rem;">"For even the Son of Man did not come to be served, but to serve, and to give his life as a ransom for many."</p>
+        <p style="font-size:0.875rem;font-weight:600;color:var(--gold);letter-spacing:0.05em;">— Mark 10:45</p>
+      </div>
+    </section>
+
+    <!-- ── MISSION STATEMENT ──────────────────────────────────────────────── -->
+    <section aria-labelledby="home-mission-heading" class="mission-banner">
+      <p class="zh-label">我們的宗旨</p>
+      <h2 id="home-mission-heading">Our Mission</h2>
+      <div class="gold-bar"></div>
+      <p class="zh-text">本教會以基督耶穌為首，聯合眾聖徒在主基督里互相建立，領人歸主，見證基督，傳揚福音，培育門徒，遵行主耶穌所托付之使命，以榮神益人。</p>
+      <p class="en-text">"Our church, with Jesus Christ as its head, unites all saints to build one another up in the Lord Jesus Christ, lead people to the Lord, witness to Christ, proclaim the gospel, nurture disciples, and carry out the mission entrusted to us by the Lord Jesus, so as to glorify God and benefit people."</p>
+    </section>
+
+    <!-- ── QUICK-LINK PHOTO CARDS ─────────────────────────────────────────── -->
+    <nav aria-label="Quick links" class="home-cards">
+      <a class="home-card card-border"
+         href="worship.html"
+         aria-label="Our Worship — Sunday services"
+         style="background-image:url('assets/images/img_c76755828323.jpg');background-size:cover;background-position:center;">
+        <div class="home-card-text">
+          <div class="zh">我們的敬拜</div>
+          <div class="en">Our Worship</div>
+          <div class="sub-zh">主日中英文崇拜，上午11時</div>
+          <div class="sub-en">Sunday services in Chinese &amp; English at 11:00 AM</div>
+        </div>
+      </a>
+      <a class="home-card card-border"
+         href="ministries.html"
+         aria-label="Ministries and Fellowship"
+         style="background-image:url('assets/images/img_4e82b05a8e95.jpg');background-size:cover;background-position:center;">
+        <div class="home-card-text">
+          <div class="zh">事工與團契</div>
+          <div class="en">Ministries &amp; Fellowship</div>
+          <div class="sub-zh">兒童、青年、關懷及長者事工</div>
+          <div class="sub-en">Children, Youth, Care &amp; Senior ministries</div>
+        </div>
+      </a>
+      <a class="home-card card-border"
+         href="events.html"
+         aria-label="Upcoming Events"
+         style="background-image:url('assets/images/img_c3d2a0f170ee.webp');background-size:cover;background-position:center;">
+        <div class="home-card-text">
+          <div class="zh">近期活動</div>
+          <div class="en">Upcoming Events</div>
+          <div class="sub-zh">秋季活動、週年音樂會、台灣宣教之旅等</div>
+          <div class="sub-en">Fall Fest, Anniversary Concert, Taiwan Missions Trip &amp; more</div>
+        </div>
+      </a>
+    </nav>
+
+    <!-- ── ANNOUNCEMENTS ──────────────────────────────────────────────────── -->
+    <!--
+      CHANGED: <div class="section"> → <section class="section">.
+      Semantic improvement; <section> correctly identifies this as a
+      standalone content region. aria-labelledby wires it to the <h2>.
+      CHANGED: Inline-styled <p>公告</p> → <p class="zh-label-lg">公告</p>.
+      The .zh-label-lg class in style.css produces identical output.
+      id="announcements-heading" added to the <h2> to support aria-labelledby.
+    -->
+    <section class="section" aria-labelledby="announcements-heading">
+      <div style="max-width:860px;margin:0 auto;">
+        <div class="gold-divider"></div>
+        <p class="zh-label-lg">公告</p>
+        <h2 class="section-title" id="announcements-heading">Announcements</h2>
+        <p class="section-subtitle">Stay updated with what's happening in our community</p>
+
+        <article class="announce-item">
+          <div class="announce-date">
+            <span class="month">Oct</span>
+            <span class="day">22</span>
+          </div>
+          <div class="announce-body">
+            <h4 style="font-family:'Noto Sans SC',sans-serif;color:var(--navy);margin-bottom:0.1rem;">秋季活動暨中秋節</h4>
+            <h4 style="color:var(--navy);margin-bottom:0.5rem;">Fall Fest &amp; Mid Autumn Festival</h4>
+            <p style="font-family:'Noto Sans SC',sans-serif;color:var(--slate);font-size:0.875rem;margin-bottom:0.2rem;">歡迎參加我們的秋季活動暨中秋節慶典。十月二十二日（週日）下午5時至8時。</p>
+            <p>Join us for a wonderful celebration combining Fall Fest and the Mid Autumn Festival. Sunday, October 22, 5:00 PM — 8:00 PM.</p>
+          </div>
+        </article>
+
+        <article class="announce-item">
+          <div class="announce-date">
+            <span class="month">Apr</span>
+            <span class="day">6</span>
+          </div>
+          <div class="announce-body">
+            <h4 style="font-family:'Noto Sans SC',sans-serif;color:var(--navy);margin-bottom:0.1rem;">週年音樂會</h4>
+            <h4 style="color:var(--navy);margin-bottom:0.5rem;">Anniversary Concert</h4>
+            <p style="font-family:'Noto Sans SC',sans-serif;color:var(--slate);font-size:0.875rem;margin-bottom:0.2rem;">以讚美敬拜慶祝教會週年。歡迎所有人參加這個特別的音樂之夜。</p>
+            <p>Celebrate our church's anniversary with an evening of praise and worship. All are welcome.</p>
+          </div>
+        </article>
+
+        <article class="announce-item">
+          <div class="announce-date">
+            <span class="month">Aug</span>
+            <span class="day">18</span>
+          </div>
+          <div class="announce-body">
+            <h4 style="font-family:'Noto Sans SC',sans-serif;color:var(--navy);margin-bottom:0.1rem;">台灣宣教之旅</h4>
+            <h4 style="color:var(--navy);margin-bottom:0.5rem;">Taiwan Missions Trip</h4>
+            <p style="font-family:'Noto Sans SC',sans-serif;color:var(--slate);font-size:0.875rem;margin-bottom:0.2rem;">我們的宣教團隊將前往台灣支持合作教會及事工。請聯絡宣教協調員了解詳情。</p>
+            <p>Our missions team travels to Taiwan to support partner ministries. Contact our missions coordinator for details.</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ── ONLINE WORSHIP ─────────────────────────────────────────────────── -->
+    <!--
+      CHANGED: <div class="section section-alt"> → <section class="section section-alt">
+      Semantic improvement; pairs with aria-labelledby pointing to the heading inside.
+      CHANGED: Removed role="region" and aria-label from the inner .online-card div.
+      The parent <section> already provides the landmark; a nested role="region"
+      on the card itself was redundant and required its own accessible name.
+      id="online-heading" added to the <h3> to support the section's aria-labelledby.
+    -->
+    <section class="section section-alt" aria-labelledby="online-heading">
+      <div style="max-width:860px;margin:0 auto;">
+        <div class="online-card">
+          <div class="zh">線上敬拜</div>
+          <h3 id="online-heading">Join Us Online</h3>
+          <p style="font-family:'Noto Sans SC',sans-serif;font-size:0.9rem;color:rgba(255,255,255,0.8);margin-bottom:0.3rem;">無法親自出席？線上觀看直播或隨時收看錄影。</p>
+          <p>Can't make it in person? Watch our services live or access recordings anytime.</p>
+          <div class="online-btns">
+            <a class="btn-watch" href="https://www.youtube.com/@ChineseMinistryCCCRI" target="_blank" rel="noopener">▶ Watch Live 直播</a>
+            <a class="btn-gold"  href="https://goo.gl/maps/HcaaXQQvwiYJvish9"        target="_blank" rel="noopener">🗺 Directions 路線</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main><!-- /.page -->
+
+  <!-- ── FOOTER ──────────────────────────────────────────────────────────── -->
+  <!--
+    NOTE: The source file was truncated mid-footer. The content below
+    preserves everything that was present in the original exactly as-is.
+    Restore the full footer content from your source repository.
+  -->
+  <footer>
+    <div class="footer-links">
+      <span>📍 <strong style="color:var(--gold-light);">333 Roosevelt Ave, Pawtucket, RI 02860</strong></span>
+      <span>📞 <a href="tel:4017228877" style="color:var(--gold-light);">(401) 722-8877</a></span>
+      <span>✉️ <a href="/cdn-cgi/l/email-protection#f49d9a929bb4979797869dda9b8693" style="color:var(--gold-light);"><span class="__cf_email__" data-cfemail="7c15121a133c1f1f1f0e1552130e1b">[email&#160;protected]</span></a></span>
+    </div>
+    <!-- Restore remaining footer content (info paragraph, copy line) from source -->
+  </footer>
+
+</body>
+</html>
