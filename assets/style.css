@@ -51,7 +51,7 @@ nav {
 /* ── HERO ── */
 .hero {
   position:relative; height:560px; overflow:hidden;
-  background:url('images/img_3942a6f02a90.jpg') center 60% / 100% no-repeat;
+  background:url('images/img_3942a6f02a90.jpg') center 60% / cover no-repeat;
   display:flex; align-items:center; justify-content:center;
 }
 .hero::before {
@@ -421,7 +421,7 @@ footer .info { font-size:0.875rem; color:rgba(255,255,255,0.65); margin-bottom:0
   /* leader grids handled by .leader-grid-* classes */
   .hamburger { display:flex; }
   .two-col,.three-col,.four-col,.home-cards,.weekly-grid,.form-row { grid-template-columns:1fr; }
-  .hero { height:420px; }
+  .hero { height:420px; background-size:cover; background-position:center center; }
   .hero-chinese { font-size:1.5rem; }
   .hero-english { font-size:0.95rem; }
   .hero-btns { flex-direction:column; align-items:center; }
