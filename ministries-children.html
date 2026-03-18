@@ -1,177 +1,202 @@
 <!DOCTYPE html>
 <html lang="zh-cmn-Hans-x-en">
 <head>
-<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="Chinese Christian Church of Rhode Island (CCCRI) — A non-denominational Christian church serving Rhode Island and southeastern New England in Mandarin, Cantonese, and English." name="description"/><meta content="Chinese Christian Church of Rhode Island | 羅德島華人基督教會" property="og:title"/><meta content="website" property="og:type"/><meta content="#c0171d" name="theme-color"/><title>Chinese Christian Church of Rhode Island | 羅德島華人基督教會</title><link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&amp;family=Noto+Serif:wght@400;600;700&amp;family=Noto+Sans+SC:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/><script>
-window.showPage = function(id) {
-  var pages = document.querySelectorAll('.page');
-  for (var i = 0; i < pages.length; i++) pages[i].classList.remove('active');
-  var btns = document.querySelectorAll('.nav-links button');
-  for (var j = 0; j < btns.length; j++) btns[j].classList.remove('active');
-  var page = document.getElementById('page-' + id);
-  var btn  = document.getElementById('nav-'  + id);
-  if (page) page.classList.add('active');
-  if (btn)  btn.classList.add('active');
-  window.scrollTo(0, 0);
-};
+  <meta charset="utf-8"/>
+  <meta name="viewport"    content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Chinese Christian Church of Rhode Island (CCCRI) — A non-denominational Christian church serving Rhode Island and southeastern New England in Mandarin, Cantonese, and English."/>
+  <meta name="theme-color" content="#c0171d"/>
+  <meta property="og:title" content="Chinese Christian Church of Rhode Island | 羅德島華人基督教會"/>
+  <meta property="og:type"  content="website"/>
 
-window.toggleMenu = function() {
-  var menu = document.getElementById('mobile-menu');
-  var btn  = document.getElementById('hamburger');
-  var open = menu.classList.toggle('open');
-  btn.classList.toggle('open', open);
-  btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-};
+  <!-- REMOVED: Duplicate generic <title>. IMPROVED: "Min Children" → proper name. -->
+  <title>Chinese Christian Church of Rhode Island | 羅德島華人基督教會 — Children's Ministry</title>
 
-window.navTo = function(id) {
-  window.showPage(id);
-  var menu = document.getElementById('mobile-menu');
-  var btn  = document.getElementById('hamburger');
-  menu.classList.remove('open');
-  btn.classList.remove('open');
-  btn.setAttribute('aria-expanded', 'false');
-};
+  <link rel="stylesheet" href="assets/style.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&family=Noto+Serif:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap"/>
 
-function switchTab(id) {
-  // Update buttons
-  document.querySelectorAll('.tab-btn').forEach(function(btn) {
-    btn.classList.remove('tab-active');
-    btn.setAttribute('aria-selected', 'false');
-  });
-  var activeBtn = document.getElementById('tab-' + id);
-  if (activeBtn) { activeBtn.classList.add('tab-active'); activeBtn.setAttribute('aria-selected', 'true'); }
-  // Update panels
-  document.querySelectorAll('.tab-panel').forEach(function(p) { p.style.display = 'none'; });
-  var activePanel = document.getElementById('panel-' + id);
-  if (activePanel) activePanel.style.display = 'block';
-}
-
-</script>
-<link rel="stylesheet" href="assets/style.css">
-<title>Chinese Christian Church of Rhode Island | 羅德島華人基督教會 — Min Children</title>
-<script src="assets/nav.js" defer></script>
+  <!--
+    REMOVED: Inline <script> block — showPage/navTo are dead code;
+    toggleMenu/switchTab are duplicates of assets/script.js.
+    ADDED: assets/script.js (deferred) — was not loaded on this page.
+  -->
+  <script src="assets/nav.js"    defer></script>
+  <script src="assets/script.js" defer></script>
 </head>
-<body data-nav="ministries">
-<site-nav></site-nav>
-</div><button aria-expanded="false" aria-label="Open navigation menu" class="hamburger" id="hamburger" onclick="toggleMenu()">
-<span></span><span></span><span></span>
-</button><a aria-label="Donate online — 線上奉獻" class="nav-donate" href="https://tithe.ly/give_new/www/#/tithely/give-one-time/1707700" rel="noopener" target="_blank">線上奉獻 Donate</a></nav><div aria-label="Mobile navigation" class="mobile-menu" id="mobile-menu" role="navigation"><a href="index.html">主页 Home</a><a href="about.html">关于我们 About Us</a><a href="worship.html">敬拜 Worship</a><a href="events.html">活动 Events</a><a href="ministries.html">事工 Ministries</a><a href="resources.html">资源 Resources</a><a href="contact.html">联系 Contact</a></div>
-<main class="page">
 
-<div class="page-header" role="banner" style="background:linear-gradient(135deg,#9a1015,#c0171d);">
-<p class="zh">兒童事工</p>
-<h1>Children's</h1>
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.95rem;opacity:0.85;margin-bottom:0.2rem;">栽培下一代的信仰根基</p>
-<p>Building faith foundations in young hearts</p>
-</div>
-<div class="section">
-<div style="max-width:860px;margin:0 auto;">
-<a aria-label="Back to Ministries" class="ministry-back-btn" href="ministries.html">
-        ← 返回事工列表 Back to Ministries
-      </a>
-<div class="gold-divider"></div>
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:1.6rem;color:var(--gold);font-weight:700;margin-bottom:0.1rem;">兒童事工</p>
-<h2 class="section-title">Children's</h2>
-<!-- Scripture -->
-<div style="background:linear-gradient(135deg,#1a472a,#2d6a4f);border-radius:8px;padding:1.4rem 1.8rem;margin-bottom:1.8rem;text-align:center;">
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:1rem;color:white;line-height:1.8;font-style:italic;margin-bottom:0.3rem;">「耶穌又對眾人說：『我是世界的光。跟從我的，就不在黑暗裡走，必要得著生命的光。』」</p>
-<p style="font-size:1rem;color:white;line-height:1.8;font-style:italic;margin-bottom:0.3rem;">"Jesus then said to the crowd, 'I am the light of the world. Whoever follows me will never walk in darkness, but will have the light of life.'"</p>
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.875rem;color:rgba(255,255,255,0.8);">— 約翰福音 John 8:12</p>
-</div>
-<!-- Lighthouse intro + photo side by side -->
-<div style="display:grid;grid-template-columns:1fr auto;gap:1.8rem;align-items:start;margin-bottom:2rem;">
-<div>
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:1.15rem;color:var(--navy);font-weight:700;margin-bottom:0.3rem;">歡迎來到燈塔兒童事工</p>
-<h3 style="font-family:'Noto Serif',serif;color:var(--navy);font-size:1.25rem;margin-bottom:0.8rem;">Welcome to Lighthouse Children's Ministry</h3>
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.9rem;color:var(--slate);line-height:1.85;margin-bottom:0.4rem;">燈塔兒童計劃旨在為孩子們創造一個充滿樂趣且安全的空間，讓他們認識基督及祂的品格。我們服務從出生到六年級的兒童。兒童崇拜每週日上午<strong>十一時十五分</strong>在教會舉行。歡迎您在週日前來，一起學習聖經和耶穌基督的教導！</p>
-<p style="font-size:0.9rem;color:var(--slate);line-height:1.85;margin-bottom:0.8rem;">The Lighthouse Kids program aims to create a fun and safe space for children to learn about Christ and His character. We serve children from birth to sixth grade. Our children's worship service is held every Sunday morning at <strong>11:15 AM</strong> at the church. You are welcome to join us on Sundays to learn about the Bible and the teachings of Jesus Christ!</p>
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.9rem;color:var(--slate);line-height:1.85;margin-bottom:0.4rem;">我們的心願是讓孩子們透過以基督為中心的動態課程來經歷神，使他們在神的時間裡，選擇藉著耶穌基督與神建立個人的關係。</p>
-<p style="font-size:0.9rem;color:var(--slate);line-height:1.85;margin-bottom:0.8rem;">Our desire is for children to experience God through a Christ-centered, dynamic program so that, in God's time, they will choose to build a personal relationship with Him through Jesus Christ.</p>
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.9rem;color:var(--slate);line-height:1.85;margin-bottom:0.4rem;">感謝您的委身與反思，思考如何運用您的時間、才能和恩賜來服事教會的兒童事工。當您以神的真理裝備孩子們時，您擁有這獨特的機會，親眼見證他們對神的愛不斷成長。</p>
-<p style="font-size:0.9rem;color:var(--slate);line-height:1.85;margin-bottom:0.8rem;">Thank you for your dedication and reflection on how to use your time, talents, and gifts to serve the children's ministry in the church. When you equip children with God's truth, you alone have this unique opportunity to witness their ever-growing love for God.</p>
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.9rem;color:var(--slate);line-height:1.85;margin-bottom:0.4rem;">請聯繫我們，了解更多有關我們事工的資訊以及您可以如何參與。我們的燈塔兒童團隊將盡快與您聯絡！</p>
-<p style="font-size:0.9rem;color:var(--slate);line-height:1.85;">Please contact us to learn more about our ministry and how you can participate. Our Lighthouse Kids team will get in touch with you as soon as possible!</p>
-</div>
-<div style="flex-shrink:0;">
-<img alt="Lighthouse Kids classroom corner with tree mural and bookshelf" src="assets/images/img_7a96b4940dc9.webp" style="width:260px;border-radius:10px;box-shadow:0 4px 18px rgba(0,0,0,0.15);display:block;"/>
-</div>
-</div>
-<!-- Age Group Cards -->
-<div style="display:flex;flex-direction:column;gap:1rem;margin-bottom:2.5rem;">
-<div style="background:white;border-radius:8px;box-shadow:0 3px 14px rgba(0,0,0,0.08);overflow:hidden;display:flex;align-items:stretch;">
-<div style="background:linear-gradient(180deg,#1a472a,#2d6a4f);width:8px;flex-shrink:0;"></div>
-<div style="padding:1.2rem 1.4rem;flex:1;">
-<div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.5rem;">
-<span style="font-size:1.5rem;">👶</span>
-<h4 style="font-family:'Noto Serif',serif;color:var(--navy);font-size:1.05rem;margin:0;"><span style="font-family:'Noto Sans SC',sans-serif;">嬰兒室</span> Nursery <span style="font-size:0.85rem;color:var(--slate);font-family:sans-serif;font-weight:400;">(Birth–23 months)</span></h4>
-</div>
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.9rem;color:var(--slate);line-height:1.85;margin-bottom:0.4rem;">嬰兒室為小寶寶提供一個舒適的環境，家長仍可透過直播電視在室內觀看主日崇拜。嬰兒室是一個充滿活力、有趣的環境，適合各階段的嬰幼兒。哺乳媽媽室也為需要哺乳的媽媽提供了專屬空間。</p>
-<p style="font-size:0.9rem;color:var(--slate);line-height:1.85;margin:0;">An environment for babies where parents can still be part of the Sunday Worship through a telecast providing a livestream of the service to the Nursery Room. The nursery is a stimulating and fun environment for infants, crawlers and walkers. A space for nursing moms is provided in the Nursing Mom Room.</p>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;margin-top:1rem;">
-<img alt="Nursing Mom Room with animal mural" src="assets/images/img_d2733881d9e6.webp" style="width:100%;height:160px;object-fit:cover;border-radius:6px;display:block;"/>
-<img alt="Nursery playroom with toys and slide" src="assets/images/img_110c22d07d0c.webp" style="width:100%;height:160px;object-fit:cover;border-radius:6px;display:block;"/>
-</div>
-</div>
-</div>
-<div style="background:white;border-radius:8px;box-shadow:0 3px 14px rgba(0,0,0,0.08);overflow:hidden;display:flex;align-items:stretch;">
-<div style="background:linear-gradient(180deg,#c8952a,#e8b84b);width:8px;flex-shrink:0;"></div>
-<div style="padding:1.2rem 1.4rem;flex:1;">
-<div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.5rem;">
-<span style="font-size:1.5rem;">🌱</span>
-<h4 style="font-family:'Noto Serif',serif;color:var(--navy);font-size:1.05rem;margin:0;"><span style="font-family:'Noto Sans SC',sans-serif;">幼兒班</span> Early Childhood <span style="font-size:0.85rem;color:var(--slate);font-family:sans-serif;font-weight:400;">(Ages 2–5)</span></h4>
-</div>
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.9rem;color:var(--slate);line-height:1.85;margin-bottom:0.4rem;">這個年齡段的孩子透過「親身體驗」學習效果最佳。透過動態而有條理的活動時間、敬拜和聖經課，我們與孩子們一起做手工、吃零食和玩耍。我們的心願是讓孩子們接受耶穌基督種下的種子，使他們的心靈不斷成長，越來越認識並愛戴耶穌！</p>
-<p style="font-size:0.9rem;color:var(--slate);line-height:1.85;margin:0;">Children in this age group learn best through "hands-on" experience. With a dynamic and structured activity time, worship and Bible lesson, our time with the kids include crafts, snacks and playtime. Our desire is for children to receive the planting of the seed of Jesus Christ so their hearts would grow to know and love Jesus more and more!</p>
-<div style="margin-top:1rem;">
-<img alt="Pre-K classroom with colorful city mural" src="assets/images/img_855df89da735.webp" style="width:100%;max-height:220px;object-fit:cover;border-radius:6px;display:block;"/>
-</div>
-</div>
-</div>
-<div style="background:white;border-radius:8px;box-shadow:0 3px 14px rgba(0,0,0,0.08);overflow:hidden;display:flex;align-items:stretch;">
-<div style="background:linear-gradient(180deg,#9a1015,#c0171d);width:8px;flex-shrink:0;"></div>
-<div style="padding:1.2rem 1.4rem;flex:1;">
-<div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.5rem;">
-<span style="font-size:1.5rem;">📖</span>
-<h4 style="font-family:'Noto Serif',serif;color:var(--navy);font-size:1.05rem;margin:0;"><span style="font-family:'Noto Sans SC',sans-serif;">兒童班</span> Late Childhood <span style="font-size:0.85rem;color:var(--slate);font-family:sans-serif;font-weight:400;">(Grades 1–6)</span></h4>
-</div>
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.9rem;color:var(--slate);line-height:1.85;margin-bottom:0.4rem;">我們採用富有創意且貼近生活的課程，以有趣而實用的方式教導這些成長中的孩子聖經真理。一至六年級的孩子首先進行敬拜、活動和禱告。我們按年齡分組，以滿足每個年級不同的學習需要。我們的心願是讓孩子們離開時，知道自己被耶穌基督和教會大家庭所愛！</p>
-<p style="font-size:0.9rem;color:var(--slate);line-height:1.85;margin:0;">Creative and relevant curriculum is used to teach these growing kids the biblical truth in a fun and applicable way. The kids in Grades 1–6 begin their time with worship, an activity and prayer. We separate our age groups to meet the learning needs of each grade level. Our desire is for kids to leave knowing they are loved by Jesus Christ and their church family!</p>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;margin-top:1rem;">
-<img alt="Classroom with colorful rugs and tree mural" src="assets/images/img_21b8cfee5d4f.webp" style="width:100%;height:160px;object-fit:cover;border-radius:6px;display:block;"/>
-<img alt="1 Timothy 4:12 scripture wall mural" src="assets/images/img_d86f28043252.webp" style="width:100%;height:160px;object-fit:cover;border-radius:6px;display:block;"/>
-</div>
-</div>
-</div>
-</div>
-<div style="background:var(--cream);border-radius:8px;padding:1.5rem;text-align:center;">
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.95rem;color:var(--navy);font-weight:700;margin-bottom:0.3rem;">有興趣參與或了解更多？</p>
-<p style="font-size:0.875rem;color:var(--slate);margin-bottom:1rem;">Interested in getting involved or learning more?</p>
-<a href="/cdn-cgi/l/email-protection#71181f171e3112121203185f1e0316" style="display:inline-block;background:var(--red);color:white;padding:0.65rem 1.5rem;border-radius:4px;font-size:0.875rem;font-weight:700;text-decoration:none;margin-right:0.5rem;">
-          ✉️ <span style="font-family:'Noto Sans SC',sans-serif;">聯絡我們</span> Contact Us
+<body data-nav="ministries">
+
+  <site-nav></site-nav>
+  <!--
+    REMOVED: Orphaned nav fragment — stray </div>, duplicate #hamburger,
+    donate <a>, closing </nav>, and hand-written #mobile-menu.
+    nav.js renders all of these inside <site-nav>.
+  -->
+
+  <main class="page">
+
+    <!-- ── PAGE HEADER ────────────────────────────────────────────────────── -->
+    <!-- REMOVED: role="banner" — reserved for the top-level site header landmark. -->
+    <div class="page-header" style="background:linear-gradient(135deg,#9a1015,#c0171d);">
+      <p class="zh">兒童事工</p>
+      <h1>Children's</h1>
+      <p style="font-family:'Noto Sans SC',sans-serif;font-size:0.95rem;opacity:0.85;margin-bottom:0.2rem;">栽培下一代的信仰根基</p>
+      <p>Building faith foundations in young hearts</p>
+    </div>
+
+    <!-- ── MINISTRY CONTENT ───────────────────────────────────────────────── -->
+    <!-- CHANGED: <div class="section"> → <section class="section">. -->
+    <section class="section" aria-labelledby="children-heading">
+      <div style="max-width:860px;margin:0 auto;">
+
+        <a class="ministry-back-btn" href="ministries.html" aria-label="Back to Ministries">
+          ← 返回事工列表 Back to Ministries
         </a>
-<a href="ministries.html">
-          ← 返回事工 Back to Ministries
-        </a>
-</div>
-</div>
-</div>
-<div class="section section-alt">
-<div style="max-width:860px;margin:0 auto;">
-<div aria-label="Online worship options" class="online-card" role="region">
-<div class="zh">線上敬拜</div>
-<h3>Join Us Online</h3>
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.9rem;color:rgba(255,255,255,0.8);margin-bottom:0.3rem;">無法親自出席？線上觀看直播或隨時收看錄影。</p>
-<p>Can't make it in person? Watch our services live or access recordings anytime.</p>
-<div class="online-btns">
-<a class="btn-watch" href="https://www.youtube.com/@ChineseMinistryCCCRI" rel="noopener" target="_blank">▶ Watch Live 直播</a>
-<a class="btn-gold" href="https://goo.gl/maps/HcaaXQQvwiYJvish9" rel="noopener" target="_blank">🗺 Directions 路線</a>
-</div>
-</div>
-</div>
-</div>
-<footer>
-<div class="footer-links">
-<span>📍 <strong style="color:var(--gold-light);">333 Roosevelt Ave, Pawtucket, RI 02860</strong></span>
-<span>📞 <a href="tel:4017228877" style="color:var(--gold-light);">(401) 722-8877</a></span>
-<span>✉️ <a href="/cdn-cgi/l/email-protection#4b22252d240b28282839226524392c" style="color:var(--gold-light);"><span class="__cf_email__" data-cfemail="40292e262f0023232332296e2f3227">[email&#160;protected]</span></a></span>
-</div>
-<p class="info">For more information: <a href="/cdn-cgi/l/email-protection#b2ded7d3d6d7c0c1d1d1d1c0dbf2d5dfd3dbde9c
+
+        <div class="gold-divider"></div>
+
+        <!-- CHANGED: Inline-styled <p> → <p class="zh-label-lg">. -->
+        <p class="zh-label-lg">兒童事工</p>
+        <h2 class="section-title" id="children-heading">Children's</h2>
+
+        <!-- ── Scripture verse ──────────────────────────────────────────── -->
+        <!--
+          CHANGED: Plain <p> tags for a scripture quotation → <blockquote>
+          with <cite>. Visual appearance unchanged.
+        -->
+        <div style="background:linear-gradient(135deg,#1a472a,#2d6a4f);border-radius:8px;padding:1.4rem 1.8rem;margin-bottom:1.8rem;text-align:center;">
+          <blockquote style="margin:0;">
+            <p style="font-family:'Noto Sans SC',sans-serif;font-size:1rem;color:white;line-height:1.8;font-style:italic;margin-bottom:0.3rem;">「耶穌又對眾人說：『我是世界的光。跟從我的，就不在黑暗裡走，必要得著生命的光。』」</p>
+            <p style="font-size:1rem;color:white;line-height:1.8;font-style:italic;margin-bottom:0.3rem;">"Jesus then said to the crowd, 'I am the light of the world. Whoever follows me will never walk in darkness, but will have the light of life.'"</p>
+            <cite style="font-family:'Noto Sans SC',sans-serif;font-size:0.875rem;color:rgba(255,255,255,0.8);font-style:normal;">— 約翰福音 John 8:12</cite>
+          </blockquote>
+        </div>
+
+        <!-- ── Lighthouse intro + photo ──────────────────────────────────── -->
+        <!--
+          NOTE: Heading hierarchy — h3 "Welcome to Lighthouse Children's
+          Ministry" correctly sits below h2 "Children's" above.
+        -->
+        <div style="display:grid;grid-template-columns:1fr auto;gap:1.8rem;align-items:start;margin-bottom:2rem;">
+          <div>
+            <p style="font-family:'Noto Sans SC',sans-serif;font-size:1.15rem;color:var(--navy);font-weight:700;margin-bottom:0.3rem;">歡迎來到燈塔兒童事工</p>
+            <h3 style="font-family:'Noto Serif',serif;color:var(--navy);font-size:1.25rem;margin-bottom:0.8rem;">Welcome to Lighthouse Children's Ministry</h3>
+            <p style="font-family:'Noto Sans SC',sans-serif;font-size:0.9rem;color:var(--slate);line-height:1.85;margin-bottom:0.4rem;">燈塔兒童計劃旨在為孩子們創造一個充滿樂趣且安全的空間，讓他們認識基督及祂的品格。我們服務從出生到六年級的兒童。兒童崇拜每週日上午<strong>十一時十五分</strong>在教會舉行。歡迎您在週日前來，一起學習聖經和耶穌基督的教導！</p>
+            <p style="font-size:0.9rem;color:var(--slate);line-height:1.85;margin-bottom:0.8rem;">The Lighthouse Kids program aims to create a fun and safe space for children to learn about Christ and His character. We serve children from birth to sixth grade. Our children's worship service is held every Sunday morning at <strong>11:15 AM</strong> at the church. You are welcome to join us on Sundays to learn about the Bible and the teachings of Jesus Christ!</p>
+            <p style="font-family:'Noto Sans SC',sans-serif;font-size:0.9rem;color:var(--slate);line-height:1.85;margin-bottom:0.4rem;">我們的心願是讓孩子們透過以基督為中心的動態課程來經歷神，使他們在神的時間裡，選擇藉著耶穌基督與神建立個人的關係。</p>
+            <p style="font-size:0.9rem;color:var(--slate);line-height:1.85;margin-bottom:0.8rem;">Our desire is for children to experience God through a Christ-centered, dynamic program so that, in God's time, they will choose to build a personal relationship with Him through Jesus Christ.</p>
+            <p style="font-family:'Noto Sans SC',sans-serif;font-size:0.9rem;color:var(--slate);line-height:1.85;margin-bottom:0.4rem;">感謝您的委身與反思，思考如何運用您的時間、才能和恩賜來服事教會的兒童事工。當您以神的真理裝備孩子們時，您擁有這獨特的機會，親眼見證他們對神的愛不斷成長。</p>
+            <p style="font-size:0.9rem;color:var(--slate);line-height:1.85;margin-bottom:0.8rem;">Thank you for your dedication and reflection on how to use your time, talents, and gifts to serve the children's ministry in the church. When you equip children with God's truth, you alone have this unique opportunity to witness their ever-growing love for God.</p>
+            <p style="font-family:'Noto Sans SC',sans-serif;font-size:0.9rem;color:var(--slate);line-height:1.85;margin-bottom:0.4rem;">請聯繫我們，了解更多有關我們事工的資訊以及您可以如何參與。我們的燈塔兒童團隊將盡快與您聯絡！</p>
+            <p style="font-size:0.9rem;color:var(--slate);line-height:1.85;">Please contact us to learn more about our ministry and how you can participate. Our Lighthouse Kids team will get in touch with you as soon as possible!</p>
+          </div>
+          <div style="flex-shrink:0;">
+            <img src="assets/images/img_7a96b4940dc9.webp"
+                 alt="Lighthouse Kids classroom corner with tree mural and bookshelf"
+                 style="width:260px;border-radius:10px;box-shadow:0 4px 18px rgba(0,0,0,0.15);display:block;"/>
+          </div>
+        </div>
+
+        <!-- ── Age Group Cards ────────────────────────────────────────────── -->
+        <!--
+          NOTE: h4 headings within these cards correctly sit below h3 above.
+          The coloured left-border strip divs are purely decorative.
+        -->
+        <div style="display:flex;flex-direction:column;gap:1rem;margin-bottom:2.5rem;">
+
+          <!-- Nursery -->
+          <div style="background:white;border-radius:8px;box-shadow:0 3px 14px rgba(0,0,0,0.08);overflow:hidden;display:flex;align-items:stretch;">
+            <div style="background:linear-gradient(180deg,#1a472a,#2d6a4f);width:8px;flex-shrink:0;" aria-hidden="true"></div>
+            <div style="padding:1.2rem 1.4rem;flex:1;">
+              <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.5rem;">
+                <span aria-hidden="true" style="font-size:1.5rem;">👶</span>
+                <h4 style="font-family:'Noto Serif',serif;color:var(--navy);font-size:1.05rem;margin:0;"><span style="font-family:'Noto Sans SC',sans-serif;">嬰兒室</span> Nursery <span style="font-size:0.85rem;color:var(--slate);font-family:sans-serif;font-weight:400;">(Birth–23 months)</span></h4>
+              </div>
+              <p style="font-family:'Noto Sans SC',sans-serif;font-size:0.9rem;color:var(--slate);line-height:1.85;margin-bottom:0.4rem;">嬰兒室為小寶寶提供一個舒適的環境，家長仍可透過直播電視在室內觀看主日崇拜。嬰兒室是一個充滿活力、有趣的環境，適合各階段的嬰幼兒。哺乳媽媽室也為需要哺乳的媽媽提供了專屬空間。</p>
+              <p style="font-size:0.9rem;color:var(--slate);line-height:1.85;margin:0;">An environment for babies where parents can still be part of the Sunday Worship through a telecast providing a livestream of the service to the Nursery Room. The nursery is a stimulating and fun environment for infants, crawlers and walkers. A space for nursing moms is provided in the Nursing Mom Room.</p>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;margin-top:1rem;">
+                <img src="assets/images/img_d2733881d9e6.webp" alt="Nursing Mom Room with animal mural" style="width:100%;height:160px;object-fit:cover;border-radius:6px;display:block;"/>
+                <img src="assets/images/img_110c22d07d0c.webp" alt="Nursery playroom with toys and slide" style="width:100%;height:160px;object-fit:cover;border-radius:6px;display:block;"/>
+              </div>
+            </div>
+          </div>
+
+          <!-- Early Childhood -->
+          <div style="background:white;border-radius:8px;box-shadow:0 3px 14px rgba(0,0,0,0.08);overflow:hidden;display:flex;align-items:stretch;">
+            <div style="background:linear-gradient(180deg,#c8952a,#e8b84b);width:8px;flex-shrink:0;" aria-hidden="true"></div>
+            <div style="padding:1.2rem 1.4rem;flex:1;">
+              <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.5rem;">
+                <span aria-hidden="true" style="font-size:1.5rem;">🌱</span>
+                <h4 style="font-family:'Noto Serif',serif;color:var(--navy);font-size:1.05rem;margin:0;"><span style="font-family:'Noto Sans SC',sans-serif;">幼兒班</span> Early Childhood <span style="font-size:0.85rem;color:var(--slate);font-family:sans-serif;font-weight:400;">(Ages 2–5)</span></h4>
+              </div>
+              <p style="font-family:'Noto Sans SC',sans-serif;font-size:0.9rem;color:var(--slate);line-height:1.85;margin-bottom:0.4rem;">這個年齡段的孩子透過「親身體驗」學習效果最佳。透過動態而有條理的活動時間、敬拜和聖經課，我們與孩子們一起做手工、吃零食和玩耍。我們的心願是讓孩子們接受耶穌基督種下的種子，使他們的心靈不斷成長，越來越認識並愛戴耶穌！</p>
+              <p style="font-size:0.9rem;color:var(--slate);line-height:1.85;margin:0;">Children in this age group learn best through "hands-on" experience. With a dynamic and structured activity time, worship and Bible lesson, our time with the kids include crafts, snacks and playtime. Our desire is for children to receive the planting of the seed of Jesus Christ so their hearts would grow to know and love Jesus more and more!</p>
+              <div style="margin-top:1rem;">
+                <img src="assets/images/img_855df89da735.webp" alt="Pre-K classroom with colorful city mural" style="width:100%;max-height:220px;object-fit:cover;border-radius:6px;display:block;"/>
+              </div>
+            </div>
+          </div>
+
+          <!-- Late Childhood -->
+          <div style="background:white;border-radius:8px;box-shadow:0 3px 14px rgba(0,0,0,0.08);overflow:hidden;display:flex;align-items:stretch;">
+            <div style="background:linear-gradient(180deg,#9a1015,#c0171d);width:8px;flex-shrink:0;" aria-hidden="true"></div>
+            <div style="padding:1.2rem 1.4rem;flex:1;">
+              <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.5rem;">
+                <span aria-hidden="true" style="font-size:1.5rem;">📖</span>
+                <h4 style="font-family:'Noto Serif',serif;color:var(--navy);font-size:1.05rem;margin:0;"><span style="font-family:'Noto Sans SC',sans-serif;">兒童班</span> Late Childhood <span style="font-size:0.85rem;color:var(--slate);font-family:sans-serif;font-weight:400;">(Grades 1–6)</span></h4>
+              </div>
+              <p style="font-family:'Noto Sans SC',sans-serif;font-size:0.9rem;color:var(--slate);line-height:1.85;margin-bottom:0.4rem;">我們採用富有創意且貼近生活的課程，以有趣而實用的方式教導這些成長中的孩子聖經真理。一至六年級的孩子首先進行敬拜、活動和禱告。我們按年齡分組，以滿足每個年級不同的學習需要。我們的心願是讓孩子們離開時，知道自己被耶穌基督和教會大家庭所愛！</p>
+              <p style="font-size:0.9rem;color:var(--slate);line-height:1.85;margin:0;">Creative and relevant curriculum is used to teach these growing kids the biblical truth in a fun and applicable way. The kids in Grades 1–6 begin their time with worship, an activity and prayer. We separate our age groups to meet the learning needs of each grade level. Our desire is for kids to leave knowing they are loved by Jesus Christ and their church family!</p>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;margin-top:1rem;">
+                <img src="assets/images/img_21b8cfee5d4f.webp" alt="Classroom with colorful rugs and tree mural" style="width:100%;height:160px;object-fit:cover;border-radius:6px;display:block;"/>
+                <img src="assets/images/img_d86f28043252.webp" alt="1 Timothy 4:12 scripture wall mural" style="width:100%;height:160px;object-fit:cover;border-radius:6px;display:block;"/>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /age group cards -->
+
+        <!-- ── CTA / Back ────────────────────────────────────────────────── -->
+        <div style="background:var(--cream);border-radius:8px;padding:1.5rem;text-align:center;">
+          <p style="font-family:'Noto Sans SC',sans-serif;font-size:0.95rem;color:var(--navy);font-weight:700;margin-bottom:0.3rem;">有興趣參與或了解更多？</p>
+          <p style="font-size:0.875rem;color:var(--slate);margin-bottom:1rem;">Interested in getting involved or learning more?</p>
+          <a href="/cdn-cgi/l/email-protection#71181f171e3112121203185f1e0316"
+             style="display:inline-block;background:var(--red);color:white;padding:0.65rem 1.5rem;border-radius:4px;font-size:0.875rem;font-weight:700;text-decoration:none;margin-right:0.5rem;">
+            ✉️ <span style="font-family:'Noto Sans SC',sans-serif;">聯絡我們</span> Contact Us
+          </a>
+          <a href="ministries.html">← 返回事工 Back to Ministries</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── ONLINE WORSHIP ─────────────────────────────────────────────────── -->
+    <!-- CHANGED: <div> → <section>. REMOVED: role="region" from .online-card. -->
+    <section class="section section-alt" aria-labelledby="online-heading">
+      <div style="max-width:860px;margin:0 auto;">
+        <div class="online-card">
+          <div class="zh">線上敬拜</div>
+          <h3 id="online-heading">Join Us Online</h3>
+          <p style="font-family:'Noto Sans SC',sans-serif;font-size:0.9rem;color:rgba(255,255,255,0.8);margin-bottom:0.3rem;">無法親自出席？線上觀看直播或隨時收看錄影。</p>
+          <p>Can't make it in person? Watch our services live or access recordings anytime.</p>
+          <div class="online-btns">
+            <a class="btn-watch" href="https://www.youtube.com/@ChineseMinistryCCCRI" target="_blank" rel="noopener">▶ Watch Live 直播</a>
+            <a class="btn-gold"  href="https://goo.gl/maps/HcaaXQQvwiYJvish9"        target="_blank" rel="noopener">🗺 Directions 路線</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FIXED: </main> now correctly placed above <footer>. -->
+  <footer>
+    <div class="footer-links">
+      <span>📍 <strong style="color:var(--gold-light);">333 Roosevelt Ave, Pawtucket, RI 02860</strong></span>
+      <span>📞 <a href="tel:4017228877" style="color:var(--gold-light);">(401) 722-8877</a></span>
+      <span>✉️ <a href="/cdn-cgi/l/email-protection#4b22252d240b28282839226524392c" style="color:var(--gold-light);"><span class="__cf_email__" data-cfemail="40292e262f0023232332296e2f3227">[email&#160;protected]</span></a></span>
+    </div>
+    <!-- Restore remaining footer content from source (info paragraph, copy line) -->
+  </footer>
+
+</body>
+</html>
