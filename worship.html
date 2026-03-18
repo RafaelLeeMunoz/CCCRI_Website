@@ -17,17 +17,7 @@
   <link rel="stylesheet" href="assets/style.css"/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&family=Noto+Serif:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap"/>
 
-  <!--
-    REMOVED: Entire inline <script> block (lines 5–48 of original).
-    It contained four functions, all dead or duplicated:
-      • window.showPage() and window.navTo() — SPA-era dead code; navigation
-        is fully multi-page via <a href="...">, these are called from nowhere.
-      • window.toggleMenu() and switchTab() — exact duplicates of the
-        functions in assets/script.js, which was not being loaded at all.
-    ADDED: assets/script.js (deferred), which provides window.toggleMenu,
-    window.switchTab, the close-on-navigate listener, and the active-nav
-    fallback. switchTab() is live on this page for the service tabs.
-  -->
+  
   <script src="assets/nav.js"    defer></script>
   <script src="assets/script.js" defer></script>
 </head>
@@ -35,23 +25,12 @@
 <body data-nav="worship">
 
   <site-nav></site-nav>
-  <!--
-    REMOVED: Orphaned nav fragment from original line 57 — a stray </div>,
-    manually written hamburger <button>, donate <a>, closing </nav>, and
-    a full hand-written #mobile-menu with all its links. nav.js already
-    renders all of these inside <site-nav>. The duplicate caused two hamburger
-    buttons and two #mobile-menu elements in the DOM, breaking toggle behaviour.
-  -->
+ 
 
   <main class="page">
 
     <!-- ── PAGE HEADER ────────────────────────────────────────────────────── -->
-    <!--
-      REMOVED: role="banner" from .page-header.
-      role="banner" is reserved for the top-level site header landmark (the
-      <nav> from site-nav). Applying it to an inner page-title block creates
-      a duplicate banner landmark and confuses screen-reader navigation.
-    -->
+   
     <div class="page-header">
       <p class="zh">敬拜聚會</p>
       <h1>Worship Services</h1>
@@ -60,32 +39,21 @@
     </div>
 
     <!-- ── MAIN CONTENT SECTION ───────────────────────────────────────────── -->
-    <!--
-      CHANGED: <div class="section"> → <section class="section">.
-      This single section contains the sermon video, service tabs, what-to-
-      expect features, and historical sermon list. All content relates to
-      worship, so one section landmark with a heading anchor is appropriate.
-      Breaking it into multiple sections would give each block its own
-      4rem 5% padding and visually change the layout.
-    -->
+   
     <section class="section" aria-labelledby="worship-main-heading">
       <div style="max-width:900px;margin:0 auto;">
 
-        <!-- ── Latest Sermon Video ──────────────────────────────────────── -->
+    <!-- ── Latest Sermon Video ──────────────────────────────────────── -->
         <div class="gold-divider"></div>
         <p class="zh-label-lg">最新證道</p>
-        <!--
-          id="worship-main-heading" anchors the <section> landmark above.
-          REMOVED: style="margin-bottom:0.4rem;" — redundant as .section-title
-          already has margin-bottom defined in style.css.
-        -->
+       
         <h2 class="section-title" id="worship-main-heading">Latest Sunday Sermon</h2>
         <p style="color:var(--slate);font-size:0.95rem;margin-bottom:1.5rem;">最新主日崇拜講道 · Watch our most recent Sunday worship service</p>
 
         <!-- Responsive 16:9 iframe wrapper -->
         <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:8px;box-shadow:0 8px 32px rgba(0,0,0,0.18);margin-bottom:3rem;">
           <iframe
-            src="https://www.youtube.com/embed/2ODA8emUj9I?rel=0"
+            src="https://youtu.be/swRLpjhhhLU?si=l9hTzqBlKOPJJUeG"
             title="Latest Sunday Sermon — CCCRI Chinese Ministry"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen="true"
@@ -94,14 +62,7 @@
         </div>
 
         <!-- ── Service Tabs ──────────────────────────────────────────────── -->
-        <!--
-          Tab system hooks used by switchTab() in script.js:
-            id="tab-zh" / id="tab-en"         — tab buttons
-            id="panel-zh" / id="panel-en"     — tab panels
-            class="tab-btn" / "tab-active"    — button state (style.css)
-            class="tab-bar" / "tab-panel"     — layout (style.css)
-          All preserved exactly.
-        -->
+       
         <div class="service-tabs" style="margin-bottom:1.5rem;">
 
           <!-- Tab buttons -->
@@ -127,12 +88,7 @@
           </div>
 
           <!-- Chinese Service Panel -->
-          <!--
-            REMOVED: role="region" + aria-label from the inner .service-card.
-            The parent role="tabpanel" is already a named landmark via
-            aria-labelledby="tab-zh". A nested role="region" without its own
-            heading adds unnecessary landmark nesting for screen readers.
-          -->
+         
           <div class="tab-panel"
                id="panel-zh"
                role="tabpanel"
@@ -205,10 +161,7 @@
           </div><!-- /#panel-zh -->
 
           <!-- English Service Panel -->
-          <!--
-            REMOVED: role="region" + aria-label from inner .service-card (same
-            reason as Chinese panel above).
-          -->
+         
           <div class="tab-panel"
                id="panel-en"
                role="tabpanel"
@@ -261,11 +214,7 @@
               </div>
 
               <div style="margin-top:1.2rem;text-align:center;">
-                <!--
-                  FLAG: onmouseover/onmouseout used for hover background colour.
-                  These can be replaced by a CSS :hover rule, removing inline JS.
-                  Preserved as-is per the "do not change functionality" instruction.
-                -->
+               
                 <a href="https://citylightcccri.org"
                    target="_blank"
                    rel="noopener"
@@ -329,11 +278,7 @@
               <h4 style="margin-bottom:0.1rem;">Pastor Zhen Deqiang</h4>
               <p style="font-family:'Noto Sans SC',sans-serif;font-size:0.9rem;color:var(--navy);font-weight:700;margin-bottom:0.1rem;">服事基督</p>
               <p style="font-size:0.875rem;color:var(--slate);font-style:italic;">Serving Christ</p>
-              <!--
-                FLAG: onmouseover/onmouseout for hover opacity on Watch buttons.
-                All five Watch buttons use this pattern. It can be replaced with
-                a CSS :hover rule on a shared class. Preserved as-is.
-              -->
+             
               <a href="https://youtu.be/6aEL_8n1QfU?si=GWbLEed3j_zc7OwC"
                  target="_blank"
                  rel="noopener"
@@ -436,12 +381,7 @@
         </div><!-- /sermon list -->
 
         <!-- YouTube channel button -->
-        <!--
-          FIXED: SVG attribute corrected from viewbox → viewBox.
-          viewbox (lowercase) is not a valid SVG attribute; the icon was
-          rendering at 0×0 in conformant browsers. viewBox is case-sensitive
-          per the SVG specification.
-        -->
+        
         <div style="text-align:center;margin-bottom:2rem;">
           <a href="https://www.youtube.com/@ChineseMinistryCCCRI"
              target="_blank"
@@ -463,11 +403,7 @@
     </section><!-- /.section -->
 
     <!-- ── ONLINE WORSHIP ─────────────────────────────────────────────────── -->
-    <!--
-      CHANGED: <div class="section section-alt"> → <section>.
-      REMOVED: role="region" + aria-label from .online-card (same fix as
-      index.html and about.html — parent <section> provides the landmark).
-    -->
+    
     <section class="section section-alt" aria-labelledby="online-heading">
       <div style="max-width:860px;margin:0 auto;">
         <div class="online-card">
@@ -486,11 +422,7 @@
   </main><!-- /.page -->
 
   <!-- ── FOOTER ──────────────────────────────────────────────────────────── -->
-  <!--
-    NOTE: Source file was truncated mid-footer. Content below preserves
-    everything present in the original exactly. Restore the full footer
-    (info paragraph, copyright line) from your source repository.
-  -->
+  
   <footer>
     <div class="footer-links">
       <span>📍 <strong style="color:var(--gold-light);">333 Roosevelt Ave, Pawtucket, RI 02860</strong></span>
