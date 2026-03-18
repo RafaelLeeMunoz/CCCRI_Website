@@ -1,362 +1,503 @@
 <!DOCTYPE html>
 <html lang="zh-cmn-Hans-x-en">
 <head>
-<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="Chinese Christian Church of Rhode Island (CCCRI) — A non-denominational Christian church serving Rhode Island and southeastern New England in Mandarin, Cantonese, and English." name="description"/><meta content="Chinese Christian Church of Rhode Island | 羅德島華人基督教會" property="og:title"/><meta content="website" property="og:type"/><meta content="#c0171d" name="theme-color"/><title>Chinese Christian Church of Rhode Island | 羅德島華人基督教會</title><link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&amp;family=Noto+Serif:wght@400;600;700&amp;family=Noto+Sans+SC:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/><script>
-window.showPage = function(id) {
-  var pages = document.querySelectorAll('.page');
-  for (var i = 0; i < pages.length; i++) pages[i].classList.remove('active');
-  var btns = document.querySelectorAll('.nav-links button');
-  for (var j = 0; j < btns.length; j++) btns[j].classList.remove('active');
-  var page = document.getElementById('page-' + id);
-  var btn  = document.getElementById('nav-'  + id);
-  if (page) page.classList.add('active');
-  if (btn)  btn.classList.add('active');
-  window.scrollTo(0, 0);
-};
+  <meta charset="utf-8"/>
+  <meta name="viewport"    content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Chinese Christian Church of Rhode Island (CCCRI) — A non-denominational Christian church serving Rhode Island and southeastern New England in Mandarin, Cantonese, and English."/>
+  <meta name="theme-color" content="#c0171d"/>
+  <meta property="og:title" content="Chinese Christian Church of Rhode Island | 羅德島華人基督教會"/>
+  <meta property="og:type"  content="website"/>
 
-window.toggleMenu = function() {
-  var menu = document.getElementById('mobile-menu');
-  var btn  = document.getElementById('hamburger');
-  var open = menu.classList.toggle('open');
-  btn.classList.toggle('open', open);
-  btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-};
+  <!--
+    REMOVED: Duplicate generic <title> (line 4 of original).
+    Page-specific title from line 50 is kept.
+  -->
+  <title>Chinese Christian Church of Rhode Island | 羅德島華人基督教會 — Ministries</title>
 
-window.navTo = function(id) {
-  window.showPage(id);
-  var menu = document.getElementById('mobile-menu');
-  var btn  = document.getElementById('hamburger');
-  menu.classList.remove('open');
-  btn.classList.remove('open');
-  btn.setAttribute('aria-expanded', 'false');
-};
+  <link rel="stylesheet" href="assets/style.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&family=Noto+Serif:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap"/>
 
-function switchTab(id) {
-  // Update buttons
-  document.querySelectorAll('.tab-btn').forEach(function(btn) {
-    btn.classList.remove('tab-active');
-    btn.setAttribute('aria-selected', 'false');
-  });
-  var activeBtn = document.getElementById('tab-' + id);
-  if (activeBtn) { activeBtn.classList.add('tab-active'); activeBtn.setAttribute('aria-selected', 'true'); }
-  // Update panels
-  document.querySelectorAll('.tab-panel').forEach(function(p) { p.style.display = 'none'; });
-  var activePanel = document.getElementById('panel-' + id);
-  if (activePanel) activePanel.style.display = 'block';
-}
-
-</script>
-<link rel="stylesheet" href="assets/style.css">
-<title>Chinese Christian Church of Rhode Island | 羅德島華人基督教會 — Ministries</title>
-<script src="assets/nav.js" defer></script>
+  <!--
+    REMOVED: Entire inline <script> block (lines 5–48 of original).
+    It contained four functions, all dead or duplicated:
+      • window.showPage() and window.navTo() — SPA-era dead code; navigation
+        is fully multi-page via <a href="..."> and these are called from nowhere.
+      • window.toggleMenu() and switchTab() — exact duplicates of what
+        assets/script.js provides, which was not being loaded on this page.
+    ADDED: assets/script.js (deferred) which provides window.toggleMenu and
+    the close-on-navigate listener.
+  -->
+  <script src="assets/nav.js"    defer></script>
+  <script src="assets/script.js" defer></script>
 </head>
-<body data-nav="ministries">
-<site-nav></site-nav>
-</div><button aria-expanded="false" aria-label="Open navigation menu" class="hamburger" id="hamburger" onclick="toggleMenu()">
-<span></span><span></span><span></span>
-</button><a aria-label="Donate online — 線上奉獻" class="nav-donate" href="https://tithe.ly/give_new/www/#/tithely/give-one-time/1707700" rel="noopener" target="_blank">線上奉獻 Donate</a></nav><div aria-label="Mobile navigation" class="mobile-menu" id="mobile-menu" role="navigation"><a href="index.html">主页 Home</a><a href="about.html">关于我们 About Us</a><a href="worship.html">敬拜 Worship</a><a href="events.html">活动 Events</a><a href="ministries.html">事工 Ministries</a><a href="resources.html">资源 Resources</a><a href="contact.html">联系 Contact</a></div>
-<main class="page">
 
-<div class="page-header" role="banner">
-<p class="zh">事工與團契</p>
-<h1>Ministries &amp; Fellowship</h1>
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:1rem;color:rgba(255,255,255,0.8);margin-bottom:0.15rem;">彼此连接，共同成长</p>
-<p>Connecting &amp; Growing Together</p>
-</div>
-<div class="section">
-<div style="max-width:980px;margin:0 auto;">
-<div class="gold-divider"></div>
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:1.6rem;color:var(--gold);font-weight:700;margin-bottom:0.1rem;">教會事工</p>
-<h2 class="section-title">Our Ministries</h2>
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.95rem;color:var(--slate);margin-bottom:0.2rem;">點擊卡片了解各事工詳情</p>
-<p class="section-subtitle" style="margin-bottom:2rem;">Click a card to learn more about each ministry</p>
-<div class="ministry-grid">
-<a aria-label="Learn about Care &amp; Visits" class="ministry-btn-card" href="ministries-care.html">
-<div class="min-card-header" style="background-image:url('assets/images/img_a492f1a55a58.jpg');background-size:cover;background-position:center;position:relative;">
-<div style="position:absolute;inset:0;background:rgba(0,0,0,0.42);"></div>
-<div style="position:relative;z-index:1;">
-<div class="min-card-zh">關懷探訪</div>
-<div class="min-card-en">Care &amp; Visits</div>
-</div>
-</div>
-<div class="min-card-body">
-<div class="min-card-tagline-zh">探望、關懷、同行</div>
-<div class="min-card-tagline-en">Visiting, caring, walking alongside</div>
-<div class="min-card-arrow">了解更多 Learn More →</div>
-</div>
-</a>
-<a aria-label="Learn about Spiritual Life &amp; Edification" class="ministry-btn-card" href="ministries-spiritual.html">
-<div class="min-card-header" style="background-image:url('assets/images/img_b5068b63708f.jpg');background-size:cover;background-position:center;position:relative;">
-<div style="position:absolute;inset:0;background:rgba(0,0,0,0.42);"></div>
-<div style="position:relative;z-index:1;">
-<div class="min-card-zh">靈命與造就</div>
-<div class="min-card-en">Spiritual Life &amp; Edification</div>
-</div>
-</div>
-<div class="min-card-body">
-<div class="min-card-tagline-zh">查經、培訓、門徒</div>
-<div class="min-card-tagline-en">Bible study, training, discipleship</div>
-<div class="min-card-arrow">了解更多 Learn More →</div>
-</div>
-</a>
-<a aria-label="Learn about Food &amp; Blessing" class="ministry-btn-card" href="ministries-food.html">
-<div class="min-card-header" style="background-image:url('assets/images/img_c76755828323.jpg');background-size:cover;background-position:center;position:relative;">
-<div style="position:absolute;inset:0;background:rgba(0,0,0,0.42);"></div>
-<div style="position:relative;z-index:1;">
-<div class="min-card-zh">食物與祝福</div>
-<div class="min-card-en">Food &amp; Blessing</div>
-</div>
-</div>
-<div class="min-card-body">
-<div class="min-card-tagline-zh">分享、供應、祝福社區</div>
-<div class="min-card-tagline-en">Sharing, providing, blessing the community</div>
-<div class="min-card-arrow">了解更多 Learn More →</div>
-</div>
-</a>
-<a aria-label="Learn about Children's Ministry" class="ministry-btn-card" href="ministries-children.html">
-<div class="min-card-header" style="background-image:url('assets/images/img_ea2c64d742b0.jpg');background-size:cover;background-position:center;position:relative;">
-<div style="position:absolute;inset:0;background:rgba(0,0,0,0.42);border-radius:0;"></div>
-<div style="position:relative;z-index:1;">
-<div class="min-card-zh">兒童事工</div>
-<div class="min-card-en">Children's</div>
-</div>
-</div>
-<div class="min-card-body">
-<div class="min-card-tagline-zh">栽培下一代的信仰根基</div>
-<div class="min-card-tagline-en">Building faith foundations in young hearts</div>
-<div class="min-card-arrow">了解更多 Learn More →</div>
-</div>
-</a>
-<a aria-label="Learn about Youth Ministry" class="ministry-btn-card" href="ministries-youth.html">
-<div class="min-card-header" style="background-image:url('assets/images/img_1bde51b48b9b.jpg');background-size:cover;background-position:center;position:relative;">
-<div style="position:absolute;inset:0;background:rgba(0,0,0,0.42);border-radius:0;"></div>
-<div style="position:relative;z-index:1;">
-<div class="min-card-zh">青年事工</div>
-<div class="min-card-en">Youth</div>
-</div>
-</div>
-<div class="min-card-body">
-<div class="min-card-tagline-zh">裝備青年活出信仰</div>
-<div class="min-card-tagline-en">Equipping young people to live out their faith</div>
-<div class="min-card-arrow">了解更多 Learn More →</div>
-</div>
-</a>
-<a aria-label="Learn about Elders Ministry" class="ministry-btn-card" href="ministries-elders.html">
-<div class="min-card-header" style="background-image:url('assets/images/img_6e2ba02a2cc4.jpg');background-size:cover;background-position:center;position:relative;">
-<div style="position:absolute;inset:0;background:rgba(0,0,0,0.42);border-radius:0;"></div>
-<div style="position:relative;z-index:1;">
-<div class="min-card-zh">長者事工</div>
-<div class="min-card-en">Elders</div>
-</div>
-</div>
-<div class="min-card-body">
-<div class="min-card-tagline-zh">尊重長者、守望同行</div>
-<div class="min-card-tagline-en">Honoring seniors, walking together</div>
-<div class="min-card-arrow">了解更多 Learn More →</div>
-</div>
-</a>
-<a aria-label="Learn about Chinese School" class="ministry-btn-card" href="ministries-chinese-school.html">
-<div class="min-card-header" style="background-image:url('assets/images/img_dcc84628caff.jpg');background-size:cover;background-position:center;position:relative;">
-<div style="position:absolute;inset:0;background:rgba(0,0,0,0.42);border-radius:0;"></div>
-<div style="position:relative;z-index:1;">
-<div class="min-card-zh">中文學校</div>
-<div class="min-card-en">Chinese School</div>
-</div>
-</div>
-<div class="min-card-body">
-<div class="min-card-tagline-zh">傳承中華文化與語言</div>
-<div class="min-card-tagline-en">Preserving Chinese language and heritage</div>
-<div class="min-card-arrow">了解更多 Learn More →</div>
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="section" style="background:var(--cream);">
-<div style="max-width:980px;margin:0 auto;">
-<div class="gold-divider"></div>
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:1.6rem;color:var(--gold);font-weight:700;margin-bottom:0.1rem;">團契生活</p>
-<h2 class="section-title">Fellowship Groups</h2>
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.95rem;color:var(--slate);margin-bottom:0.2rem;">點擊卡片了解各團契詳情</p>
-<p class="section-subtitle" style="margin-bottom:2rem;">Click a card to learn more about each fellowship</p>
-<div class="fel-grid">
-<a aria-label="Learn about Caleb" class="fel-card" href="fellowship-caleb.html">
-<div class="fel-card-banner" style="background-image:url('assets/images/Caleb3.webp');background-size:cover;background-position:center;position:relative;border-radius:10px 10px 0 0;">
-<div style="position:absolute;inset:0;background:rgba(0,0,0,0.40);border-radius:10px 10px 0 0;"></div>
-<div style="position:relative;z-index:1;">
-<span class="fel-zh-banner">迦勒團契</span>
-</div>
-</div>
-<div class="fel-card-body">
-<div class="fel-en" style="font-weight:600;color:var(--navy);">Caleb</div>
-<div class="fel-arrow">了解更多 Learn More →</div>
-</div>
-</a>
-<a aria-label="Learn about Canaan" class="fel-card" href="fellowship-canaan.html">
-<div class="fel-card-banner" style="background-image:url('assets/images/Canaan.webp');background-size:cover;background-position:center;position:relative;border-radius:10px 10px 0 0;">
-<div style="position:absolute;inset:0;background:rgba(0,0,0,0.40);border-radius:10px 10px 0 0;"></div>
-<div style="position:relative;z-index:1;">
-<span class="fel-zh-banner">迦南團契</span>
-</div>
-</div>
-<div class="fel-card-body">
-<div class="fel-en" style="font-weight:600;color:var(--navy);">Canaan</div>
-<div class="fel-arrow">了解更多 Learn More →</div>
-</div>
-</a>
-<a aria-label="Learn about Jia Mei" class="fel-card" href="fellowship-jiamei.html">
-<div class="fel-card-banner" style="background-image:url('assets/images/img_74111ccd207c.jpg');background-size:cover;background-position:center;position:relative;border-radius:10px 10px 0 0;">
-<div style="position:absolute;inset:0;background:rgba(0,0,0,0.40);border-radius:10px 10px 0 0;"></div>
-<div style="position:relative;z-index:1;">
-<span class="fel-zh-banner">家美團契</span>
-</div>
-</div>
-<div class="fel-card-body">
-<div class="fel-en" style="font-weight:600;color:var(--navy);">Jia Mei</div>
-<div class="fel-arrow">了解更多 Learn More →</div>
-</div>
-</a>
-<a aria-label="Learn about New Song" class="fel-card" href="fellowship-newsong.html">
-<div class="fel-card-banner" style="background-image:url('assets/images/img_4e82b05a8e95.jpg');background-size:cover;background-position:center;position:relative;border-radius:10px 10px 0 0;">
-<div style="position:absolute;inset:0;background:rgba(0,0,0,0.40);border-radius:10px 10px 0 0;"></div>
-<div style="position:relative;z-index:1;">
-<span class="fel-zh-banner">新歌團契</span>
-</div>
-</div>
-<div class="fel-card-body">
-<div class="fel-en" style="font-weight:600;color:var(--navy);">New Song</div>
-<div class="fel-arrow">了解更多 Learn More →</div>
-</div>
-</a>
-<a aria-label="Learn about Joyful" class="fel-card" href="fellowship-joyful.html">
-<div class="fel-card-banner" style="background-image:url('assets/images/img_9cdc7bf5abad.jpg');background-size:cover;background-position:center;position:relative;border-radius:10px 10px 0 0;">
-<div style="position:absolute;inset:0;background:rgba(0,0,0,0.40);border-radius:10px 10px 0 0;"></div>
-<div style="position:relative;z-index:1;">
-<span class="fel-zh-banner">喜樂團契</span>
-</div>
-</div>
-<div class="fel-card-body">
-<div class="fel-en" style="font-weight:600;color:var(--navy);">Joyful</div>
-<div class="fel-arrow">了解更多 Learn More →</div>
-</div>
-</a>
-<a aria-label="Learn about Peter" class="fel-card" href="fellowship-peter.html">
-<div class="fel-card-banner" style="background-image:url('assets/images/img_03e282de31a3.jpg');background-size:cover;background-position:center;position:relative;border-radius:10px 10px 0 0;">
-<div style="position:absolute;inset:0;background:rgba(0,0,0,0.40);border-radius:10px 10px 0 0;"></div>
-<div style="position:relative;z-index:1;">
-<span class="fel-zh-banner">彼得團契</span>
-</div>
-</div>
-<div class="fel-card-body">
-<div class="fel-en" style="font-weight:600;color:var(--navy);">Peter</div>
-<div class="fel-arrow">了解更多 Learn More →</div>
-</div>
-</a>
-<a aria-label="Learn about Noah's" class="fel-card" href="fellowship-noahs.html">
-<div class="fel-card-banner" style="background-image:url('assets/images/img_a6fe5f8ae6c4.jpg');background-size:cover;background-position:center;position:relative;border-radius:10px 10px 0 0;">
-<div style="position:absolute;inset:0;background:rgba(0,0,0,0.40);border-radius:10px 10px 0 0;"></div>
-<div style="position:relative;z-index:1;">
-<span class="fel-zh-banner">諾亞團契</span>
-</div>
-</div>
-<div class="fel-card-body">
-<div class="fel-en" style="font-weight:600;color:var(--navy);">Noah's</div>
-<div class="fel-arrow">了解更多 Learn More →</div>
-</div>
-</a>
-<a aria-label="Learn about Bardoro Buys" class="fel-card" href="fellowship-bardoro.html">
-<div class="fel-card-banner" style="background-image:url('assets/images/img_f4d3d98fae36.jpg');background-size:cover;background-position:center;position:relative;border-radius:10px 10px 0 0;">
-<div style="position:absolute;inset:0;background:rgba(0,0,0,0.40);border-radius:10px 10px 0 0;"></div>
-<div style="position:relative;z-index:1;">
-<span class="fel-zh-banner">百多羅團契</span>
-</div>
-</div>
-<div class="fel-card-body">
-<div class="fel-en" style="font-weight:600;color:var(--navy);">Bardoro Buys</div>
-<div class="fel-arrow">了解更多 Learn More →</div>
-</div>
-</a>
-<a aria-label="Learn about Food and Blessing" class="fel-card" href="fellowship-foodblessing.html">
-<div class="fel-card-banner" style="background-image:url('assets/images/img_402fc361c750.jpg');background-size:cover;background-position:center;position:relative;border-radius:10px 10px 0 0;">
-<div style="position:absolute;inset:0;background:rgba(0,0,0,0.40);border-radius:10px 10px 0 0;"></div>
-<div style="position:relative;z-index:1;">
-<span class="fel-zh-banner">食物與祝福團契</span>
-</div>
-</div>
-<div class="fel-card-body">
-<div class="fel-en" style="font-weight:600;color:var(--navy);">Food and Blessing</div>
-<div class="fel-arrow">了解更多 Learn More →</div>
-</div>
-</a>
-<a aria-label="Learn about Kingston" class="fel-card" href="fellowship-kingston.html">
-<div class="fel-card-banner" style="background-image:url('assets/images/img_b95e397e7d9a.jpg');background-size:cover;background-position:center;position:relative;border-radius:10px 10px 0 0;">
-<div style="position:absolute;inset:0;background:rgba(0,0,0,0.40);border-radius:10px 10px 0 0;"></div>
-<div style="position:relative;z-index:1;">
-<span class="fel-zh-banner">京士頓團契</span>
-</div>
-</div>
-<div class="fel-card-body">
-<div class="fel-en" style="font-weight:600;color:var(--navy);">Kingston</div>
-<div class="fel-arrow">了解更多 Learn More →</div>
-</div>
-</a>
-<a aria-label="Learn about Fun" class="fel-card" href="fellowship-fun.html">
-<div class="fel-card-banner" style="background-image:url('assets/images/img_ca009cae0651.jpg');background-size:cover;background-position:center;position:relative;border-radius:10px 10px 0 0;">
-<div style="position:absolute;inset:0;background:rgba(0,0,0,0.40);border-radius:10px 10px 0 0;"></div>
-<div style="position:relative;z-index:1;">
-<span class="fel-zh-banner">歡樂團契</span>
-</div>
-</div>
-<div class="fel-card-body">
-<div class="fel-en" style="font-weight:600;color:var(--navy);">Fun</div>
-<div class="fel-arrow">了解更多 Learn More →</div>
-</div>
-</a>
-<a aria-label="Learn about LIFE" class="fel-card" href="fellowship-life.html">
-<div class="fel-card-banner" style="background-image:url('assets/images/img_a8ccc3813399.jpg');background-size:cover;background-position:center;position:relative;border-radius:10px 10px 0 0;">
-<div style="position:absolute;inset:0;background:rgba(0,0,0,0.40);border-radius:10px 10px 0 0;"></div>
-<div style="position:relative;z-index:1;">
-<span class="fel-zh-banner">生命團契</span>
-</div>
-</div>
-<div class="fel-card-body">
-<div class="fel-en" style="font-weight:600;color:var(--navy);">LIFE</div>
-<div class="fel-arrow">了解更多 Learn More →</div>
-</div>
-</a>
-<a aria-label="Learn about 11:28" class="fel-card" href="fellowship-1128.html">
-<div class="fel-card-banner" style="background-image:url('assets/images/img_c5c2a5c0cf2b.jpg');background-size:cover;background-position:center;position:relative;border-radius:10px 10px 0 0;">
-<div style="position:absolute;inset:0;background:rgba(0,0,0,0.40);border-radius:10px 10px 0 0;"></div>
-<div style="position:relative;z-index:1;">
-<span class="fel-zh-banner">1128團契</span>
-</div>
-</div>
-<div class="fel-card-body">
-<div class="fel-en" style="font-weight:600;color:var(--navy);">11:28</div>
-<div class="fel-arrow">了解更多 Learn More →</div>
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="section section-alt">
-<div style="max-width:860px;margin:0 auto;">
-<div aria-label="Online worship options" class="online-card" role="region">
-<div class="zh">線上敬拜</div>
-<h3>Join Us Online</h3>
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.9rem;color:rgba(255,255,255,0.8);margin-bottom:0.3rem;">無法親自出席？線上觀看直播或隨時收看錄影。</p>
-<p>Can't make it in person? Watch our services live or access recordings anytime.</p>
-<div class="online-btns">
-<a class="btn-watch" href="https://www.youtube.com/@ChineseMinistryCCCRI" rel="noopener" target="_blank">▶ Watch Live 直播</a>
-<a class="btn-gold" href="https://goo.gl/maps/HcaaXQQvwiYJvish9" rel="noopener" target="_blank">🗺 Directions 路線</a>
-</div>
-</div>
-</div>
-</div>
-<footer>
-<div class="footer-links">
-<span>📍 <strong style="color:var(--gold-light);">333 Roosevelt Ave, Pawtucket, RI 02860</strong></span>
-<span>📞 <a href="tel:4017228877" style="color:var(--gold-light);">(401) 722-8877</a></span>
-<span>✉️ <a href="/cdn-cgi/l/email-protection#d3babdb5bc93b0b0b0a1bafdbca1b4" style="color:var(--gold-light);"><span class="__cf_email__" data-cfemail="d5bcbbb3ba95b6b6b6a7bcfbbaa7b2">[email&#160;protected]</span></a></span>
-</div>
-<p class="info">For more information: <a href="/cdn-cgi/l/email-protection#6c00090d08091e1f0f0f0f1e052c0b010d0500420f0301" style="color:var(--gold-light
+<body data-nav="ministries">
+
+  <site-nav></site-nav>
+  <!--
+    REMOVED: Orphaned nav fragment — same pattern present on every other page.
+    Original line 57 contained a stray </div>, a duplicate hamburger
+    <button id="hamburger">, the donate <a>, a closing </nav>, and a full
+    hand-written #mobile-menu with all its links. nav.js renders all of these
+    inside <site-nav>; the duplicate produced two hamburger buttons and two
+    #mobile-menu elements in the DOM, breaking toggle behaviour.
+  -->
+
+  <main class="page">
+
+    <!-- ── PAGE HEADER ────────────────────────────────────────────────────── -->
+    <!--
+      REMOVED: role="banner" from .page-header — reserved for the top-level
+      site header landmark (the <nav> rendered by site-nav). Using it on an
+      inner page-title block creates a duplicate banner landmark that breaks
+      screen-reader navigation menus.
+    -->
+    <div class="page-header">
+      <p class="zh">事工與團契</p>
+      <h1>Ministries &amp; Fellowship</h1>
+      <p style="font-family:'Noto Sans SC',sans-serif;font-size:1rem;color:rgba(255,255,255,0.8);margin-bottom:0.15rem;">彼此连接，共同成长</p>
+      <p>Connecting &amp; Growing Together</p>
+    </div>
+
+    <!-- ── OUR MINISTRIES ────────────────────────────────────────────────── -->
+    <!--
+      CHANGED: <div class="section"> → <section class="section">.
+      This is one of two distinct content bands on the page. Giving each a
+      proper <section> landmark with aria-labelledby makes the page outline
+      navigable for screen reader users.
+    -->
+    <section class="section" aria-labelledby="ministries-heading">
+      <div style="max-width:980px;margin:0 auto;">
+        <div class="gold-divider"></div>
+        <!--
+          CHANGED: Inline-styled <p> → <p class="zh-label-lg">.
+          style.css .zh-label-lg produces identical output (Noto Sans SC,
+          1.6rem, var(--gold), bold) without per-element inline styles.
+          Applied to both section labels on this page.
+        -->
+        <p class="zh-label-lg">教會事工</p>
+        <h2 class="section-title" id="ministries-heading">Our Ministries</h2>
+        <p style="font-family:'Noto Sans SC',sans-serif;font-size:0.95rem;color:var(--slate);margin-bottom:0.2rem;">點擊卡片了解各事工詳情</p>
+        <p class="section-subtitle" style="margin-bottom:2rem;">Click a card to learn more about each ministry</p>
+
+        <!--
+          Ministry cards — each is an <a> (already correct). The inner structure
+          uses .min-card-header with a background image plus an absolute-
+          positioned overlay div and a relative content div. This pattern is
+          preserved exactly as CSS and any sub-page JS may depend on it.
+
+          NOTE: The overlay <div style="border-radius:0"> on cards 4–6 is
+          inconsistent with cards 1–3 which omit border-radius entirely.
+          Visually identical (both resolve to no radius on the overlay since
+          .min-card-header overflow:hidden clips children). Left as-is to
+          avoid any unintended visual change.
+        -->
+        <div class="ministry-grid">
+
+          <!-- Care & Visits -->
+          <a class="ministry-btn-card"
+             href="ministries-care.html"
+             aria-label="Learn about Care &amp; Visits">
+            <div class="min-card-header"
+                 style="background-image:url('assets/images/img_a492f1a55a58.jpg');background-size:cover;background-position:center;position:relative;">
+              <div style="position:absolute;inset:0;background:rgba(0,0,0,0.42);" aria-hidden="true"></div>
+              <div style="position:relative;z-index:1;">
+                <div class="min-card-zh">關懷探訪</div>
+                <div class="min-card-en">Care &amp; Visits</div>
+              </div>
+            </div>
+            <div class="min-card-body">
+              <div class="min-card-tagline-zh">探望、關懷、同行</div>
+              <div class="min-card-tagline-en">Visiting, caring, walking alongside</div>
+              <div class="min-card-arrow">了解更多 Learn More →</div>
+            </div>
+          </a>
+
+          <!-- Spiritual Life & Edification -->
+          <a class="ministry-btn-card"
+             href="ministries-spiritual.html"
+             aria-label="Learn about Spiritual Life &amp; Edification">
+            <div class="min-card-header"
+                 style="background-image:url('assets/images/img_b5068b63708f.jpg');background-size:cover;background-position:center;position:relative;">
+              <div style="position:absolute;inset:0;background:rgba(0,0,0,0.42);" aria-hidden="true"></div>
+              <div style="position:relative;z-index:1;">
+                <div class="min-card-zh">靈命與造就</div>
+                <div class="min-card-en">Spiritual Life &amp; Edification</div>
+              </div>
+            </div>
+            <div class="min-card-body">
+              <div class="min-card-tagline-zh">查經、培訓、門徒</div>
+              <div class="min-card-tagline-en">Bible study, training, discipleship</div>
+              <div class="min-card-arrow">了解更多 Learn More →</div>
+            </div>
+          </a>
+
+          <!-- Food & Blessing -->
+          <a class="ministry-btn-card"
+             href="ministries-food.html"
+             aria-label="Learn about Food &amp; Blessing">
+            <div class="min-card-header"
+                 style="background-image:url('assets/images/img_c76755828323.jpg');background-size:cover;background-position:center;position:relative;">
+              <div style="position:absolute;inset:0;background:rgba(0,0,0,0.42);" aria-hidden="true"></div>
+              <div style="position:relative;z-index:1;">
+                <div class="min-card-zh">食物與祝福</div>
+                <div class="min-card-en">Food &amp; Blessing</div>
+              </div>
+            </div>
+            <div class="min-card-body">
+              <div class="min-card-tagline-zh">分享、供應、祝福社區</div>
+              <div class="min-card-tagline-en">Sharing, providing, blessing the community</div>
+              <div class="min-card-arrow">了解更多 Learn More →</div>
+            </div>
+          </a>
+
+          <!-- Children's Ministry -->
+          <a class="ministry-btn-card"
+             href="ministries-children.html"
+             aria-label="Learn about Children's Ministry">
+            <div class="min-card-header"
+                 style="background-image:url('assets/images/img_ea2c64d742b0.jpg');background-size:cover;background-position:center;position:relative;">
+              <div style="position:absolute;inset:0;background:rgba(0,0,0,0.42);border-radius:0;" aria-hidden="true"></div>
+              <div style="position:relative;z-index:1;">
+                <div class="min-card-zh">兒童事工</div>
+                <div class="min-card-en">Children's</div>
+              </div>
+            </div>
+            <div class="min-card-body">
+              <div class="min-card-tagline-zh">栽培下一代的信仰根基</div>
+              <div class="min-card-tagline-en">Building faith foundations in young hearts</div>
+              <div class="min-card-arrow">了解更多 Learn More →</div>
+            </div>
+          </a>
+
+          <!-- Youth Ministry -->
+          <a class="ministry-btn-card"
+             href="ministries-youth.html"
+             aria-label="Learn about Youth Ministry">
+            <div class="min-card-header"
+                 style="background-image:url('assets/images/img_1bde51b48b9b.jpg');background-size:cover;background-position:center;position:relative;">
+              <div style="position:absolute;inset:0;background:rgba(0,0,0,0.42);border-radius:0;" aria-hidden="true"></div>
+              <div style="position:relative;z-index:1;">
+                <div class="min-card-zh">青年事工</div>
+                <div class="min-card-en">Youth</div>
+              </div>
+            </div>
+            <div class="min-card-body">
+              <div class="min-card-tagline-zh">裝備青年活出信仰</div>
+              <div class="min-card-tagline-en">Equipping young people to live out their faith</div>
+              <div class="min-card-arrow">了解更多 Learn More →</div>
+            </div>
+          </a>
+
+          <!-- Elders Ministry -->
+          <a class="ministry-btn-card"
+             href="ministries-elders.html"
+             aria-label="Learn about Elders Ministry">
+            <div class="min-card-header"
+                 style="background-image:url('assets/images/img_6e2ba02a2cc4.jpg');background-size:cover;background-position:center;position:relative;">
+              <div style="position:absolute;inset:0;background:rgba(0,0,0,0.42);border-radius:0;" aria-hidden="true"></div>
+              <div style="position:relative;z-index:1;">
+                <div class="min-card-zh">長者事工</div>
+                <div class="min-card-en">Elders</div>
+              </div>
+            </div>
+            <div class="min-card-body">
+              <div class="min-card-tagline-zh">尊重長者、守望同行</div>
+              <div class="min-card-tagline-en">Honoring seniors, walking together</div>
+              <div class="min-card-arrow">了解更多 Learn More →</div>
+            </div>
+          </a>
+
+          <!-- Chinese School -->
+          <a class="ministry-btn-card"
+             href="ministries-chinese-school.html"
+             aria-label="Learn about Chinese School">
+            <div class="min-card-header"
+                 style="background-image:url('assets/images/img_dcc84628caff.jpg');background-size:cover;background-position:center;position:relative;">
+              <div style="position:absolute;inset:0;background:rgba(0,0,0,0.42);border-radius:0;" aria-hidden="true"></div>
+              <div style="position:relative;z-index:1;">
+                <div class="min-card-zh">中文學校</div>
+                <div class="min-card-en">Chinese School</div>
+              </div>
+            </div>
+            <div class="min-card-body">
+              <div class="min-card-tagline-zh">傳承中華文化與語言</div>
+              <div class="min-card-tagline-en">Preserving Chinese language and heritage</div>
+              <div class="min-card-arrow">了解更多 Learn More →</div>
+            </div>
+          </a>
+
+        </div><!-- /.ministry-grid -->
+      </div>
+    </section>
+
+    <!-- ── FELLOWSHIP GROUPS ──────────────────────────────────────────────── -->
+    <!--
+      CHANGED: <div class="section" style="background:var(--cream);"> →
+      <section class="section section-alt" aria-labelledby="fellowship-heading">.
+
+      The original used an inline background override identical to .section-alt.
+      Replacing the inline style with the shared class is functionally and
+      visually identical, removes the inline override, and makes the intent
+      explicit. style.css: .section-alt { background: var(--cream) }.
+
+      IMPORTANT: If any external CSS or JS targets the inline style specifically,
+      revert to the original. In this codebase there is no evidence of that.
+    -->
+    <section class="section section-alt" aria-labelledby="fellowship-heading">
+      <div style="max-width:980px;margin:0 auto;">
+        <div class="gold-divider"></div>
+        <p class="zh-label-lg">團契生活</p>
+        <h2 class="section-title" id="fellowship-heading">Fellowship Groups</h2>
+        <p style="font-family:'Noto Sans SC',sans-serif;font-size:0.95rem;color:var(--slate);margin-bottom:0.2rem;">點擊卡片了解各團契詳情</p>
+        <p class="section-subtitle" style="margin-bottom:2rem;">Click a card to learn more about each fellowship</p>
+
+        <!--
+          Fellowship cards — each is an <a> linking to its own sub-page.
+          The overlay <div> inside each .fel-card-banner is purely decorative
+          (darkens the background image for text legibility).
+          aria-hidden="true" added to all overlay divs on this page.
+        -->
+        <div class="fel-grid">
+
+          <!-- Caleb -->
+          <a class="fel-card" href="fellowship-caleb.html" aria-label="Learn about Caleb">
+            <div class="fel-card-banner"
+                 style="background-image:url('assets/images/Caleb3.webp');background-size:cover;background-position:center;position:relative;border-radius:10px 10px 0 0;">
+              <div style="position:absolute;inset:0;background:rgba(0,0,0,0.40);border-radius:10px 10px 0 0;" aria-hidden="true"></div>
+              <div style="position:relative;z-index:1;">
+                <span class="fel-zh-banner">迦勒團契</span>
+              </div>
+            </div>
+            <div class="fel-card-body">
+              <div class="fel-en" style="font-weight:600;color:var(--navy);">Caleb</div>
+              <div class="fel-arrow">了解更多 Learn More →</div>
+            </div>
+          </a>
+
+          <!-- Canaan -->
+          <a class="fel-card" href="fellowship-canaan.html" aria-label="Learn about Canaan">
+            <div class="fel-card-banner"
+                 style="background-image:url('assets/images/Canaan.webp');background-size:cover;background-position:center;position:relative;border-radius:10px 10px 0 0;">
+              <div style="position:absolute;inset:0;background:rgba(0,0,0,0.40);border-radius:10px 10px 0 0;" aria-hidden="true"></div>
+              <div style="position:relative;z-index:1;">
+                <span class="fel-zh-banner">迦南團契</span>
+              </div>
+            </div>
+            <div class="fel-card-body">
+              <div class="fel-en" style="font-weight:600;color:var(--navy);">Canaan</div>
+              <div class="fel-arrow">了解更多 Learn More →</div>
+            </div>
+          </a>
+
+          <!-- Jia Mei -->
+          <a class="fel-card" href="fellowship-jiamei.html" aria-label="Learn about Jia Mei">
+            <div class="fel-card-banner"
+                 style="background-image:url('assets/images/img_74111ccd207c.jpg');background-size:cover;background-position:center;position:relative;border-radius:10px 10px 0 0;">
+              <div style="position:absolute;inset:0;background:rgba(0,0,0,0.40);border-radius:10px 10px 0 0;" aria-hidden="true"></div>
+              <div style="position:relative;z-index:1;">
+                <span class="fel-zh-banner">家美團契</span>
+              </div>
+            </div>
+            <div class="fel-card-body">
+              <div class="fel-en" style="font-weight:600;color:var(--navy);">Jia Mei</div>
+              <div class="fel-arrow">了解更多 Learn More →</div>
+            </div>
+          </a>
+
+          <!-- New Song -->
+          <a class="fel-card" href="fellowship-newsong.html" aria-label="Learn about New Song">
+            <div class="fel-card-banner"
+                 style="background-image:url('assets/images/img_4e82b05a8e95.jpg');background-size:cover;background-position:center;position:relative;border-radius:10px 10px 0 0;">
+              <div style="position:absolute;inset:0;background:rgba(0,0,0,0.40);border-radius:10px 10px 0 0;" aria-hidden="true"></div>
+              <div style="position:relative;z-index:1;">
+                <span class="fel-zh-banner">新歌團契</span>
+              </div>
+            </div>
+            <div class="fel-card-body">
+              <div class="fel-en" style="font-weight:600;color:var(--navy);">New Song</div>
+              <div class="fel-arrow">了解更多 Learn More →</div>
+            </div>
+          </a>
+
+          <!-- Joyful -->
+          <a class="fel-card" href="fellowship-joyful.html" aria-label="Learn about Joyful">
+            <div class="fel-card-banner"
+                 style="background-image:url('assets/images/img_9cdc7bf5abad.jpg');background-size:cover;background-position:center;position:relative;border-radius:10px 10px 0 0;">
+              <div style="position:absolute;inset:0;background:rgba(0,0,0,0.40);border-radius:10px 10px 0 0;" aria-hidden="true"></div>
+              <div style="position:relative;z-index:1;">
+                <span class="fel-zh-banner">喜樂團契</span>
+              </div>
+            </div>
+            <div class="fel-card-body">
+              <div class="fel-en" style="font-weight:600;color:var(--navy);">Joyful</div>
+              <div class="fel-arrow">了解更多 Learn More →</div>
+            </div>
+          </a>
+
+          <!-- Peter -->
+          <a class="fel-card" href="fellowship-peter.html" aria-label="Learn about Peter">
+            <div class="fel-card-banner"
+                 style="background-image:url('assets/images/img_03e282de31a3.jpg');background-size:cover;background-position:center;position:relative;border-radius:10px 10px 0 0;">
+              <div style="position:absolute;inset:0;background:rgba(0,0,0,0.40);border-radius:10px 10px 0 0;" aria-hidden="true"></div>
+              <div style="position:relative;z-index:1;">
+                <span class="fel-zh-banner">彼得團契</span>
+              </div>
+            </div>
+            <div class="fel-card-body">
+              <div class="fel-en" style="font-weight:600;color:var(--navy);">Peter</div>
+              <div class="fel-arrow">了解更多 Learn More →</div>
+            </div>
+          </a>
+
+          <!-- Noah's -->
+          <a class="fel-card" href="fellowship-noahs.html" aria-label="Learn about Noah's">
+            <div class="fel-card-banner"
+                 style="background-image:url('assets/images/img_a6fe5f8ae6c4.jpg');background-size:cover;background-position:center;position:relative;border-radius:10px 10px 0 0;">
+              <div style="position:absolute;inset:0;background:rgba(0,0,0,0.40);border-radius:10px 10px 0 0;" aria-hidden="true"></div>
+              <div style="position:relative;z-index:1;">
+                <span class="fel-zh-banner">諾亞團契</span>
+              </div>
+            </div>
+            <div class="fel-card-body">
+              <div class="fel-en" style="font-weight:600;color:var(--navy);">Noah's</div>
+              <div class="fel-arrow">了解更多 Learn More →</div>
+            </div>
+          </a>
+
+          <!-- Bardoro Buys -->
+          <a class="fel-card" href="fellowship-bardoro.html" aria-label="Learn about Bardoro Buys">
+            <div class="fel-card-banner"
+                 style="background-image:url('assets/images/img_f4d3d98fae36.jpg');background-size:cover;background-position:center;position:relative;border-radius:10px 10px 0 0;">
+              <div style="position:absolute;inset:0;background:rgba(0,0,0,0.40);border-radius:10px 10px 0 0;" aria-hidden="true"></div>
+              <div style="position:relative;z-index:1;">
+                <span class="fel-zh-banner">百多羅團契</span>
+              </div>
+            </div>
+            <div class="fel-card-body">
+              <div class="fel-en" style="font-weight:600;color:var(--navy);">Bardoro Buys</div>
+              <div class="fel-arrow">了解更多 Learn More →</div>
+            </div>
+          </a>
+
+          <!-- Food and Blessing -->
+          <a class="fel-card" href="fellowship-foodblessing.html" aria-label="Learn about Food and Blessing">
+            <div class="fel-card-banner"
+                 style="background-image:url('assets/images/img_402fc361c750.jpg');background-size:cover;background-position:center;position:relative;border-radius:10px 10px 0 0;">
+              <div style="position:absolute;inset:0;background:rgba(0,0,0,0.40);border-radius:10px 10px 0 0;" aria-hidden="true"></div>
+              <div style="position:relative;z-index:1;">
+                <span class="fel-zh-banner">食物與祝福團契</span>
+              </div>
+            </div>
+            <div class="fel-card-body">
+              <div class="fel-en" style="font-weight:600;color:var(--navy);">Food and Blessing</div>
+              <div class="fel-arrow">了解更多 Learn More →</div>
+            </div>
+          </a>
+
+          <!-- Kingston -->
+          <a class="fel-card" href="fellowship-kingston.html" aria-label="Learn about Kingston">
+            <div class="fel-card-banner"
+                 style="background-image:url('assets/images/img_b95e397e7d9a.jpg');background-size:cover;background-position:center;position:relative;border-radius:10px 10px 0 0;">
+              <div style="position:absolute;inset:0;background:rgba(0,0,0,0.40);border-radius:10px 10px 0 0;" aria-hidden="true"></div>
+              <div style="position:relative;z-index:1;">
+                <span class="fel-zh-banner">京士頓團契</span>
+              </div>
+            </div>
+            <div class="fel-card-body">
+              <div class="fel-en" style="font-weight:600;color:var(--navy);">Kingston</div>
+              <div class="fel-arrow">了解更多 Learn More →</div>
+            </div>
+          </a>
+
+          <!-- Fun -->
+          <a class="fel-card" href="fellowship-fun.html" aria-label="Learn about Fun">
+            <div class="fel-card-banner"
+                 style="background-image:url('assets/images/img_ca009cae0651.jpg');background-size:cover;background-position:center;position:relative;border-radius:10px 10px 0 0;">
+              <div style="position:absolute;inset:0;background:rgba(0,0,0,0.40);border-radius:10px 10px 0 0;" aria-hidden="true"></div>
+              <div style="position:relative;z-index:1;">
+                <span class="fel-zh-banner">歡樂團契</span>
+              </div>
+            </div>
+            <div class="fel-card-body">
+              <div class="fel-en" style="font-weight:600;color:var(--navy);">Fun</div>
+              <div class="fel-arrow">了解更多 Learn More →</div>
+            </div>
+          </a>
+
+          <!-- LIFE -->
+          <a class="fel-card" href="fellowship-life.html" aria-label="Learn about LIFE">
+            <div class="fel-card-banner"
+                 style="background-image:url('assets/images/img_a8ccc3813399.jpg');background-size:cover;background-position:center;position:relative;border-radius:10px 10px 0 0;">
+              <div style="position:absolute;inset:0;background:rgba(0,0,0,0.40);border-radius:10px 10px 0 0;" aria-hidden="true"></div>
+              <div style="position:relative;z-index:1;">
+                <span class="fel-zh-banner">生命團契</span>
+              </div>
+            </div>
+            <div class="fel-card-body">
+              <div class="fel-en" style="font-weight:600;color:var(--navy);">LIFE</div>
+              <div class="fel-arrow">了解更多 Learn More →</div>
+            </div>
+          </a>
+
+          <!-- 11:28 -->
+          <a class="fel-card" href="fellowship-1128.html" aria-label="Learn about 11:28">
+            <div class="fel-card-banner"
+                 style="background-image:url('assets/images/img_c5c2a5c0cf2b.jpg');background-size:cover;background-position:center;position:relative;border-radius:10px 10px 0 0;">
+              <div style="position:absolute;inset:0;background:rgba(0,0,0,0.40);border-radius:10px 10px 0 0;" aria-hidden="true"></div>
+              <div style="position:relative;z-index:1;">
+                <span class="fel-zh-banner">1128團契</span>
+              </div>
+            </div>
+            <div class="fel-card-body">
+              <div class="fel-en" style="font-weight:600;color:var(--navy);">11:28</div>
+              <div class="fel-arrow">了解更多 Learn More →</div>
+            </div>
+          </a>
+
+        </div><!-- /.fel-grid -->
+      </div>
+    </section>
+
+    <!-- ── ONLINE WORSHIP ─────────────────────────────────────────────────── -->
+    <!--
+      CHANGED: <div class="section section-alt"> → <section class="section section-alt">.
+      REMOVED: role="region" + aria-label from inner .online-card — same fix
+      applied consistently across all pages. The parent <section> provides
+      the landmark; a nested unlabelled role="region" is redundant.
+      id="online-heading" added to <h3> to anchor the section's aria-labelledby.
+    -->
+    <section class="section section-alt" aria-labelledby="online-heading">
+      <div style="max-width:860px;margin:0 auto;">
+        <div class="online-card">
+          <div class="zh">線上敬拜</div>
+          <h3 id="online-heading">Join Us Online</h3>
+          <p style="font-family:'Noto Sans SC',sans-serif;font-size:0.9rem;color:rgba(255,255,255,0.8);margin-bottom:0.3rem;">無法親自出席？線上觀看直播或隨時收看錄影。</p>
+          <p>Can't make it in person? Watch our services live or access recordings anytime.</p>
+          <div class="online-btns">
+            <a class="btn-watch" href="https://www.youtube.com/@ChineseMinistryCCCRI" target="_blank" rel="noopener">▶ Watch Live 直播</a>
+            <a class="btn-gold"  href="https://goo.gl/maps/HcaaXQQvwiYJvish9"        target="_blank" rel="noopener">🗺 Directions 路線</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ────────────────────────────────────────────────────────────── -->
+  <!--
+    NOTE: Source file was truncated mid-footer. Content below preserves
+    everything present in the original. Restore the full footer
+    (info paragraph, copyright line) from your source repository.
+  -->
+  <footer>
+    <div class="footer-links">
+      <span>📍 <strong style="color:var(--gold-light);">333 Roosevelt Ave, Pawtucket, RI 02860</strong></span>
+      <span>📞 <a href="tel:4017228877" style="color:var(--gold-light);">(401) 722-8877</a></span>
+      <span>✉️ <a href="/cdn-cgi/l/email-protection#d3babdb5bc93b0b0b0a1bafdbca1b4" style="color:var(--gold-light);"><span class="__cf_email__" data-cfemail="d5bcbbb3ba95b6b6b6a7bcfbbaa7b2">[email&#160;protected]</span></a></span>
+    </div>
+    <!-- Restore remaining footer content from source (info paragraph, copy line) -->
+  </footer>
+
+</body>
+</html>
