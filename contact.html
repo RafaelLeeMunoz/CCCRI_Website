@@ -1,155 +1,248 @@
 <!DOCTYPE html>
 <html lang="zh-cmn-Hans-x-en">
 <head>
-<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="Chinese Christian Church of Rhode Island (CCCRI) — A non-denominational Christian church serving Rhode Island and southeastern New England in Mandarin, Cantonese, and English." name="description"/><meta content="Chinese Christian Church of Rhode Island | 羅德島華人基督教會" property="og:title"/><meta content="website" property="og:type"/><meta content="#c0171d" name="theme-color"/><title>Chinese Christian Church of Rhode Island | 羅德島華人基督教會</title><link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&amp;family=Noto+Serif:wght@400;600;700&amp;family=Noto+Sans+SC:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/><script>
-window.showPage = function(id) {
-  var pages = document.querySelectorAll('.page');
-  for (var i = 0; i < pages.length; i++) pages[i].classList.remove('active');
-  var btns = document.querySelectorAll('.nav-links button');
-  for (var j = 0; j < btns.length; j++) btns[j].classList.remove('active');
-  var page = document.getElementById('page-' + id);
-  var btn  = document.getElementById('nav-'  + id);
-  if (page) page.classList.add('active');
-  if (btn)  btn.classList.add('active');
-  window.scrollTo(0, 0);
-};
+  <meta charset="utf-8"/>
+  <meta name="viewport"    content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Chinese Christian Church of Rhode Island (CCCRI) — A non-denominational Christian church serving Rhode Island and southeastern New England in Mandarin, Cantonese, and English."/>
+  <meta name="theme-color" content="#c0171d"/>
+  <meta property="og:title" content="Chinese Christian Church of Rhode Island | 羅德島華人基督教會"/>
+  <meta property="og:type"  content="website"/>
 
-window.toggleMenu = function() {
-  var menu = document.getElementById('mobile-menu');
-  var btn  = document.getElementById('hamburger');
-  var open = menu.classList.toggle('open');
-  btn.classList.toggle('open', open);
-  btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-};
+  <!--
+    REMOVED: Duplicate generic <title> (line 4 of original).
+    Page-specific title from line 50 is kept.
+  -->
+  <title>Chinese Christian Church of Rhode Island | 羅德島華人基督教會 — Contact</title>
 
-window.navTo = function(id) {
-  window.showPage(id);
-  var menu = document.getElementById('mobile-menu');
-  var btn  = document.getElementById('hamburger');
-  menu.classList.remove('open');
-  btn.classList.remove('open');
-  btn.setAttribute('aria-expanded', 'false');
-};
+  <link rel="stylesheet" href="assets/style.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&family=Noto+Serif:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap"/>
 
-function switchTab(id) {
-  // Update buttons
-  document.querySelectorAll('.tab-btn').forEach(function(btn) {
-    btn.classList.remove('tab-active');
-    btn.setAttribute('aria-selected', 'false');
-  });
-  var activeBtn = document.getElementById('tab-' + id);
-  if (activeBtn) { activeBtn.classList.add('tab-active'); activeBtn.setAttribute('aria-selected', 'true'); }
-  // Update panels
-  document.querySelectorAll('.tab-panel').forEach(function(p) { p.style.display = 'none'; });
-  var activePanel = document.getElementById('panel-' + id);
-  if (activePanel) activePanel.style.display = 'block';
-}
-
-</script>
-<link rel="stylesheet" href="assets/style.css">
-<title>Chinese Christian Church of Rhode Island | 羅德島華人基督教會 — Contact</title>
-<script src="assets/nav.js" defer></script>
+  <!--
+    REMOVED: Entire inline <script> block (lines 5–48 of original).
+    It contained four functions, all dead or duplicated:
+      • window.showPage() and window.navTo() — SPA-era dead code; navigation
+        is fully multi-page via <a href="...">, called from nowhere on this page.
+      • window.toggleMenu() and switchTab() — exact duplicates of the functions
+        in assets/script.js.
+    MOVED: assets/script.js from the bottom of <body> to <head> with defer,
+    matching the pattern used on every other page in this site. Deferred scripts
+    run after the DOM is ready regardless of where they are declared, so the
+    behaviour is identical.
+  -->
+  <script src="assets/nav.js"    defer></script>
+  <script src="assets/script.js" defer></script>
 </head>
+
 <body data-nav="contact">
-<site-nav></site-nav>
-</div><button aria-expanded="false" aria-label="Open navigation menu" class="hamburger" id="hamburger" onclick="toggleMenu()">
-<span></span><span></span><span></span>
-</button><a aria-label="Donate online — 線上奉獻" class="nav-donate" href="https://tithe.ly/give_new/www/#/tithely/give-one-time/1707700" rel="noopener" target="_blank">線上奉獻 Donate</a></nav><div aria-label="Mobile navigation" class="mobile-menu" id="mobile-menu" role="navigation"><a href="index.html">主页 Home</a><a href="about.html">关于我们 About Us</a><a href="worship.html">敬拜 Worship</a><a href="events.html">活动 Events</a><a href="ministries.html">事工 Ministries</a><a href="resources.html">资源 Resources</a><a href="contact.html">联系 Contact</a></div>
-<main class="page">
 
-<div class="page-header" role="banner">
-<p class="zh">聯絡我們</p>
-<h1>Contact Us</h1>
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:1rem;color:rgba(255,255,255,0.8);margin-bottom:0.15rem;">我们很乐意听取您的意见</p>  
-<p>We'd love to hear from you</p>
-</div>
-<div class="section">
-<div style="max-width:960px;margin:0 auto;">
-<div class="two-col" style="align-items:start;gap:3rem;">
-<div>
-<div class="gold-divider"></div>
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:1.6rem;color:var(--gold);font-weight:700;margin-bottom:0.1rem;">聯絡資訊</p>
-<h2 class="section-title">Contact Information</h2>
-<div style="margin:1.5rem 0;display:flex;flex-direction:column;gap:1.2rem;">
-<div style="display:flex;gap:1rem;align-items:flex-start;">
-<span style="font-size:1.4rem;margin-top:0.1rem;">📍</span>
-<div>
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.875rem;color:var(--gold);font-weight:700;margin-bottom:0.1rem;">地址</p>
-<p style="font-weight:700;color:var(--navy);margin-bottom:0.1rem;">Address</p>
-<p style="color:var(--slate);">333 Roosevelt Ave<br/>Pawtucket, RI 02860</p>
-</div>
-</div>
-<div style="display:flex;gap:1rem;align-items:flex-start;">
-<span style="font-size:1.4rem;margin-top:0.1rem;">📞</span>
-<div>
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.875rem;color:var(--gold);font-weight:700;margin-bottom:0.1rem;">電話</p>
-<p style="font-weight:700;color:var(--navy);margin-bottom:0.1rem;">Phone</p>
-<a href="tel:4017228877" style="color:var(--slate);">(401) 722-8877</a>
-</div>
-</div>
-<div style="display:flex;gap:1rem;align-items:flex-start;">
-<span style="font-size:1.4rem;margin-top:0.1rem;">✉️</span>
-<div>
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.875rem;color:var(--gold);font-weight:700;margin-bottom:0.1rem;">電郵</p>
-<p style="font-weight:700;color:var(--navy);margin-bottom:0.1rem;">Email</p>
-<a href="mailto:info@cccri.org" style="color:var(--slate);">info@cccri.org</a>
-</div>
-</div>
-<div style="display:flex;gap:1rem;align-items:flex-start;">
-<span style="font-size:1.4rem;margin-top:0.1rem;">🕐</span>
-<div>
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.875rem;color:var(--gold);font-weight:700;margin-bottom:0.1rem;">主日崇拜時間</p>
-<p style="font-weight:700;color:var(--navy);margin-bottom:0.1rem;">Sunday Service Times</p>
-<p style="color:var(--slate);font-family:'Noto Sans SC',sans-serif;font-size:0.875rem;">英文崇拜 English: 10:00 AM – 11:10 AM</p>
-<p style="color:var(--slate);font-family:'Noto Sans SC',sans-serif;font-size:0.875rem;">中文崇拜 Chinese: 11:15 AM – 12:50 PM</p>
-</div>
-</div>
-</div>
-<div style="margin-top:1.5rem;">
-</div>
-</div>
-<div>
-<div class="gold-divider"></div>
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:1.6rem;color:var(--gold);font-weight:700;margin-bottom:0.1rem;">發送信息</p>
-<h2 class="section-title" style="margin-bottom:1.5rem;">Send Us a Message</h2>
-<div class="form-row">
-<div class="form-group"><label><span class="zh">姓名 </span>Name</label><input aria-label="Your name" placeholder="Your name" type="text"/></div>
-<div class="form-group"><label><span class="zh">電郵 </span>Email</label><input aria-label="Your email" placeholder="your@email.com" type="email"/></div>
-</div>
-<div class="form-group"><label><span class="zh">主題 </span>Subject</label><input aria-label="Message subject" placeholder="How can we help?" type="text"/></div>
-<div class="form-group"><label><span class="zh">信息 </span>Message</label><textarea aria-label="Your message" placeholder="Write your message here..." rows="5"></textarea></div>
-<button class="btn-red" onclick="alert('Thank you! We will be in touch soon.')" style="width:100%;padding:0.85rem;font-size:0.95rem;font-weight:700;cursor:pointer;">
-<span style="font-family:'Noto Sans SC',sans-serif;">發送 </span>Send Message
-          </button>
-</div>
-</div>
-</div>
-</div>
-<div class="section section-alt">
-<div style="max-width:860px;margin:0 auto;">
-<div aria-label="Online worship options" class="online-card" role="region">
-<div class="zh">線上敬拜</div>
-<h3>Join Us Online</h3>
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.9rem;color:rgba(255,255,255,0.8);margin-bottom:0.3rem;">無法親自出席？線上觀看直播或隨時收看錄影。</p>
-<p>Can't make it in person? Watch our services live or access recordings anytime.</p>
-<div class="online-btns">
-<a class="btn-watch" href="https://www.youtube.com/@ChineseMinistryCCCRI" rel="noopener" target="_blank">▶ Watch Live 直播</a>
-<a class="btn-gold" href="https://goo.gl/maps/HcaaXQQvwiYJvish9" rel="noopener" target="_blank">🗺 Directions 路線</a>
-</div>
-</div>
-</div>
-</div>
-<footer>
-<div class="footer-links">
-<span>📍 <strong style="color:var(--gold-light);">333 Roosevelt Ave, Pawtucket, RI 02860</strong></span>
-<span>📞 <a href="tel:4017228877" style="color:var(--gold-light);">(401) 722-8877</a></span>
-<span>✉️ <a href="mailto:info@cccri.org" style="color:var(--gold-light);">info@cccri.org</a></span>
-</div>
-<p class="info">For more information: <a href="mailto:leaderscccri@gmail.com" style="color:var(--gold-light);">leaderscccri@gmail.com</a></p>
-<p class="copy">© CCCRI — All Rights Reserved</p>
-</footer>
+  <site-nav></site-nav>
+  <!--
+    REMOVED: Orphaned nav fragment — same issue present on every other page.
+    The original line 57 contained a stray </div>, a manually written hamburger
+    <button id="hamburger">, the donate <a>, a closing </nav>, and a full
+    hand-written #mobile-menu div with all seven links. nav.js renders all of
+    these inside <site-nav>, so the duplicate produced two hamburger buttons
+    and two #mobile-menu elements, breaking toggle behaviour.
+  -->
 
-</main>
-<script src="assets/script.js" defer></script>
+  <main class="page">
+
+    <!-- ── PAGE HEADER ────────────────────────────────────────────────────── -->
+    <!--
+      REMOVED: role="banner" from .page-header — consistent with all other
+      pages in this series. role="banner" is reserved for the top-level site
+      header landmark (the <nav> rendered by site-nav). Placing it on an inner
+      page-title block creates a duplicate banner landmark that breaks
+      screen-reader navigation menus.
+    -->
+    <div class="page-header">
+      <p class="zh">聯絡我們</p>
+      <h1>Contact Us</h1>
+      <p style="font-family:'Noto Sans SC',sans-serif;font-size:1rem;color:rgba(255,255,255,0.8);margin-bottom:0.15rem;">我们很乐意听取您的意见</p>
+      <p>We'd love to hear from you</p>
+    </div>
+
+    <!-- ── CONTACT INFORMATION + CONTACT FORM ────────────────────────────── -->
+    <!--
+      CHANGED: <div class="section"> → <section class="section">.
+      The two-column layout (info + form) is one unified content area; a single
+      section landmark with aria-labelledby is correct and avoids doubling the
+      4rem 5% padding that separate sections would introduce.
+    -->
+    <section class="section" aria-labelledby="contact-info-heading">
+      <div style="max-width:960px;margin:0 auto;">
+        <div class="two-col" style="align-items:start;gap:3rem;">
+
+          <!-- Left column: Contact information -->
+          <div>
+            <div class="gold-divider"></div>
+            <!--
+              CHANGED: Inline-styled <p> → <p class="zh-label-lg">.
+              style.css .zh-label-lg rule produces identical output without
+              per-element inline styles.
+            -->
+            <p class="zh-label-lg">聯絡資訊</p>
+            <h2 class="section-title" id="contact-info-heading">Contact Information</h2>
+
+            <div style="margin:1.5rem 0;display:flex;flex-direction:column;gap:1.2rem;">
+
+              <!-- Address -->
+              <div style="display:flex;gap:1rem;align-items:flex-start;">
+                <span aria-hidden="true" style="font-size:1.4rem;margin-top:0.1rem;">📍</span>
+                <div>
+                  <p style="font-family:'Noto Sans SC',sans-serif;font-size:0.875rem;color:var(--gold);font-weight:700;margin-bottom:0.1rem;">地址</p>
+                  <p style="font-weight:700;color:var(--navy);margin-bottom:0.1rem;">Address</p>
+                  <address style="font-style:normal;color:var(--slate);">
+                    333 Roosevelt Ave<br/>
+                    Pawtucket, RI 02860
+                  </address>
+                </div>
+              </div>
+
+              <!-- Phone -->
+              <div style="display:flex;gap:1rem;align-items:flex-start;">
+                <span aria-hidden="true" style="font-size:1.4rem;margin-top:0.1rem;">📞</span>
+                <div>
+                  <p style="font-family:'Noto Sans SC',sans-serif;font-size:0.875rem;color:var(--gold);font-weight:700;margin-bottom:0.1rem;">電話</p>
+                  <p style="font-weight:700;color:var(--navy);margin-bottom:0.1rem;">Phone</p>
+                  <a href="tel:4017228877" style="color:var(--slate);">(401) 722-8877</a>
+                </div>
+              </div>
+
+              <!-- Email -->
+              <div style="display:flex;gap:1rem;align-items:flex-start;">
+                <span aria-hidden="true" style="font-size:1.4rem;margin-top:0.1rem;">✉️</span>
+                <div>
+                  <p style="font-family:'Noto Sans SC',sans-serif;font-size:0.875rem;color:var(--gold);font-weight:700;margin-bottom:0.1rem;">電郵</p>
+                  <p style="font-weight:700;color:var(--navy);margin-bottom:0.1rem;">Email</p>
+                  <a href="mailto:info@cccri.org" style="color:var(--slate);">info@cccri.org</a>
+                </div>
+              </div>
+
+              <!-- Service times -->
+              <div style="display:flex;gap:1rem;align-items:flex-start;">
+                <span aria-hidden="true" style="font-size:1.4rem;margin-top:0.1rem;">🕐</span>
+                <div>
+                  <p style="font-family:'Noto Sans SC',sans-serif;font-size:0.875rem;color:var(--gold);font-weight:700;margin-bottom:0.1rem;">主日崇拜時間</p>
+                  <p style="font-weight:700;color:var(--navy);margin-bottom:0.1rem;">Sunday Service Times</p>
+                  <p style="color:var(--slate);font-family:'Noto Sans SC',sans-serif;font-size:0.875rem;">英文崇拜 English: 10:00 AM – 11:10 AM</p>
+                  <p style="color:var(--slate);font-family:'Noto Sans SC',sans-serif;font-size:0.875rem;">中文崇拜 Chinese: 11:15 AM – 12:50 PM</p>
+                </div>
+              </div>
+
+            </div>
+            <!--
+              REMOVED: <div style="margin-top:1.5rem;"></div> — completely empty
+              element used only as a margin spacer. Removed without visual impact.
+            -->
+          </div><!-- /left column -->
+
+          <!-- Right column: Contact form -->
+          <div>
+            <div class="gold-divider"></div>
+            <p class="zh-label-lg">發送信息</p>
+            <h2 class="section-title" id="contact-form-heading" style="margin-bottom:1.5rem;">Send Us a Message</h2>
+
+            <!--
+              CHANGED: Wrapped inputs in a <form> element.
+              The original had a button that submits a message but no <form> wrapper,
+              meaning the inputs had no semantic grouping, Enter-key submission
+              didn't work, and the form had no accessible name. A <form> with
+              aria-labelledby and novalidate (to allow custom feedback via the
+              existing onclick alert) corrects all three.
+
+              CHANGED: Added for/id pairs on every label and its matching input.
+              Without them, clicking a label did not focus its input and screen
+              readers could not associate the label text with the field. The
+              aria-label attributes on the inputs were the only accessible name
+              source — now that proper labels are linked, the aria-label
+              attributes are removed to avoid redundant double-announcement.
+
+              All class names (.form-row, .form-group) and input types are
+              preserved exactly as before.
+            -->
+            <form aria-labelledby="contact-form-heading" novalidate>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="contact-name"><span class="zh">姓名 </span>Name</label>
+                  <input id="contact-name" type="text" placeholder="Your name"/>
+                </div>
+                <div class="form-group">
+                  <label for="contact-email"><span class="zh">電郵 </span>Email</label>
+                  <input id="contact-email" type="email" placeholder="your@email.com"/>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-subject"><span class="zh">主題 </span>Subject</label>
+                <input id="contact-subject" type="text" placeholder="How can we help?"/>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-message"><span class="zh">信息 </span>Message</label>
+                <textarea id="contact-message" rows="5" placeholder="Write your message here..."></textarea>
+              </div>
+
+              <!--
+                type="submit" added to the button so it participates in normal
+                form submission behaviour. The onclick alert is preserved exactly.
+              -->
+              <button type="submit"
+                      class="btn-red"
+                      onclick="alert('Thank you! We will be in touch soon.')"
+                      style="width:100%;padding:0.85rem;font-size:0.95rem;font-weight:700;cursor:pointer;">
+                <span style="font-family:'Noto Sans SC',sans-serif;">發送 </span>Send Message
+              </button>
+
+            </form>
+          </div><!-- /right column -->
+
+        </div><!-- /.two-col -->
+      </div>
+    </section>
+
+    <!-- ── ONLINE WORSHIP ─────────────────────────────────────────────────── -->
+    <!--
+      CHANGED: <div class="section section-alt"> → <section>.
+      REMOVED: role="region" + aria-label from .online-card — same fix applied
+      across all pages. The parent <section> provides the landmark; a nested
+      role="region" without an accessible name is redundant.
+      id="online-heading" added to <h3> to supply aria-labelledby on the section.
+    -->
+    <section class="section section-alt" aria-labelledby="online-heading">
+      <div style="max-width:860px;margin:0 auto;">
+        <div class="online-card">
+          <div class="zh">線上敬拜</div>
+          <h3 id="online-heading">Join Us Online</h3>
+          <p style="font-family:'Noto Sans SC',sans-serif;font-size:0.9rem;color:rgba(255,255,255,0.8);margin-bottom:0.3rem;">無法親自出席？線上觀看直播或隨時收看錄影。</p>
+          <p>Can't make it in person? Watch our services live or access recordings anytime.</p>
+          <div class="online-btns">
+            <a class="btn-watch" href="https://www.youtube.com/@ChineseMinistryCCCRI" target="_blank" rel="noopener">▶ Watch Live 直播</a>
+            <a class="btn-gold"  href="https://goo.gl/maps/HcaaXQQvwiYJvish9"        target="_blank" rel="noopener">🗺 Directions 路線</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ────────────────────────────────────────────────────────────── -->
+  <!--
+    FIXED: In the original, </main> was the very last tag before </body>,
+    meaning the <footer> was a child of <main>. The footer is a top-level
+    landmark and must be a sibling of <main>, not nested inside it.
+    Moved </main> to close above <footer>.
+  -->
+  <footer>
+    <div class="footer-links">
+      <span>📍 <strong style="color:var(--gold-light);">333 Roosevelt Ave, Pawtucket, RI 02860</strong></span>
+      <span>📞 <a href="tel:4017228877"          style="color:var(--gold-light);">(401) 722-8877</a></span>
+      <span>✉️ <a href="mailto:info@cccri.org"   style="color:var(--gold-light);">info@cccri.org</a></span>
+    </div>
+    <p class="info">For more information: <a href="mailto:leaderscccri@gmail.com" style="color:var(--gold-light);">leaderscccri@gmail.com</a></p>
+    <p class="copy">© CCCRI — All Rights Reserved</p>
+  </footer>
+
 </body>
 </html>
