@@ -8,57 +8,21 @@
   <meta property="og:title" content="Chinese Christian Church of Rhode Island | 羅德島華人基督教會"/>
   <meta property="og:type"  content="website"/>
 
-  <!--
-    CHANGED: Two <title> tags existed in the original (lines 4 and 50).
-    The page-specific title from line 50 is kept; the generic duplicate is removed.
-  -->
   <title>Chinese Christian Church of Rhode Island | 羅德島華人基督教會 — About</title>
 
   <link rel="stylesheet" href="assets/style.css"/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&family=Noto+Serif:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap"/>
 
-  <!--
-    REMOVED: The entire inline <script> block. It contained four functions:
-      • window.showPage() and window.navTo() — SPA-era dead code. Navigation
-        is multi-page; these are called from nowhere in this document.
-      • window.toggleMenu() and switchTab() — exact duplicates of what
-        assets/script.js provides. They were only necessary because script.js
-        was never loaded on this page.
-    ADDED: assets/script.js (deferred) which provides window.toggleMenu,
-    the close-on-navigate listener, and the active-nav fallback.
-  -->
   <script src="assets/nav.js"    defer></script>
   <script src="assets/script.js" defer></script>
 </head>
 
 <body data-nav="about">
-
-  <site-nav></site-nav>
-  <!--
-    REMOVED: Orphaned nav fragment that began on the same line as </site-nav>
-    (original line 57). It contained a stray </div>, a manually written
-    hamburger <button>, the donate <a>, a closing </nav>, and a fully
-    hand-written #mobile-menu with all its links. nav.js already renders all
-    of these inside <site-nav>. Having a second copy meant two hamburger
-    buttons and two mobile menus in the DOM, breaking toggle behaviour and
-    screen-reader navigation.
-  -->
-
-  <!--
-    ADDED: id="page-about" on <main>.
-    style.css contains the rule: #page-about .section { padding: 2.5rem 5% }
-    which tightens section padding specifically for this page. Without this ID
-    the rule has no effect.
-  -->
-  <main class="page" id="page-about">
+<site-nav></site-nav>
+<main class="page" id="page-about">
 
     <!-- ── PAGE HEADER ────────────────────────────────────────────────────── -->
-    <!--
-      CHANGED: Removed role="banner" from .page-header.
-      role="banner" is reserved for the top-level site header landmark (the <nav>
-      rendered by site-nav). Applying it to an inner page-title block creates a
-      duplicate banner landmark and confuses screen-reader navigation.
-    -->
+    
     <div class="page-header">
       <p class="zh">關於我們</p>
       <h1>About Us</h1>
@@ -67,14 +31,7 @@
     </div>
 
     <!-- ── INTRODUCTION ───────────────────────────────────────────────────── -->
-    <!--
-      CHANGED: <div class="section"> → <section class="section"> throughout,
-      pairing each with aria-labelledby pointing to its heading.
-      CHANGED: Removed role="region" and aria-label from .about-blurb.
-      The parent <section> already provides the landmark. A bare role="region"
-      on a child div without an accessible name is not a useful landmark and
-      adds noise for screen readers.
-    -->
+    
     <section class="section" aria-labelledby="about-intro-heading">
       <div style="max-width:960px;margin:0 auto;">
 
@@ -117,12 +74,7 @@
 
         <!-- ── LEADERSHIP ─────────────────────────────────────────────────── -->
         <div class="gold-divider"></div>
-        <!--
-          CHANGED: Inline-styled <p> tags replaced with .zh-label-lg throughout
-          the leadership sub-sections. This class in style.css produces identical
-          output (Noto Sans SC, 1.6rem, var(--gold), bold) while removing
-          per-element inline styles.
-        -->
+        
         <p class="zh-label-lg">領導團隊</p>
         <h2 class="section-title" id="leadership-heading">Our Leadership Team</h2>
         <p class="section-subtitle">
@@ -254,12 +206,7 @@
     </section>
 
     <!-- ── MISSION & VALUES ───────────────────────────────────────────────── -->
-    <!--
-      CHANGED: Removed role="region" and aria-label from .values-card.
-      The parent <section> provides the landmark. Added aria-labelledby with
-      an id on the values heading so the inner card is still correctly described
-      for screen readers without needing its own redundant region role.
-    -->
+    
     <section class="section section-alt" aria-labelledby="mission-values-heading">
       <div style="max-width:960px;margin:0 auto;">
         <div class="two-col">
@@ -324,12 +271,7 @@
           Milestones in our journey of faith
         </p>
 
-        <!--
-          NOTE: The <style> block below is inline within the page rather than
-          in style.css. Functionality is preserved as-is. Recommend moving
-          .tl-item, .tl-dot, .tl-year, and .tl-text into style.css when
-          doing a CSS pass of this page.
-        -->
+        
         <div style="position:relative;padding-left:2.2rem;margin-top:2rem;">
           <!-- Vertical timeline rule -->
           <div style="position:absolute;left:0.55rem;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--gold),var(--navy));opacity:0.25;border-radius:2px;"></div>
@@ -479,11 +421,7 @@
     </section>
 
     <!-- ── ONLINE WORSHIP ─────────────────────────────────────────────────── -->
-    <!--
-      CHANGED: <div class="section section-alt"> → <section> with aria-labelledby.
-      CHANGED: role="region" + aria-label removed from .online-card — same fix
-      as index.html; the parent <section> landmark is sufficient.
-    -->
+  
     <section class="section section-alt" aria-labelledby="online-heading">
       <div style="max-width:860px;margin:0 auto;">
         <div class="online-card">
@@ -502,11 +440,7 @@
   </main><!-- /#page-about -->
 
   <!-- ── FOOTER ──────────────────────────────────────────────────────────── -->
-  <!--
-    NOTE: The source file was truncated mid-footer. Content below preserves
-    everything present in the original exactly. Restore the full footer
-    (info paragraph, copyright line) from your source repository.
-  -->
+  
   <footer>
     <div class="footer-links">
       <span>📍 <strong style="color:var(--gold-light);">333 Roosevelt Ave, Pawtucket, RI 02860</strong></span>
