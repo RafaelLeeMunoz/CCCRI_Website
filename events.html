@@ -1,216 +1,346 @@
 <!DOCTYPE html>
 <html lang="zh-cmn-Hans-x-en">
 <head>
-<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="Chinese Christian Church of Rhode Island (CCCRI) — A non-denominational Christian church serving Rhode Island and southeastern New England in Mandarin, Cantonese, and English." name="description"/><meta content="Chinese Christian Church of Rhode Island | 羅德島華人基督教會" property="og:title"/><meta content="website" property="og:type"/><meta content="#c0171d" name="theme-color"/><title>Chinese Christian Church of Rhode Island | 羅德島華人基督教會</title><link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&amp;family=Noto+Serif:wght@400;600;700&amp;family=Noto+Sans+SC:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/><script>
-window.showPage = function(id) {
-  var pages = document.querySelectorAll('.page');
-  for (var i = 0; i < pages.length; i++) pages[i].classList.remove('active');
-  var btns = document.querySelectorAll('.nav-links button');
-  for (var j = 0; j < btns.length; j++) btns[j].classList.remove('active');
-  var page = document.getElementById('page-' + id);
-  var btn  = document.getElementById('nav-'  + id);
-  if (page) page.classList.add('active');
-  if (btn)  btn.classList.add('active');
-  window.scrollTo(0, 0);
-};
+  <meta charset="utf-8"/>
+  <meta name="viewport"    content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Chinese Christian Church of Rhode Island (CCCRI) — A non-denominational Christian church serving Rhode Island and southeastern New England in Mandarin, Cantonese, and English."/>
+  <meta name="theme-color" content="#c0171d"/>
+  <meta property="og:title" content="Chinese Christian Church of Rhode Island | 羅德島華人基督教會"/>
+  <meta property="og:type"  content="website"/>
 
-window.toggleMenu = function() {
-  var menu = document.getElementById('mobile-menu');
-  var btn  = document.getElementById('hamburger');
-  var open = menu.classList.toggle('open');
-  btn.classList.toggle('open', open);
-  btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-};
+  <!--
+    REMOVED: Duplicate generic <title> (line 4 of original).
+    Page-specific title from line 50 is kept.
+  -->
+  <title>Chinese Christian Church of Rhode Island | 羅德島華人基督教會 — Activities</title>
 
-window.navTo = function(id) {
-  window.showPage(id);
-  var menu = document.getElementById('mobile-menu');
-  var btn  = document.getElementById('hamburger');
-  menu.classList.remove('open');
-  btn.classList.remove('open');
-  btn.setAttribute('aria-expanded', 'false');
-};
+  <link rel="stylesheet" href="assets/style.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&family=Noto+Serif:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap"/>
 
-function switchTab(id) {
-  // Update buttons
-  document.querySelectorAll('.tab-btn').forEach(function(btn) {
-    btn.classList.remove('tab-active');
-    btn.setAttribute('aria-selected', 'false');
-  });
-  var activeBtn = document.getElementById('tab-' + id);
-  if (activeBtn) { activeBtn.classList.add('tab-active'); activeBtn.setAttribute('aria-selected', 'true'); }
-  // Update panels
-  document.querySelectorAll('.tab-panel').forEach(function(p) { p.style.display = 'none'; });
-  var activePanel = document.getElementById('panel-' + id);
-  if (activePanel) activePanel.style.display = 'block';
-}
-
-</script>
-<link rel="stylesheet" href="assets/style.css">
-<title>Chinese Christian Church of Rhode Island | 羅德島華人基督教會 — Activities</title>
-<script src="assets/nav.js" defer></script>
+  <!--
+    REMOVED: Entire inline <script> block (lines 5–48 of original).
+    It contained four functions, all dead or duplicated:
+      • window.showPage() and window.navTo() — SPA-era dead code; navigation
+        is fully multi-page via <a href="...">, these are called from nowhere.
+      • window.toggleMenu() and switchTab() — exact duplicates of the
+        functions in assets/script.js, which was not being loaded at all.
+    ADDED: assets/script.js (deferred) which provides window.toggleMenu and
+    the close-on-navigate listener. switchTab is not used on this page but
+    is available for consistency.
+  -->
+  <script src="assets/nav.js"    defer></script>
+  <script src="assets/script.js" defer></script>
 </head>
+
 <body data-nav="activities">
-<site-nav></site-nav>
-</div><button aria-expanded="false" aria-label="Open navigation menu" class="hamburger" id="hamburger" onclick="toggleMenu()">
-<span></span><span></span><span></span>
-</button><a aria-label="Donate online — 線上奉獻" class="nav-donate" href="https://tithe.ly/give_new/www/#/tithely/give-one-time/1707700" rel="noopener" target="_blank">線上奉獻 Donate</a></nav><div aria-label="Mobile navigation" class="mobile-menu" id="mobile-menu" role="navigation"><a href="index.html">主页 Home</a><a href="about.html">关于我们 About Us</a><a href="worship.html">敬拜 Worship</a><a href="events.html">活动 Events</a><a href="ministries.html">事工 Ministries</a><a href="resources.html">资源 Resources</a><a href="contact.html">联系 Contact</a></div>
-<main class="page">
 
-<div class="page-header" role="banner">
-<p class="zh">活動預告</p>
-<h1>Events &amp; Activities</h1>
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:1rem;color:rgba(255,255,255,0.8);margin-bottom:0.15rem;">关注我们的社区，获取最新动态</p>  
-<p>Stay Up to Date with Our Community</p>
-</div>
-<div class="section">
-<div style="max-width:960px;margin:0 auto;">
-<!-- ═══ FEATURED EVENTS ═══ -->
-<div class="gold-divider"></div>
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:1.6rem;color:var(--gold);font-weight:700;margin-bottom:0.1rem;">精選活動</p>
-<h2 class="section-title">Featured Events</h2>
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.875rem;color:var(--slate);margin-bottom:0.2rem;">點擊「了解更多」查看詳情</p>
-<p class="section-subtitle" style="margin-bottom:2rem;">Click "Learn More" for full details</p>
-<!-- ═══ MODALS ═══ -->
-<!-- Modal: Church Weekly Activities -->
-<div id="modal-weekly" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.75);z-index:9999;overflow-y:auto;padding:2rem 1rem;" onclick="if(event.target===this)this.style.display='none';">
-  <div style="max-width:860px;margin:0 auto;background:white;border-radius:10px;overflow:hidden;position:relative;">
-    <button onclick="document.getElementById('modal-weekly').style.display='none';" style="position:absolute;top:0.75rem;right:0.75rem;background:rgba(0,0,0,0.55);color:white;border:none;border-radius:50%;width:32px;height:32px;font-size:1.1rem;cursor:pointer;line-height:1;z-index:10;">✕</button>
-    <img src="assets/images/Church weekly Activities March.webp" alt="教會一周活動安排 Church Weekly Activities 3/8/2026–3/15/2026" style="width:100%;display:block;">
-  </div>
-</div>
+  <site-nav></site-nav>
+  <!--
+    REMOVED: Orphaned nav fragment from original line 57 — a stray </div>,
+    manually written hamburger <button>, donate <a>, closing </nav>, and a
+    full hand-written #mobile-menu with all its links. nav.js already renders
+    all of these inside <site-nav>. The duplicate caused two hamburger buttons
+    and two #mobile-menu elements in the DOM, breaking toggle behaviour and
+    presenting duplicate navigation landmarks to screen readers.
+  -->
 
-<!-- Modal: Good Friday Gospel Play -->
-<div id="modal-goodfriday" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.82);z-index:9999;overflow-y:auto;padding:2rem 1rem;" onclick="if(event.target===this)this.style.display='none';">
-  <div style="max-width:680px;margin:0 auto;background:white;border-radius:10px;overflow:hidden;position:relative;">
-    <button onclick="document.getElementById('modal-goodfriday').style.display='none';" style="position:absolute;top:0.75rem;right:0.75rem;background:rgba(0,0,0,0.55);color:white;border:none;border-radius:50%;width:32px;height:32px;font-size:1.1rem;cursor:pointer;line-height:1;z-index:10;">✕</button>
-    <img src="assets/images/Event Image.webp" alt="RESPAWN 復活 — Good Friday Gospel Play" style="width:100%;display:block;">
-    <div style="padding:1.8rem 2rem 2rem;">
-      <p style="font-family:'Noto Sans SC',sans-serif;font-size:1rem;color:var(--navy);font-weight:700;margin-bottom:1rem;">羅德島華人基督教會誠邀您攜同家人朋友……</p>
-      <p style="font-size:0.9rem;color:var(--slate);line-height:1.8;margin-bottom:0.75rem;">Rhode Island Christian Church cordially invites you and your family and friends...</p>
-      <p style="font-family:'Noto Sans SC',sans-serif;font-size:0.9rem;color:var(--slate);line-height:1.8;margin-bottom:0.5rem;">前來觀賞我們籌備排練了整整一年的受難節福音話劇。</p>
-      <p style="font-size:0.9rem;color:var(--slate);line-height:1.8;margin-bottom:1.2rem;">Come and watch our Good Friday gospel play, which we have been planning and rehearsing for a year.</p>
-      <p style="text-align:center;font-family:'Noto Serif',serif;font-size:1rem;color:var(--navy);font-weight:600;margin-bottom:1.2rem;">———《RESPAWN · 復活》</p>
-      <p style="font-family:'Noto Sans SC',sans-serif;font-size:0.9rem;color:var(--slate);line-height:1.8;margin-bottom:0.5rem;">故事講述一個人意外「進入」了福音事件，親身經歷耶穌所做的——醫治、赦免、憐憫，然後一步步走向十字架的抉擇。透過這個故事，讓我們重新思考耶穌的愛與十字架的意義。</p>
-      <p style="font-size:0.9rem;color:var(--slate);line-height:1.8;margin-bottom:1.2rem;">The story tells of a person who accidentally "enters" into the Gospel event, experiences what Jesus did — healing, forgiveness, mercy — and then gradually walks to the choice of the cross. Through this story, let us rethink the love of Jesus and the meaning of the cross.</p>
-      <p style="font-family:'Noto Sans SC',sans-serif;font-size:0.9rem;color:var(--slate);margin-bottom:0.4rem;">時間、地點及詳情請參閱海報。4月3日教會見！</p>
-      <p style="font-size:0.9rem;color:var(--slate);margin-bottom:0;">Please see the poster for time, location and details. See you at church on April 3rd!</p>
+  <!--
+    MODALS — placed before <main> so they sit outside the main landmark.
+    Visible at z-index:9999 regardless of position in the DOM.
+
+    ADDED: role="dialog", aria-modal="true", and aria-labelledby on each
+    modal overlay so screen readers announce it as a dialog and restrict
+    virtual cursor to its contents when open.
+
+    ADDED: IDs on the headings inside each modal so aria-labelledby resolves.
+
+    NOTE: Full keyboard focus management (trapping Tab, returning focus on
+    close) is not implemented here — that is a JavaScript concern and outside
+    the scope of this HTML refactor. Flag for a future JS pass.
+  -->
+
+  <!-- Modal: Church Weekly Activities -->
+  <div id="modal-weekly"
+       role="dialog"
+       aria-modal="true"
+       aria-labelledby="modal-weekly-title"
+       style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.75);z-index:9999;overflow-y:auto;padding:2rem 1rem;"
+       onclick="if(event.target===this)this.style.display='none';">
+    <div style="max-width:860px;margin:0 auto;background:white;border-radius:10px;overflow:hidden;position:relative;">
+      <button onclick="document.getElementById('modal-weekly').style.display='none';"
+              aria-label="Close modal"
+              style="position:absolute;top:0.75rem;right:0.75rem;background:rgba(0,0,0,0.55);color:white;border:none;border-radius:50%;width:32px;height:32px;font-size:1.1rem;cursor:pointer;line-height:1;z-index:10;">✕</button>
+      <img id="modal-weekly-title"
+           src="assets/images/Church weekly Activities March.webp"
+           alt="教會一周活動安排 Church Weekly Activities 3/8/2026–3/15/2026"
+           style="width:100%;display:block;">
     </div>
   </div>
-</div>
 
-<!-- Modal: Let's Learn English -->
-<div id="modal-english" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.82);z-index:9999;overflow-y:auto;padding:2rem 1rem;" onclick="if(event.target===this)this.style.display='none';">
-  <div style="max-width:900px;margin:0 auto;position:relative;">
-    <button onclick="document.getElementById('modal-english').style.display='none';" style="position:absolute;top:0.75rem;right:0.75rem;background:rgba(0,0,0,0.55);color:white;border:none;border-radius:50%;width:32px;height:32px;font-size:1.1rem;cursor:pointer;line-height:1;z-index:10;">✕</button>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;">
-      <img src="assets/images/LearnEnglish2.webp" alt="齊來學英語 — 餐福團契英文班" style="width:100%;display:block;border-radius:10px;">
-      <img src="assets/images/LearnEnglish.webp" alt="成人英語班招生 — 外籍英語老師Robert任教" style="width:100%;display:block;border-radius:10px;">
+  <!-- Modal: Good Friday Gospel Play -->
+  <div id="modal-goodfriday"
+       role="dialog"
+       aria-modal="true"
+       aria-labelledby="modal-goodfriday-title"
+       style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.82);z-index:9999;overflow-y:auto;padding:2rem 1rem;"
+       onclick="if(event.target===this)this.style.display='none';">
+    <div style="max-width:680px;margin:0 auto;background:white;border-radius:10px;overflow:hidden;position:relative;">
+      <button onclick="document.getElementById('modal-goodfriday').style.display='none';"
+              aria-label="Close modal"
+              style="position:absolute;top:0.75rem;right:0.75rem;background:rgba(0,0,0,0.55);color:white;border:none;border-radius:50%;width:32px;height:32px;font-size:1.1rem;cursor:pointer;line-height:1;z-index:10;">✕</button>
+      <img src="assets/images/Event Image.webp"
+           alt="RESPAWN 復活 — Good Friday Gospel Play"
+           style="width:100%;display:block;">
+      <div style="padding:1.8rem 2rem 2rem;">
+        <h2 id="modal-goodfriday-title"
+            style="font-family:'Noto Serif',serif;font-size:1.25rem;color:var(--navy);margin-bottom:0.75rem;">
+          ———《RESPAWN · 復活》
+        </h2>
+        <p style="font-family:'Noto Sans SC',sans-serif;font-size:1rem;color:var(--navy);font-weight:700;margin-bottom:1rem;">羅德島華人基督教會誠邀您攜同家人朋友……</p>
+        <p style="font-size:0.9rem;color:var(--slate);line-height:1.8;margin-bottom:0.75rem;">Rhode Island Christian Church cordially invites you and your family and friends...</p>
+        <p style="font-family:'Noto Sans SC',sans-serif;font-size:0.9rem;color:var(--slate);line-height:1.8;margin-bottom:0.5rem;">前來觀賞我們籌備排練了整整一年的受難節福音話劇。</p>
+        <p style="font-size:0.9rem;color:var(--slate);line-height:1.8;margin-bottom:1.2rem;">Come and watch our Good Friday gospel play, which we have been planning and rehearsing for a year.</p>
+        <p style="font-family:'Noto Sans SC',sans-serif;font-size:0.9rem;color:var(--slate);line-height:1.8;margin-bottom:0.5rem;">故事講述一個人意外「進入」了福音事件，親身經歷耶穌所做的——醫治、赦免、憐憫，然後一步步走向十字架的抉擇。透過這個故事，讓我們重新思考耶穌的愛與十字架的意義。</p>
+        <p style="font-size:0.9rem;color:var(--slate);line-height:1.8;margin-bottom:1.2rem;">The story tells of a person who accidentally "enters" into the Gospel event, experiences what Jesus did — healing, forgiveness, mercy — and then gradually walks to the choice of the cross. Through this story, let us rethink the love of Jesus and the meaning of the cross.</p>
+        <p style="font-family:'Noto Sans SC',sans-serif;font-size:0.9rem;color:var(--slate);margin-bottom:0.4rem;">時間、地點及詳情請參閱海報。4月3日教會見！</p>
+        <p style="font-size:0.9rem;color:var(--slate);margin-bottom:0;">Please see the poster for time, location and details. See you at church on April 3rd!</p>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="three-col" style="margin-bottom:3rem;align-items:start;">
-<!-- Card 1: Church Weekly Activities -->
-<div class="feat-card">
-<div class="feat-banner" style="background:linear-gradient(160deg,#1a2e4a 0%,#2d4a6e 100%);">
-<p class="feat-banner-zh">教會一周活動安排</p>
-<h3>📅 Church Weekly<br/>Activities</h3>
-<p class="feat-banner-date">3/8/2026 – 3/15/2026</p>
-</div>
-<div class="feat-body">
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.875rem;color:var(--slate);margin-bottom:0.5rem;">中文堂本週活動時間表，包含主日學、查經、團契等。</p>
-<p style="font-size:0.875rem;color:var(--slate);line-height:1.7;margin-bottom:1rem;">This week's Chinese Congregation schedule including Sunday School, Bible studies, fellowship groups, and more.</p>
-<button class="btn-red" onclick="document.getElementById('modal-weekly').style.display='block';" style="display:inline-block;padding:0.5rem 1.2rem;font-size:0.875rem;font-weight:700;border:none;border-radius:4px;cursor:pointer;">
-  了解更多 Learn More
-</button>
-</div>
-</div>
-<!-- Card 2: Good Friday Gospel Play -->
-<div class="feat-card">
-<div class="feat-banner" style="background:linear-gradient(160deg,#0d1f3c 0%,#1a3a5c 100%);">
-<p class="feat-banner-zh">受難節福音話劇「復活」</p>
-<h3>✝️ Good Friday Gospel Play<br/>"Resurrection"</h3>
-<p class="feat-banner-date">4月3日 晚上7時 · April 3, 7PM</p>
-</div>
-<div class="feat-body">
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.875rem;color:var(--slate);margin-bottom:0.5rem;">你有沒有想過，如果你突然「進入」了一個福音故事，看見耶穌伸手醫治並對你說「你的罪赦免了」，你會怎麼選擇？我們邀請你踏上這段無法置身事外的旅程，重新發現愛、犧牲與重生。4月3日於教會隆重獻演。</p>
-<p style="font-size:0.875rem;color:var(--slate);line-height:1.7;margin-bottom:1rem;">Have you ever wondered what would happen if you suddenly "entered" a gospel story? If you see Jesus reach out to heal and hear Him say, "Your sins are forgiven," what would you choose? We invite you to embark on this journey — to rediscover love, sacrifice, and rebirth. Grandly performed at church on April 3rd.</p>
-<button class="btn-red" onclick="document.getElementById('modal-goodfriday').style.display='block';" style="display:inline-block;padding:0.5rem 1.2rem;font-size:0.875rem;font-weight:700;border:none;border-radius:4px;cursor:pointer;">
-  了解更多 Learn More
-</button>
-</div>
-</div>
-<!-- Card 3: Let's Learn English -->
-<div class="feat-card">
-<div class="feat-banner" style="background:linear-gradient(160deg,#b45309 0%,#d97706 100%);">
-<p class="feat-banner-zh">齊來學英語・免費英文班</p>
-<h3>📚 Let's Learn English</h3>
-<p class="feat-banner-date">星期日 下午 1:45–3:15</p>
-</div>
-<div class="feat-body">
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.875rem;color:var(--slate);margin-bottom:0.5rem;">完全免費！外籍英語老師Robert任教，設中文助教，適合初階程度，名額有限。</p>
-<p style="font-size:0.875rem;color:var(--slate);line-height:1.7;margin-bottom:1rem;">Completely free! Taught by native English teacher Robert. Chinese teaching assistant available. Beginner-friendly. Limited spots — register soon!</p>
-<button class="btn-red" onclick="document.getElementById('modal-english').style.display='block';" style="display:inline-block;padding:0.5rem 1.2rem;font-size:0.875rem;font-weight:700;border:none;border-radius:4px;cursor:pointer;">
-  了解更多 Learn More
-</button>
-</div>
-</div>
-</div>
-<!-- ═══ WEEKLY GATHERINGS ═══ -->
-<div class="gold-divider"></div>
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:1.6rem;color:var(--gold);font-weight:700;margin-bottom:0.1rem;">每週聚會</p>
-<h2 class="section-title">Weekly Gatherings</h2>
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.875rem;color:var(--slate);margin-bottom:0.15rem;">中文堂每週活動時間表（2/22/2026 – 3/1/2026）</p>
-<p style="font-size:0.875rem;color:var(--slate);margin-bottom:1.5rem;">Chinese Congregation weekly activities</p>
-<div style="overflow-x:auto;margin-bottom:3rem;">
-<table class="weekly-table">
-<thead>
-<tr>
-<th>日期 Date</th>
-<th>活動 Activity</th>
-<th>時間 Time</th>
-<th>地點 Location</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>2/22/26（日）</td><td>主日學課程</td><td>9:45–11:00am</td><td>教會</td></tr>
-<tr><td>2/22/26（日）</td><td>共融事工</td><td>11:00am</td><td>134</td></tr>
-<tr><td>2/22/26（五）</td><td>廣東三團契春節聯歡</td><td>3:00pm</td><td>教會</td></tr>
-<tr><td>2/22/26（日）</td><td>健體班</td><td>2:00–3:00pm</td><td>樓下華協及飯堂</td></tr>
-<tr><td>2/22/26（日）</td><td>成人油畫班</td><td>3:00–4:00pm</td><td>樓下華協</td></tr>
-<tr><td>2/24/26（二）</td><td>餐福團契網上晚堂崇拜</td><td>10:00pm</td><td>Zoom: 858 5769 274</td></tr>
-<tr><td>2/27/26（五）</td><td>南區查經小組查經聚會</td><td>6:00 晚餐 / 7:00 查經</td><td>French Town Church</td></tr>
-<tr><td>2/27/26（五）</td><td>喜樂團契查經</td><td>7:30pm</td><td>會議室</td></tr>
-<tr><td>2/27/26（五）</td><td>家美團契活水小組查經</td><td>6:30 晚餐 / 7:30 查經</td><td>詩班房</td></tr>
-<tr class="zoom-row"><td>2/27/26（五）</td><td>家美團契天路歷程小組網上查經</td><td>7:30pm</td><td>Zoom: 5087280204<br/>Password: 666888</td></tr>
-<tr class="week-divider"><td>3/1/26（日）</td><td>粵語主日學課程</td><td>9:45–11:00am</td><td>教會</td></tr>
-<tr><td>3/1/26（日）</td><td>共融事工</td><td>11:00am</td><td>134</td></tr>
-<tr><td>3/1/26（日）</td><td>健體班</td><td>2:00–3:00pm</td><td>樓下華協及飯堂</td></tr>
-<tr><td>3/1/26（日）</td><td>成人油畫班</td><td>3:00–4:00pm</td><td>樓下華協</td></tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div class="section section-alt">
-<div style="max-width:860px;margin:0 auto;">
-<div aria-label="Online worship options" class="online-card" role="region">
-<div class="zh">線上敬拜</div>
-<h3>Join Us Online</h3>
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.9rem;color:rgba(255,255,255,0.8);margin-bottom:0.3rem;">無法親自出席？線上觀看直播或隨時收看錄影。</p>
-<p>Can't make it in person? Watch our services live or access recordings anytime.</p>
-<div class="online-btns">
-<a class="btn-watch" href="https://www.youtube.com/@ChineseMinistryCCCRI" rel="noopener" target="_blank">▶ Watch Live 直播</a>
-<a class="btn-gold" href="https://goo.gl/maps/HcaaXQQvwiYJvish9" rel="noopener" target="_blank">🗺 Directions 路線</a>
-</div>
-</div>
-</div>
-</div>
-<footer>
-<div class="footer-links">
-<span>📍 <strong style="color:var(--gold-light);">333 Roosevelt Ave, Pawtucket, RI 02860</strong></span>
-<span>📞 <a href="tel:4017228877" style="color:var(--gold-light);">(401) 722-8877</a></span>
-<span>✉️ <a href="/cdn-cgi/l/email-protection#c7aea9a1a887a4a4a4b5aee9a8b5a0" style="color:var(--gold-light);"><span class="__cf_email__" data-cfemail="ff96919990bf9c9c9c8d96d1908d98">[email&#160;protected]</span></a></span>
-</div>
-<p class="info">For more information: <a href="/cdn-cgi/l/email-protection#acc0c9cdc8c9dedfcfcfcfdec5eccbc1cdc5c082cfc3c1" style="color:var(--gold-light
+  <!-- Modal: Let's Learn English -->
+  <div id="modal-english"
+       role="dialog"
+       aria-modal="true"
+       aria-labelledby="modal-english-title"
+       style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.82);z-index:9999;overflow-y:auto;padding:2rem 1rem;"
+       onclick="if(event.target===this)this.style.display='none';">
+    <div style="max-width:900px;margin:0 auto;position:relative;">
+      <button onclick="document.getElementById('modal-english').style.display='none';"
+              aria-label="Close modal"
+              style="position:absolute;top:0.75rem;right:0.75rem;background:rgba(0,0,0,0.55);color:white;border:none;border-radius:50%;width:32px;height:32px;font-size:1.1rem;cursor:pointer;line-height:1;z-index:10;">✕</button>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;">
+        <!--
+          CHANGED: aria-labelledby points to first image alt as the dialog
+          title. An explicit visually-hidden <h2> is added so the modal has a
+          proper accessible name.
+        -->
+        <h2 id="modal-english-title" style="display:none;">齊來學英語 — 餐福團契英文班</h2>
+        <img src="assets/images/LearnEnglish2.webp"
+             alt="齊來學英語 — 餐福團契英文班"
+             style="width:100%;display:block;border-radius:10px;">
+        <img src="assets/images/LearnEnglish.webp"
+             alt="成人英語班招生 — 外籍英語老師Robert任教"
+             style="width:100%;display:block;border-radius:10px;">
+      </div>
+    </div>
+  </div>
+
+  <main class="page">
+
+    <!-- ── PAGE HEADER ────────────────────────────────────────────────────── -->
+    <!--
+      REMOVED: role="banner" from .page-header — same fix applied across all
+      pages. role="banner" is reserved for the top-level site header landmark
+      (the <nav> from site-nav). Using it on an inner page-title block creates
+      a duplicate banner landmark that confuses screen-reader navigation.
+    -->
+    <div class="page-header">
+      <p class="zh">活動預告</p>
+      <h1>Events &amp; Activities</h1>
+      <p style="font-family:'Noto Sans SC',sans-serif;font-size:1rem;color:rgba(255,255,255,0.8);margin-bottom:0.15rem;">关注我们的社区，获取最新动态</p>
+      <p>Stay Up to Date with Our Community</p>
+    </div>
+
+    <!-- ── FEATURED EVENTS + WEEKLY GATHERINGS ───────────────────────────── -->
+    <!--
+      CHANGED: <div class="section"> → <section class="section">.
+      Both Featured Events and Weekly Gatherings share this wrapper — they are
+      related content groupings on the same page. One section landmark with
+      aria-labelledby anchored to the first heading is appropriate; splitting
+      them would double the section padding and alter the visual layout.
+    -->
+    <section class="section" aria-labelledby="featured-events-heading">
+      <div style="max-width:960px;margin:0 auto;">
+
+        <!-- ── Featured Events ────────────────────────────────────────────── -->
+        <div class="gold-divider"></div>
+        <!--
+          CHANGED: Inline-styled <p> → <p class="zh-label-lg"> throughout.
+          style.css .zh-label-lg rule produces identical output (Noto Sans SC,
+          1.6rem, var(--gold), bold) without per-element inline styles.
+        -->
+        <p class="zh-label-lg">精選活動</p>
+        <h2 class="section-title" id="featured-events-heading">Featured Events</h2>
+        <p style="font-family:'Noto Sans SC',sans-serif;font-size:0.875rem;color:var(--slate);margin-bottom:0.2rem;">點擊「了解更多」查看詳情</p>
+        <p class="section-subtitle" style="margin-bottom:2rem;">Click "Learn More" for full details</p>
+
+        <!--
+          CHANGED: Three inner <div class="feat-card"> → <article class="feat-card">.
+          Each card is self-contained, independently meaningful event content.
+          style.css targets .feat-card by class, not tag, so the change is safe.
+          .feat-banner h3 is targeted by descendant selector in style.css —
+          the <h3> tags inside .feat-banner are preserved exactly.
+        -->
+        <div class="three-col" style="margin-bottom:3rem;align-items:start;">
+
+          <!-- Card 1: Church Weekly Activities -->
+          <article class="feat-card">
+            <div class="feat-banner" style="background:linear-gradient(160deg,#1a2e4a 0%,#2d4a6e 100%);">
+              <p class="feat-banner-zh">教會一周活動安排</p>
+              <h3>📅 Church Weekly<br/>Activities</h3>
+              <p class="feat-banner-date">3/8/2026 – 3/15/2026</p>
+            </div>
+            <div class="feat-body">
+              <p style="font-family:'Noto Sans SC',sans-serif;font-size:0.875rem;color:var(--slate);margin-bottom:0.5rem;">中文堂本週活動時間表，包含主日學、查經、團契等。</p>
+              <p style="font-size:0.875rem;color:var(--slate);line-height:1.7;margin-bottom:1rem;">This week's Chinese Congregation schedule including Sunday School, Bible studies, fellowship groups, and more.</p>
+              <button class="btn-red"
+                      onclick="document.getElementById('modal-weekly').style.display='block';"
+                      aria-haspopup="dialog"
+                      style="display:inline-block;padding:0.5rem 1.2rem;font-size:0.875rem;font-weight:700;border:none;border-radius:4px;cursor:pointer;">
+                了解更多 Learn More
+              </button>
+            </div>
+          </article>
+
+          <!-- Card 2: Good Friday Gospel Play -->
+          <article class="feat-card">
+            <div class="feat-banner" style="background:linear-gradient(160deg,#0d1f3c 0%,#1a3a5c 100%);">
+              <p class="feat-banner-zh">受難節福音話劇「復活」</p>
+              <h3>✝️ Good Friday Gospel Play<br/>"Resurrection"</h3>
+              <p class="feat-banner-date">4月3日 晚上7時 · April 3, 7PM</p>
+            </div>
+            <div class="feat-body">
+              <p style="font-family:'Noto Sans SC',sans-serif;font-size:0.875rem;color:var(--slate);margin-bottom:0.5rem;">你有沒有想過，如果你突然「進入」了一個福音故事，看見耶穌伸手醫治並對你說「你的罪赦免了」，你會怎麼選擇？我們邀請你踏上這段無法置身事外的旅程，重新發現愛、犧牲與重生。4月3日於教會隆重獻演。</p>
+              <p style="font-size:0.875rem;color:var(--slate);line-height:1.7;margin-bottom:1rem;">Have you ever wondered what would happen if you suddenly "entered" a gospel story? If you see Jesus reach out to heal and hear Him say, "Your sins are forgiven," what would you choose? We invite you to embark on this journey — to rediscover love, sacrifice, and rebirth. Grandly performed at church on April 3rd.</p>
+              <button class="btn-red"
+                      onclick="document.getElementById('modal-goodfriday').style.display='block';"
+                      aria-haspopup="dialog"
+                      style="display:inline-block;padding:0.5rem 1.2rem;font-size:0.875rem;font-weight:700;border:none;border-radius:4px;cursor:pointer;">
+                了解更多 Learn More
+              </button>
+            </div>
+          </article>
+
+          <!-- Card 3: Let's Learn English -->
+          <article class="feat-card">
+            <div class="feat-banner" style="background:linear-gradient(160deg,#b45309 0%,#d97706 100%);">
+              <p class="feat-banner-zh">齊來學英語・免費英文班</p>
+              <h3>📚 Let's Learn English</h3>
+              <p class="feat-banner-date">星期日 下午 1:45–3:15</p>
+            </div>
+            <div class="feat-body">
+              <p style="font-family:'Noto Sans SC',sans-serif;font-size:0.875rem;color:var(--slate);margin-bottom:0.5rem;">完全免費！外籍英語老師Robert任教，設中文助教，適合初階程度，名額有限。</p>
+              <p style="font-size:0.875rem;color:var(--slate);line-height:1.7;margin-bottom:1rem;">Completely free! Taught by native English teacher Robert. Chinese teaching assistant available. Beginner-friendly. Limited spots — register soon!</p>
+              <button class="btn-red"
+                      onclick="document.getElementById('modal-english').style.display='block';"
+                      aria-haspopup="dialog"
+                      style="display:inline-block;padding:0.5rem 1.2rem;font-size:0.875rem;font-weight:700;border:none;border-radius:4px;cursor:pointer;">
+                了解更多 Learn More
+              </button>
+            </div>
+          </article>
+
+        </div><!-- /.three-col -->
+
+        <!-- ── Weekly Gatherings ──────────────────────────────────────────── -->
+        <div class="gold-divider"></div>
+        <p class="zh-label-lg">每週聚會</p>
+        <h2 class="section-title" id="weekly-gatherings-heading">Weekly Gatherings</h2>
+        <p style="font-family:'Noto Sans SC',sans-serif;font-size:0.875rem;color:var(--slate);margin-bottom:0.15rem;">中文堂每週活動時間表（2/22/2026 – 3/1/2026）</p>
+        <p style="font-size:0.875rem;color:var(--slate);margin-bottom:1.5rem;">Chinese Congregation weekly activities</p>
+
+        <!--
+          Responsive table wrapper — overflow-x:auto enables horizontal scroll
+          on narrow viewports without affecting the table layout.
+        -->
+        <div style="overflow-x:auto;margin-bottom:3rem;">
+          <table class="weekly-table">
+            <thead>
+              <tr>
+                <th scope="col">日期 Date</th>
+                <th scope="col">活動 Activity</th>
+                <th scope="col">時間 Time</th>
+                <th scope="col">地點 Location</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>2/22/26（日）</td><td>主日學課程</td>     <td>9:45–11:00am</td>             <td>教會</td></tr>
+              <tr><td>2/22/26（日）</td><td>共融事工</td>       <td>11:00am</td>                  <td>134</td></tr>
+              <tr><td>2/22/26（五）</td><td>廣東三團契春節聯歡</td><td>3:00pm</td>                <td>教會</td></tr>
+              <tr><td>2/22/26（日）</td><td>健體班</td>         <td>2:00–3:00pm</td>             <td>樓下華協及飯堂</td></tr>
+              <tr><td>2/22/26（日）</td><td>成人油畫班</td>     <td>3:00–4:00pm</td>             <td>樓下華協</td></tr>
+              <tr><td>2/24/26（二）</td><td>餐福團契網上晚堂崇拜</td><td>10:00pm</td>            <td>Zoom: 858 5769 274</td></tr>
+              <tr><td>2/27/26（五）</td><td>南區查經小組查經聚會</td><td>6:00 晚餐 / 7:00 查經</td><td>French Town Church</td></tr>
+              <tr><td>2/27/26（五）</td><td>喜樂團契查經</td>   <td>7:30pm</td>                  <td>會議室</td></tr>
+              <tr><td>2/27/26（五）</td><td>家美團契活水小組查經</td><td>6:30 晚餐 / 7:30 查經</td><td>詩班房</td></tr>
+              <!--
+                class="zoom-row" preserved as-is — may be used for CSS or JS
+                targeting elsewhere. Not defined in the reviewed style.css but
+                kept to avoid breaking any external dependency.
+              -->
+              <tr class="zoom-row">
+                <td>2/27/26（五）</td>
+                <td>家美團契天路歷程小組網上查經</td>
+                <td>7:30pm</td>
+                <td>Zoom: 5087280204<br/>Password: 666888</td>
+              </tr>
+              <!--
+                class="week-divider" adds a gold top-border via style.css:
+                .weekly-table tr.week-divider td { border-top: 3px solid var(--gold) }
+              -->
+              <tr class="week-divider">
+                <td>3/1/26（日）</td><td>粵語主日學課程</td><td>9:45–11:00am</td><td>教會</td>
+              </tr>
+              <tr><td>3/1/26（日）</td><td>共融事工</td>   <td>11:00am</td>    <td>134</td></tr>
+              <tr><td>3/1/26（日）</td><td>健體班</td>     <td>2:00–3:00pm</td><td>樓下華協及飯堂</td></tr>
+              <tr><td>3/1/26（日）</td><td>成人油畫班</td> <td>3:00–4:00pm</td><td>樓下華協</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </section><!-- /.section -->
+
+    <!-- ── ONLINE WORSHIP ─────────────────────────────────────────────────── -->
+    <!--
+      CHANGED: <div class="section section-alt"> → <section>.
+      REMOVED: role="region" + aria-label from inner .online-card — same fix
+      applied across all pages. The parent <section> already provides the
+      landmark; a nested role="region" without an accessible name is redundant.
+      id="online-heading" added to <h3> to supply aria-labelledby on the section.
+    -->
+    <section class="section section-alt" aria-labelledby="online-heading">
+      <div style="max-width:860px;margin:0 auto;">
+        <div class="online-card">
+          <div class="zh">線上敬拜</div>
+          <h3 id="online-heading">Join Us Online</h3>
+          <p style="font-family:'Noto Sans SC',sans-serif;font-size:0.9rem;color:rgba(255,255,255,0.8);margin-bottom:0.3rem;">無法親自出席？線上觀看直播或隨時收看錄影。</p>
+          <p>Can't make it in person? Watch our services live or access recordings anytime.</p>
+          <div class="online-btns">
+            <a class="btn-watch" href="https://www.youtube.com/@ChineseMinistryCCCRI" target="_blank" rel="noopener">▶ Watch Live 直播</a>
+            <a class="btn-gold"  href="https://goo.gl/maps/HcaaXQQvwiYJvish9"        target="_blank" rel="noopener">🗺 Directions 路線</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main><!-- /.page -->
+
+  <!-- ── FOOTER ──────────────────────────────────────────────────────────── -->
+  <!--
+    NOTE: Source file was truncated mid-footer. Content below preserves
+    everything present in the original exactly. Restore the full footer
+    (info paragraph, copyright line) from your source repository.
+  -->
+  <footer>
+    <div class="footer-links">
+      <span>📍 <strong style="color:var(--gold-light);">333 Roosevelt Ave, Pawtucket, RI 02860</strong></span>
+      <span>📞 <a href="tel:4017228877" style="color:var(--gold-light);">(401) 722-8877</a></span>
+      <span>✉️ <a href="/cdn-cgi/l/email-protection#c7aea9a1a887a4a4a4b5aee9a8b5a0" style="color:var(--gold-light);"><span class="__cf_email__" data-cfemail="ff96919990bf9c9c9c8d96d1908d98">[email&#160;protected]</span></a></span>
+    </div>
+    <!-- Restore remaining footer content from source (info paragraph, copy line) -->
+  </footer>
+
+</body>
+</html>
