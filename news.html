@@ -1,91 +1,35 @@
 <!DOCTYPE html>
 <html lang="zh-cmn-Hans-x-en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="News & Updates — Chinese Christian Church of Rhode Island (CCCRI)" name="description"/>
-<title>消息與見證 News | Chinese Christian Church of Rhode Island</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&family=Noto+Serif:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet"/>
-<style>
-/* ── SITE CSS (from style.css) ── */
-:root {
-  --red: #c0171d;
-  --red-dark: #9a1015;
-  --gold: #c8952a;
-  --gold-light: #e8b84b;
-  --navy: #1a2e4a;
-  --cream: #f9f5ef;
-  --warm-white: #fdfaf6;
-  --slate: #4a5568;
-  --light-blue: #e8f0f8;
-  --text: #2d3748;
-}
-* { margin:0; padding:0; box-sizing:border-box; }
-body { font-family:'Noto Sans','Noto Sans SC',sans-serif; color:var(--text); background:var(--warm-white); overflow-x:hidden; font-weight:500; }
-nav {
-  position:fixed; top:0; left:0; right:0; z-index:1000;
-  background:var(--red);
-  display:flex; align-items:center; justify-content:space-between;
-  padding:0 1.5rem; height:64px;
-  box-shadow:0 2px 12px rgba(0,0,0,0.25);
-}
-.nav-logo { display:flex; align-items:center; text-decoration:none; padding:6px 0; }
-.nav-logo img { height:50px; width:auto; filter:brightness(0) invert(1); }
-.nav-links { display:flex; gap:0; }
-.nav-links a {
-  background:none; border:none; color:rgba(255,255,255,0.88);
-  font-family:'Noto Sans','Noto Sans SC',sans-serif; font-size:0.875rem;
-  font-weight:500; padding:0 0.9rem; height:64px; cursor:pointer;
-  letter-spacing:0.02em; border-bottom:3px solid transparent;
-  transition:all 0.2s; white-space:nowrap; display:flex; align-items:center; text-decoration:none;
-}
-.nav-links a:hover, .nav-links a.active { color:#fff; border-bottom-color:#fff; background:rgba(0,0,0,0.15); }
-.nav-donate {
-  background:white; color:var(--red); font-family:'Noto Sans','Noto Sans SC',sans-serif;
-  font-size:0.875rem; font-weight:700; padding:0.45rem 1.1rem; border-radius:3px;
-  text-decoration:none; white-space:nowrap; margin-left:0.75rem;
-  border:2px solid white; transition:all 0.2s;
-}
-.nav-donate:hover { background:var(--red-dark); color:white; }
-.page { display:block; padding-top:64px; min-height:100vh; }
-.section { padding:4rem 5%; }
-.section-alt { background:var(--cream); }
-.section-title { font-family:'Noto Serif',serif; font-size:1.9rem; color:var(--navy); margin-bottom:0.4rem; }
-.section-subtitle { color:var(--slate); font-size:0.95rem; margin-bottom:2.5rem; font-weight:500; }
-.gold-divider { width:60px; height:3px; background:var(--gold); margin-bottom:0.8rem; }
-.page-header {
-  background:linear-gradient(135deg, var(--red-dark), var(--red));
-  color:white; text-align:center; padding:3.5rem 2rem;
-  position:relative; overflow:hidden;
-}
-.page-header::after {
-  content:''; position:absolute; bottom:0; left:0; right:0;
-  height:4px; background:linear-gradient(90deg,var(--gold),var(--gold-light),var(--gold));
-}
-.page-header h1 { font-family:'Noto Serif',serif; font-size:2.4rem; margin-bottom:0.3rem; text-shadow:0px 1px 5px rgba(0,0,0,0.55); }
-.page-header p { color:rgba(255,255,255,0.8); font-size:1rem; font-weight:500; }
-.page-header .zh { font-family:'Noto Sans SC',sans-serif; font-size:2rem; font-weight:700; color:rgba(255,255,255,0.9); margin-bottom:0.2rem; text-shadow:0px 1px 5px rgba(0,0,0,0.55); }
-footer { background:var(--red-dark); color:white; text-align:center; padding:2rem 1.5rem; }
-.footer-links { display:flex; flex-wrap:wrap; justify-content:center; gap:0.5rem 2rem; margin-bottom:0.75rem; font-size:0.875rem; font-weight:500; }
-.footer-links a { color:var(--gold-light); text-decoration:none; }
-footer .info { font-size:0.875rem; color:rgba(255,255,255,0.65); margin-bottom:0.4rem; }
-footer .copy { font-size:0.875rem; color:rgba(255,255,255,0.4); margin-top:0.5rem; }
-.hamburger { display:none; background:none; border:none; cursor:pointer; flex-direction:column; gap:5px; padding:4px; margin-left:0.5rem; }
-.hamburger span { display:block; width:24px; height:2px; background:white; border-radius:2px; transition:all 0.3s; }
-.mobile-menu { display:none; position:fixed; top:64px; left:0; right:0; z-index:999; background:var(--red-dark); flex-direction:column; border-top:2px solid rgba(255,255,255,0.15); box-shadow:0 8px 24px rgba(0,0,0,0.3); }
-.mobile-menu.open { display:flex; }
-.mobile-menu a { background:none; border:none; border-bottom:1px solid rgba(255,255,255,0.1); color:white; font-family:'Noto Sans','Noto Sans SC',sans-serif; font-size:1rem; padding:1rem 1.5rem; text-align:left; cursor:pointer; transition:background 0.2s; text-decoration:none; display:block; }
-.mobile-menu a:hover { background:rgba(0,0,0,0.2); }
-@media(max-width:768px) {
-  .nav-links { display:none; }
-  .hamburger { display:flex; }
-  nav { padding:0 1rem; }
-  .nav-donate { font-size:0.875rem; padding:0.4rem 0.75rem; margin-left:0.5rem; }
-  .section { padding:2.5rem 4%; }
-  .page-header h1 { font-size:1.8rem; }
-}
+  <meta charset="utf-8"/>
+  <meta name="viewport"    content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="News &amp; Updates — Chinese Christian Church of Rhode Island (CCCRI)"/>
+  <meta name="theme-color" content="#c0171d"/>
+  <meta property="og:title" content="消息與見證 News | Chinese Christian Church of Rhode Island"/>
+  <meta property="og:type"  content="website"/>
+  <title>消息與見證 News | Chinese Christian Church of Rhode Island</title>
 
-/* ── YEAR TABS ── */
+  <!--
+    CHANGED: Linked assets/style.css and assets/script.js.
+    This page originally duplicated the entire base CSS inline instead of
+    loading the shared stylesheet. The base rules (nav, footer, page, section,
+    hamburger, mobile-menu, etc.) are removed from the inline <style> block
+    below; only page-specific CSS (year tabs, news cards, modals) is kept.
+    assets/script.js provides window.toggleMenu — the duplicate definition
+    in the bottom <script> has been removed accordingly.
+  -->
+  <link rel="stylesheet" href="assets/style.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&family=Noto+Serif:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap"/>
+  <script src="assets/nav.js"    defer></script>
+  <script src="assets/script.js" defer></script>
+<style>
+  /*
+    Page-specific styles for news.html.
+    Base styles (nav, footer, page, section, hamburger, mobile-menu, etc.)
+    are now loaded from assets/style.css above.
+  */
+
+  /* ── YEAR TABS ── */
 .year-tabs {
   display:flex;
   gap:0;
@@ -362,42 +306,41 @@ footer .copy { font-size:0.875rem; color:rgba(255,255,255,0.4); margin-top:0.5re
   font-size:2.5rem; color:var(--navy); opacity:0.35;
 }
 </style>
-<script src="assets/nav.js" defer></script>
 </head>
 <body data-nav="news">
 
 <site-nav></site-nav>
-  </div>
-  <button aria-expanded="false" aria-label="Open navigation menu" class="hamburger" id="hamburger" onclick="toggleMenu()">
-    <span></span><span></span><span></span>
-  </button>
-  <a class="nav-donate" href="https://tithe.ly/give_new/www/#/tithely/give-one-time/1707700" rel="noopener" target="_blank">線上奉獻 Donate</a>
-</nav>
-
-<div class="mobile-menu" id="mobile-menu">
-  <a href="index.html">主页 Home</a>
-  <a href="about.html">关于我们 About Us</a>
-  <a href="worship.html">敬拜 Worship</a>
-  <a href="events.html">活动 Events</a>
-  <a href="ministries.html">事工 Ministries</a>
-  <a href="news.html">消息 News</a>
-  <a href="resources.html">资源 Resources</a>
-  <a href="contact.html">联系 Contact</a>
-</div>
+  <!--
+    REMOVED: Orphaned nav fragment — stray </div>, duplicate hamburger
+    <button id="hamburger">, donate <a>, closing </nav>, and a full
+    hand-written mobile-menu div. nav.js renders all of these inside
+    <site-nav>; the duplicate produced two hamburger buttons and two
+    #mobile-menu elements, breaking toggle behaviour.
+  -->
 
 <main class="page">
-  <div class="page-header" role="banner">
+  <div class="page-header">
+    <!--
+      REMOVED: role="banner" — reserved for the top-level site header
+      landmark rendered by site-nav. Using it here creates a duplicate
+      banner landmark that confuses screen-reader navigation.
+    -->
     <p class="zh">消息與見證</p>
     <h1>News &amp; Updates</h1>
     <p style="font-family:'Noto Sans SC',sans-serif;font-size:1rem;color:rgba(255,255,255,0.8);margin-bottom:0.15rem;">記錄上帝在我們中間的工作</p>
     <p>A record of God's work among us</p>
   </div>
 
-  <div class="section">
+  <!--
+    CHANGED: <div class="section"> → <section class="section">.
+    The news grid is a proper content landmark anchored to the "Ministry
+    News by Year" heading below.
+  -->
+  <section class="section" aria-labelledby="news-heading">
     <div style="max-width:1060px;margin:0 auto;">
       <div class="gold-divider"></div>
-      <p style="font-family:'Noto Sans SC',sans-serif;font-size:1.6rem;color:var(--gold);font-weight:700;margin-bottom:0.1rem;">年度消息</p>
-      <h2 class="section-title">Ministry News by Year</h2>
+      <p class="zh-label-lg">年度消息</p>
+      <h2 class="section-title" id="news-heading">Ministry News by Year</h2>
       <p class="section-subtitle"><span style="font-family:'Noto Sans SC',sans-serif;display:block;margin-bottom:0.2rem;">點擊月份卡片閱讀完整報告</span>Click any month card to read the full report</p>
 
       <!-- YEAR TABS -->
@@ -413,7 +356,11 @@ footer .copy { font-size:0.875rem; color:rgba(255,255,255,0.4); margin-top:0.5re
         <div class="news-grid">
 
           <!-- APRIL 2023 -->
-          <div class="news-card" onclick="openModal('apr2023')">
+          <div class="news-card"
+             role="button"
+             tabindex="0"
+             onclick="openModal('apr2023')"
+             onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal('apr2023');}">
             <div class="news-card-header">
               <div class="news-card-month">April 2023 · 四月</div>
               <div class="news-card-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:0.88rem;margin-bottom:0.25rem;font-weight:500;opacity:0.92;">乒乓球友谊赛与弟兄姐妹退修会</span>Table Tennis Tournament &amp; Brothers/Sisters' Retreat</div>
@@ -429,7 +376,11 @@ footer .copy { font-size:0.875rem; color:rgba(255,255,255,0.4); margin-top:0.5re
           </div>
 
           <!-- MAY 2023 -->
-          <div class="news-card" onclick="openModal('may2023')">
+          <div class="news-card"
+             role="button"
+             tabindex="0"
+             onclick="openModal('may2023')"
+             onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal('may2023');}">
             <div class="news-card-header">
               <div class="news-card-month">May 2023 · 五月</div>
               <div class="news-card-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:0.88rem;margin-bottom:0.25rem;font-weight:500;opacity:0.92;">祷告日、大扫除、母亲节及社区活动</span>Prayer, Cleaning, Mother's Day &amp; Community Events</div>
@@ -445,7 +396,11 @@ footer .copy { font-size:0.875rem; color:rgba(255,255,255,0.4); margin-top:0.5re
           </div>
 
           <!-- JUNE 2023 -->
-          <div class="news-card" onclick="openModal('jun2023')">
+          <div class="news-card"
+             role="button"
+             tabindex="0"
+             onclick="openModal('jun2023')"
+             onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal('jun2023');}">
             <div class="news-card-header">
               <div class="news-card-month">June 2023 · 六月</div>
               <div class="news-card-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:0.88rem;margin-bottom:0.25rem;font-weight:500;opacity:0.92;">联合团契、毕业典礼、父亲节与洗礼</span>Joint Fellowships, Graduation, Father's Day &amp; Baptism</div>
@@ -461,7 +416,11 @@ footer .copy { font-size:0.875rem; color:rgba(255,255,255,0.4); margin-top:0.5re
           </div>
 
           <!-- JULY 2023 -->
-          <div class="news-card" onclick="openModal('jul2023')">
+          <div class="news-card"
+             role="button"
+             tabindex="0"
+             onclick="openModal('jul2023')"
+             onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal('jul2023');}">
             <div class="news-card-header">
               <div class="news-card-month">July 2023 · 七月</div>
               <div class="news-card-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:0.88rem;margin-bottom:0.25rem;font-weight:500;opacity:0.92;">诗歌见证会与敬拜部培训</span>Hymn Testimony Meeting &amp; Worship Dept. Training</div>
@@ -477,7 +436,11 @@ footer .copy { font-size:0.875rem; color:rgba(255,255,255,0.4); margin-top:0.5re
           </div>
 
           <!-- AUGUST 2023 -->
-          <div class="news-card" onclick="openModal('aug2023')">
+          <div class="news-card"
+             role="button"
+             tabindex="0"
+             onclick="openModal('aug2023')"
+             onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal('aug2023');}">
             <div class="news-card-header">
               <div class="news-card-month">August 2023 · 八月</div>
               <div class="news-card-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:0.88rem;margin-bottom:0.25rem;font-weight:500;opacity:0.92;">关怀部退修、暑期圣经学校与嘉美游轮</span>Care Dept. Retreat, VBS &amp; Jia Mei Cruise</div>
@@ -493,7 +456,11 @@ footer .copy { font-size:0.875rem; color:rgba(255,255,255,0.4); margin-top:0.5re
           </div>
 
           <!-- SEPTEMBER 2023 -->
-          <div class="news-card" onclick="openModal('sep2023')">
+          <div class="news-card"
+             role="button"
+             tabindex="0"
+             onclick="openModal('sep2023')"
+             onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal('sep2023');}">
             <div class="news-card-header">
               <div class="news-card-month">September 2023 · 九月</div>
               <div class="news-card-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:0.88rem;margin-bottom:0.25rem;font-weight:500;opacity:0.92;">龙舟节与社区福音外展</span>Dragon Boat Festival &amp; Community Outreach</div>
@@ -509,7 +476,11 @@ footer .copy { font-size:0.875rem; color:rgba(255,255,255,0.4); margin-top:0.5re
           </div>
 
           <!-- OCTOBER 2023 -->
-          <div class="news-card" onclick="openModal('oct2023')">
+          <div class="news-card"
+             role="button"
+             tabindex="0"
+             onclick="openModal('oct2023')"
+             onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal('oct2023');}">
             <div class="news-card-header">
               <div class="news-card-month">October 2023 · 十月</div>
               <div class="news-card-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:0.88rem;margin-bottom:0.25rem;font-weight:500;opacity:0.92;">联合团契与第六届圣经知识竞赛</span>Joint Fellowship &amp; 6th Bible Knowledge Competition</div>
@@ -525,7 +496,11 @@ footer .copy { font-size:0.875rem; color:rgba(255,255,255,0.4); margin-top:0.5re
           </div>
 
           <!-- NOVEMBER 2023 -->
-          <div class="news-card" onclick="openModal('nov2023')">
+          <div class="news-card"
+             role="button"
+             tabindex="0"
+             onclick="openModal('nov2023')"
+             onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal('nov2023');}">
             <div class="news-card-header">
               <div class="news-card-month">November 2023 · 十一月</div>
               <div class="news-card-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:0.88rem;margin-bottom:0.25rem;font-weight:500;opacity:0.92;">感恩节庆典</span>Thanksgiving Celebration</div>
@@ -548,7 +523,11 @@ footer .copy { font-size:0.875rem; color:rgba(255,255,255,0.4); margin-top:0.5re
         <div class="news-grid">
 
           <!-- JANUARY 2024 -->
-          <div class="news-card" onclick="openModal('jan2024')">
+          <div class="news-card"
+             role="button"
+             tabindex="0"
+             onclick="openModal('jan2024')"
+             onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal('jan2024');}">
             <div class="news-card-header">
               <div class="news-card-month">January 2024 · 一月</div>
               <div class="news-card-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:0.88rem;margin-bottom:0.25rem;font-weight:500;opacity:0.92;">「愿你的旨意成就」——年终回顾</span>"May Your Will Be Done" — Year-End Reflection</div>
@@ -564,7 +543,11 @@ footer .copy { font-size:0.875rem; color:rgba(255,255,255,0.4); margin-top:0.5re
           </div>
 
           <!-- FEBRUARY 2024 -->
-          <div class="news-card" onclick="openModal('feb2024')">
+          <div class="news-card"
+             role="button"
+             tabindex="0"
+             onclick="openModal('feb2024')"
+             onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal('feb2024');}">
             <div class="news-card-header">
               <div class="news-card-month">February 2024 · 二月</div>
               <div class="news-card-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:0.88rem;margin-bottom:0.25rem;font-weight:500;opacity:0.92;">冬季主日学：「金句与我的生命」</span>Winter Sunday School: "Golden Verses and My Life"</div>
@@ -580,7 +563,11 @@ footer .copy { font-size:0.875rem; color:rgba(255,255,255,0.4); margin-top:0.5re
           </div>
 
           <!-- MARCH 2024 -->
-          <div class="news-card" onclick="openModal('mar2024')">
+          <div class="news-card"
+             role="button"
+             tabindex="0"
+             onclick="openModal('mar2024')"
+             onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal('mar2024');}">
             <div class="news-card-header">
               <div class="news-card-month">March 2024 · 三月</div>
               <div class="news-card-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:0.88rem;margin-bottom:0.25rem;font-weight:500;opacity:0.92;">建堂四十七周年：社区慈善便当日</span>47th Anniversary: Community Charity Lunchbox Drive</div>
@@ -596,7 +583,11 @@ footer .copy { font-size:0.875rem; color:rgba(255,255,255,0.4); margin-top:0.5re
           </div>
 
           <!-- APRIL 2024 -->
-          <div class="news-card" onclick="openModal('apr2024')">
+          <div class="news-card"
+             role="button"
+             tabindex="0"
+             onclick="openModal('apr2024')"
+             onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal('apr2024');}">
             <div class="news-card-header">
               <div class="news-card-month">April 2024 · 四月</div>
               <div class="news-card-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:0.88rem;margin-bottom:0.25rem;font-weight:500;opacity:0.92;">钢琴音乐会与免费成人英语班</span>Piano Recital &amp; Free Adult English Classes</div>
@@ -612,7 +603,11 @@ footer .copy { font-size:0.875rem; color:rgba(255,255,255,0.4); margin-top:0.5re
           </div>
 
           <!-- JUNE 2024 -->
-          <div class="news-card" onclick="openModal('jun2024')">
+          <div class="news-card"
+             role="button"
+             tabindex="0"
+             onclick="openModal('jun2024')"
+             onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal('jun2024');}">
             <div class="news-card-header">
               <div class="news-card-month">June 2024 · 六月</div>
               <div class="news-card-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:0.88rem;margin-bottom:0.25rem;font-weight:500;opacity:0.92;">第二十五届姐妹退修会——「走向丰盛」</span>25th Sisters' Retreat — "Towards Abundance"</div>
@@ -628,7 +623,11 @@ footer .copy { font-size:0.875rem; color:rgba(255,255,255,0.4); margin-top:0.5re
           </div>
 
           <!-- JULY 2024 -->
-          <div class="news-card" onclick="openModal('jul2024')">
+          <div class="news-card"
+             role="button"
+             tabindex="0"
+             onclick="openModal('jul2024')"
+             onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal('jul2024');}">
             <div class="news-card-header">
               <div class="news-card-month">July 2024 · 七月</div>
               <div class="news-card-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:0.88rem;margin-bottom:0.25rem;font-weight:500;opacity:0.92;">教会夏日聚会于科尔特州立公园</span>Church Summer Outing at Colt State Park</div>
@@ -644,7 +643,11 @@ footer .copy { font-size:0.875rem; color:rgba(255,255,255,0.4); margin-top:0.5re
           </div>
 
           <!-- AUGUST 2024 -->
-          <div class="news-card" onclick="openModal('aug2024')">
+          <div class="news-card"
+             role="button"
+             tabindex="0"
+             onclick="openModal('aug2024')"
+             onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal('aug2024');}">
             <div class="news-card-header">
               <div class="news-card-month">August 2024 · 八月</div>
               <div class="news-card-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:0.88rem;margin-bottom:0.25rem;font-weight:500;opacity:0.92;">龙舟节与社区福音外展</span>Dragon Boat Festival &amp; Community Outreach</div>
@@ -660,7 +663,11 @@ footer .copy { font-size:0.875rem; color:rgba(255,255,255,0.4); margin-top:0.5re
           </div>
 
           <!-- NOVEMBER 2024 -->
-          <div class="news-card" onclick="openModal('nov2024')">
+          <div class="news-card"
+             role="button"
+             tabindex="0"
+             onclick="openModal('nov2024')"
+             onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal('nov2024');}">
             <div class="news-card-header">
               <div class="news-card-month">November 2024 · 十一月</div>
               <div class="news-card-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:0.88rem;margin-bottom:0.25rem;font-weight:500;opacity:0.92;">感恩节：见证、爱宴与「举起救恩的杯」</span>Thanksgiving: Testimonies, Feast &amp; "Lift Up the Cup"</div>
@@ -683,7 +690,11 @@ footer .copy { font-size:0.875rem; color:rgba(255,255,255,0.4); margin-top:0.5re
         <div class="news-grid">
 
           <!-- JANUARY -->
-          <div class="news-card" onclick="openModal('jan2025')">
+          <div class="news-card"
+             role="button"
+             tabindex="0"
+             onclick="openModal('jan2025')"
+             onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal('jan2025');}">
             <div class="news-card-header">
               <div class="news-card-month">January 2025 · 一月</div>
               <div class="news-card-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:0.88rem;margin-bottom:0.25rem;font-weight:500;opacity:0.92;">英语班农历新年庆典</span>English Class Lunar New Year Celebration</div>
@@ -699,7 +710,11 @@ footer .copy { font-size:0.875rem; color:rgba(255,255,255,0.4); margin-top:0.5re
           </div>
 
           <!-- MAY -->
-          <div class="news-card" onclick="openModal('may2025')">
+          <div class="news-card"
+             role="button"
+             tabindex="0"
+             onclick="openModal('may2025')"
+             onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal('may2025');}">
             <div class="news-card-header">
               <div class="news-card-month">May 2025 · 五月</div>
               <div class="news-card-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:0.88rem;margin-bottom:0.25rem;font-weight:500;opacity:0.92;">商权弟兄小提琴音乐会</span>Violin Recital: Brother Shang Quan</div>
@@ -715,7 +730,11 @@ footer .copy { font-size:0.875rem; color:rgba(255,255,255,0.4); margin-top:0.5re
           </div>
 
           <!-- JULY -->
-          <div class="news-card" onclick="openModal('jul2025')">
+          <div class="news-card"
+             role="button"
+             tabindex="0"
+             onclick="openModal('jul2025')"
+             onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal('jul2025');}">
             <div class="news-card-header">
               <div class="news-card-month">July 2025 · 七月</div>
               <div class="news-card-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:0.88rem;margin-bottom:0.25rem;font-weight:500;opacity:0.92;">好运超市福音外展</span>Good Luck Supermarket Outreach</div>
@@ -731,7 +750,11 @@ footer .copy { font-size:0.875rem; color:rgba(255,255,255,0.4); margin-top:0.5re
           </div>
 
           <!-- AUGUST -->
-          <div class="news-card" onclick="openModal('aug2025')">
+          <div class="news-card"
+             role="button"
+             tabindex="0"
+             onclick="openModal('aug2025')"
+             onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal('aug2025');}">
             <div class="news-card-header">
               <div class="news-card-month">August 2025 · 八月</div>
               <div class="news-card-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:0.88rem;margin-bottom:0.25rem;font-weight:500;opacity:0.92;">龙舟节福音外展</span>Dragon Boat Festival Outreach</div>
@@ -747,7 +770,11 @@ footer .copy { font-size:0.875rem; color:rgba(255,255,255,0.4); margin-top:0.5re
           </div>
 
           <!-- OCTOBER -->
-          <div class="news-card" onclick="openModal('oct2025')">
+          <div class="news-card"
+             role="button"
+             tabindex="0"
+             onclick="openModal('oct2025')"
+             onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal('oct2025');}">
             <div class="news-card-header">
               <div class="news-card-month">October 2025 · 十月</div>
               <div class="news-card-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:0.88rem;margin-bottom:0.25rem;font-weight:500;opacity:0.92;">佛蒙特州秋日赏枫之旅</span>Vermont Fall Foliage Trips</div>
@@ -763,7 +790,11 @@ footer .copy { font-size:0.875rem; color:rgba(255,255,255,0.4); margin-top:0.5re
           </div>
 
           <!-- NOVEMBER -->
-          <div class="news-card" onclick="openModal('nov2025')">
+          <div class="news-card"
+             role="button"
+             tabindex="0"
+             onclick="openModal('nov2025')"
+             onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal('nov2025');}">
             <div class="news-card-header">
               <div class="news-card-month">November 2025 · 十一月</div>
               <div class="news-card-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:0.88rem;margin-bottom:0.25rem;font-weight:500;opacity:0.92;">感恩节、圣经知识竞赛与联合团契</span>Thanksgiving, Bible Competition &amp; Joint Fellowship</div>
@@ -779,7 +810,11 @@ footer .copy { font-size:0.875rem; color:rgba(255,255,255,0.4); margin-top:0.5re
           </div>
 
           <!-- DECEMBER -->
-          <div class="news-card" onclick="openModal('dec2025')">
+          <div class="news-card"
+             role="button"
+             tabindex="0"
+             onclick="openModal('dec2025')"
+             onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal('dec2025');}">
             <div class="news-card-header">
               <div class="news-card-month">December 2025 · 十二月</div>
               <div class="news-card-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:0.88rem;margin-bottom:0.25rem;font-weight:500;opacity:0.92;">圣诞季：爱的行动</span>Christmas Season: Love in Action</div>
@@ -802,7 +837,11 @@ footer .copy { font-size:0.875rem; color:rgba(255,255,255,0.4); margin-top:0.5re
         <div class="news-grid">
 
           <!-- FEBRUARY 2026 -->
-          <div class="news-card" onclick="openModal('feb2026')">
+          <div class="news-card"
+             role="button"
+             tabindex="0"
+             onclick="openModal('feb2026')"
+             onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal('feb2026');}">
             <div class="news-card-header">
               <div class="news-card-month">February 2026 · 二月</div>
               <div class="news-card-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:0.88rem;margin-bottom:0.25rem;font-weight:500;opacity:0.92;">第十四届春节联欢晚会——「回家过年」</span>14th Annual Spring Festival Gala — "Going Home for the New Year"</div>
@@ -818,7 +857,11 @@ footer .copy { font-size:0.875rem; color:rgba(255,255,255,0.4); margin-top:0.5re
           </div>
 
           <!-- MARCH 2026 -->
-          <div class="news-card" onclick="openModal('mar2026')">
+          <div class="news-card"
+             role="button"
+             tabindex="0"
+             onclick="openModal('mar2026')"
+             onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal('mar2026');}">
             <div class="news-card-header">
               <div class="news-card-month">March 2026 · 三月</div>
               <div class="news-card-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:0.88rem;margin-bottom:0.25rem;font-weight:500;opacity:0.92;">音乐会与粤语团契新春联欢</span>Concert &amp; Cantonese Fellowship Chinese New Year Gathering</div>
@@ -837,18 +880,23 @@ footer .copy { font-size:0.875rem; color:rgba(255,255,255,0.4); margin-top:0.5re
       </div><!-- /panel-2026 -->
 
     </div>
-  </div>
+  </section>
 </main>
 
 <!-- ═══════════════ MODALS ═══════════════ -->
 
 <!-- JANUARY 2025 -->
-<div class="modal-overlay" id="modal-jan2025" onclick="closeModalOutside(event, 'jan2025')">
+<div class="modal-overlay"
+     id="modal-jan2025"
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="modal-jan2025-title"
+     onclick="closeModalOutside(event, 'jan2025')">
   <div class="modal">
     <div class="modal-header">
-      <button class="modal-close" onclick="closeModal('jan2025')">✕</button>
+      <button class="modal-close" onclick="closeModal('jan2025')" aria-label="Close dialog">✕</button>
       <div class="modal-month">January 2025 · 一月</div>
-      <div class="modal-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:1.25rem;margin-bottom:0.25rem;">英语班农历新年庆典</span>English Class Lunar New Year Celebration</div>
+      <h2 class="modal-title" id="modal-jan2025-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:1.25rem;margin-bottom:0.25rem;">英语班农历新年庆典</span>English Class Lunar New Year Celebration</h2>
     </div>
     <div class="modal-body">
       <p><em>Church website editor Chen Ting reports.</em></p>
@@ -860,12 +908,17 @@ footer .copy { font-size:0.875rem; color:rgba(255,255,255,0.4); margin-top:0.5re
 </div>
 
 <!-- MAY 2025 -->
-<div class="modal-overlay" id="modal-may2025" onclick="closeModalOutside(event, 'may2025')">
+<div class="modal-overlay"
+     id="modal-may2025"
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="modal-may2025-title"
+     onclick="closeModalOutside(event, 'may2025')">
   <div class="modal">
     <div class="modal-header">
-      <button class="modal-close" onclick="closeModal('may2025')">✕</button>
+      <button class="modal-close" onclick="closeModal('may2025')" aria-label="Close dialog">✕</button>
       <div class="modal-month">May 2025 · 五月</div>
-      <div class="modal-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:1.25rem;margin-bottom:0.25rem;">商权弟兄小提琴音乐会</span>Violin Recital: Brother Shang Quan</div>
+      <h2 class="modal-title" id="modal-may2025-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:1.25rem;margin-bottom:0.25rem;">商权弟兄小提琴音乐会</span>Violin Recital: Brother Shang Quan</h2>
     </div>
     <div class="modal-body">
       <p><em>Church website editor Chen Ting reports.</em></p>
@@ -883,12 +936,17 @@ footer .copy { font-size:0.875rem; color:rgba(255,255,255,0.4); margin-top:0.5re
 </div>
 
 <!-- JULY 2025 -->
-<div class="modal-overlay" id="modal-jul2025" onclick="closeModalOutside(event, 'jul2025')">
+<div class="modal-overlay"
+     id="modal-jul2025"
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="modal-jul2025-title"
+     onclick="closeModalOutside(event, 'jul2025')">
   <div class="modal">
     <div class="modal-header">
-      <button class="modal-close" onclick="closeModal('jul2025')">✕</button>
+      <button class="modal-close" onclick="closeModal('jul2025')" aria-label="Close dialog">✕</button>
       <div class="modal-month">July 2025 · 七月</div>
-      <div class="modal-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:1.25rem;margin-bottom:0.25rem;">好运超市福音外展</span>Good Luck Supermarket Outreach</div>
+      <h2 class="modal-title" id="modal-jul2025-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:1.25rem;margin-bottom:0.25rem;">好运超市福音外展</span>Good Luck Supermarket Outreach</h2>
     </div>
     <div class="modal-body">
       <p><em>Church website editor Chen Ting reports.</em></p>
@@ -914,12 +972,17 @@ footer .copy { font-size:0.875rem; color:rgba(255,255,255,0.4); margin-top:0.5re
 </div>
 
 <!-- AUGUST 2025 -->
-<div class="modal-overlay" id="modal-aug2025" onclick="closeModalOutside(event, 'aug2025')">
+<div class="modal-overlay"
+     id="modal-aug2025"
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="modal-aug2025-title"
+     onclick="closeModalOutside(event, 'aug2025')">
   <div class="modal">
     <div class="modal-header">
-      <button class="modal-close" onclick="closeModal('aug2025')">✕</button>
+      <button class="modal-close" onclick="closeModal('aug2025')" aria-label="Close dialog">✕</button>
       <div class="modal-month">August 2025 · 八月</div>
-      <div class="modal-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:1.25rem;margin-bottom:0.25rem;">龙舟节户外福音外展</span>Dragon Boat Festival Outdoor Outreach</div>
+      <h2 class="modal-title" id="modal-aug2025-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:1.25rem;margin-bottom:0.25rem;">龙舟节户外福音外展</span>Dragon Boat Festival Outdoor Outreach</h2>
     </div>
     <div class="modal-body">
       <p><em>Church website editor Chen Ting reports.</em></p>
@@ -933,12 +996,17 @@ footer .copy { font-size:0.875rem; color:rgba(255,255,255,0.4); margin-top:0.5re
 </div>
 
 <!-- OCTOBER 2025 -->
-<div class="modal-overlay" id="modal-oct2025" onclick="closeModalOutside(event, 'oct2025')">
+<div class="modal-overlay"
+     id="modal-oct2025"
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="modal-oct2025-title"
+     onclick="closeModalOutside(event, 'oct2025')">
   <div class="modal">
     <div class="modal-header">
-      <button class="modal-close" onclick="closeModal('oct2025')">✕</button>
+      <button class="modal-close" onclick="closeModal('oct2025')" aria-label="Close dialog">✕</button>
       <div class="modal-month">October 2025 · 十月</div>
-      <div class="modal-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:1.25rem;margin-bottom:0.25rem;">佛蒙特州秋日赏枫之旅</span>Vermont Fall Foliage Trips</div>
+      <h2 class="modal-title" id="modal-oct2025-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:1.25rem;margin-bottom:0.25rem;">佛蒙特州秋日赏枫之旅</span>Vermont Fall Foliage Trips</h2>
     </div>
     <div class="modal-body">
       <h4><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:0.97rem;margin-bottom:0.2rem;font-weight:700;">家庭团契佛蒙特州赏枫之旅（十月十至十三日）</span>Home Fellowship Vermont Fall Foliage Tour (Oct. 10–13)</h4>
@@ -1008,12 +1076,17 @@ footer .copy { font-size:0.875rem; color:rgba(255,255,255,0.4); margin-top:0.5re
 </div>
 
 <!-- NOVEMBER 2025 -->
-<div class="modal-overlay" id="modal-nov2025" onclick="closeModalOutside(event, 'nov2025')">
+<div class="modal-overlay"
+     id="modal-nov2025"
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="modal-nov2025-title"
+     onclick="closeModalOutside(event, 'nov2025')">
   <div class="modal">
     <div class="modal-header">
-      <button class="modal-close" onclick="closeModal('nov2025')">✕</button>
+      <button class="modal-close" onclick="closeModal('nov2025')" aria-label="Close dialog">✕</button>
       <div class="modal-month">November 2025 · 十一月</div>
-      <div class="modal-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:1.25rem;margin-bottom:0.25rem;">感恩节、圣经知识竞赛与联合团契</span>Thanksgiving, Bible Competition &amp; Joint Fellowship</div>
+      <h2 class="modal-title" id="modal-nov2025-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:1.25rem;margin-bottom:0.25rem;">感恩节、圣经知识竞赛与联合团契</span>Thanksgiving, Bible Competition &amp; Joint Fellowship</h2>
     </div>
     <div class="modal-body">
       <h4><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:0.97rem;margin-bottom:0.2rem;font-weight:700;">2025年教会感恩节活动</span>2025 Church Thanksgiving Activities</h4>
@@ -1056,12 +1129,17 @@ footer .copy { font-size:0.875rem; color:rgba(255,255,255,0.4); margin-top:0.5re
 </div>
 
 <!-- DECEMBER 2025 -->
-<div class="modal-overlay" id="modal-dec2025" onclick="closeModalOutside(event, 'dec2025')">
+<div class="modal-overlay"
+     id="modal-dec2025"
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="modal-dec2025-title"
+     onclick="closeModalOutside(event, 'dec2025')">
   <div class="modal">
     <div class="modal-header">
-      <button class="modal-close" onclick="closeModal('dec2025')">✕</button>
+      <button class="modal-close" onclick="closeModal('dec2025')" aria-label="Close dialog">✕</button>
       <div class="modal-month">December 2025 · 十二月</div>
-      <div class="modal-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:1.25rem;margin-bottom:0.25rem;">圣诞季：爱的行动</span>Christmas Season: Love in Action</div>
+      <h2 class="modal-title" id="modal-dec2025-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:1.25rem;margin-bottom:0.25rem;">圣诞季：爱的行动</span>Christmas Season: Love in Action</h2>
     </div>
     <div class="modal-body">
 
@@ -1139,12 +1217,17 @@ footer .copy { font-size:0.875rem; color:rgba(255,255,255,0.4); margin-top:0.5re
 <!-- ══════ 2023 MODALS ══════ -->
 
 <!-- APRIL 2023 -->
-<div class="modal-overlay" id="modal-apr2023" onclick="closeModalOutside(event,'apr2023')">
+<div class="modal-overlay"
+     id="modal-apr2023"
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="modal-apr2023-title"
+     onclick="closeModalOutside(event, 'apr2023')">
   <div class="modal">
     <div class="modal-header">
-      <button class="modal-close" onclick="closeModal('apr2023')">✕</button>
+      <button class="modal-close" onclick="closeModal('apr2023')" aria-label="Close dialog">✕</button>
       <div class="modal-month">April 2023 · 四月</div>
-      <div class="modal-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:1.25rem;margin-bottom:0.25rem;">乒乓球友谊赛与弟兄姐妹退修会</span>Table Tennis Tournament &amp; Brothers/Sisters' Retreat</div>
+      <h2 class="modal-title" id="modal-apr2023-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:1.25rem;margin-bottom:0.25rem;">乒乓球友谊赛与弟兄姐妹退修会</span>Table Tennis Tournament &amp; Brothers/Sisters' Retreat</h2>
     </div>
     <div class="modal-body">
       <h4><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:0.97rem;margin-bottom:0.2rem;font-weight:700;">乒乓球友谊赛（四月二十三至三十日）</span>Table Tennis Friendly Match (April 23–30)</h4>
@@ -1162,12 +1245,17 @@ footer .copy { font-size:0.875rem; color:rgba(255,255,255,0.4); margin-top:0.5re
 </div>
 
 <!-- MAY 2023 -->
-<div class="modal-overlay" id="modal-may2023" onclick="closeModalOutside(event,'may2023')">
+<div class="modal-overlay"
+     id="modal-may2023"
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="modal-may2023-title"
+     onclick="closeModalOutside(event, 'may2023')">
   <div class="modal">
     <div class="modal-header">
-      <button class="modal-close" onclick="closeModal('may2023')">✕</button>
+      <button class="modal-close" onclick="closeModal('may2023')" aria-label="Close dialog">✕</button>
       <div class="modal-month">May 2023 · 五月</div>
-      <div class="modal-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:1.25rem;margin-bottom:0.25rem;">祷告日、大扫除、母亲节及社区活动</span>Prayer, Cleaning, Mother's Day &amp; Community Events</div>
+      <h2 class="modal-title" id="modal-may2023-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:1.25rem;margin-bottom:0.25rem;">祷告日、大扫除、母亲节及社区活动</span>Prayer, Cleaning, Mother's Day &amp; Community Events</h2>
     </div>
     <div class="modal-body">
       <h4><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:0.97rem;margin-bottom:0.2rem;font-weight:700;">全国祷告日祷告会（五月四日）</span>National Day of Prayer Meeting (May 4)</h4>
@@ -1197,12 +1285,17 @@ footer .copy { font-size:0.875rem; color:rgba(255,255,255,0.4); margin-top:0.5re
 </div>
 
 <!-- JUNE 2023 -->
-<div class="modal-overlay" id="modal-jun2023" onclick="closeModalOutside(event,'jun2023')">
+<div class="modal-overlay"
+     id="modal-jun2023"
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="modal-jun2023-title"
+     onclick="closeModalOutside(event, 'jun2023')">
   <div class="modal">
     <div class="modal-header">
-      <button class="modal-close" onclick="closeModal('jun2023')">✕</button>
+      <button class="modal-close" onclick="closeModal('jun2023')" aria-label="Close dialog">✕</button>
       <div class="modal-month">June 2023 · 六月</div>
-      <div class="modal-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:1.25rem;margin-bottom:0.25rem;">联合团契、毕业典礼、父亲节与洗礼</span>Joint Fellowships, Graduation, Father's Day &amp; Baptism</div>
+      <h2 class="modal-title" id="modal-jun2023-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:1.25rem;margin-bottom:0.25rem;">联合团契、毕业典礼、父亲节与洗礼</span>Joint Fellowships, Graduation, Father's Day &amp; Baptism</h2>
     </div>
     <div class="modal-body">
       <h4><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:0.97rem;margin-bottom:0.2rem;font-weight:700;">迦勒团契与喜乐团契联合聚会（六月三日）</span>Caleb &amp; Joyful Fellowship Joint Gathering (June 3)</h4>
@@ -1224,12 +1317,17 @@ footer .copy { font-size:0.875rem; color:rgba(255,255,255,0.4); margin-top:0.5re
 </div>
 
 <!-- JULY 2023 -->
-<div class="modal-overlay" id="modal-jul2023" onclick="closeModalOutside(event,'jul2023')">
+<div class="modal-overlay"
+     id="modal-jul2023"
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="modal-jul2023-title"
+     onclick="closeModalOutside(event, 'jul2023')">
   <div class="modal">
     <div class="modal-header">
-      <button class="modal-close" onclick="closeModal('jul2023')">✕</button>
+      <button class="modal-close" onclick="closeModal('jul2023')" aria-label="Close dialog">✕</button>
       <div class="modal-month">July 2023 · 七月</div>
-      <div class="modal-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:1.25rem;margin-bottom:0.25rem;">诗歌见证会与敬拜部培训</span>Hymn Testimony Meeting &amp; Worship Dept. Training</div>
+      <h2 class="modal-title" id="modal-jul2023-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:1.25rem;margin-bottom:0.25rem;">诗歌见证会与敬拜部培训</span>Hymn Testimony Meeting &amp; Worship Dept. Training</h2>
     </div>
     <div class="modal-body">
       <h4><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:0.97rem;margin-bottom:0.2rem;font-weight:700;">诗歌见证会（七月九日）</span>Poetry Testimony Meeting (July 9)</h4>
@@ -1252,12 +1350,17 @@ footer .copy { font-size:0.875rem; color:rgba(255,255,255,0.4); margin-top:0.5re
 </div>
 
 <!-- AUGUST 2023 -->
-<div class="modal-overlay" id="modal-aug2023" onclick="closeModalOutside(event,'aug2023')">
+<div class="modal-overlay"
+     id="modal-aug2023"
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="modal-aug2023-title"
+     onclick="closeModalOutside(event, 'aug2023')">
   <div class="modal">
     <div class="modal-header">
-      <button class="modal-close" onclick="closeModal('aug2023')">✕</button>
+      <button class="modal-close" onclick="closeModal('aug2023')" aria-label="Close dialog">✕</button>
       <div class="modal-month">August 2023 · 八月</div>
-      <div class="modal-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:1.25rem;margin-bottom:0.25rem;">关怀部退修、暑期圣经学校与嘉美游轮</span>Care Dept. Retreat, VBS &amp; Jia Mei Cruise</div>
+      <h2 class="modal-title" id="modal-aug2023-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:1.25rem;margin-bottom:0.25rem;">关怀部退修、暑期圣经学校与嘉美游轮</span>Care Dept. Retreat, VBS &amp; Jia Mei Cruise</h2>
     </div>
     <div class="modal-body">
       <h4><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:0.97rem;margin-bottom:0.2rem;font-weight:700;">关怀部退修会（八月五日）</span>Care Department Retreat (August 5)</h4>
@@ -1286,12 +1389,17 @@ footer .copy { font-size:0.875rem; color:rgba(255,255,255,0.4); margin-top:0.5re
 </div>
 
 <!-- SEPTEMBER 2023 -->
-<div class="modal-overlay" id="modal-sep2023" onclick="closeModalOutside(event,'sep2023')">
+<div class="modal-overlay"
+     id="modal-sep2023"
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="modal-sep2023-title"
+     onclick="closeModalOutside(event, 'sep2023')">
   <div class="modal">
     <div class="modal-header">
-      <button class="modal-close" onclick="closeModal('sep2023')">✕</button>
+      <button class="modal-close" onclick="closeModal('sep2023')" aria-label="Close dialog">✕</button>
       <div class="modal-month">September 2023 · 九月</div>
-      <div class="modal-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:1.25rem;margin-bottom:0.25rem;">龙舟节与社区外展</span>Dragon Boat Festival &amp; Community Outreach</div>
+      <h2 class="modal-title" id="modal-sep2023-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:1.25rem;margin-bottom:0.25rem;">龙舟节与社区外展</span>Dragon Boat Festival &amp; Community Outreach</h2>
     </div>
     <div class="modal-body">
       <p><em>Reported by Xin Yuan.</em></p>
@@ -1310,12 +1418,17 @@ footer .copy { font-size:0.875rem; color:rgba(255,255,255,0.4); margin-top:0.5re
 </div>
 
 <!-- OCTOBER 2023 -->
-<div class="modal-overlay" id="modal-oct2023" onclick="closeModalOutside(event,'oct2023')">
+<div class="modal-overlay"
+     id="modal-oct2023"
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="modal-oct2023-title"
+     onclick="closeModalOutside(event, 'oct2023')">
   <div class="modal">
     <div class="modal-header">
-      <button class="modal-close" onclick="closeModal('oct2023')">✕</button>
+      <button class="modal-close" onclick="closeModal('oct2023')" aria-label="Close dialog">✕</button>
       <div class="modal-month">October 2023 · 十月</div>
-      <div class="modal-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:1.25rem;margin-bottom:0.25rem;">联合团契与第六届圣经知识竞赛</span>Joint Fellowship &amp; 6th Bible Knowledge Competition</div>
+      <h2 class="modal-title" id="modal-oct2023-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:1.25rem;margin-bottom:0.25rem;">联合团契与第六届圣经知识竞赛</span>Joint Fellowship &amp; 6th Bible Knowledge Competition</h2>
     </div>
     <div class="modal-body">
       <h4><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:0.97rem;margin-bottom:0.2rem;font-weight:700;">迦勒团契与嘉美团契联合聚会（十月二十一日）</span>Caleb &amp; Jia Mei Joint Fellowship (October 21)</h4>
@@ -1334,12 +1447,17 @@ footer .copy { font-size:0.875rem; color:rgba(255,255,255,0.4); margin-top:0.5re
 </div>
 
 <!-- NOVEMBER 2023 -->
-<div class="modal-overlay" id="modal-nov2023" onclick="closeModalOutside(event,'nov2023')">
+<div class="modal-overlay"
+     id="modal-nov2023"
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="modal-nov2023-title"
+     onclick="closeModalOutside(event, 'nov2023')">
   <div class="modal">
     <div class="modal-header">
-      <button class="modal-close" onclick="closeModal('nov2023')">✕</button>
+      <button class="modal-close" onclick="closeModal('nov2023')" aria-label="Close dialog">✕</button>
       <div class="modal-month">November 2023 · 十一月</div>
-      <div class="modal-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:1.25rem;margin-bottom:0.25rem;">感恩节庆典</span>Thanksgiving Celebration</div>
+      <h2 class="modal-title" id="modal-nov2023-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:1.25rem;margin-bottom:0.25rem;">感恩节庆典</span>Thanksgiving Celebration</h2>
     </div>
     <div class="modal-body">
       <p><em>Reported by Kathy, Ministry of Evangelism.</em></p>
@@ -1356,12 +1474,17 @@ footer .copy { font-size:0.875rem; color:rgba(255,255,255,0.4); margin-top:0.5re
 <!-- ══════ 2024 MODALS ══════ -->
 
 <!-- JANUARY 2024 -->
-<div class="modal-overlay" id="modal-jan2024" onclick="closeModalOutside(event,'jan2024')">
+<div class="modal-overlay"
+     id="modal-jan2024"
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="modal-jan2024-title"
+     onclick="closeModalOutside(event, 'jan2024')">
   <div class="modal">
     <div class="modal-header">
-      <button class="modal-close" onclick="closeModal('jan2024')">✕</button>
+      <button class="modal-close" onclick="closeModal('jan2024')" aria-label="Close dialog">✕</button>
       <div class="modal-month">January 2024 · 一月</div>
-      <div class="modal-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:1.25rem;margin-bottom:0.25rem;">「愿你的旨意成就」——年终回顾</span>"May Your Will Be Done" — Year-End Reflection</div>
+      <h2 class="modal-title" id="modal-jan2024-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:1.25rem;margin-bottom:0.25rem;">「愿你的旨意成就」——年终回顾</span>"May Your Will Be Done" — Year-End Reflection</h2>
     </div>
     <div class="modal-body">
       <p><em>Scripture: Matthew 6:9–13</em></p>
@@ -1382,12 +1505,17 @@ footer .copy { font-size:0.875rem; color:rgba(255,255,255,0.4); margin-top:0.5re
 </div>
 
 <!-- FEBRUARY 2024 -->
-<div class="modal-overlay" id="modal-feb2024" onclick="closeModalOutside(event,'feb2024')">
+<div class="modal-overlay"
+     id="modal-feb2024"
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="modal-feb2024-title"
+     onclick="closeModalOutside(event, 'feb2024')">
   <div class="modal">
     <div class="modal-header">
-      <button class="modal-close" onclick="closeModal('feb2024')">✕</button>
+      <button class="modal-close" onclick="closeModal('feb2024')" aria-label="Close dialog">✕</button>
       <div class="modal-month">February 2024 · 二月</div>
-      <div class="modal-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:1.25rem;margin-bottom:0.25rem;">冬季主日学：「金句与我的生命」</span>Winter Sunday School: "Golden Verses and My Life"</div>
+      <h2 class="modal-title" id="modal-feb2024-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:1.25rem;margin-bottom:0.25rem;">冬季主日学：「金句与我的生命」</span>Winter Sunday School: "Golden Verses and My Life"</h2>
     </div>
     <div class="modal-body">
       <p><em>Provided by the Basic Education Department.</em></p>
@@ -1401,12 +1529,17 @@ footer .copy { font-size:0.875rem; color:rgba(255,255,255,0.4); margin-top:0.5re
 </div>
 
 <!-- MARCH 2024 -->
-<div class="modal-overlay" id="modal-mar2024" onclick="closeModalOutside(event,'mar2024')">
+<div class="modal-overlay"
+     id="modal-mar2024"
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="modal-mar2024-title"
+     onclick="closeModalOutside(event, 'mar2024')">
   <div class="modal">
     <div class="modal-header">
-      <button class="modal-close" onclick="closeModal('mar2024')">✕</button>
+      <button class="modal-close" onclick="closeModal('mar2024')" aria-label="Close dialog">✕</button>
       <div class="modal-month">March 2024 · 三月</div>
-      <div class="modal-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:1.25rem;margin-bottom:0.25rem;">建堂四十七周年：社区慈善便当日</span>47th Anniversary: Community Charity Lunchbox Drive</div>
+      <h2 class="modal-title" id="modal-mar2024-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:1.25rem;margin-bottom:0.25rem;">建堂四十七周年：社区慈善便当日</span>47th Anniversary: Community Charity Lunchbox Drive</h2>
     </div>
     <div class="modal-body">
       <p><em>Church website editor Yan Dong reports.</em></p>
@@ -1418,12 +1551,17 @@ footer .copy { font-size:0.875rem; color:rgba(255,255,255,0.4); margin-top:0.5re
 </div>
 
 <!-- APRIL 2024 -->
-<div class="modal-overlay" id="modal-apr2024" onclick="closeModalOutside(event,'apr2024')">
+<div class="modal-overlay"
+     id="modal-apr2024"
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="modal-apr2024-title"
+     onclick="closeModalOutside(event, 'apr2024')">
   <div class="modal">
     <div class="modal-header">
-      <button class="modal-close" onclick="closeModal('apr2024')">✕</button>
+      <button class="modal-close" onclick="closeModal('apr2024')" aria-label="Close dialog">✕</button>
       <div class="modal-month">April 2024 · 四月</div>
-      <div class="modal-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:1.25rem;margin-bottom:0.25rem;">钢琴音乐会与免费成人英语班</span>Piano Recital &amp; Free Adult English Classes</div>
+      <h2 class="modal-title" id="modal-apr2024-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:1.25rem;margin-bottom:0.25rem;">钢琴音乐会与免费成人英语班</span>Piano Recital &amp; Free Adult English Classes</h2>
     </div>
     <div class="modal-body">
       <h4><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:0.97rem;margin-bottom:0.2rem;font-weight:700;">《超越琴键》——建堂四十七周年钢琴音乐会（四月六日）</span>"Beyond the Piano" — 47th Anniversary Piano Recital (April 6)</h4>
@@ -1449,12 +1587,17 @@ footer .copy { font-size:0.875rem; color:rgba(255,255,255,0.4); margin-top:0.5re
 </div>
 
 <!-- JUNE 2024 -->
-<div class="modal-overlay" id="modal-jun2024" onclick="closeModalOutside(event,'jun2024')">
+<div class="modal-overlay"
+     id="modal-jun2024"
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="modal-jun2024-title"
+     onclick="closeModalOutside(event, 'jun2024')">
   <div class="modal">
     <div class="modal-header">
-      <button class="modal-close" onclick="closeModal('jun2024')">✕</button>
+      <button class="modal-close" onclick="closeModal('jun2024')" aria-label="Close dialog">✕</button>
       <div class="modal-month">June 2024 · 六月</div>
-      <div class="modal-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:1.25rem;margin-bottom:0.25rem;">第二十五届姐妹退修会——「走向丰盛」</span>25th Sisters' Retreat — "Towards Abundance"</div>
+      <h2 class="modal-title" id="modal-jun2024-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:1.25rem;margin-bottom:0.25rem;">第二十五届姐妹退修会——「走向丰盛」</span>25th Sisters' Retreat — "Towards Abundance"</h2>
     </div>
     <div class="modal-body">
       <p><em>Reported by Chen Ting, specially invited by Church.net.</em></p>
@@ -1482,12 +1625,17 @@ footer .copy { font-size:0.875rem; color:rgba(255,255,255,0.4); margin-top:0.5re
 </div>
 
 <!-- JULY 2024 -->
-<div class="modal-overlay" id="modal-jul2024" onclick="closeModalOutside(event,'jul2024')">
+<div class="modal-overlay"
+     id="modal-jul2024"
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="modal-jul2024-title"
+     onclick="closeModalOutside(event, 'jul2024')">
   <div class="modal">
     <div class="modal-header">
-      <button class="modal-close" onclick="closeModal('jul2024')">✕</button>
+      <button class="modal-close" onclick="closeModal('jul2024')" aria-label="Close dialog">✕</button>
       <div class="modal-month">July 2024 · 七月</div>
-      <div class="modal-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:1.25rem;margin-bottom:0.25rem;">教会夏日聚会于科尔特州立公园</span>Church Summer Outing at Colt State Park</div>
+      <h2 class="modal-title" id="modal-jul2024-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:1.25rem;margin-bottom:0.25rem;">教会夏日聚会于科尔特州立公园</span>Church Summer Outing at Colt State Park</h2>
     </div>
     <div class="modal-body">
       <p><em>Special report by Chen Ting, church website contributor.</em></p>
@@ -1514,12 +1662,17 @@ footer .copy { font-size:0.875rem; color:rgba(255,255,255,0.4); margin-top:0.5re
 </div>
 
 <!-- AUGUST 2024 -->
-<div class="modal-overlay" id="modal-aug2024" onclick="closeModalOutside(event,'aug2024')">
+<div class="modal-overlay"
+     id="modal-aug2024"
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="modal-aug2024-title"
+     onclick="closeModalOutside(event, 'aug2024')">
   <div class="modal">
     <div class="modal-header">
-      <button class="modal-close" onclick="closeModal('aug2024')">✕</button>
+      <button class="modal-close" onclick="closeModal('aug2024')" aria-label="Close dialog">✕</button>
       <div class="modal-month">August 2024 · 八月</div>
-      <div class="modal-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:1.25rem;margin-bottom:0.25rem;">龙舟节与社区外展</span>Dragon Boat Festival &amp; Community Outreach</div>
+      <h2 class="modal-title" id="modal-aug2024-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:1.25rem;margin-bottom:0.25rem;">龙舟节与社区外展</span>Dragon Boat Festival &amp; Community Outreach</h2>
     </div>
     <div class="modal-body">
       <p><em>Church Network Special Contributor: Xinyuan.</em></p>
@@ -1532,12 +1685,17 @@ footer .copy { font-size:0.875rem; color:rgba(255,255,255,0.4); margin-top:0.5re
 </div>
 
 <!-- NOVEMBER 2024 -->
-<div class="modal-overlay" id="modal-nov2024" onclick="closeModalOutside(event,'nov2024')">
+<div class="modal-overlay"
+     id="modal-nov2024"
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="modal-nov2024-title"
+     onclick="closeModalOutside(event, 'nov2024')">
   <div class="modal">
     <div class="modal-header">
-      <button class="modal-close" onclick="closeModal('nov2024')">✕</button>
+      <button class="modal-close" onclick="closeModal('nov2024')" aria-label="Close dialog">✕</button>
       <div class="modal-month">November 2024 · 十一月</div>
-      <div class="modal-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:1.25rem;margin-bottom:0.25rem;">感恩节：见证、爱宴与「举起救恩的杯」</span>Thanksgiving: Testimonies, Feast &amp; "Lift Up the Cup"</div>
+      <h2 class="modal-title" id="modal-nov2024-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:1.25rem;margin-bottom:0.25rem;">感恩节：见证、爱宴与「举起救恩的杯」</span>Thanksgiving: Testimonies, Feast &amp; "Lift Up the Cup"</h2>
     </div>
     <div class="modal-body">
       <h4><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:0.97rem;margin-bottom:0.2rem;font-weight:700;">周璨姐妹的感恩见证</span>Sister Zhou Can's Thanksgiving Testimony</h4>
@@ -1565,12 +1723,17 @@ footer .copy { font-size:0.875rem; color:rgba(255,255,255,0.4); margin-top:0.5re
 <!-- ══════ END 2024 MODALS ══════ -->
 
 
-<div class="modal-overlay" id="modal-mar2026" onclick="closeModalOutside(event, 'mar2026')">
+<div class="modal-overlay"
+     id="modal-mar2026"
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="modal-mar2026-title"
+     onclick="closeModalOutside(event, 'mar2026')">
   <div class="modal">
     <div class="modal-header">
-      <button class="modal-close" onclick="closeModal('mar2026')">✕</button>
+      <button class="modal-close" onclick="closeModal('mar2026')" aria-label="Close dialog">✕</button>
       <div class="modal-month">March 2026 · 三月</div>
-      <div class="modal-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:1.25rem;margin-bottom:0.25rem;">音乐会与粤语团契新春联欢</span>Concert &amp; Cantonese Fellowship Chinese New Year Gathering</div>
+      <h2 class="modal-title" id="modal-mar2026-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:1.25rem;margin-bottom:0.25rem;">音乐会与粤语团契新春联欢</span>Concert &amp; Cantonese Fellowship Chinese New Year Gathering</h2>
     </div>
     <div class="modal-body">
 
@@ -1634,12 +1797,17 @@ footer .copy { font-size:0.875rem; color:rgba(255,255,255,0.4); margin-top:0.5re
 </div>
 
 <!-- FEBRUARY 2026 -->
-<div class="modal-overlay" id="modal-feb2026" onclick="closeModalOutside(event, 'feb2026')">
+<div class="modal-overlay"
+     id="modal-feb2026"
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="modal-feb2026-title"
+     onclick="closeModalOutside(event, 'feb2026')">
   <div class="modal">
     <div class="modal-header">
-      <button class="modal-close" onclick="closeModal('feb2026')">✕</button>
+      <button class="modal-close" onclick="closeModal('feb2026')" aria-label="Close dialog">✕</button>
       <div class="modal-month">February 2026 · 二月</div>
-      <div class="modal-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:1.25rem;margin-bottom:0.25rem;">第十四届春节联欢晚会——「回家过年」</span>14th Annual Spring Festival Gala — "Going Home for the New Year"</div>
+      <h2 class="modal-title" id="modal-feb2026-title"><span style="font-family:'Noto Sans SC',sans-serif;display:block;font-size:1.25rem;margin-bottom:0.25rem;">第十四届春节联欢晚会——「回家过年」</span>14th Annual Spring Festival Gala — "Going Home for the New Year"</h2>
     </div>
     <div class="modal-body">
       <p><em>Yang Minli, Jiamei Fellowship.</em></p>
@@ -1671,13 +1839,12 @@ footer .copy { font-size:0.875rem; color:rgba(255,255,255,0.4); margin-top:0.5re
 </div>
 
 <script>
-function toggleMenu() {
-  var menu = document.getElementById('mobile-menu');
-  var btn = document.getElementById('hamburger');
-  var open = menu.classList.toggle('open');
-  btn.classList.toggle('open', open);
-  btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-}
+/*
+  Page-specific functions. toggleMenu is provided by assets/script.js.
+  switchYear, openModal, closeModal, closeModalOutside, and the Escape
+  key listener are specific to this page and remain here.
+*/
+/* toggleMenu is provided by assets/script.js (loaded in <head defer>) */
 
 function switchYear(year) {
   document.querySelectorAll('.year-tab').forEach(function(t) { t.classList.remove('active'); });
