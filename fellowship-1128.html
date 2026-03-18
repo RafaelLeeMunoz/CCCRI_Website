@@ -1,128 +1,187 @@
 <!DOCTYPE html>
 <html lang="zh-cmn-Hans-x-en">
 <head>
-<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="Chinese Christian Church of Rhode Island (CCCRI) — A non-denominational Christian church serving Rhode Island and southeastern New England in Mandarin, Cantonese, and English." name="description"/><meta content="Chinese Christian Church of Rhode Island | 羅德島華人基督教會" property="og:title"/><meta content="website" property="og:type"/><meta content="#c0171d" name="theme-color"/><title>Chinese Christian Church of Rhode Island | 羅德島華人基督教會</title><link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&amp;family=Noto+Serif:wght@400;600;700&amp;family=Noto+Sans+SC:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/><script>
-window.showPage = function(id) {
-  var pages = document.querySelectorAll('.page');
-  for (var i = 0; i < pages.length; i++) pages[i].classList.remove('active');
-  var btns = document.querySelectorAll('.nav-links button');
-  for (var j = 0; j < btns.length; j++) btns[j].classList.remove('active');
-  var page = document.getElementById('page-' + id);
-  var btn  = document.getElementById('nav-'  + id);
-  if (page) page.classList.add('active');
-  if (btn)  btn.classList.add('active');
-  window.scrollTo(0, 0);
-};
+  <meta charset="utf-8"/>
+  <meta name="viewport"    content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Chinese Christian Church of Rhode Island (CCCRI) — A non-denominational Christian church serving Rhode Island and southeastern New England in Mandarin, Cantonese, and English."/>
+  <meta name="theme-color" content="#c0171d"/>
+  <meta property="og:title" content="Chinese Christian Church of Rhode Island | 羅德島華人基督教會"/>
+  <meta property="og:type"  content="website"/>
 
-window.toggleMenu = function() {
-  var menu = document.getElementById('mobile-menu');
-  var btn  = document.getElementById('hamburger');
-  var open = menu.classList.toggle('open');
-  btn.classList.toggle('open', open);
-  btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-};
+  <!--
+    REMOVED: Duplicate generic <title> (line 4 of original).
+    IMPROVED: Page-specific title updated from the vague "Fel 1128" to the
+    proper fellowship name, matching the h1 on the page.
+  -->
+  <title>Chinese Christian Church of Rhode Island | 羅德島華人基督教會 — 11:28 Fellowship</title>
 
-window.navTo = function(id) {
-  window.showPage(id);
-  var menu = document.getElementById('mobile-menu');
-  var btn  = document.getElementById('hamburger');
-  menu.classList.remove('open');
-  btn.classList.remove('open');
-  btn.setAttribute('aria-expanded', 'false');
-};
+  <link rel="stylesheet" href="assets/style.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&family=Noto+Serif:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap"/>
 
-function switchTab(id) {
-  // Update buttons
-  document.querySelectorAll('.tab-btn').forEach(function(btn) {
-    btn.classList.remove('tab-active');
-    btn.setAttribute('aria-selected', 'false');
-  });
-  var activeBtn = document.getElementById('tab-' + id);
-  if (activeBtn) { activeBtn.classList.add('tab-active'); activeBtn.setAttribute('aria-selected', 'true'); }
-  // Update panels
-  document.querySelectorAll('.tab-panel').forEach(function(p) { p.style.display = 'none'; });
-  var activePanel = document.getElementById('panel-' + id);
-  if (activePanel) activePanel.style.display = 'block';
-}
-
-</script>
-<link rel="stylesheet" href="assets/style.css">
-<title>Chinese Christian Church of Rhode Island | 羅德島華人基督教會 — Fel 1128</title>
-<script src="assets/nav.js" defer></script>
+  <!--
+    REMOVED: Entire inline <script> block.
+    It contained four functions, all dead or duplicated:
+      • window.showPage() and window.navTo() — SPA-era dead code; navigation
+        is fully multi-page via <a href="..."> and these are called from nowhere.
+      • window.toggleMenu() and switchTab() — exact duplicates of what
+        assets/script.js provides, which was not loaded on this page at all.
+    ADDED: assets/script.js (deferred) which provides window.toggleMenu and
+    the close-on-navigate listener.
+  -->
+  <script src="assets/nav.js"    defer></script>
+  <script src="assets/script.js" defer></script>
 </head>
+
+<!--
+  NOTE: This page had no orphaned nav fragment after <site-nav> — unlike most
+  other pages in this site. nav.js correctly handles the full nav render here.
+-->
 <body data-nav="ministries">
-<site-nav></site-nav>
 
-<main class="page">
-<div class="page-header" role="banner" style="background:linear-gradient(135deg,#9a1015,#c0171d);">
-<p class="zh">1128團契</p>
-<h1>11:28 Fellowship</h1>
-</div>
-<div class="section">
-<div style="max-width:760px;margin:0 auto;">
-<a class="ministry-back-btn" href="ministries.html">
-        ← 返回團契列表 Back to Ministries
-      </a>
-<div class="gold-divider"></div>
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:1.6rem;color:var(--gold);font-weight:700;margin-bottom:0.1rem;">1128團契</p>
-<h2 class="section-title">11:28 Fellowship</h2>
-<!-- Scripture -->
-<div style="background:linear-gradient(135deg,#1a3a5c,#2a5298);border-radius:8px;padding:1.4rem 1.8rem;margin-bottom:1.8rem;">
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.95rem;color:white;line-height:1.9;font-style:italic;margin-bottom:0.25rem;">「凡勞苦擔重擔的人，可以到我這裡來，我就使你們得安息。」</p>
-<p style="font-size:0.95rem;color:rgba(255,255,255,0.9);line-height:1.8;font-style:italic;margin-bottom:0.5rem;">"Come to me, all you who are weary and burdened, and I will give you rest."</p>
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.85rem;color:rgba(255,255,255,0.75);margin:0;">— 馬太福音 Matthew 11:28</p>
-</div>
+  <site-nav></site-nav>
 
-<!-- Description -->
-<div style="background:var(--cream);border-radius:8px;padding:1.8rem;margin-bottom:2rem;border-left:4px solid var(--red);">
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.95rem;color:var(--slate);line-height:1.9;margin-bottom:0.4rem;">因此，我們稱自己為「11:28」——CityLight 的青年團契。我們由初中生和高中生組成，在一個接納、真誠、靈性滋養的環境中彼此分享、共同成長、同行面對挑戰。我們每週五晚上七時三十分至九時三十分聚會。我們一起學習、禱告、敬拜和玩樂，最重要的是——我們彼此關愛！如需更多資訊，請電郵聯絡 Lexine De Vera。</p>
-<p style="font-size:0.95rem;color:var(--slate);line-height:1.9;margin-bottom:1.2rem;">And thus, we call ourselves "11:28," the youth fellowship of CityLight. We are made up of Junior High and High School students. We share, grow and struggle together in an accepting, honest and spiritually nourishing environment. We meet every Friday night from 7:30 PM until 9:30 PM. We study, pray, worship, and play. Most of all, we care! For more info, email Lexine De Vera.</p>
+  <main class="page">
 
-<div style="background:white;border:2px solid var(--red);border-radius:8px;padding:1.1rem 1.4rem;text-align:center;">
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:1rem;color:var(--red);font-weight:700;margin-bottom:0.25rem;">♥ 聚會時間：每週五晚上七時三十分至九時三十分 ♥</p>
-<p style="font-size:0.95rem;color:var(--navy);font-weight:600;margin:0;">♥ Meeting Time: Every Friday night, 7:30–9:30 PM ♥</p>
-</div>
-</div>
+    <!-- ── PAGE HEADER ────────────────────────────────────────────────────── -->
+    <!--
+      REMOVED: role="banner" from .page-header — reserved for the top-level
+      site header landmark (the <nav> rendered by site-nav). Using it on an
+      inner page-title block creates a duplicate banner landmark that breaks
+      screen-reader navigation menus. Consistent fix across all pages.
+    -->
+    <div class="page-header" style="background:linear-gradient(135deg,#9a1015,#c0171d);">
+      <p class="zh">1128團契</p>
+      <h1>11:28 Fellowship</h1>
+    </div>
 
-<!-- Photo Gallery -->
-<div style="margin-bottom:2rem;">
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:1.1rem;color:var(--gold);font-weight:700;margin-bottom:0.2rem;">團契相片集</p>
-<h3 style="font-family:'Noto Serif',serif;color:var(--navy);font-size:1.15rem;margin-bottom:1rem;">Fellowship Gallery</h3>
-<div style="display:flex;flex-direction:column;gap:0.75rem;">
-<img alt="11:28 Fellowship youth group formal photo at a special event" src="assets/images/11_28.webp" style="width:100%;border-radius:8px;object-fit:cover;max-height:300px;box-shadow:0 3px 12px rgba(0,0,0,0.12);"/>
-<img alt="11:28 Fellowship youth members gathered on outdoor steps at sunset" src="assets/images/11_282.webp" style="width:100%;border-radius:8px;object-fit:cover;max-height:360px;box-shadow:0 3px 12px rgba(0,0,0,0.12);"/>
-</div>
-</div>
-<div style="background:var(--cream);border-radius:8px;padding:1.5rem;text-align:center;">
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.95rem;color:var(--navy);font-weight:700;margin-bottom:0.3rem;">有興趣加入或了解更多？</p>
-<p style="font-size:0.875rem;color:var(--slate);margin-bottom:1rem;">Interested in joining or learning more?</p>
-<a href="/cdn-cgi/l/email-protection#7d14131b123d1e1e1e0f1453120f1a" style="display:inline-block;background:var(--red);color:white;padding:0.65rem 1.5rem;border-radius:4px;font-size:0.875rem;font-weight:700;text-decoration:none;margin-right:0.5rem;">
-          ✉ <span style="font-family:'Noto Sans SC',sans-serif;">聯絡我們</span> Contact Us
+    <!-- ── FELLOWSHIP CONTENT ────────────────────────────────────────────── -->
+    <!--
+      CHANGED: <div class="section"> → <section class="section">.
+      Gives the main content a proper landmark, anchored to the h2 heading.
+    -->
+    <section class="section" aria-labelledby="fellowship-1128-heading">
+      <div style="max-width:760px;margin:0 auto;">
+
+        <!-- Back link -->
+        <a class="ministry-back-btn" href="ministries.html">
+          ← 返回團契列表 Back to Ministries
         </a>
-<a href="ministries.html">
-          ← 返回 Back
-        </a>
-</div>
-</div>
-</div>
-<div class="section section-alt">
-<div style="max-width:860px;margin:0 auto;">
-<div aria-label="Online worship options" class="online-card" role="region">
-<div class="zh">線上敬拜</div>
-<h3>Join Us Online</h3>
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.9rem;color:rgba(255,255,255,0.8);margin-bottom:0.3rem;">無法親自出席？線上觀看直播或隨時收看錄影。</p>
-<p>Can't make it in person? Watch our services live or access recordings anytime.</p>
-<div class="online-btns">
-<a class="btn-watch" href="https://www.youtube.com/@ChineseMinistryCCCRI" rel="noopener" target="_blank">▶ Watch Live 直播</a>
-<a class="btn-gold" href="https://goo.gl/maps/HcaaXQQvwiYJvish9" rel="noopener" target="_blank">🗺 Directions 路線</a>
-</div>
-</div>
-</div>
-</div>
-<footer>
-<div class="footer-links">
-<span>📍 <strong style="color:var(--gold-light);">333 Roosevelt Ave, Pawtucket, RI 02860</strong></span>
-<span>📞 <a href="tel:4017228877" style="color:var(--gold-light);">(401) 722-8877</a></span>
-<span>✉️ <a href="/cdn-cgi/l/email-protection#7b12151d143b18181809125514091c" style="color:var(--gold-light);"><span class="__cf_email__" data-cfemail="553c3b333a15363636273c7b3a2732">[email&#160;protected]</span></a></span>
-</div>
-<p class="info">For more information: <a href="/cdn-cgi/l/email-protection#3f535a5e5b5a4d4c5c5c5c4d567f58525e565311
+
+        <div class="gold-divider"></div>
+
+        <!--
+          CHANGED: Inline-styled <p> → <p class="zh-label-lg">.
+          style.css .zh-label-lg produces identical output (Noto Sans SC,
+          1.6rem, var(--gold), bold) without per-element inline styles.
+        -->
+        <p class="zh-label-lg">1128團契</p>
+        <h2 class="section-title" id="fellowship-1128-heading">11:28 Fellowship</h2>
+
+        <!-- ── Scripture verse ─────────────────────────────────────────── -->
+        <!--
+          CHANGED: Wrapped in <blockquote> with a <cite> for the reference.
+          The original used plain <p> tags for a scripture quotation; <blockquote>
+          is the correct semantic element. The visual appearance is unchanged
+          since the background/padding styling is preserved on the wrapper div.
+        -->
+        <div style="background:linear-gradient(135deg,#1a3a5c,#2a5298);border-radius:8px;padding:1.4rem 1.8rem;margin-bottom:1.8rem;">
+          <blockquote style="margin:0;">
+            <p style="font-family:'Noto Sans SC',sans-serif;font-size:0.95rem;color:white;line-height:1.9;font-style:italic;margin-bottom:0.25rem;">「凡勞苦擔重擔的人，可以到我這裡來，我就使你們得安息。」</p>
+            <p style="font-size:0.95rem;color:rgba(255,255,255,0.9);line-height:1.8;font-style:italic;margin-bottom:0.5rem;">"Come to me, all you who are weary and burdened, and I will give you rest."</p>
+            <cite style="font-family:'Noto Sans SC',sans-serif;font-size:0.85rem;color:rgba(255,255,255,0.75);font-style:normal;">— 馬太福音 Matthew 11:28</cite>
+          </blockquote>
+        </div>
+
+        <!-- ── Description ─────────────────────────────────────────────── -->
+        <div style="background:var(--cream);border-radius:8px;padding:1.8rem;margin-bottom:2rem;border-left:4px solid var(--red);">
+          <p style="font-family:'Noto Sans SC',sans-serif;font-size:0.95rem;color:var(--slate);line-height:1.9;margin-bottom:0.4rem;">因此，我們稱自己為「11:28」——CityLight 的青年團契。我們由初中生和高中生組成，在一個接納、真誠、靈性滋養的環境中彼此分享、共同成長、同行面對挑戰。我們每週五晚上七時三十分至九時三十分聚會。我們一起學習、禱告、敬拜和玩樂，最重要的是——我們彼此關愛！如需更多資訊，請電郵聯絡 Lexine De Vera。</p>
+          <p style="font-size:0.95rem;color:var(--slate);line-height:1.9;margin-bottom:1.2rem;">And thus, we call ourselves "11:28," the youth fellowship of CityLight. We are made up of Junior High and High School students. We share, grow and struggle together in an accepting, honest and spiritually nourishing environment. We meet every Friday night from 7:30 PM until 9:30 PM. We study, pray, worship, and play. Most of all, we care! For more info, email Lexine De Vera.</p>
+
+          <!-- Meeting time callout -->
+          <div style="background:white;border:2px solid var(--red);border-radius:8px;padding:1.1rem 1.4rem;text-align:center;">
+            <p style="font-family:'Noto Sans SC',sans-serif;font-size:1rem;color:var(--red);font-weight:700;margin-bottom:0.25rem;">♥ 聚會時間：每週五晚上七時三十分至九時三十分 ♥</p>
+            <p style="font-size:0.95rem;color:var(--navy);font-weight:600;margin:0;">♥ Meeting Time: Every Friday night, 7:30–9:30 PM ♥</p>
+          </div>
+        </div>
+
+        <!-- ── Photo Gallery ────────────────────────────────────────────── -->
+        <!--
+          NOTE: Heading hierarchy is correct here — h3 sits below the h2
+          "11:28 Fellowship" above. The inline styles are preserved as this
+          heading does not use a shared CSS class.
+        -->
+        <div style="margin-bottom:2rem;">
+          <p style="font-family:'Noto Sans SC',sans-serif;font-size:1.1rem;color:var(--gold);font-weight:700;margin-bottom:0.2rem;">團契相片集</p>
+          <h3 style="font-family:'Noto Serif',serif;color:var(--navy);font-size:1.15rem;margin-bottom:1rem;">Fellowship Gallery</h3>
+          <div style="display:flex;flex-direction:column;gap:0.75rem;">
+            <img src="assets/images/11_28.webp"
+                 alt="11:28 Fellowship youth group formal photo at a special event"
+                 style="width:100%;border-radius:8px;object-fit:cover;max-height:300px;box-shadow:0 3px 12px rgba(0,0,0,0.12);"/>
+            <img src="assets/images/11_282.webp"
+                 alt="11:28 Fellowship youth members gathered on outdoor steps at sunset"
+                 style="width:100%;border-radius:8px;object-fit:cover;max-height:360px;box-shadow:0 3px 12px rgba(0,0,0,0.12);"/>
+          </div>
+        </div>
+
+        <!-- ── CTA / Back ───────────────────────────────────────────────── -->
+        <div style="background:var(--cream);border-radius:8px;padding:1.5rem;text-align:center;">
+          <p style="font-family:'Noto Sans SC',sans-serif;font-size:0.95rem;color:var(--navy);font-weight:700;margin-bottom:0.3rem;">有興趣加入或了解更多？</p>
+          <p style="font-size:0.875rem;color:var(--slate);margin-bottom:1rem;">Interested in joining or learning more?</p>
+          <a href="/cdn-cgi/l/email-protection#7d14131b123d1e1e1e0f1453120f1a"
+             style="display:inline-block;background:var(--red);color:white;padding:0.65rem 1.5rem;border-radius:4px;font-size:0.875rem;font-weight:700;text-decoration:none;margin-right:0.5rem;">
+            ✉ <span style="font-family:'Noto Sans SC',sans-serif;">聯絡我們</span> Contact Us
+          </a>
+          <a href="ministries.html">
+            ← 返回 Back
+          </a>
+        </div>
+
+      </div>
+    </section><!-- /.section -->
+
+    <!-- ── ONLINE WORSHIP ─────────────────────────────────────────────────── -->
+    <!--
+      CHANGED: <div class="section section-alt"> → <section>.
+      REMOVED: role="region" + aria-label from .online-card — same fix applied
+      across all pages. The parent <section> provides the landmark; a nested
+      unlabelled role="region" is redundant noise for screen readers.
+      id="online-heading" added to <h3> to anchor the section's aria-labelledby.
+    -->
+    <section class="section section-alt" aria-labelledby="online-heading">
+      <div style="max-width:860px;margin:0 auto;">
+        <div class="online-card">
+          <div class="zh">線上敬拜</div>
+          <h3 id="online-heading">Join Us Online</h3>
+          <p style="font-family:'Noto Sans SC',sans-serif;font-size:0.9rem;color:rgba(255,255,255,0.8);margin-bottom:0.3rem;">無法親自出席？線上觀看直播或隨時收看錄影。</p>
+          <p>Can't make it in person? Watch our services live or access recordings anytime.</p>
+          <div class="online-btns">
+            <a class="btn-watch" href="https://www.youtube.com/@ChineseMinistryCCCRI" target="_blank" rel="noopener">▶ Watch Live 直播</a>
+            <a class="btn-gold"  href="https://goo.gl/maps/HcaaXQQvwiYJvish9"        target="_blank" rel="noopener">🗺 Directions 路線</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ────────────────────────────────────────────────────────────── -->
+  <!--
+    FIXED: Same structural bug as contact.html and resources.html. The original
+    </main> was missing before <footer>, meaning the footer was a child of
+    <main>. The footer is a top-level landmark (role="contentinfo") and must
+    be a sibling of <main>. </main> is now correctly placed above <footer>.
+  -->
+  <footer>
+    <div class="footer-links">
+      <span>📍 <strong style="color:var(--gold-light);">333 Roosevelt Ave, Pawtucket, RI 02860</strong></span>
+      <span>📞 <a href="tel:4017228877" style="color:var(--gold-light);">(401) 722-8877</a></span>
+      <span>✉️ <a href="/cdn-cgi/l/email-protection#7b12151d143b18181809125514091c" style="color:var(--gold-light);"><span class="__cf_email__" data-cfemail="553c3b333a15363636273c7b3a2732">[email&#160;protected]</span></a></span>
+    </div>
+    <!--
+      NOTE: Source document was truncated mid-footer. Restore the info
+      paragraph and copyright line from your source repository.
+    -->
+  </footer>
+
+</body>
+</html>
