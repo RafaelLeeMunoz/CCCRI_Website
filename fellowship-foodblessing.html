@@ -1,133 +1,163 @@
 <!DOCTYPE html>
 <html lang="zh-cmn-Hans-x-en">
 <head>
-<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="Chinese Christian Church of Rhode Island (CCCRI) — A non-denominational Christian church serving Rhode Island and southeastern New England in Mandarin, Cantonese, and English." name="description"/><meta content="Chinese Christian Church of Rhode Island | 羅德島華人基督教會" property="og:title"/><meta content="website" property="og:type"/><meta content="#c0171d" name="theme-color"/><title>Chinese Christian Church of Rhode Island | 羅德島華人基督教會</title><link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&amp;family=Noto+Serif:wght@400;600;700&amp;family=Noto+Sans+SC:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/><script>
-window.showPage = function(id) {
-  var pages = document.querySelectorAll('.page');
-  for (var i = 0; i < pages.length; i++) pages[i].classList.remove('active');
-  var btns = document.querySelectorAll('.nav-links button');
-  for (var j = 0; j < btns.length; j++) btns[j].classList.remove('active');
-  var page = document.getElementById('page-' + id);
-  var btn  = document.getElementById('nav-'  + id);
-  if (page) page.classList.add('active');
-  if (btn)  btn.classList.add('active');
-  window.scrollTo(0, 0);
-};
+  <meta charset="utf-8"/>
+  <meta name="viewport"    content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Chinese Christian Church of Rhode Island (CCCRI) — A non-denominational Christian church serving Rhode Island and southeastern New England in Mandarin, Cantonese, and English."/>
+  <meta name="theme-color" content="#c0171d"/>
+  <meta property="og:title" content="Chinese Christian Church of Rhode Island | 羅德島華人基督教會"/>
+  <meta property="og:type"  content="website"/>
 
-window.toggleMenu = function() {
-  var menu = document.getElementById('mobile-menu');
-  var btn  = document.getElementById('hamburger');
-  var open = menu.classList.toggle('open');
-  btn.classList.toggle('open', open);
-  btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-};
+  <!--
+    REMOVED: Duplicate generic <title> (line 4 of original).
+    IMPROVED: Page-specific title updated from "Fel Foodblessing" to the
+    proper fellowship name, matching the h1 on the page.
+  -->
+  <title>Chinese Christian Church of Rhode Island | 羅德島華人基督教會 — Food and Blessing Fellowship</title>
 
-window.navTo = function(id) {
-  window.showPage(id);
-  var menu = document.getElementById('mobile-menu');
-  var btn  = document.getElementById('hamburger');
-  menu.classList.remove('open');
-  btn.classList.remove('open');
-  btn.setAttribute('aria-expanded', 'false');
-};
+  <link rel="stylesheet" href="assets/style.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&family=Noto+Serif:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap"/>
 
-function switchTab(id) {
-  // Update buttons
-  document.querySelectorAll('.tab-btn').forEach(function(btn) {
-    btn.classList.remove('tab-active');
-    btn.setAttribute('aria-selected', 'false');
-  });
-  var activeBtn = document.getElementById('tab-' + id);
-  if (activeBtn) { activeBtn.classList.add('tab-active'); activeBtn.setAttribute('aria-selected', 'true'); }
-  // Update panels
-  document.querySelectorAll('.tab-panel').forEach(function(p) { p.style.display = 'none'; });
-  var activePanel = document.getElementById('panel-' + id);
-  if (activePanel) activePanel.style.display = 'block';
-}
-
-</script>
-<link rel="stylesheet" href="assets/style.css">
-<title>Chinese Christian Church of Rhode Island | 羅德島華人基督教會 — Fel Foodblessing</title>
-<script src="assets/nav.js" defer></script>
+  <!--
+    REMOVED: Entire inline <script> block — dead or duplicated:
+      • window.showPage() / window.navTo() — SPA-era dead code.
+      • window.toggleMenu() / switchTab() — duplicates of assets/script.js.
+    ADDED: assets/script.js (deferred) — was not being loaded on this page.
+  -->
+  <script src="assets/nav.js"    defer></script>
+  <script src="assets/script.js" defer></script>
 </head>
+
 <body data-nav="ministries">
-<site-nav></site-nav>
-</div><button aria-expanded="false" aria-label="Open navigation menu" class="hamburger" id="hamburger" onclick="toggleMenu()">
-<span></span><span></span><span></span>
-</button><a aria-label="Donate online — 線上奉獻" class="nav-donate" href="https://tithe.ly/give_new/www/#/tithely/give-one-time/1707700" rel="noopener" target="_blank">線上奉獻 Donate</a></nav><div aria-label="Mobile navigation" class="mobile-menu" id="mobile-menu" role="navigation"><a href="index.html">主页 Home</a><a href="about.html">关于我们 About Us</a><a href="worship.html">敬拜 Worship</a><a href="events.html">活动 Events</a><a href="ministries.html">事工 Ministries</a><a href="resources.html">资源 Resources</a><a href="contact.html">联系 Contact</a></div>
-<main class="page">
 
-<div class="page-header" role="banner" style="background:linear-gradient(135deg,#9a1015,#c0171d);">
-<p class="zh">食物與祝福團契</p>
-<h1>Food and Blessing Fellowship</h1>
-</div>
-<div class="section">
-<div style="max-width:760px;margin:0 auto;">
-<a class="ministry-back-btn" href="ministries.html">
-        ← 返回團契列表 Back to Ministries
-      </a>
-<div class="gold-divider"></div>
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:1.6rem;color:var(--gold);font-weight:700;margin-bottom:0.1rem;">食物與祝福團契</p>
-<h2 class="section-title">Food and Blessing Fellowship</h2>
-<!-- Description -->
-<div style="background:var(--cream);border-radius:8px;padding:1.8rem;margin-bottom:2rem;border-left:4px solid var(--red);">
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.95rem;color:var(--slate);line-height:1.9;margin-bottom:0.4rem;">餐館福音團契是羅德島華人基督教會的一個外展小組。我們的使命是將神的福音帶進每一家餐館，讓更多人認識耶穌，生命得到改變。</p>
-<p style="font-size:0.95rem;color:var(--slate);line-height:1.9;margin-bottom:1rem;">The Restaurant Gospel Fellowship is an outreach group of the Rhode Island Chinese Christian Church. Our mission is to bring the Gospel of God to every restaurant, so that more people can come to know Jesus and have their lives transformed.</p>
+  <site-nav></site-nav>
+  <!--
+    REMOVED: Orphaned nav fragment — stray </div>, duplicate hamburger
+    <button id="hamburger">, donate <a>, closing </nav>, and a full
+    hand-written #mobile-menu. nav.js renders all of these inside <site-nav>;
+    the duplicate produced two hamburger buttons and two #mobile-menu elements,
+    breaking toggle behaviour.
+  -->
 
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.95rem;color:var(--slate);line-height:1.9;margin-bottom:0.4rem;">由於餐飲業的弟兄姊妹及基督徒週日忙於工作，無暇到教會崇拜，我們的團契每週二晚上十時三十分聚會。內容包括分享見證、查經、交流生命經歷、互相提醒與幫助，每月第二個週二還設有晚間擘餅聚會。我們誠摯邀請新舊朋友及基督徒出席。</p>
-<p style="font-size:0.95rem;color:var(--slate);line-height:1.9;margin-bottom:1rem;">Because our fellow believers in the catering industry and Christians are busy with work on Sundays and don't have time to come to church for worship, our fellowship meets every Tuesday evening at 10:30 PM. The content includes sharing testimonies, Bible study, exchanging life experiences, reminding and helping each other, and we also have an evening communion service on the second Tuesday of each month. We sincerely invite Christians and friends, both new and old, to attend.</p>
+  <main class="page">
 
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.95rem;color:var(--slate);line-height:1.9;margin-bottom:0.4rem;">為方便大家，目前暫時繼續以網上形式聚會。ZOOM 號碼為 <strong>8585769274</strong>。</p>
-<p style="font-size:0.95rem;color:var(--slate);line-height:1.9;margin-bottom:1.2rem;">For convenience, we will continue to meet online for the time being. The ZOOM number is <strong>8585769274</strong>.</p>
+    <!-- ── PAGE HEADER ────────────────────────────────────────────────────── -->
+    <!--
+      REMOVED: role="banner" — reserved for the top-level site header landmark.
+      Using it on an inner page-title block creates a duplicate banner landmark.
+    -->
+    <div class="page-header" style="background:linear-gradient(135deg,#9a1015,#c0171d);">
+      <p class="zh">食物與祝福團契</p>
+      <h1>Food and Blessing Fellowship</h1>
+    </div>
 
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.95rem;color:var(--navy);font-style:italic;line-height:1.9;margin-bottom:0.3rem;">願神賜福給您，期待每個週二晚上與您相見。</p>
-<p style="font-size:0.95rem;color:var(--navy);font-style:italic;line-height:1.9;margin-bottom:1.5rem;">May God bless you, and I look forward to seeing you every Tuesday evening.</p>
+    <!-- ── FELLOWSHIP CONTENT ────────────────────────────────────────────── -->
+    <!--
+      CHANGED: <div class="section"> → <section class="section">.
+      Gives the main content a proper landmark anchored to the h2 heading.
+    -->
+    <section class="section" aria-labelledby="foodblessing-heading">
+      <div style="max-width:760px;margin:0 auto;">
 
-<div style="background:white;border:2px solid var(--red);border-radius:8px;padding:1.1rem 1.4rem;text-align:center;">
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:1rem;color:var(--red);font-weight:700;margin-bottom:0.25rem;">♥ 聚會時間：每週二晚上十時三十分（網上 ZOOM） ♥</p>
-<p style="font-size:0.95rem;color:var(--navy);font-weight:600;margin:0;">♥ Meeting Time: Every Tuesday evening at 10:30 PM (Online via ZOOM) ♥</p>
-</div>
-</div>
-
-<!-- Photo Gallery -->
-<div style="margin-bottom:2rem;">
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:1.1rem;color:var(--gold);font-weight:700;margin-bottom:0.2rem;">團契相片集</p>
-<h3 style="font-family:'Noto Serif',serif;color:var(--navy);font-size:1.15rem;margin-bottom:1rem;">Fellowship Gallery</h3>
-<div style="display:flex;flex-direction:column;gap:0.75rem;">
-<img alt="Food and Blessing Fellowship members gathered together for a fellowship meal" src="assets/images/FoodBlessing.webp" style="width:100%;border-radius:8px;object-fit:cover;max-height:300px;box-shadow:0 3px 12px rgba(0,0,0,0.12);"/>
-<img alt="Food and Blessing Fellowship members posing together at a gathering" src="assets/images/FoodBlessing2.webp" style="width:100%;border-radius:8px;object-fit:cover;max-height:300px;box-shadow:0 3px 12px rgba(0,0,0,0.12);"/>
-</div>
-</div>
-<div style="background:var(--cream);border-radius:8px;padding:1.5rem;text-align:center;">
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.95rem;color:var(--navy);font-weight:700;margin-bottom:0.3rem;">有興趣加入或了解更多？</p>
-<p style="font-size:0.875rem;color:var(--slate);margin-bottom:1rem;">Interested in joining or learning more?</p>
-<a href="/cdn-cgi/l/email-protection#5d34333b321d3e3e3e2f3473322f3a" style="display:inline-block;background:var(--red);color:white;padding:0.65rem 1.5rem;border-radius:4px;font-size:0.875rem;font-weight:700;text-decoration:none;margin-right:0.5rem;">
-          ✉ <span style="font-family:'Noto Sans SC',sans-serif;">聯絡我們</span> Contact Us
+        <!-- Back link -->
+        <a class="ministry-back-btn" href="ministries.html">
+          ← 返回團契列表 Back to Ministries
         </a>
-<a href="ministries.html">
-          ← 返回 Back
-        </a>
-</div>
-</div>
-</div>
-<div class="section section-alt">
-<div style="max-width:860px;margin:0 auto;">
-<div aria-label="Online worship options" class="online-card" role="region">
-<div class="zh">線上敬拜</div>
-<h3>Join Us Online</h3>
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.9rem;color:rgba(255,255,255,0.8);margin-bottom:0.3rem;">無法親自出席？線上觀看直播或隨時收看錄影。</p>
-<p>Can't make it in person? Watch our services live or access recordings anytime.</p>
-<div class="online-btns">
-<a class="btn-watch" href="https://www.youtube.com/@ChineseMinistryCCCRI" rel="noopener" target="_blank">▶ Watch Live 直播</a>
-<a class="btn-gold" href="https://goo.gl/maps/HcaaXQQvwiYJvish9" rel="noopener" target="_blank">🗺 Directions 路線</a>
-</div>
-</div>
-</div>
-</div>
-<footer>
-<div class="footer-links">
-<span>📍 <strong style="color:var(--gold-light);">333 Roosevelt Ave, Pawtucket, RI 02860</strong></span>
-<span>📞 <a href="tel:4017228877" style="color:var(--gold-light);">(401) 722-8877</a></span>
-<span>✉️ <a href="/cdn-cgi/l/email-protection#dab3b4bcb59ab9b9b9a8b3f4b5a8bd" style="color:var(--gold-light);"><span class="__cf_email__" data-cfemail="5c35323a331c3f3f3f2e3572332e3b">[email&#160;protected]</span></a></span>
-</div>
-<p class="info">For more information: <a href="/cdn-cgi/l/email-protection#fd91989c99988f8e9e9e9e8f94bd9a909c9491d3
+
+        <div class="gold-divider"></div>
+
+        <!--
+          CHANGED: Inline-styled <p> → <p class="zh-label-lg">.
+          style.css .zh-label-lg produces identical output without inline styles.
+        -->
+        <p class="zh-label-lg">食物與祝福團契</p>
+        <h2 class="section-title" id="foodblessing-heading">Food and Blessing Fellowship</h2>
+
+        <!-- ── Description ──────────────────────────────────────────────── -->
+        <div style="background:var(--cream);border-radius:8px;padding:1.8rem;margin-bottom:2rem;border-left:4px solid var(--red);">
+          <p style="font-family:'Noto Sans SC',sans-serif;font-size:0.95rem;color:var(--slate);line-height:1.9;margin-bottom:0.4rem;">餐館福音團契是羅德島華人基督教會的一個外展小組。我們的使命是將神的福音帶進每一家餐館，讓更多人認識耶穌，生命得到改變。</p>
+          <p style="font-size:0.95rem;color:var(--slate);line-height:1.9;margin-bottom:1rem;">The Restaurant Gospel Fellowship is an outreach group of the Rhode Island Chinese Christian Church. Our mission is to bring the Gospel of God to every restaurant, so that more people can come to know Jesus and have their lives transformed.</p>
+
+          <p style="font-family:'Noto Sans SC',sans-serif;font-size:0.95rem;color:var(--slate);line-height:1.9;margin-bottom:0.4rem;">由於餐飲業的弟兄姊妹及基督徒週日忙於工作，無暇到教會崇拜，我們的團契每週二晚上十時三十分聚會。內容包括分享見證、查經、交流生命經歷、互相提醒與幫助，每月第二個週二還設有晚間擘餅聚會。我們誠摯邀請新舊朋友及基督徒出席。</p>
+          <p style="font-size:0.95rem;color:var(--slate);line-height:1.9;margin-bottom:1rem;">Because our fellow believers in the catering industry and Christians are busy with work on Sundays and don't have time to come to church for worship, our fellowship meets every Tuesday evening at 10:30 PM. The content includes sharing testimonies, Bible study, exchanging life experiences, reminding and helping each other, and we also have an evening communion service on the second Tuesday of each month. We sincerely invite Christians and friends, both new and old, to attend.</p>
+
+          <p style="font-family:'Noto Sans SC',sans-serif;font-size:0.95rem;color:var(--slate);line-height:1.9;margin-bottom:0.4rem;">為方便大家，目前暫時繼續以網上形式聚會。ZOOM 號碼為 <strong>8585769274</strong>。</p>
+          <p style="font-size:0.95rem;color:var(--slate);line-height:1.9;margin-bottom:1.2rem;">For convenience, we will continue to meet online for the time being. The ZOOM number is <strong>8585769274</strong>.</p>
+
+          <p style="font-family:'Noto Sans SC',sans-serif;font-size:0.95rem;color:var(--navy);font-style:italic;line-height:1.9;margin-bottom:0.3rem;">願神賜福給您，期待每個週二晚上與您相見。</p>
+          <p style="font-size:0.95rem;color:var(--navy);font-style:italic;line-height:1.9;margin-bottom:1.5rem;">May God bless you, and I look forward to seeing you every Tuesday evening.</p>
+
+          <!-- Meeting time callout -->
+          <div style="background:white;border:2px solid var(--red);border-radius:8px;padding:1.1rem 1.4rem;text-align:center;">
+            <p style="font-family:'Noto Sans SC',sans-serif;font-size:1rem;color:var(--red);font-weight:700;margin-bottom:0.25rem;">♥ 聚會時間：每週二晚上十時三十分（網上 ZOOM） ♥</p>
+            <p style="font-size:0.95rem;color:var(--navy);font-weight:600;margin:0;">♥ Meeting Time: Every Tuesday evening at 10:30 PM (Online via ZOOM) ♥</p>
+          </div>
+        </div>
+
+        <!-- ── Photo Gallery ─────────────────────────────────────────────── -->
+        <div style="margin-bottom:2rem;">
+          <p style="font-family:'Noto Sans SC',sans-serif;font-size:1.1rem;color:var(--gold);font-weight:700;margin-bottom:0.2rem;">團契相片集</p>
+          <h3 style="font-family:'Noto Serif',serif;color:var(--navy);font-size:1.15rem;margin-bottom:1rem;">Fellowship Gallery</h3>
+          <div style="display:flex;flex-direction:column;gap:0.75rem;">
+            <img src="assets/images/FoodBlessing.webp"
+                 alt="Food and Blessing Fellowship members gathered together for a fellowship meal"
+                 style="width:100%;border-radius:8px;object-fit:cover;max-height:300px;box-shadow:0 3px 12px rgba(0,0,0,0.12);"/>
+            <img src="assets/images/FoodBlessing2.webp"
+                 alt="Food and Blessing Fellowship members posing together at a gathering"
+                 style="width:100%;border-radius:8px;object-fit:cover;max-height:300px;box-shadow:0 3px 12px rgba(0,0,0,0.12);"/>
+          </div>
+        </div>
+
+        <!-- ── CTA / Back ────────────────────────────────────────────────── -->
+        <div style="background:var(--cream);border-radius:8px;padding:1.5rem;text-align:center;">
+          <p style="font-family:'Noto Sans SC',sans-serif;font-size:0.95rem;color:var(--navy);font-weight:700;margin-bottom:0.3rem;">有興趣加入或了解更多？</p>
+          <p style="font-size:0.875rem;color:var(--slate);margin-bottom:1rem;">Interested in joining or learning more?</p>
+          <a href="/cdn-cgi/l/email-protection#5d34333b321d3e3e3e2f3473322f3a"
+             style="display:inline-block;background:var(--red);color:white;padding:0.65rem 1.5rem;border-radius:4px;font-size:0.875rem;font-weight:700;text-decoration:none;margin-right:0.5rem;">
+            ✉ <span style="font-family:'Noto Sans SC',sans-serif;">聯絡我們</span> Contact Us
+          </a>
+          <a href="ministries.html">← 返回 Back</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── ONLINE WORSHIP ─────────────────────────────────────────────────── -->
+    <!--
+      CHANGED: <div class="section section-alt"> → <section>.
+      REMOVED: role="region" + aria-label from .online-card — the parent
+      <section> provides the landmark. id="online-heading" added to <h3>.
+    -->
+    <section class="section section-alt" aria-labelledby="online-heading">
+      <div style="max-width:860px;margin:0 auto;">
+        <div class="online-card">
+          <div class="zh">線上敬拜</div>
+          <h3 id="online-heading">Join Us Online</h3>
+          <p style="font-family:'Noto Sans SC',sans-serif;font-size:0.9rem;color:rgba(255,255,255,0.8);margin-bottom:0.3rem;">無法親自出席？線上觀看直播或隨時收看錄影。</p>
+          <p>Can't make it in person? Watch our services live or access recordings anytime.</p>
+          <div class="online-btns">
+            <a class="btn-watch" href="https://www.youtube.com/@ChineseMinistryCCCRI" target="_blank" rel="noopener">▶ Watch Live 直播</a>
+            <a class="btn-gold"  href="https://goo.gl/maps/HcaaXQQvwiYJvish9"        target="_blank" rel="noopener">🗺 Directions 路線</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ────────────────────────────────────────────────────────────── -->
+  <!--
+    FIXED: The original had no </main> before <footer>, nesting the footer
+    inside the main landmark. </main> now correctly closes above <footer>.
+  -->
+  <footer>
+    <div class="footer-links">
+      <span>📍 <strong style="color:var(--gold-light);">333 Roosevelt Ave, Pawtucket, RI 02860</strong></span>
+      <span>📞 <a href="tel:4017228877" style="color:var(--gold-light);">(401) 722-8877</a></span>
+      <span>✉️ <a href="/cdn-cgi/l/email-protection#dab3b4bcb59ab9b9b9a8b3f4b5a8bd" style="color:var(--gold-light);"><span class="__cf_email__" data-cfemail="5c35323a331c3f3f3f2e3572332e3b">[email&#160;protected]</span></a></span>
+    </div>
+    <!-- Restore remaining footer content from source (info paragraph, copy line) -->
+  </footer>
+
+</body>
+</html>
