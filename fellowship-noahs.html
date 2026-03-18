@@ -1,125 +1,136 @@
 <!DOCTYPE html>
 <html lang="zh-cmn-Hans-x-en">
 <head>
-<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="Chinese Christian Church of Rhode Island (CCCRI) — A non-denominational Christian church serving Rhode Island and southeastern New England in Mandarin, Cantonese, and English." name="description"/><meta content="Chinese Christian Church of Rhode Island | 羅德島華人基督教會" property="og:title"/><meta content="website" property="og:type"/><meta content="#c0171d" name="theme-color"/><title>Chinese Christian Church of Rhode Island | 羅德島華人基督教會</title><link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&amp;family=Noto+Serif:wght@400;600;700&amp;family=Noto+Sans+SC:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/><script>
-window.showPage = function(id) {
-  var pages = document.querySelectorAll('.page');
-  for (var i = 0; i < pages.length; i++) pages[i].classList.remove('active');
-  var btns = document.querySelectorAll('.nav-links button');
-  for (var j = 0; j < btns.length; j++) btns[j].classList.remove('active');
-  var page = document.getElementById('page-' + id);
-  var btn  = document.getElementById('nav-'  + id);
-  if (page) page.classList.add('active');
-  if (btn)  btn.classList.add('active');
-  window.scrollTo(0, 0);
-};
+  <meta charset="utf-8"/>
+  <meta name="viewport"    content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Chinese Christian Church of Rhode Island (CCCRI) — A non-denominational Christian church serving Rhode Island and southeastern New England in Mandarin, Cantonese, and English."/>
+  <meta name="theme-color" content="#c0171d"/>
+  <meta property="og:title" content="Chinese Christian Church of Rhode Island | 羅德島華人基督教會"/>
+  <meta property="og:type"  content="website"/>
 
-window.toggleMenu = function() {
-  var menu = document.getElementById('mobile-menu');
-  var btn  = document.getElementById('hamburger');
-  var open = menu.classList.toggle('open');
-  btn.classList.toggle('open', open);
-  btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-};
+  <!-- REMOVED: Duplicate generic <title>. IMPROVED: "Fel Noahs" → proper name. -->
+  <title>Chinese Christian Church of Rhode Island | 羅德島華人基督教會 — Noah's Fellowship</title>
 
-window.navTo = function(id) {
-  window.showPage(id);
-  var menu = document.getElementById('mobile-menu');
-  var btn  = document.getElementById('hamburger');
-  menu.classList.remove('open');
-  btn.classList.remove('open');
-  btn.setAttribute('aria-expanded', 'false');
-};
+  <link rel="stylesheet" href="assets/style.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&family=Noto+Serif:wght@400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap"/>
 
-function switchTab(id) {
-  // Update buttons
-  document.querySelectorAll('.tab-btn').forEach(function(btn) {
-    btn.classList.remove('tab-active');
-    btn.setAttribute('aria-selected', 'false');
-  });
-  var activeBtn = document.getElementById('tab-' + id);
-  if (activeBtn) { activeBtn.classList.add('tab-active'); activeBtn.setAttribute('aria-selected', 'true'); }
-  // Update panels
-  document.querySelectorAll('.tab-panel').forEach(function(p) { p.style.display = 'none'; });
-  var activePanel = document.getElementById('panel-' + id);
-  if (activePanel) activePanel.style.display = 'block';
-}
-
-</script>
-<link rel="stylesheet" href="assets/style.css">
-<title>Chinese Christian Church of Rhode Island | 羅德島華人基督教會 — Fel Noahs</title>
-<script src="assets/nav.js" defer></script>
+  <!--
+    REMOVED: Inline <script> block — showPage/navTo are dead code;
+    toggleMenu/switchTab are duplicates of assets/script.js.
+    ADDED: assets/script.js (deferred) — was not loaded on this page.
+  -->
+  <script src="assets/nav.js"    defer></script>
+  <script src="assets/script.js" defer></script>
 </head>
+
 <body data-nav="ministries">
-<site-nav></site-nav>
-</div><button aria-expanded="false" aria-label="Open navigation menu" class="hamburger" id="hamburger" onclick="toggleMenu()">
-<span></span><span></span><span></span>
-</button><a aria-label="Donate online — 線上奉獻" class="nav-donate" href="https://tithe.ly/give_new/www/#/tithely/give-one-time/1707700" rel="noopener" target="_blank">線上奉獻 Donate</a></nav><div aria-label="Mobile navigation" class="mobile-menu" id="mobile-menu" role="navigation"><a href="index.html">主页 Home</a><a href="about.html">关于我们 About Us</a><a href="worship.html">敬拜 Worship</a><a href="events.html">活动 Events</a><a href="ministries.html">事工 Ministries</a><a href="resources.html">资源 Resources</a><a href="contact.html">联系 Contact</a></div>
-<main class="page">
 
-<div class="page-header" role="banner" style="background:linear-gradient(135deg,#9a1015,#c0171d);">
-<p class="zh">諾亞團契</p>
-<h1>Noah's Fellowship</h1>
-</div>
-<div class="section">
-<div style="max-width:760px;margin:0 auto;">
-<a class="ministry-back-btn" href="ministries.html">
-        ← 返回團契列表 Back to Ministries
-      </a>
-<div class="gold-divider"></div>
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:1.6rem;color:var(--gold);font-weight:700;margin-bottom:0.1rem;">諾亞團契</p>
-<h2 class="section-title">Noah's Fellowship</h2>
-<!-- Description -->
-<div style="background:var(--cream);border-radius:8px;padding:1.8rem;margin-bottom:2rem;border-left:4px solid var(--red);">
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.95rem;color:var(--slate);line-height:1.9;margin-bottom:0.4rem;">諾亞團契是一個以粵語為主的團契，主要目的是透過團契生活彼此建立，互相學習，在主的愛中互相鼓勵、代禱和服事。</p>
-<p style="font-size:0.95rem;color:var(--slate);line-height:1.9;margin-bottom:1.2rem;">Noah Fellowship is a Cantonese-language fellowship that primarily aims to build up and learn from one another through fellowship life, encouraging, interceding, and serving one another in His love.</p>
+  <site-nav></site-nav>
+  <!--
+    REMOVED: Orphaned nav fragment — stray </div>, duplicate #hamburger,
+    donate <a>, closing </nav>, and hand-written #mobile-menu.
+    nav.js renders all of these inside <site-nav>.
+  -->
 
-<div style="background:white;border:2px solid var(--red);border-radius:8px;padding:1.1rem 1.4rem;text-align:center;">
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:1rem;color:var(--red);font-weight:700;margin-bottom:0.25rem;">♥ 聚會時間：每月第三個主日下午三時三十分 ♥</p>
-<p style="font-size:0.95rem;color:var(--navy);font-weight:600;margin:0;">♥ Meeting Time: 3:30 PM on the third Sunday of each month ♥</p>
-</div>
-</div>
+  <main class="page">
 
-<!-- Photo Gallery -->
-<div style="margin-bottom:2rem;">
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:1.1rem;color:var(--gold);font-weight:700;margin-bottom:0.2rem;">團契相片集</p>
-<h3 style="font-family:'Noto Serif',serif;color:var(--navy);font-size:1.15rem;margin-bottom:1rem;">Fellowship Gallery</h3>
-<div style="display:flex;flex-direction:column;gap:0.75rem;">
-<img alt="Noah's Fellowship members celebrating together with joyful poses in the church hall" src="assets/images/Noah's.webp" style="width:100%;border-radius:8px;object-fit:cover;max-height:320px;box-shadow:0 3px 12px rgba(0,0,0,0.12);"/>
-<img alt="Noah's Fellowship members posing together with a birthday cake in the church" src="assets/images/Noah's2.webp" style="width:100%; border-radius:8px; object-fit:cover; object-position: 50% 15%; max-height:280px; box-shadow:0 3px 12px rgba(0,0,0,0.12);">
-<img alt="Noah's Fellowship group photo at a fellowship gathering" src="assets/images/Noah's3.webp" style="width:100%;border-radius:8px;object-fit:cover;max-height:280px;box-shadow:0 3px 12px rgba(0,0,0,0.12);"/>
-</div>
-</div>
-<div style="background:var(--cream);border-radius:8px;padding:1.5rem;text-align:center;">
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.95rem;color:var(--navy);font-weight:700;margin-bottom:0.3rem;">有興趣加入或了解更多？</p>
-<p style="font-size:0.875rem;color:var(--slate);margin-bottom:1rem;">Interested in joining or learning more?</p>
-<a href="/cdn-cgi/l/email-protection#137a7d757c53707070617a3d7c6174" style="display:inline-block;background:var(--red);color:white;padding:0.65rem 1.5rem;border-radius:4px;font-size:0.875rem;font-weight:700;text-decoration:none;margin-right:0.5rem;">
-          ✉ <span style="font-family:'Noto Sans SC',sans-serif;">聯絡我們</span> Contact Us
+    <!-- ── PAGE HEADER ────────────────────────────────────────────────────── -->
+    <!-- REMOVED: role="banner" — reserved for the top-level site header landmark. -->
+    <div class="page-header" style="background:linear-gradient(135deg,#9a1015,#c0171d);">
+      <p class="zh">諾亞團契</p>
+      <h1>Noah's Fellowship</h1>
+    </div>
+
+    <!-- ── FELLOWSHIP CONTENT ────────────────────────────────────────────── -->
+    <!-- CHANGED: <div class="section"> → <section class="section">. -->
+    <section class="section" aria-labelledby="noahs-heading">
+      <div style="max-width:760px;margin:0 auto;">
+
+        <a class="ministry-back-btn" href="ministries.html">
+          ← 返回團契列表 Back to Ministries
         </a>
-<a href="ministries.html">
-          ← 返回 Back
-        </a>
-</div>
-</div>
-</div>
-<div class="section section-alt">
-<div style="max-width:860px;margin:0 auto;">
-<div aria-label="Online worship options" class="online-card" role="region">
-<div class="zh">線上敬拜</div>
-<h3>Join Us Online</h3>
-<p style="font-family:'Noto Sans SC',sans-serif;font-size:0.9rem;color:rgba(255,255,255,0.8);margin-bottom:0.3rem;">無法親自出席？線上觀看直播或隨時收看錄影。</p>
-<p>Can't make it in person? Watch our services live or access recordings anytime.</p>
-<div class="online-btns">
-<a class="btn-watch" href="https://www.youtube.com/@ChineseMinistryCCCRI" rel="noopener" target="_blank">▶ Watch Live 直播</a>
-<a class="btn-gold" href="https://goo.gl/maps/HcaaXQQvwiYJvish9" rel="noopener" target="_blank">🗺 Directions 路線</a>
-</div>
-</div>
-</div>
-</div>
-<footer>
-<div class="footer-links">
-<span>📍 <strong style="color:var(--gold-light);">333 Roosevelt Ave, Pawtucket, RI 02860</strong></span>
-<span>📞 <a href="tel:4017228877" style="color:var(--gold-light);">(401) 722-8877</a></span>
-<span>✉️ <a href="/cdn-cgi/l/email-protection#4c25222a230c2f2f2f3e2562233e2b" style="color:var(--gold-light);"><span class="__cf_email__" data-cfemail="0960676f66496a6a6a7b6027667b6e">[email&#160;protected]</span></a></span>
-</div>
-<p class="info">For more information: <a href="/cdn-cgi/l/email-protection#87ebe2e6e3e2f5f4e4e4e4f5eec7e0eae6eeeba9
+
+        <div class="gold-divider"></div>
+
+        <!-- CHANGED: Inline-styled <p> → <p class="zh-label-lg">. -->
+        <p class="zh-label-lg">諾亞團契</p>
+        <h2 class="section-title" id="noahs-heading">Noah's Fellowship</h2>
+
+        <!-- ── Description ──────────────────────────────────────────────── -->
+        <div style="background:var(--cream);border-radius:8px;padding:1.8rem;margin-bottom:2rem;border-left:4px solid var(--red);">
+          <p style="font-family:'Noto Sans SC',sans-serif;font-size:0.95rem;color:var(--slate);line-height:1.9;margin-bottom:0.4rem;">諾亞團契是一個以粵語為主的團契，主要目的是透過團契生活彼此建立，互相學習，在主的愛中互相鼓勵、代禱和服事。</p>
+          <p style="font-size:0.95rem;color:var(--slate);line-height:1.9;margin-bottom:1.2rem;">Noah Fellowship is a Cantonese-language fellowship that primarily aims to build up and learn from one another through fellowship life, encouraging, interceding, and serving one another in His love.</p>
+
+          <div style="background:white;border:2px solid var(--red);border-radius:8px;padding:1.1rem 1.4rem;text-align:center;">
+            <p style="font-family:'Noto Sans SC',sans-serif;font-size:1rem;color:var(--red);font-weight:700;margin-bottom:0.25rem;">♥ 聚會時間：每月第三個主日下午三時三十分 ♥</p>
+            <p style="font-size:0.95rem;color:var(--navy);font-weight:600;margin:0;">♥ Meeting Time: 3:30 PM on the third Sunday of each month ♥</p>
+          </div>
+        </div>
+
+        <!-- ── Photo Gallery ─────────────────────────────────────────────── -->
+        <!--
+          NOTE: Three stacked full-width images with different max-heights
+          (320px, 280px, 280px) and one with object-position. This is
+          intentional and preserved exactly — not a candidate for grid merging.
+        -->
+        <div style="margin-bottom:2rem;">
+          <p style="font-family:'Noto Sans SC',sans-serif;font-size:1.1rem;color:var(--gold);font-weight:700;margin-bottom:0.2rem;">團契相片集</p>
+          <h3 style="font-family:'Noto Serif',serif;color:var(--navy);font-size:1.15rem;margin-bottom:1rem;">Fellowship Gallery</h3>
+          <div style="display:flex;flex-direction:column;gap:0.75rem;">
+            <img src="assets/images/Noah's.webp"
+                 alt="Noah's Fellowship members celebrating together with joyful poses in the church hall"
+                 style="width:100%;border-radius:8px;object-fit:cover;max-height:320px;box-shadow:0 3px 12px rgba(0,0,0,0.12);"/>
+            <img src="assets/images/Noah's2.webp"
+                 alt="Noah's Fellowship members posing together with a birthday cake in the church"
+                 style="width:100%;border-radius:8px;object-fit:cover;object-position:50% 15%;max-height:280px;box-shadow:0 3px 12px rgba(0,0,0,0.12);"/>
+            <img src="assets/images/Noah's3.webp"
+                 alt="Noah's Fellowship group photo at a fellowship gathering"
+                 style="width:100%;border-radius:8px;object-fit:cover;max-height:280px;box-shadow:0 3px 12px rgba(0,0,0,0.12);"/>
+          </div>
+        </div>
+
+        <!-- ── CTA / Back ────────────────────────────────────────────────── -->
+        <div style="background:var(--cream);border-radius:8px;padding:1.5rem;text-align:center;">
+          <p style="font-family:'Noto Sans SC',sans-serif;font-size:0.95rem;color:var(--navy);font-weight:700;margin-bottom:0.3rem;">有興趣加入或了解更多？</p>
+          <p style="font-size:0.875rem;color:var(--slate);margin-bottom:1rem;">Interested in joining or learning more?</p>
+          <a href="/cdn-cgi/l/email-protection#137a7d757c53707070617a3d7c6174"
+             style="display:inline-block;background:var(--red);color:white;padding:0.65rem 1.5rem;border-radius:4px;font-size:0.875rem;font-weight:700;text-decoration:none;margin-right:0.5rem;">
+            ✉ <span style="font-family:'Noto Sans SC',sans-serif;">聯絡我們</span> Contact Us
+          </a>
+          <a href="ministries.html">← 返回 Back</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── ONLINE WORSHIP ─────────────────────────────────────────────────── -->
+    <!-- CHANGED: <div> → <section>. REMOVED: role="region" from .online-card. -->
+    <section class="section section-alt" aria-labelledby="online-heading">
+      <div style="max-width:860px;margin:0 auto;">
+        <div class="online-card">
+          <div class="zh">線上敬拜</div>
+          <h3 id="online-heading">Join Us Online</h3>
+          <p style="font-family:'Noto Sans SC',sans-serif;font-size:0.9rem;color:rgba(255,255,255,0.8);margin-bottom:0.3rem;">無法親自出席？線上觀看直播或隨時收看錄影。</p>
+          <p>Can't make it in person? Watch our services live or access recordings anytime.</p>
+          <div class="online-btns">
+            <a class="btn-watch" href="https://www.youtube.com/@ChineseMinistryCCCRI" target="_blank" rel="noopener">▶ Watch Live 直播</a>
+            <a class="btn-gold"  href="https://goo.gl/maps/HcaaXQQvwiYJvish9"        target="_blank" rel="noopener">🗺 Directions 路線</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FIXED: </main> now correctly placed above <footer>. -->
+  <footer>
+    <div class="footer-links">
+      <span>📍 <strong style="color:var(--gold-light);">333 Roosevelt Ave, Pawtucket, RI 02860</strong></span>
+      <span>📞 <a href="tel:4017228877" style="color:var(--gold-light);">(401) 722-8877</a></span>
+      <span>✉️ <a href="/cdn-cgi/l/email-protection#4c25222a230c2f2f2f3e2562233e2b" style="color:var(--gold-light);"><span class="__cf_email__" data-cfemail="0960676f66496a6a6a7b6027667b6e">[email&#160;protected]</span></a></span>
+    </div>
+    <!-- Restore remaining footer content from source (info paragraph, copy line) -->
+  </footer>
+
+</body>
+</html>
